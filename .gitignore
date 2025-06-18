@@ -1,0 +1,33 @@
+# Ignore specific asset folders
+/Assets/Rowlan/
+/Assets/NatureManufacture Assets/
+/Assets/Forst/
+/Assets/ALP_Assets/
+/Assets/TerrainSampleAssets/
+/Assets/Realistic Volume Profiles/
+
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Oo]bj/
+[Mm]emoryCaptures/
+sysinfo.txt
+
+# Visual Studio
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Unity package manager
+Packages/packages-lock.json
