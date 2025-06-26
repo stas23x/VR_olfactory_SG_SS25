@@ -21,7 +21,6 @@ public class MenuController : MonoBehaviour
         if (menuPanel != null)
             menuPanel.SetActive(isMenuVisible);
 
-        // Hook up button events
         continueButton?.onClick.AddListener(OnContinueClicked);
         exitButton?.onClick.AddListener(OnExitClicked);
 
@@ -29,14 +28,13 @@ public class MenuController : MonoBehaviour
         if (GlobalSettings.Instance != null)
         {
             audioSlider.value = GlobalSettings.Instance.audioStrength;
-            skyDropdown.value = GlobalSettings.Instance.skyVolume;
-            sceneDropdown.value = sceneDropdown.options.FindIndex(
-                opt => opt.text == GlobalSettings.Instance.currentSceneName
-            );
+
+            // Match dropdown options with stored string values
+            skyDropdown.value = skyDropdown.options.FindIndex(opt => opt.text == GlobalSettings.Instance.skyVolume);
+            sceneDropdown.value = sceneDropdown.options.FindIndex(opt => opt.text == GlobalSettings.Instance.currentSceneName);
         }
     }
 
-    // Toggle menu visibility
     public void ToggleMenu()
     {
         if (menuPanel == null) return;
@@ -45,18 +43,17 @@ public class MenuController : MonoBehaviour
         menuPanel.SetActive(isMenuVisible);
     }
 
-    // Apply settings and load scene if needed
     private void OnContinueClicked()
     {
+        
         if (GlobalSettings.Instance != null)
         {
             GlobalSettings.Instance.audioStrength = audioSlider.value;
-            GlobalSettings.Instance.skyVolume = skyDropdown.value;
+            GlobalSettings.Instance.skyVolume = skyDropdown.options[skyDropdown.value].text;
         }
-
+        
         string selectedScene = sceneDropdown.options[sceneDropdown.value].text;
-
-        // Only load if different from current scene
+        
         if (SceneManager.GetActiveScene().name != selectedScene)
         {
             GlobalSettings.Instance.currentSceneName = selectedScene;
@@ -68,7 +65,6 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    // Exit the application
     private void OnExitClicked()
     {
         Application.Quit();

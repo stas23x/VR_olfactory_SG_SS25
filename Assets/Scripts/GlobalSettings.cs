@@ -5,7 +5,7 @@ public class GlobalSettings : MonoBehaviour
     public static GlobalSettings Instance;
 
     public float audioStrength = 1.0f;
-    public int skyVolume = 0;
+    public string skyVolume = "";
     public string currentSceneName = "";
 
     private void Awake()

@@ -3674,6 +3674,53 @@ MonoBehaviour:
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
+--- !u!1 &1161825078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161825080}
+  - component: {fileID: 1161825079}
+  m_Layer: 0
+  m_Name: GlobalSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1161825079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161825078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072bbbb6ec491c844a5d02f59eceef3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioStrength: 1
+  skyVolume: 
+  currentSceneName: 
+--- !u!4 &1161825080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161825078}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1162675801
 GameObject:
   m_ObjectHideFlags: 0
@@ -5673,7 +5720,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Beach
+  m_Text: forest 1
 --- !u!222 &1842567770
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6587,13 +6634,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Beach
+    - m_Text: forest 1
       m_Image: {fileID: 0}
-    - m_Text: Amrum
+    - m_Text: forest_terrain
       m_Image: {fileID: 0}
-    - m_Text: Koenigssee
-      m_Image: {fileID: 0}
-    - m_Text: Forest
+    - m_Text: TemplateScene
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6938,3 +6983,4 @@ SceneRoots:
   - {fileID: 1157974479}
   - {fileID: 941621724}
   - {fileID: 696355760}
+  - {fileID: 1161825080}
