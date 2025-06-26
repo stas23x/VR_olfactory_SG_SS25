@@ -14,6 +14,9 @@ public class MenuController : MonoBehaviour
     public Button continueButton;
     public Button exitButton;
 
+    // Reference to your audio manager handling mixer volume
+    public AudioManager audioManager;
+
     private bool isMenuVisible = true;
 
     private void Start()
@@ -24,14 +27,34 @@ public class MenuController : MonoBehaviour
         continueButton?.onClick.AddListener(OnContinueClicked);
         exitButton?.onClick.AddListener(OnExitClicked);
 
-        // Initialize UI with values from GlobalSettings
         if (GlobalSettings.Instance != null)
         {
+            // Initialize UI elements from GlobalSettings
             audioSlider.value = GlobalSettings.Instance.audioStrength;
-
-            // Match dropdown options with stored string values
             skyDropdown.value = skyDropdown.options.FindIndex(opt => opt.text == GlobalSettings.Instance.skyVolume);
             sceneDropdown.value = sceneDropdown.options.FindIndex(opt => opt.text == GlobalSettings.Instance.currentSceneName);
+
+            // Set mixer volume immediately to match stored value
+            if (audioManager != null)
+            {
+                audioManager.SetMasterVolume(GlobalSettings.Instance.audioStrength);
+            }
+        }
+
+        // Add listener to update volume in real-time when slider changes
+        audioSlider.onValueChanged.AddListener(OnAudioSliderChanged);
+    }
+
+    private void OnAudioSliderChanged(float value)
+    {
+        if (audioManager != null)
+        {
+            audioManager.SetMasterVolume(value);
+        }
+
+        if (GlobalSettings.Instance != null)
+        {
+            GlobalSettings.Instance.audioStrength = value;
         }
     }
 
@@ -45,15 +68,14 @@ public class MenuController : MonoBehaviour
 
     private void OnContinueClicked()
     {
-        
         if (GlobalSettings.Instance != null)
         {
-            GlobalSettings.Instance.audioStrength = audioSlider.value;
+            // audioStrength already updated by slider listener, so no need here again
             GlobalSettings.Instance.skyVolume = skyDropdown.options[skyDropdown.value].text;
         }
-        
+
         string selectedScene = sceneDropdown.options[sceneDropdown.value].text;
-        
+
         if (SceneManager.GetActiveScene().name != selectedScene)
         {
             GlobalSettings.Instance.currentSceneName = selectedScene;
