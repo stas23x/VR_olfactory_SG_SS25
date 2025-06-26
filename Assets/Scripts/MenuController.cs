@@ -8,10 +8,8 @@ public class MenuController : MonoBehaviour
     public GameObject menuPanel;
 
     public Dropdown sceneDropdown;
-
+    public Dropdown skyDropdown;
     public Slider audioSlider;
-    public Slider skySlider;
-    public Slider sceneSlider;
 
     public Button continueButton;
     public Button exitButton;
@@ -24,22 +22,21 @@ public class MenuController : MonoBehaviour
             menuPanel.SetActive(isMenuVisible);
 
         // Hook up button events
-        if (continueButton != null)
-            continueButton.onClick.AddListener(OnContinueClicked);
+        continueButton?.onClick.AddListener(OnContinueClicked);
+        exitButton?.onClick.AddListener(OnExitClicked);
 
-        if (exitButton != null)
-            exitButton.onClick.AddListener(OnExitClicked);
-
-        // Initialize sliders with values from GlobalSettings if exists
+        // Initialize UI with values from GlobalSettings
         if (GlobalSettings.Instance != null)
         {
             audioSlider.value = GlobalSettings.Instance.audioStrength;
-            skySlider.value = GlobalSettings.Instance.skyVolume;
-            sceneSlider.value = GlobalSettings.Instance.scene;
+            skyDropdown.value = GlobalSettings.Instance.skyVolume;
+            sceneDropdown.value = sceneDropdown.options.FindIndex(
+                opt => opt.text == GlobalSettings.Instance.currentSceneName
+            );
         }
     }
 
-    // Show/hide menu (optional, can be called elsewhere)
+    // Toggle menu visibility
     public void ToggleMenu()
     {
         if (menuPanel == null) return;
@@ -48,46 +45,36 @@ public class MenuController : MonoBehaviour
         menuPanel.SetActive(isMenuVisible);
     }
 
-    // Continue button: update settings and change scene if changed
+    // Apply settings and load scene if needed
     private void OnContinueClicked()
     {
         if (GlobalSettings.Instance != null)
         {
             GlobalSettings.Instance.audioStrength = audioSlider.value;
-            GlobalSettings.Instance.skyVolume = skySlider.value;
-            GlobalSettings.Instance.scene = sceneSlider.value;
+            GlobalSettings.Instance.skyVolume = skyDropdown.value;
         }
 
-        // Get selected scene from dropdown
         string selectedScene = sceneDropdown.options[sceneDropdown.value].text;
 
-        // If current scene is different, load new scene, else just close menu
+        // Only load if different from current scene
         if (SceneManager.GetActiveScene().name != selectedScene)
         {
+            GlobalSettings.Instance.currentSceneName = selectedScene;
             SceneManager.LoadScene(selectedScene);
         }
         else
         {
-            // Just close the menu if same scene
             ToggleMenu();
         }
     }
 
-    // Exit button: close the application
+    // Exit the application
     private void OnExitClicked()
     {
-        // This works for build, does nothing in editor
         Application.Quit();
 
-        // If running in the Unity editor, stop playing
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
-    }
-
-    // Change scene button: immediate scene change without updating volumes
-    private void OnChangeSceneClicked()
-    {
-        
     }
 }

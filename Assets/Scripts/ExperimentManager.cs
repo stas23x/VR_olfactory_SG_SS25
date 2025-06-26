@@ -12,7 +12,7 @@ public class ExperimentManager : MonoBehaviour
 
     private void Start()
     {
-        participantIdInput.text = GlobalSettings.Instance.participantID;
+        // participantIdInput.text = GlobalSettings.Instance.participantID;
 
         logPath = Path.Combine(Application.persistentDataPath, "experiment_log.csv");
 
