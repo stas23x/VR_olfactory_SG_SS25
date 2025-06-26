@@ -2503,13 +2503,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c352be98d9e2a4f9587c4ab29339b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skyVolumeTarget: {fileID: 0}
   menuPanel: {fileID: 385787441}
   sceneDropdown: {fileID: 2044876167}
   skyDropdown: {fileID: 1033492340}
   audioSlider: {fileID: 278179176}
   continueButton: {fileID: 1004485229}
   exitButton: {fileID: 2036864834}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 77071790}
 --- !u!114 &857109177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3802,8 +3803,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioStrength: 1
-  skyVolume: 
   currentSceneName: 
+  skyProfiles:
+  - {fileID: 11400000, guid: 5f0578d6bec14c84bb486950e8fb043f, type: 2}
+  - {fileID: 11400000, guid: 3dd5e823f1ebb40eaac89dc07ac99937, type: 2}
+  selectedSkyProfileIndex: 0
+  globalVolume: {fileID: 1812963944}
 --- !u!4 &1161825080
 Transform:
   m_ObjectHideFlags: 0
@@ -4688,6 +4693,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639736554}
   m_CullTransparentMesh: 1
+--- !u!1 &1649059885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649059886}
+  m_Layer: 0
+  m_Name: SkyVolumeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1649059886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649059885}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0015818495, y: 0.067619726, z: -1.9987411}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1812963945}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695624060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5790,7 +5827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 5f0578d6bec14c84bb486950e8fb043f, type: 2}
@@ -5802,12 +5839,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812963943}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0015818495, y: 0.067619726, z: -1.9987411}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1649059886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824980233
 GameObject:
@@ -7474,4 +7511,4 @@ SceneRoots:
   - {fileID: 2010619676}
   - {fileID: 77071791}
   - {fileID: 1360296612}
-  - {fileID: 1812963945}
+  - {fileID: 1649059886}
