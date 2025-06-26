@@ -1,44 +1,45 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 
 public class MenuController : MonoBehaviour
 {
     [Header("UI References")]
-    public GameObject menuPanel; // Assign your full menu panel here
-    public TMP_InputField participantIdInput;
-    public Dropdown sceneDropdown;
-    public Dropdown volumeProfileDropdown;
-    public Slider audioSlider;
-    public Button startExperimentButton;
+    public GameObject menuPanel;
 
-    [Header("Menu Toggle Settings")]
-    public KeyCode desktopToggleKey = KeyCode.M; // for debugging on desktop
+    public Dropdown sceneDropdown;
+
+    public Slider audioSlider;
+    public Slider skySlider;
+    public Slider sceneSlider;
+
+    public Button continueButton;
+    public Button exitButton;
 
     private bool isMenuVisible = true;
 
     private void Start()
     {
-        if (startExperimentButton != null)
-            startExperimentButton.onClick.AddListener(OnStartExperiment);
-
         if (menuPanel != null)
             menuPanel.SetActive(isMenuVisible);
-    }
 
-    private void Update()
-    {
-        // Optional: Allow desktop toggling of the menu for debugging
-        if (Input.GetKeyDown(desktopToggleKey))
+        // Hook up button events
+        if (continueButton != null)
+            continueButton.onClick.AddListener(OnContinueClicked);
+
+        if (exitButton != null)
+            exitButton.onClick.AddListener(OnExitClicked);
+
+        // Initialize sliders with values from GlobalSettings if exists
+        if (GlobalSettings.Instance != null)
         {
-            ToggleMenu();
+            audioSlider.value = GlobalSettings.Instance.audioStrength;
+            skySlider.value = GlobalSettings.Instance.skyVolume;
+            sceneSlider.value = GlobalSettings.Instance.scene;
         }
-
-        // Optional: Add XR controller input here (e.g., B button)
-        // You can later connect this to an InputAction or Unity XR Input
     }
 
+    // Show/hide menu (optional, can be called elsewhere)
     public void ToggleMenu()
     {
         if (menuPanel == null) return;
@@ -47,22 +48,46 @@ public class MenuController : MonoBehaviour
         menuPanel.SetActive(isMenuVisible);
     }
 
-    void OnStartExperiment()
+    // Continue button: update settings and change scene if changed
+    private void OnContinueClicked()
     {
         if (GlobalSettings.Instance != null)
         {
-            GlobalSettings.Instance.participantID = participantIdInput.text;
             GlobalSettings.Instance.audioStrength = audioSlider.value;
-            GlobalSettings.Instance.selectedVolumeProfile = volumeProfileDropdown.options[volumeProfileDropdown.value].text;
+            GlobalSettings.Instance.skyVolume = skySlider.value;
+            GlobalSettings.Instance.scene = sceneSlider.value;
         }
 
+        // Get selected scene from dropdown
         string selectedScene = sceneDropdown.options[sceneDropdown.value].text;
-        SceneManager.LoadScene(selectedScene);
+
+        // If current scene is different, load new scene, else just close menu
+        if (SceneManager.GetActiveScene().name != selectedScene)
+        {
+            SceneManager.LoadScene(selectedScene);
+        }
+        else
+        {
+            // Just close the menu if same scene
+            ToggleMenu();
+        }
     }
 
-    // Optional: call this method from any other script to load scenes directly
-    public void LoadSceneByName(string sceneName)
+    // Exit button: close the application
+    private void OnExitClicked()
     {
-        SceneManager.LoadScene(sceneName);
+        // This works for build, does nothing in editor
+        Application.Quit();
+
+        // If running in the Unity editor, stop playing
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
+    // Change scene button: immediate scene change without updating volumes
+    private void OnChangeSceneClicked()
+    {
+        
     }
 }
