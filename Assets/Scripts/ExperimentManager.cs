@@ -7,8 +7,13 @@ using UnityEngine.SceneManagement;
 public class ExperimentManager : MonoBehaviour
 {
     public TMP_InputField participantIdInput;
-
+    // public InputActionAsset inputActions;
     private string logPath;
+
+    // void Awake()
+    // {
+    //     inputActions.Enable();
+    // }
 
     private void Start()
     {

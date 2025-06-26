@@ -13,8 +13,8 @@ public class FollowHeadset : MonoBehaviour
         Vector3 targetPosition = target.position + target.forward * offset.z + target.up * offset.y + target.right * offset.x;
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
 
-        // Optional: smoothly rotate to face camera
-        Quaternion targetRotation = Quaternion.LookRotation(target.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * followSpeed);
+        // // Optional: smoothly rotate to face camera
+        // Quaternion targetRotation = Quaternion.LookRotation(target.position - transform.position);
+        // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * followSpeed);
     }
 }
