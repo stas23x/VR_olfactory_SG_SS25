@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dddc4d1975a6e34fb1c9e500fdef820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterMixer: {fileID: 24100000, guid: c438f08ab9518cc468e49f74c3a3164c, type: 2}
+  masterMixer: {fileID: 24100000, guid: 6d915f3b1a8bc3d4ea16dca7a9836c9f, type: 2}
 --- !u!4 &77071791
 Transform:
   m_ObjectHideFlags: 0
@@ -2207,7 +2207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   participantIdInput: {fileID: 0}
-  logPath: 
 --- !u!4 &696355760
 Transform:
   m_ObjectHideFlags: 0
@@ -2512,7 +2511,6 @@ MonoBehaviour:
   continueButton: {fileID: 1004485229}
   exitButton: {fileID: 2036864834}
   audioManager: {fileID: 77071790}
-  isMenuVisible: 1
 --- !u!114 &857109177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6820,7 +6818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5004ff629f4b54584ad7ee85cbefaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
 --- !u!1 &2036864832
 GameObject:
   m_ObjectHideFlags: 0
