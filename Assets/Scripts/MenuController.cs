@@ -4,25 +4,23 @@ using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.Rendering;
 
-
 public class MenuController : MonoBehaviour
 {
     [Header("Scene References")]
-    public Volume skyVolumeTarget; 
+    public Volume skyVolumeTarget;
 
     [Header("UI References")]
     public GameObject menuPanel;
-
     public Dropdown sceneDropdown;
     public Dropdown skyDropdown;
     public Slider audioSlider;
-
     public Button continueButton;
     public Button exitButton;
 
     public AudioManager audioManager;
 
     private bool isMenuVisible = true;
+    private string loadedAdditiveScene = "";
 
     private void Start()
     {
@@ -31,48 +29,93 @@ public class MenuController : MonoBehaviour
 
         continueButton?.onClick.AddListener(OnContinueClicked);
         exitButton?.onClick.AddListener(OnExitClicked);
-        audioSlider.onValueChanged.AddListener(OnAudioSliderChanged);
-        skyDropdown.onValueChanged.AddListener(OnSkyDropdownChanged);
+        audioSlider?.onValueChanged.AddListener(OnAudioSliderChanged);
+        skyDropdown?.onValueChanged.AddListener(OnSkyDropdownChanged);
+        sceneDropdown?.onValueChanged.AddListener(OnSceneDropdownChanged);
+
+        PopulateSkyDropdown();
+        UpdateMenuUI();
 
         if (GlobalSettings.Instance != null)
         {
-            // Populate sky dropdown
-            if (GlobalSettings.Instance.skyProfiles != null)
-            {
-                skyDropdown.ClearOptions();
-                var skyNames = GlobalSettings.Instance.skyProfiles
-                    .Where(p => p != null)
-                    .Select(p => p.name)
-                    .ToList();
-                skyDropdown.AddOptions(skyNames);
-                skyDropdown.value = Mathf.Clamp(GlobalSettings.Instance.selectedSkyProfileIndex, 0, skyDropdown.options.Count - 1);
-                skyDropdown.RefreshShownValue();
-            }
+            GlobalSettings.Instance.currentSceneName = SceneManager.GetActiveScene().name;
+        }
+    }
 
-            // Set audio and mixer
-            audioSlider.value = GlobalSettings.Instance.audioStrength;
-            if (audioManager != null)
-                audioManager.SetMasterVolume(GlobalSettings.Instance.audioStrength);
-
-            // Apply sky
-            GlobalSettings.Instance.ApplySkyProfile();
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ToggleMenu();
         }
 
-        // Set the sceneDropdown to match the current scene
+        // Optional: add XR controller support here
+    }
+
+    private void PopulateSkyDropdown()
+    {
+        if (GlobalSettings.Instance?.skyProfiles != null && skyDropdown != null)
+        {
+            skyDropdown.ClearOptions();
+            var skyNames = GlobalSettings.Instance.skyProfiles
+                .Where(p => p != null)
+                .Select(p => p.name)
+                .ToList();
+            skyDropdown.AddOptions(skyNames);
+        }
+    }
+
+    private void UpdateMenuUI()
+    {
+        if (GlobalSettings.Instance == null)
+            return;
+
+        // Sync audio
+        audioSlider.value = GlobalSettings.Instance.audioStrength;
+        audioManager?.SetMasterVolume(GlobalSettings.Instance.audioStrength);
+
+        // Sync sky
+        if (GlobalSettings.Instance.skyProfiles != null && skyDropdown.options.Count > 0)
+        {
+            int skyIndex = Mathf.Clamp(GlobalSettings.Instance.selectedSkyProfileIndex, 0, skyDropdown.options.Count - 1);
+            skyDropdown.value = skyIndex;
+            skyDropdown.RefreshShownValue();
+
+            if (skyVolumeTarget != null && skyIndex >= 0 && skyIndex < GlobalSettings.Instance.skyProfiles.Count)
+            {
+                skyVolumeTarget.profile = GlobalSettings.Instance.skyProfiles[skyIndex];
+            }
+        }
+
+        // Sync scene dropdown
         string currentScene = SceneManager.GetActiveScene().name;
         GlobalSettings.Instance.currentSceneName = currentScene;
+        int sceneIndex = sceneDropdown.options.FindIndex(opt => opt.text == currentScene);
+        if (sceneIndex >= 0)
+        {
+            sceneDropdown.value = sceneIndex;
+            sceneDropdown.RefreshShownValue();
+        }
+    }
 
-        sceneDropdown.value = sceneDropdown.options.FindIndex(opt => opt.text == currentScene);
-        sceneDropdown.RefreshShownValue();
+    public void ToggleMenu()
+    {
+        isMenuVisible = !isMenuVisible;
+        menuPanel.SetActive(isMenuVisible);
+
+        if (isMenuVisible)
+        {
+            UpdateMenuUI();
+        }
     }
 
     private void OnAudioSliderChanged(float value)
     {
-        if (audioManager != null)
-            audioManager.SetMasterVolume(value);
-
         if (GlobalSettings.Instance != null)
+        {
             GlobalSettings.Instance.audioStrength = value;
+            audioManager?.SetMasterVolume(value);
+        }
     }
 
     private void OnSkyDropdownChanged(int index)
@@ -82,7 +125,6 @@ public class MenuController : MonoBehaviour
             GlobalSettings.Instance.selectedSkyProfileIndex = index;
             GlobalSettings.Instance.ApplySkyProfile();
 
-            // Assign selected VolumeProfile to the target Volume
             if (skyVolumeTarget != null &&
                 index >= 0 &&
                 index < GlobalSettings.Instance.skyProfiles.Count &&
@@ -93,48 +135,43 @@ public class MenuController : MonoBehaviour
         }
     }
 
-
-    public void ToggleMenu()
+    private void OnSceneDropdownChanged(int index)
     {
-        if (menuPanel == null) return;
-
-        isMenuVisible = !isMenuVisible;
-        menuPanel.SetActive(isMenuVisible);
+        // Optional: scene switching logic on dropdown change if you want it immediate
     }
 
     private void OnContinueClicked()
-    {   
-        // Apply sky profile to the scene's Volume
-        if (skyVolumeTarget != null &&
-            GlobalSettings.Instance.selectedSkyProfileIndex >= 0 &&
-            GlobalSettings.Instance.selectedSkyProfileIndex < GlobalSettings.Instance.skyProfiles.Count) // <- no ()
-        {
-            var profile = GlobalSettings.Instance.skyProfiles[GlobalSettings.Instance.selectedSkyProfileIndex];
-            if (profile != null)
-                skyVolumeTarget.profile = profile;
-        }
-
-
-        if (GlobalSettings.Instance != null)
-        {
-            GlobalSettings.Instance.audioStrength = audioSlider.value;
-            GlobalSettings.Instance.selectedSkyProfileIndex = skyDropdown.value;
-        }
+    {
+        if (GlobalSettings.Instance == null || sceneDropdown == null)
+            return;
 
         string selectedScene = sceneDropdown.options[sceneDropdown.value].text;
         string currentScene = SceneManager.GetActiveScene().name;
 
-        if (selectedScene != currentScene)
+        // Save current UI values
+        GlobalSettings.Instance.audioStrength = audioSlider.value;
+        GlobalSettings.Instance.selectedSkyProfileIndex = skyDropdown.value;
+
+        // Unload old additive scene if it's not the current selection
+        if (!string.IsNullOrEmpty(loadedAdditiveScene) && loadedAdditiveScene != selectedScene)
         {
+            SceneManager.UnloadSceneAsync(loadedAdditiveScene);
+        }
+
+        // Load new scene if different
+        if (selectedScene != currentScene && selectedScene != loadedAdditiveScene)
+        {
+            loadedAdditiveScene = selectedScene;
             GlobalSettings.Instance.currentSceneName = selectedScene;
-            SceneManager.LoadScene(selectedScene);
+
+            SceneManager.LoadSceneAsync(selectedScene, LoadSceneMode.Additive);
         }
-        else
-        {
-            // Apply changes without reloading the scene
-            GlobalSettings.Instance.ApplySkyProfile();
-            ToggleMenu();
-        }
+
+        // Apply settings
+        GlobalSettings.Instance.ApplySkyProfile();
+        audioManager?.SetMasterVolume(GlobalSettings.Instance.audioStrength);
+
+        ToggleMenu();
     }
 
     private void OnExitClicked()

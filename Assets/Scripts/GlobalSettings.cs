@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using System.Collections.Generic;
 
-
 public class GlobalSettings : MonoBehaviour
 {
     public static GlobalSettings Instance;
@@ -14,7 +13,7 @@ public class GlobalSettings : MonoBehaviour
     public string currentSceneName = "";
 
     [Header("Sky Settings")]
-    public List<VolumeProfile> skyProfiles;              
+    public List<VolumeProfile> skyProfiles;
     public int selectedSkyProfileIndex = 0;
     public Volume globalVolume;
 
@@ -25,7 +24,7 @@ public class GlobalSettings : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -33,7 +32,11 @@ public class GlobalSettings : MonoBehaviour
 
     public void ApplySkyProfile()
     {
-        if (globalVolume != null && skyProfiles != null && selectedSkyProfileIndex >= 0 && selectedSkyProfileIndex < skyProfiles.Count)
+        if (globalVolume != null &&
+            skyProfiles != null &&
+            selectedSkyProfileIndex >= 0 &&
+            selectedSkyProfileIndex < skyProfiles.Count &&
+            skyProfiles[selectedSkyProfileIndex] != null)
         {
             globalVolume.profile = skyProfiles[selectedSkyProfileIndex];
         }
