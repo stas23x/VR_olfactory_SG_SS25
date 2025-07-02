@@ -1,0 +1,513 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.62f1 (4af31df58517) revision 4911901'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'en' Physical Memory: 16108 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+50980
+Successfully changed project path to: C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
+C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [2712]  Target information:
+
+Player connection [2712]  * "[IP] 172.18.30.86 [Port] 0 [Flags] 2 [Guid] 4141093717 [EditorId] 4141093717 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-U50ELT3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [2712] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [2712] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Refreshing native plugins compatible for Editor in 39.93 ms, found 12 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.62f1 (4af31df58517)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x46a6)
+    Vendor:   Intel
+    VRAM:     8054 MB
+    Driver:   31.0.101.4502
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56200
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.012456 seconds.
+- Loaded All Assemblies, in  0.471 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.482 seconds
+Domain Reload Profiling: 952ms
+	BeginReloadAssembly (146ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (93ms)
+	LoadAllAssembliesAndSetupDomain (176ms)
+		LoadAssemblies (143ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (174ms)
+			TypeCache.Refresh (172ms)
+				TypeCache.ScanAssembly (157ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (483ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (414ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (11ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (280ms)
+			ProcessInitializeOnLoadMethodAttributes (110ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.718 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  3.506 seconds
+Domain Reload Profiling: 5216ms
+	BeginReloadAssembly (271ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (60ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (1300ms)
+		LoadAssemblies (798ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (659ms)
+			TypeCache.Refresh (536ms)
+				TypeCache.ScanAssembly (496ms)
+			ScanForSourceGeneratedMonoScriptInfo (84ms)
+			ResolveRequiredComponents (36ms)
+	FinalizeReload (3507ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (3000ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (11ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (186ms)
+			ProcessInitializeOnLoadAttributes (1352ms)
+			ProcessInitializeOnLoadMethodAttributes (1422ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 153.49 ms, found 12 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 8264 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 157 unused Assets / (7.0 MB). Loaded Objects now: 8706.
+Memory consumption went from 391.6 MB to 384.6 MB.
+Total: 15.280900 ms (FindLiveObjects: 1.146100 ms CreateObjectMapping: 1.355400 ms MarkObjects: 9.689200 ms  DeleteObjects: 3.087700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1822.553065 seconds.
+  path: Assets/Stylized Stone/HDRP/material_HDRP/Solitary Stone(2.3.4).mat
+  artifactKey: Guid(f438eccda6374b94093316baea2dccb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/HDRP/material_HDRP/Solitary Stone(2.3.4).mat using Guid(f438eccda6374b94093316baea2dccb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0da554f36f8e74fe35337080ecd36a12') in 3.184060 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 72
+========================================================================
+Received Import Request.
+  Time since last request: 42.822753 seconds.
+  path: Assets/Stylized Stone/model/Solitary_Stone.fbx
+  artifactKey: Guid(33ee954e642344e4db56867731efd39f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/model/Solitary_Stone.fbx using Guid(33ee954e642344e4db56867731efd39f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b36b1c2d8bd9f508cd9a0a04363f6f14') in 0.213354 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.306376 seconds.
+  path: Assets/Stylized Stone/prefab/Solitary stone/Solitary_Stone Variant.prefab
+  artifactKey: Guid(31666dac36c32694eaf51929a5d6e8ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/prefab/Solitary stone/Solitary_Stone Variant.prefab using Guid(31666dac36c32694eaf51929a5d6e8ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5445b3481a4d4c1091c4cf470ae1acdb') in 0.078715 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 47
+========================================================================
+Received Import Request.
+  Time since last request: 19.128505 seconds.
+  path: Assets/Stylized Stone/prefab/Solitary stone/Solitary_Stone_002 Variant.prefab
+  artifactKey: Guid(ab4f4a17e1afe844e9403c0edf191b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/prefab/Solitary stone/Solitary_Stone_002 Variant.prefab using Guid(ab4f4a17e1afe844e9403c0edf191b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'eaedda3fa0a7a6ede4e72377189609b4') in 0.125035 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 48
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/Stylized Stone/HDRP/prefab_HDRP/Solitary stone/Solitary_Stone_004 Variant.prefab
+  artifactKey: Guid(be8561951c0ee9a49a8eaecbae227b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/HDRP/prefab_HDRP/Solitary stone/Solitary_Stone_004 Variant.prefab using Guid(be8561951c0ee9a49a8eaecbae227b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6b365bd8ced4427eec7f2f86e4131d6a') in 0.073512 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 3373.410858 seconds.
+  path: Assets/seaShell/3dModels/seaShellModel.fbx
+  artifactKey: Guid(e1f6c526bd96fde48be54c54223b85d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/3dModels/seaShellModel.fbx using Guid(e1f6c526bd96fde48be54c54223b85d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '55b44e534ebc4328bcff49cf4761cc51') in 0.432185 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.000099 seconds.
+  path: Assets/seaShell/materials/URP/seaShell.mat
+  artifactKey: Guid(1de39bcc4d71d204f9f1002f25953617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/materials/URP/seaShell.mat using Guid(1de39bcc4d71d204f9f1002f25953617) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '81f7e6a01ee4aef9adff9482037d9610') in 0.186301 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/seaShell/textures/urpMaps/Metallic/seaShell_Metallic.tga
+  artifactKey: Guid(7c4320351b91c684ba99fdef833bf418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/textures/urpMaps/Metallic/seaShell_Metallic.tga using Guid(7c4320351b91c684ba99fdef833bf418) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'df8e9e21486e35e038091b7c55d294da') in 0.076280 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/seaShell/textures/urpMaps/seaShell_BaseColor.tga
+  artifactKey: Guid(46a1d87f05906db4798439619c1f9396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/textures/urpMaps/seaShell_BaseColor.tga using Guid(46a1d87f05906db4798439619c1f9396) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0b8723e99573ea4f7590ced6a6434a80') in 0.070385 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/seaShell/materials/HDRP/seaShell.mat
+  artifactKey: Guid(8776b679a91a8f64e96bf81216c1c3b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/materials/HDRP/seaShell.mat using Guid(8776b679a91a8f64e96bf81216c1c3b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e2cf04d684554e6d25b69a80f1533ad5') in 1.058255 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 32.512314 seconds.
+  path: Assets/seaShell
+  artifactKey: Guid(378d1c2bffd10a744acc8ab581025457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell using Guid(378d1c2bffd10a744acc8ab581025457) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2201ec87735ea128f5b5d784438d9036') in 0.002810 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 102.092762 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Prefabs/Boulder & Veg Prefab 1.prefab
+  artifactKey: Guid(b7a29d1e7766d354fad2e8e8f377324c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Prefabs/Boulder & Veg Prefab 1.prefab using Guid(b7a29d1e7766d354fad2e8e8f377324c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6b1a66f862735c7989a660f020e7ceb3') in 2.749667 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 262
+========================================================================
+Received Import Request.
+  Time since last request: 0.000103 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Prefabs/Tree_Prefab_4.prefab
+  artifactKey: Guid(cc68cd2f1407d1c44a89f4018ef4fe13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Prefabs/Tree_Prefab_4.prefab using Guid(cc68cd2f1407d1c44a89f4018ef4fe13) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2588edf9f8b749afd5938d0930efed49') in 0.471223 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 89
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Prefabs/Plants_Prefab_1.prefab
+  artifactKey: Guid(89d3f1dbf360d9a4b877f287a8ed955f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Prefabs/Plants_Prefab_1.prefab using Guid(89d3f1dbf360d9a4b877f287a8ed955f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '389ea5ffd6183979dd78c21eb98ae407') in 0.065767 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 64
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Prefabs/Tree_Prefab_1.prefab
+  artifactKey: Guid(c9b9b18daec1fe443b63640af04d0b18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Prefabs/Tree_Prefab_1.prefab using Guid(c9b9b18daec1fe443b63640af04d0b18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dfbce3dba6ebef1a40367fd4353ee9e1') in 0.170428 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 122
+========================================================================
+Received Import Request.
+  Time since last request: 153.720852 seconds.
+  path: Assets/seaShell/prefabs
+  artifactKey: Guid(42b64dacf6f559040869a326b8df9616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/prefabs using Guid(42b64dacf6f559040869a326b8df9616) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '28f72e54f1112f7da42a12c5db689a05') in 0.001875 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.501110 seconds.
+  path: Assets/seaShell/prefabs/HDRP
+  artifactKey: Guid(59d5af4075ec7c948a4aab7678a3257f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/prefabs/HDRP using Guid(59d5af4075ec7c948a4aab7678a3257f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '35643adfed0ba56e9b76bb3f778f63d7') in 0.001447 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 322.824815 seconds.
+  path: Assets/PalmTreePack/Models/Palm1/Palm_1_1.fbx
+  artifactKey: Guid(a731333994ea95543af9b8a65692d261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PalmTreePack/Models/Palm1/Palm_1_1.fbx using Guid(a731333994ea95543af9b8a65692d261) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '29ff67464016cab5ab52e67b1fdee694') in 0.233030 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 3413.822730 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Textures/1_Bark_Difuse.png
+  artifactKey: Guid(79219678e229244429c2a6b398ad8a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Textures/1_Bark_Difuse.png using Guid(79219678e229244429c2a6b398ad8a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '421dbe5a7cceb6a0cbbc28943052e388') in 0.060695 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Stylized Stone/textures/Stacked_Boulder/3/3_Material.004_BaseMap.png
+  artifactKey: Guid(27f00bfea6131654daf6c30e4c89f488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/textures/Stacked_Boulder/3/3_Material.004_BaseMap.png using Guid(27f00bfea6131654daf6c30e4c89f488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9cfb63b20e7db5321771359dd7cfda03') in 0.045444 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 1506.939222 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Foliage/Grass/Materials/1_Grass_.mat
+  artifactKey: Guid(88a933204b6a8534fb50a24d2f7bd5d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Foliage/Grass/Materials/1_Grass_.mat using Guid(88a933204b6a8534fb50a24d2f7bd5d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '64d2d2390d363ff426f39174beaf71a5') in 0.151023 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Rocks/2_Rock/Materials/2_Rock.mat
+  artifactKey: Guid(b0c9a3e3d179cf74da675bae9e84804f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Rocks/2_Rock/Materials/2_Rock.mat using Guid(b0c9a3e3d179cf74da675bae9e84804f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '258186ea6612455d5323a3f254032069') in 0.085803 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Trees/Materials/1_tree_Billboard.mat
+  artifactKey: Guid(c699a485c595b1246b1d6faed09b64da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Trees/Materials/1_tree_Billboard.mat using Guid(c699a485c595b1246b1d6faed09b64da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'aaeab01e95264a33e2d9a2c50130bd4a') in 1.525879 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.837249 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Rocks/4_Rock/Materials/4_Rocks.mat
+  artifactKey: Guid(dc8acde8b3ad5294f99298de6d11157e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Rocks/4_Rock/Materials/4_Rocks.mat using Guid(dc8acde8b3ad5294f99298de6d11157e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4df9dc0862acacb7258f8553229c2f6b') in 0.179372 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Materials/Grass.mat
+  artifactKey: Guid(c4067b7dc58485148b1ab0d675396c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Materials/Grass.mat using Guid(c4067b7dc58485148b1ab0d675396c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '519152b07d4eefecae5852c16709eba9') in 0.078140 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Materials/skidDust.mat
+  artifactKey: Guid(45d09ea4c61aed440b7a87114d4b9233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Materials/skidDust.mat using Guid(45d09ea4c61aed440b7a87114d4b9233) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'feed106b551db788067f81d85d388d07') in 0.135573 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 113.411633 seconds.
+  path: Assets/HDRPDefaultResources/DefaultLookDevProfile.asset
+  artifactKey: Guid(d77e6d918af6f7f4aa5b3163379921a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HDRPDefaultResources/DefaultLookDevProfile.asset using Guid(d77e6d918af6f7f4aa5b3163379921a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c992db84838ca37bbd58c48e2dbe6bd9') in 0.003881 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.002106 seconds.
+  path: Assets/Scenes/forest 1/Global Volume Profile.asset
+  artifactKey: Guid(7e99184ccacf1e5479f683d10f43fc1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/forest 1/Global Volume Profile.asset using Guid(7e99184ccacf1e5479f683d10f43fc1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '54481297cb61ebeb88f7a2cb28491f89') in 0.013485 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/seaShell/demoScene/demo_hdrp/Sky and Fog Volume Profile.asset
+  artifactKey: Guid(f577ec9ad56c7f140bfb11f1b90e1293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/demoScene/demo_hdrp/Sky and Fog Volume Profile.asset using Guid(f577ec9ad56c7f140bfb11f1b90e1293) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0847c7384f987dfce3030cfd948ca22f') in 0.005251 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
