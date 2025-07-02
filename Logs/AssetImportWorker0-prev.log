@@ -15,7 +15,7 @@ F:/VR_olfactory_SG_SS25
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59475
+28248
 Successfully changed project path to: F:/VR_olfactory_SG_SS25
 F:/VR_olfactory_SG_SS25
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,21 +49,21 @@ F:/VR_olfactory_SG_SS25
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [38576]  Target information:
+Player connection [43836]  Target information:
 
-Player connection [38576]  * "[IP] 192.168.219.1 [Port] 0 [Flags] 2 [Guid] 3310449283 [EditorId] 3310449283 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [43836]  * "[IP] 192.168.219.1 [Port] 0 [Flags] 2 [Guid] 823966132 [EditorId] 823966132 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [38576]  * "[IP] 192.168.207.1 [Port] 0 [Flags] 2 [Guid] 3310449283 [EditorId] 3310449283 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [43836]  * "[IP] 192.168.207.1 [Port] 0 [Flags] 2 [Guid] 823966132 [EditorId] 823966132 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [38576]  * "[IP] 192.168.111.97 [Port] 0 [Flags] 2 [Guid] 3310449283 [EditorId] 3310449283 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [43836]  * "[IP] 192.168.111.97 [Port] 0 [Flags] 2 [Guid] 823966132 [EditorId] 823966132 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [38576]  * "[IP] 172.30.240.1 [Port] 0 [Flags] 2 [Guid] 3310449283 [EditorId] 3310449283 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [43836]  * "[IP] 172.30.240.1 [Port] 0 [Flags] 2 [Guid] 823966132 [EditorId] 823966132 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [38576] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [38576] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [43836] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [43836] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
 [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
-Refreshing native plugins compatible for Editor in 22.29 ms, found 12 plugins.
+Refreshing native plugins compatible for Editor in 699.78 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.62f1 (4af31df58517)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Resources/UnitySubsystems
@@ -79,44 +79,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56580
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004759 seconds.
-- Loaded All Assemblies, in  0.253 seconds
+Registered in 0.004905 seconds.
+- Loaded All Assemblies, in  0.944 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.197 seconds
-Domain Reload Profiling: 449ms
-	BeginReloadAssembly (76ms)
+- Finished resetting the current domain, in  0.204 seconds
+Domain Reload Profiling: 1147ms
+	BeginReloadAssembly (116ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (24ms)
+	RebuildCommonClasses (205ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (42ms)
-	LoadAllAssembliesAndSetupDomain (103ms)
-		LoadAssemblies (75ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (572ms)
+		LoadAssemblies (114ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (102ms)
-			TypeCache.Refresh (100ms)
-				TypeCache.ScanAssembly (90ms)
+		AnalyzeDomain (571ms)
+			TypeCache.Refresh (569ms)
+				TypeCache.ScanAssembly (361ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (197ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (204ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (163ms)
+		SetupLoadedEditorAssemblies (171ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
 			ProcessInitializeOnLoadAttributes (113ms)
-			ProcessInitializeOnLoadMethodAttributes (36ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -125,7 +125,7 @@ Domain Reload Profiling: 449ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.682 seconds
+- Loaded All Assemblies, in  1.809 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
@@ -138,36 +138,36 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  1.821 seconds
-Domain Reload Profiling: 2502ms
-	BeginReloadAssembly (106ms)
+- Finished resetting the current domain, in  3.303 seconds
+Domain Reload Profiling: 5112ms
+	BeginReloadAssembly (117ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (17ms)
-	RebuildCommonClasses (25ms)
+		CreateAndSetChildDomain (16ms)
+	RebuildCommonClasses (34ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (35ms)
-	LoadAllAssembliesAndSetupDomain (507ms)
-		LoadAssemblies (288ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (1612ms)
+		LoadAssemblies (1396ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (278ms)
-			TypeCache.Refresh (232ms)
-				TypeCache.ScanAssembly (215ms)
-			ScanForSourceGeneratedMonoScriptInfo (32ms)
+		AnalyzeDomain (286ms)
+			TypeCache.Refresh (239ms)
+				TypeCache.ScanAssembly (220ms)
+			ScanForSourceGeneratedMonoScriptInfo (33ms)
 			ResolveRequiredComponents (12ms)
-	FinalizeReload (1821ms)
+	FinalizeReload (3304ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1657ms)
+		SetupLoadedEditorAssemblies (3139ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (82ms)
-			ProcessInitializeOnLoadAttributes (443ms)
-			ProcessInitializeOnLoadMethodAttributes (1119ms)
+			ProcessInitializeOnLoadAttributes (451ms)
+			ProcessInitializeOnLoadMethodAttributes (2593ms)
 			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -190,13 +190,13 @@ WARNING: Shader If subshaders removal was intentional, you may have forgotten tu
 WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 22.49 ms, found 12 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 16.09 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 9010 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 337 unused Assets / (21.8 MB). Loaded Objects now: 9348.
-Memory consumption went from 396.0 MB to 374.2 MB.
-Total: 18.580400 ms (FindLiveObjects: 1.289800 ms CreateObjectMapping: 0.739300 ms MarkObjects: 6.691800 ms  DeleteObjects: 9.858200 ms)
+Unloading 9223 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 337 unused Assets / (22.8 MB). Loaded Objects now: 9566.
+Memory consumption went from 412.4 MB to 389.7 MB.
+Total: 11.287000 ms (FindLiveObjects: 0.515100 ms CreateObjectMapping: 0.460700 ms MarkObjects: 3.525600 ms  DeleteObjects: 6.784700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -214,55 +214,106 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 329117.778893 seconds.
-  path: Assets/SteamVR/Editor/SteamVR_Editor.asmdef
-  artifactKey: Guid(9bac448de04a4f6448fee1acc220e5a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/Editor/SteamVR_Editor.asmdef using Guid(9bac448de04a4f6448fee1acc220e5a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
- -> (artifact id: 'ea7ec147029fa24348a08297989fca1e') in 0.012632 seconds
+  Time since last request: 396967.855239 seconds.
+  path: Assets/CityGen3D/Prefabs/Sleeper 03.prefab
+  artifactKey: Guid(b331272671146f748b0cc11c1735a99d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/Sleeper 03.prefab using Guid(b331272671146f748b0cc11c1735a99d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '83c3130dcb2bc79fc4795d16a4f04ffe') in 4.106923 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 81
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Packages/com.valvesoftware.unity.openvr/Runtime/Unity.XR.OpenVR.asmdef
-  artifactKey: Guid(35b9c7a103b322f43805bf1744257ac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.valvesoftware.unity.openvr/Runtime/Unity.XR.OpenVR.asmdef using Guid(35b9c7a103b322f43805bf1744257ac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
- -> (artifact id: 'fbdc94a9668f03fd55e3317eda9864f5') in 0.000579 seconds
+  Time since last request: 0.000033 seconds.
+  path: Assets/CityGen3D/Prefabs/Chainlink Fence Support.prefab
+  artifactKey: Guid(c0793e53ee4310b4c9d9c4d7743521e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/Chainlink Fence Support.prefab using Guid(c0793e53ee4310b4c9d9c4d7743521e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '36847a08706572aef5dcebad8c32e628') in 3.740383 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 13
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/ProceduralTerrainPainter/Shaders/Filters.hlsl
-  artifactKey: Guid(9318a23df348cbf47b7b69ca57bd0d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ProceduralTerrainPainter/Shaders/Filters.hlsl using Guid(9318a23df348cbf47b7b69ca57bd0d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
- -> (artifact id: 'b2868afebb87a144958bcb8348a86bb8') in 0.015215 seconds
+  Time since last request: 0.000030 seconds.
+  path: Assets/CityGen3D/Prefabs/Plank Fence Support.prefab
+  artifactKey: Guid(d6ecc8d561297a644b1292be6bbaf018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/Plank Fence Support.prefab using Guid(d6ecc8d561297a644b1292be6bbaf018) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'd54dd426513583346c4e960eb8280566') in 0.467747 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 13
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Packages/com.valvesoftware.unity.openvr/package.json
-  artifactKey: Guid(2d2923a5a31e1b04da55949c11b45583) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.valvesoftware.unity.openvr/package.json using Guid(2d2923a5a31e1b04da55949c11b45583) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
- -> (artifact id: 'bac650f0f31c796262c69a0bd4155269') in 0.000986 seconds
+  Time since last request: 0.000030 seconds.
+  path: Assets/CityGen3D/Prefabs/Metal Fence Support Small.prefab
+  artifactKey: Guid(9e093213460355c4bba5680b819469ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/Metal Fence Support Small.prefab using Guid(9e093213460355c4bba5680b819469ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '3ba448b60bf32a909b753a37af017b46') in 0.026365 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 13
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/ProceduralTerrainPainter/Shaders/Noise.hlsl
-  artifactKey: Guid(2daea484bf984c319e6f827608a76110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ProceduralTerrainPainter/Shaders/Noise.hlsl using Guid(2daea484bf984c319e6f827608a76110) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
- -> (artifact id: '4fdd969a55f86cf26dc1fd9ad34dd76c') in 0.001213 seconds
+  Time since last request: 0.000027 seconds.
+  path: Assets/CityGen3D/Prefabs/Chainlink Fence 02.prefab
+  artifactKey: Guid(8906d6faade785c408da27097194ae7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/Chainlink Fence 02.prefab using Guid(8906d6faade785c408da27097194ae7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '48b4fe8cd6c979d229144d5929a6c4c9') in 0.031329 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/SteamVR/WindowsHelper/SteamVR_Windows_EditorHelper.asmdef
-  artifactKey: Guid(256e975f9c776644aa4d86bc0c894f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/WindowsHelper/SteamVR_Windows_EditorHelper.asmdef using Guid(256e975f9c776644aa4d86bc0c894f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
- -> (artifact id: '0227e08058b39150399d25f94532b024') in 0.000674 seconds
+  Time since last request: 0.000020 seconds.
+  path: Assets/CityGen3D/Prefabs/PowerTower.prefab
+  artifactKey: Guid(77b9100424cb74e43860826297b2b440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/PowerTower.prefab using Guid(77b9100424cb74e43860826297b2b440) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '97dc1ab88328438871b32f399b0834bb') in 0.066145 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/CityGen3D/Prefabs/Bush 03.prefab
+  artifactKey: Guid(87db6ccba24e8924cb8a58ad6f410e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/Bush 03.prefab using Guid(87db6ccba24e8924cb8a58ad6f410e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6d579179329df0305ec95a15f2eb3a12') in 0.059552 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/CityGen3D/Prefabs/PostBox.prefab
+  artifactKey: Guid(b4c5e27f2a1a12a42b00ae0bfd69f194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/PostBox.prefab using Guid(b4c5e27f2a1a12a42b00ae0bfd69f194) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e5b2013aa8e311583edcef33947aa627') in 0.463654 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/CityGen3D/Prefabs/Bush 05.prefab
+  artifactKey: Guid(774c26b50ba0c664f956edeedb822424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/Bush 05.prefab using Guid(774c26b50ba0c664f956edeedb822424) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'bb4224bec2036b110d92e9b82bf17962') in 0.041628 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/CityGen3D/Prefabs/Sleeper 02.prefab
+  artifactKey: Guid(cc36945fc8e7c7e428d1104b6a5c2459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Prefabs/Sleeper 02.prefab using Guid(cc36945fc8e7c7e428d1104b6a5c2459) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a1e027d2190a5e84128777f1ead135f8') in 0.076359 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
