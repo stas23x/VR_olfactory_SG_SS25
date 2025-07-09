@@ -630,9 +630,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6aca0000
-    m_LastClickedID: 51818
-    m_ExpandedIDs: 0000000076c800007ac8000000ca9a3b
+    m_SelectedIDs: 28cd0000
+    m_LastClickedID: 52520
+    m_ExpandedIDs: 000000004ecb000050cb000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -660,7 +660,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000076c8000078c800007ac80000
+    m_ExpandedIDs: 000000004ecb000050cb0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -800,9 +800,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1616f8ff
-      m_LastClickedID: -518634
-      m_ExpandedIDs: 3217f8ff3817f8ffdac6fefffac7feffccfaffff
+      m_SelectedIDs: faa20000
+      m_LastClickedID: 41722
+      m_ExpandedIDs: ccfaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1221,9 +1221,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1280, y: 35.107277, z: 512}
+    m_Target: {x: 1269.7112, y: 46.885223, z: 795.0495}
     speed: 2
-    m_Value: {x: 1280, y: 35.107277, z: 512}
+    m_Value: {x: 1269.7112, y: 46.885223, z: 795.0495}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1269,20 +1269,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.04056644, y: -0.9588837, z: 0.17982978, w: -0.21604148}
+    m_Target: {x: 0.15365392, y: 0.1190334, z: -0.018685535, w: 0.98083305}
     speed: 2
-    m_Value: {x: -0.039776154, y: -0.95961595, z: 0.17798118, w: -0.2141908}
+    m_Value: {x: 0.1526421, y: 0.12002333, z: -0.018717617, w: 0.9807877}
   m_Size:
-    m_Target: 77.842415
+    m_Target: 379.18073
     speed: 2
-    m_Value: 74.49035
+    m_Value: 362.85236
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_CameraSettings:
-    m_Speed: 1.9403001
-    m_SpeedNormalized: 0.97
+    m_Speed: 1.7014999
+    m_SpeedNormalized: 0.84999996
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
