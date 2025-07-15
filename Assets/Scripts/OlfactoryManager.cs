@@ -12,4 +12,10 @@ public class OlfactoryManager : MonoBehaviour
         // Send signal to Arduino
         Debug.Log("Trigger scent: " + scentType);
     }
+
+        public void StopScent(string scentType)
+    {
+        // Send signal to Arduino
+        Debug.Log("Stop scent: " + scentType);
+    }
 }
