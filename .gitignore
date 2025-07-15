@@ -22,6 +22,12 @@
 /Assets/Yoge.meta
 /Assets/Yoge/
 
+Assets/ALP_Assets/Realistic Terrain Textures Lite/
+Library/ArtifactDB
+Library/Artifacts/
+Library/PackageCache/
+
+
 # Unity generated files
 [Ll]ibrary/
 [Tt]emp/
