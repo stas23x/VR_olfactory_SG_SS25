@@ -2667,6 +2667,7 @@ GameObject:
   - component: {fileID: 941621725}
   - component: {fileID: 941621727}
   - component: {fileID: 941621726}
+  - component: {fileID: 941621728}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Player
@@ -2776,6 +2777,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &941621728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941621722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345d7d3068e56ea42bb5bb858f43ba1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &974914971
 GameObject:
   m_ObjectHideFlags: 0
