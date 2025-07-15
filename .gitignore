@@ -11,14 +11,7 @@
 [Oo]bj/
 [Mm]emoryCaptures/
 [Uu]serSettings/
-[Ll]ogs/
 sysinfo.txt
-
-# Unity generated folders that should not be tracked
-Logs/
-UserSettings/
-*.log
-
 
 # Visual Studio
 .vscode/
