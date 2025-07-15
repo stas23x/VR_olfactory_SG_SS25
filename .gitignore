@@ -1,3 +1,8 @@
+/Assets/ALP_Assets/Realistic Terrain Textures Lite/
+/Library/ArtifactDB
+/Library/Artifacts/
+/Library/PackageCache/
+
 # Unity generated files
 [Ll]ibrary/
 [Tt]emp/
@@ -5,7 +10,6 @@
 [Bb]uilds/
 [Oo]bj/
 [Mm]emoryCaptures/
-[Uu]serSettings/
 sysinfo.txt
 
 # Visual Studio
