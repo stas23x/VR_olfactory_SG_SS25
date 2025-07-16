@@ -2667,7 +2667,9 @@ GameObject:
   - component: {fileID: 941621725}
   - component: {fileID: 941621727}
   - component: {fileID: 941621726}
-  - component: {fileID: 941621728}
+  - component: {fileID: 941621729}
+  - component: {fileID: 941621730}
+  - component: {fileID: 941621731}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Player
@@ -2777,7 +2779,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &941621728
+--- !u!114 &941621729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2786,10 +2788,148 @@ MonoBehaviour:
   m_GameObject: {fileID: 941621722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 345d7d3068e56ea42bb5bb858f43ba1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  m_Timeout: 10
+  m_XROrigin: {fileID: 941621725}
+--- !u!114 &941621730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941621722}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 941621729}
+  m_TurnSpeed: 60
+  m_LeftHandTurnAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Hand Turn
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 346d3556-f37e-4c95-9abd-0875fad1db19
+      m_Processors: 
+      m_Interactions: Press
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: ddaca3e8-2cc2-4230-9a36-337879b40511
+        m_Path: 
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Hand Turn
+        m_Flags: 0
+      m_Flags: 1
+    m_Reference: {fileID: 0}
+  m_RightHandTurnAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Hand Turn
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: 1150a00b-e5bc-45d8-be41-96205ea43eff
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+--- !u!114 &941621731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941621722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 941621729}
+  m_MoveSpeed: 1
+  m_EnableStrafe: 1
+  m_EnableFly: 0
+  m_UseGravity: 1
+  m_GravityApplicationMode: 1
+  m_ForwardSource: {fileID: 1713723376}
+  m_LeftHandMoveAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Hand Move
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: 76a489a6-53ee-4fa0-8258-93db0f579ac0
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 2D Vector
+        m_Id: 3f433fc7-4126-4fe1-bed4-bb92f481babc
+        m_Path: 2DVector
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Hand Move
+        m_Flags: 4
+      - m_Name: up
+        m_Id: 2d8db9d9-8c5b-4ee5-9afd-97e7f5c4e467
+        m_Path: <Keyboard>/#(W)
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Hand Move
+        m_Flags: 8
+      - m_Name: down
+        m_Id: 126eeff0-6669-4b86-b956-4b92ad777103
+        m_Path: <Keyboard>/#(S)
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Hand Move
+        m_Flags: 8
+      - m_Name: left
+        m_Id: bb4738c4-ce6d-49d4-b999-1eaa2d4a4740
+        m_Path: <Keyboard>/#(A)
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Hand Move
+        m_Flags: 8
+      - m_Name: right
+        m_Id: d0d9a28f-61f2-4786-829f-ba842d607eb2
+        m_Path: <Keyboard>/#(D)
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Hand Move
+        m_Flags: 8
+      - m_Name: 
+        m_Id: ed1928d2-2a8e-4f71-97cd-ad1ed2af3449
+        m_Path: <XRController>{RightHand}/touchpad
+        m_Interactions: Press
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Hand Move
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RightHandMoveAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Hand Move
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: 26a8aa33-df47-40b6-8fc0-8a08ff1903b3
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &974914971
 GameObject:
   m_ObjectHideFlags: 0
