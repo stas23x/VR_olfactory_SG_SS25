@@ -5,6 +5,8 @@ public class AudioManager : MonoBehaviour
 {
     public AudioMixer masterMixer;  // Assign your Audio Mixer in inspector
 
+    public AudioSource globalAudioSource; // Assign a global AudioSource in inspector
+
     // Call this to set volume (value 0 to 1 from UI slider)
     public void SetMasterVolume(float volume)
     {
