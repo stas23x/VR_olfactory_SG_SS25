@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 
+
+
 public class MenuController : MonoBehaviour
 {
     [Header("UI Elements")]
@@ -22,6 +24,7 @@ public class MenuController : MonoBehaviour
     private AudioSliderHandler audioHandler;
 
     private bool isMenuVisible = true;
+
 
     void Start()
     {
@@ -50,6 +53,7 @@ public class MenuController : MonoBehaviour
         if (audioHandler == null)
             audioHandler = gameObject.AddComponent<AudioSliderHandler>();
         audioHandler.Initialize(audioSlider, audioManager);
+
     }
 
     void Update()
@@ -99,12 +103,25 @@ public class MenuController : MonoBehaviour
         ToggleMenu();
     }
 
+
+    void CloseSerialPortIfNeeded()
+    {
+        OlfactoryManager manager = FindObjectOfType<OlfactoryManager>();
+        if (manager != null)
+        {
+            manager.SendMessage("OnApplicationQuit", SendMessageOptions.DontRequireReceiver);
+        }
+    }
+
+
     void OnExitClicked()
     {
+        CloseSerialPortIfNeeded();
         Application.Quit();
 
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#endif
+    #endif
     }
+
 }

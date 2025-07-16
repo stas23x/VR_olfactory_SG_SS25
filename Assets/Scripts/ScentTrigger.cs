@@ -5,16 +5,20 @@ public class ScentTrigger : MonoBehaviour
     public OlfactoryManager olfactoryManager;
     public string scentType = "default";
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        
-        olfactoryManager.TriggerScent(scentType);
-        Debug.Log("Entered first part");
+        // Debug.Log("Trigger scent: " + scentType);
+        olfactoryManager.StartScent(scentType);
     }
 
-    void OnTriggerExit(Collider other)
+    public void OnTriggerStay(Collider other)
     {
-
+        // Debug.Log("Updating inside: " + scentType);
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        // Debug.Log("Stop scent: " + scentType);
         olfactoryManager.StopScent(scentType);
     }
+
 }

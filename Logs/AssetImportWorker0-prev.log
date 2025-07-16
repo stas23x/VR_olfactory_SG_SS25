@@ -15,7 +15,7 @@ C:/StudentProjects/Serious game group 18/My project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58467
+57682
 Successfully changed project path to: C:/StudentProjects/Serious game group 18/My project
 C:/StudentProjects/Serious game group 18/My project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,15 +49,15 @@ C:/StudentProjects/Serious game group 18/My project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [12632]  Target information:
+Player connection [26860]  Target information:
 
-Player connection [12632]  * "[IP] 192.168.253.171 [Port] 0 [Flags] 2 [Guid] 11645235 [EditorId] 11645235 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-66DGGND) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [26860]  * "[IP] 192.168.253.171 [Port] 0 [Flags] 2 [Guid] 545640428 [EditorId] 545640428 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-66DGGND) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [12632] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [12632] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [26860] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [26860] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 50.60 ms, found 12 plugins.
+Refreshing native plugins compatible for Editor in 59.40 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.62f1 (4af31df58517)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Resources/UnitySubsystems
@@ -77,44 +77,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56632
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56064
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.014811 seconds.
-- Loaded All Assemblies, in  0.466 seconds
+Registered in 0.014692 seconds.
+- Loaded All Assemblies, in  0.493 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.369 seconds
-Domain Reload Profiling: 832ms
-	BeginReloadAssembly (145ms)
+- Finished resetting the current domain, in  0.393 seconds
+Domain Reload Profiling: 883ms
+	BeginReloadAssembly (152ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (86ms)
-	LoadAllAssembliesAndSetupDomain (172ms)
-		LoadAssemblies (141ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (87ms)
+	LoadAllAssembliesAndSetupDomain (186ms)
+		LoadAssemblies (148ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (169ms)
-			TypeCache.Refresh (168ms)
-				TypeCache.ScanAssembly (152ms)
+		AnalyzeDomain (183ms)
+			TypeCache.Refresh (181ms)
+				TypeCache.ScanAssembly (166ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (370ms)
+	FinalizeReload (394ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (303ms)
+		SetupLoadedEditorAssemblies (328ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (16ms)
-			SetLoadedEditorAssemblies (11ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (14ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (205ms)
-			ProcessInitializeOnLoadMethodAttributes (68ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (218ms)
+			ProcessInitializeOnLoadMethodAttributes (73ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -123,7 +123,7 @@ Domain Reload Profiling: 832ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.476 seconds
+- Loaded All Assemblies, in  1.738 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
@@ -136,37 +136,37 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  2.190 seconds
-Domain Reload Profiling: 3655ms
-	BeginReloadAssembly (194ms)
+- Finished resetting the current domain, in  2.999 seconds
+Domain Reload Profiling: 4726ms
+	BeginReloadAssembly (225ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (12ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (44ms)
+		CreateAndSetChildDomain (28ms)
+	RebuildCommonClasses (55ms)
 	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (64ms)
-	LoadAllAssembliesAndSetupDomain (1148ms)
-		LoadAssemblies (744ms)
+	initialDomainReloadingComplete (69ms)
+	LoadAllAssembliesAndSetupDomain (1363ms)
+		LoadAssemblies (795ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (517ms)
-			TypeCache.Refresh (425ms)
-				TypeCache.ScanAssembly (395ms)
-			ScanForSourceGeneratedMonoScriptInfo (64ms)
-			ResolveRequiredComponents (24ms)
-	FinalizeReload (2190ms)
+		AnalyzeDomain (695ms)
+			TypeCache.Refresh (582ms)
+				TypeCache.ScanAssembly (545ms)
+			ScanForSourceGeneratedMonoScriptInfo (76ms)
+			ResolveRequiredComponents (33ms)
+	FinalizeReload (2999ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1824ms)
+		SetupLoadedEditorAssemblies (2575ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (11ms)
-			SetLoadedEditorAssemblies (11ms)
+			InitializePlatformSupportModulesInManaged (25ms)
+			SetLoadedEditorAssemblies (32ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (367ms)
-			ProcessInitializeOnLoadAttributes (1023ms)
-			ProcessInitializeOnLoadMethodAttributes (398ms)
-			AfterProcessingInitializeOnLoad (13ms)
+			BeforeProcessingInitializeOnLoad (688ms)
+			ProcessInitializeOnLoadAttributes (1335ms)
+			ProcessInitializeOnLoadMethodAttributes (478ms)
+			AfterProcessingInitializeOnLoad (17ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (11ms)
@@ -192,13 +192,13 @@ Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 32.93 ms, found 12 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 40.45 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 9283 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 166 unused Assets / (7.0 MB). Loaded Objects now: 9805.
-Memory consumption went from 460.9 MB to 453.9 MB.
-Total: 7.702500 ms (FindLiveObjects: 0.922500 ms CreateObjectMapping: 0.324800 ms MarkObjects: 4.407300 ms  DeleteObjects: 2.046700 ms)
+Unloading 9327 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 167 unused Assets / (7.6 MB). Loaded Objects now: 9867.
+Memory consumption went from 0.51 GB to 0.51 GB.
+Total: 8.984700 ms (FindLiveObjects: 1.073100 ms CreateObjectMapping: 0.349200 ms MarkObjects: 5.006600 ms  DeleteObjects: 2.554100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -215,10 +215,21 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 1041674.263491 seconds.
+  path: Assets/New Terrain 2.asset
+  artifactKey: Guid(1526a2595595ddc44ac09554f64d38a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain 2.asset using Guid(1526a2595595ddc44ac09554f64d38a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c3dfb86e7433c39960582c04e097956f') in 0.149444 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
 Received Prepare
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.062 seconds
+- Loaded All Assemblies, in  1.410 seconds
 Native extension for WindowsStandalone target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
@@ -227,40 +238,40 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  3.211 seconds
-Domain Reload Profiling: 4263ms
-	BeginReloadAssembly (254ms)
+- Finished resetting the current domain, in  4.247 seconds
+Domain Reload Profiling: 5647ms
+	BeginReloadAssembly (292ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (7ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (71ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (49ms)
-	LoadAllAssembliesAndSetupDomain (686ms)
-		LoadAssemblies (764ms)
+		CreateAndSetChildDomain (80ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (972ms)
+		LoadAssemblies (743ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (39ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (27ms)
-	FinalizeReload (3212ms)
+		AnalyzeDomain (367ms)
+			TypeCache.Refresh (285ms)
+				TypeCache.ScanAssembly (262ms)
+			ScanForSourceGeneratedMonoScriptInfo (56ms)
+			ResolveRequiredComponents (24ms)
+	FinalizeReload (4248ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1397ms)
+		SetupLoadedEditorAssemblies (1881ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (12ms)
-			SetLoadedEditorAssemblies (10ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (18ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (357ms)
-			ProcessInitializeOnLoadAttributes (894ms)
-			ProcessInitializeOnLoadMethodAttributes (110ms)
-			AfterProcessingInitializeOnLoad (14ms)
+			BeforeProcessingInitializeOnLoad (544ms)
+			ProcessInitializeOnLoadAttributes (1149ms)
+			ProcessInitializeOnLoadMethodAttributes (127ms)
+			AfterProcessingInitializeOnLoad (18ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (79ms)
+		AwakeInstancesAfterBackupRestoration (75ms)
 WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
@@ -283,33 +294,45 @@ Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
-Refreshing native plugins compatible for Editor in 35.91 ms, found 12 plugins.
+Refreshing native plugins compatible for Editor in 31.42 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 8749 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 137 unused Assets / (6.9 MB). Loaded Objects now: 9827.
-Memory consumption went from 373.4 MB to 366.4 MB.
-Total: 8.000000 ms (FindLiveObjects: 0.958800 ms CreateObjectMapping: 0.457000 ms MarkObjects: 4.493700 ms  DeleteObjects: 2.089000 ms)
+Unloading 8760 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 138 unused Assets / (7.6 MB). Loaded Objects now: 9891.
+Memory consumption went from 433.5 MB to 425.9 MB.
+Total: 8.163000 ms (FindLiveObjects: 0.969200 ms CreateObjectMapping: 0.291800 ms MarkObjects: 4.582600 ms  DeleteObjects: 2.317900 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/precompiled-assembly-types:Unity.VisualEffectGraph.Editor: b2d49eae805a2020effdef6205975114 -> c72cfecd023eab5d3b91d95bd44a785c
+  custom:scripting/precompiled-assembly-types:Unity.PlasticSCM.Editor: 7e4e003063ee77e81fbf11080919f8e6 -> 72a23a7a65cae48dae511b6579c293e4
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/precompiled-assembly-types:Unity.Timeline.Editor: 534d7c71c4dd9147ea00599cede121e1 -> b4313fba5652ee5a8449f3ec85f31ae4
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Unity.MemoryProfiler.Editor: 6cd916b57329226f5aa6c90b3211a06b -> 491a89dfaae41ca69f412897dd641b70
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/precompiled-assembly-types:Unity.VisualScripting.Core.Editor: 3835f49b855fbe5ca07b20dbb03fa7db -> 0885f9fa02a9f652b891ab9e0d79d246
+  custom:scripting/precompiled-assembly-types:Unity.InputSystem: 21bfd1a5f861a4c1a269d4f5ad677a1f -> 2222043d877f44155494aa0fec7c358b
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Unity.RenderPipelines.HighDefinition.Editor: 672a714048ab2a1751d9c6ab25741e32 -> c31fde03936b1886782fdbf440dc1203
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/precompiled-assembly-types:Unity.RenderPipelines.Universal.Editor: 52ff221ae2b804dc1bb3f369b00e1b9b -> 32201adf6a5fc7a13ad1603f5995da9d
+  custom:scripting/precompiled-assembly-types:Unity.ShaderGraph.Editor: f757652afe6333ea75bff541a7cdee87 -> 28bc7c9ebe18e45439f15ab5ce10b8a3
+  custom:scripting/precompiled-assembly-types:Unity.XR.OpenXR: 6b540efea7d7bcf04b31853b4d2f54c0 -> 32a84589b193c75e762f34d0bbd2fc84
+  custom:scripting/precompiled-assembly-types:Unity.TerrainTools.Editor: f93c768beb09fd323d03ee82db9243a8 -> cebc80752e596b975b8e4cd4f97de4c9
+  custom:scripting/precompiled-assembly-types:UnityEngine.TestRunner: a2173a678c0a61666c8be32cb16c8d35 -> d1ebeee1032097906c7147d87f996ff7
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
 Received Prepare
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.324 seconds
+- Loaded All Assemblies, in  1.079 seconds
 Native extension for WindowsStandalone target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
@@ -318,37 +341,37 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  3.998 seconds
-Domain Reload Profiling: 5311ms
-	BeginReloadAssembly (246ms)
+- Finished resetting the current domain, in  4.512 seconds
+Domain Reload Profiling: 5579ms
+	BeginReloadAssembly (235ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (10ms)
+		DisableScriptedObjects (7ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (57ms)
-	RebuildCommonClasses (44ms)
+		CreateAndSetChildDomain (60ms)
+	RebuildCommonClasses (81ms)
 	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (52ms)
-	LoadAllAssembliesAndSetupDomain (955ms)
-		LoadAssemblies (729ms)
+	initialDomainReloadingComplete (57ms)
+	LoadAllAssembliesAndSetupDomain (678ms)
+		LoadAssemblies (752ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (347ms)
-			TypeCache.Refresh (265ms)
-				TypeCache.ScanAssembly (243ms)
-			ScanForSourceGeneratedMonoScriptInfo (53ms)
-			ResolveRequiredComponents (25ms)
-	FinalizeReload (3998ms)
+		AnalyzeDomain (38ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (26ms)
+	FinalizeReload (4513ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1915ms)
+		SetupLoadedEditorAssemblies (1468ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (18ms)
-			SetLoadedEditorAssemblies (19ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (10ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (510ms)
-			ProcessInitializeOnLoadAttributes (1218ms)
-			ProcessInitializeOnLoadMethodAttributes (131ms)
-			AfterProcessingInitializeOnLoad (18ms)
+			BeforeProcessingInitializeOnLoad (384ms)
+			ProcessInitializeOnLoadAttributes (925ms)
+			ProcessInitializeOnLoadMethodAttributes (121ms)
+			AfterProcessingInitializeOnLoad (15ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (95ms)
@@ -374,12 +397,12 @@ Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
-Refreshing native plugins compatible for Editor in 31.81 ms, found 12 plugins.
+Refreshing native plugins compatible for Editor in 36.09 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 8743 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 137 unused Assets / (6.9 MB). Loaded Objects now: 9843.
-Memory consumption went from 372.2 MB to 365.3 MB.
-Total: 7.491000 ms (FindLiveObjects: 0.891200 ms CreateObjectMapping: 0.321400 ms MarkObjects: 4.253100 ms  DeleteObjects: 2.024100 ms)
+Unloading 8755 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 138 unused Assets / (7.6 MB). Loaded Objects now: 9907.
+Memory consumption went from 432.7 MB to 425.1 MB.
+Total: 10.341200 ms (FindLiveObjects: 0.997900 ms CreateObjectMapping: 0.403400 ms MarkObjects: 6.585800 ms  DeleteObjects: 2.352100 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -410,591 +433,569 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 968471.513497 seconds.
-  path: Assets/Scenes/Stanislav beach.unity
-  artifactKey: Guid(6d428b555a589094ba97882d3bd41837) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stanislav beach.unity using Guid(6d428b555a589094ba97882d3bd41837) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '065ee373a894b78f6db011df380eb575') in 0.002374 seconds
-Number of updated asset objects reloaded before import = 1
-Number of asset objects unloaded after import = 0
+  Time since last request: 820.964767 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Forest_Dirt_01_A_Sm.tga
+  artifactKey: Guid(3967e75603a7c1041bc0dae53ee7ac5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Forest_Dirt_01_A_Sm.tga using Guid(3967e75603a7c1041bc0dae53ee7ac5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '87bb4ececf3850c102f383484b37f00d') in 0.114671 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 261.102912 seconds.
-  path: Assets/seaShell/lowPolyShell_LOD0.prefab
-  artifactKey: Guid(e9945be851471d24398c36a3013314e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/seaShell/lowPolyShell_LOD0.prefab using Guid(e9945be851471d24398c36a3013314e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 16.936441 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_04.prefab
+  artifactKey: Guid(ddbee68d1655416438238b56bd770657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_04.prefab using Guid(ddbee68d1655416438238b56bd770657) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'f862a8056686de23e4490de6a4d5b6c0') in 1.267142 seconds
+ -> (artifact id: 'f851fdc41b02a0e96ca4b86cfd427070') in 3.913205 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 76
+Number of asset objects unloaded after import = 77
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000058 seconds.
-  path: Assets/seaShell/lowPolyShell_LOD0 Variant 1.prefab
-  artifactKey: Guid(46c8b3e4e81fefa43ad95543236ea3ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/seaShell/lowPolyShell_LOD0 Variant 1.prefab using Guid(46c8b3e4e81fefa43ad95543236ea3ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 0.000047 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_fern_01_1.prefab
+  artifactKey: Guid(92d59797291d3214c86797e8edf24958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_fern_01_1.prefab using Guid(92d59797291d3214c86797e8edf24958) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'e2904043b971d37f2954e246944b5769') in 0.113210 seconds
+ -> (artifact id: '58ef14d5c5fa17fd596d1daf37363a4f') in 0.059481 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 24
+Number of asset objects unloaded after import = 12
 ========================================================================
 Received Import Request.
   Time since last request: 0.000062 seconds.
-  path: Assets/seaShell/seaShell Variant 2.prefab
-  artifactKey: Guid(b90e8c6f4803ac2478b99a3624778104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/seaShell/seaShell Variant 2.prefab using Guid(b90e8c6f4803ac2478b99a3624778104) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_01.prefab
+  artifactKey: Guid(4783008bdd614ec44b38001c339af0dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_01.prefab using Guid(4783008bdd614ec44b38001c339af0dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '3b6bb3c3411578722788c3fb7fbd5b11') in 0.102916 seconds
+ -> (artifact id: '8277a8a8bda427a8718098c82e52c85c') in 0.052505 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 116
+Number of asset objects unloaded after import = 12
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000068 seconds.
-  path: Assets/seaShell/seaShell Variant.prefab
-  artifactKey: Guid(2d141a6a383b7e448a7ccf492f3881f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/seaShell/seaShell Variant.prefab using Guid(2d141a6a383b7e448a7ccf492f3881f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 0.000038 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_01.prefab
+  artifactKey: Guid(b52247261fbfac54eb9dfef486bc80b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_01.prefab using Guid(b52247261fbfac54eb9dfef486bc80b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'c34b580a5522d6d3fa215ecffabdc22f') in 0.096274 seconds
+ -> (artifact id: 'abc1deff3628385c75766c7bbdb33747') in 0.053427 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 72
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/seaShell/Solitary Stone.002_LOD0.prefab
-  artifactKey: Guid(44a4d55a8e892cd419caf456f34db279) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/seaShell/Solitary Stone.002_LOD0.prefab using Guid(44a4d55a8e892cd419caf456f34db279) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ac6eed4fac08c47b433d5b589775d576') in 0.602571 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 13
-========================================================================
-Received Import Request.
-  Time since last request: 78.200867 seconds.
-  path: Assets/seaShell/seaShell Variant.prefab
-  artifactKey: Guid(2d141a6a383b7e448a7ccf492f3881f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/seaShell/seaShell Variant.prefab using Guid(2d141a6a383b7e448a7ccf492f3881f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '4b89f08b4f77b55a2e6691d216dbc310') in 0.075693 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 72
+Number of asset objects unloaded after import = 12
 ========================================================================
 Received Import Request.
   Time since last request: 0.000046 seconds.
-  path: Assets/seaShell/seaShell Variant 2.prefab
-  artifactKey: Guid(b90e8c6f4803ac2478b99a3624778104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/seaShell/seaShell Variant 2.prefab using Guid(b90e8c6f4803ac2478b99a3624778104) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_03.prefab
+  artifactKey: Guid(46bfa179df12c014b8e0c1330c572dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_03.prefab using Guid(46bfa179df12c014b8e0c1330c572dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '501c09fc78eeed2b68fa53acdfbc48e4') in 0.065556 seconds
+ -> (artifact id: '1eb318fa014687ed5b4734fbac7dca14') in 0.048853 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 116
+Number of asset objects unloaded after import = 12
 ========================================================================
 Received Import Request.
-  Time since last request: 58.719570 seconds.
-  path: Assets/ProceduralTerrainPainter/_Demo/Textures/Sand_034_Albedo.png
-  artifactKey: Guid(780df0da6ab54ca40821db1b339520ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ProceduralTerrainPainter/_Demo/Textures/Sand_034_Albedo.png using Guid(780df0da6ab54ca40821db1b339520ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 0.000047 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_fern_01_2.prefab
+  artifactKey: Guid(2714167ea71bf0c499cda24213ada456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_fern_01_2.prefab using Guid(2714167ea71bf0c499cda24213ada456) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'f5564d4ffd0b4b0614b46d3c414d548b') in 0.043392 seconds
+ -> (artifact id: '7899caf909679cd4248da091abf5d19f') in 0.051108 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_02.prefab
+  artifactKey: Guid(1ce2545741b8b484888ff1d29ac36d7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_02.prefab using Guid(1ce2545741b8b484888ff1d29ac36d7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '212c8015f361231c3c6a912e935ceb8c') in 0.047142 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_clover_01.prefab
+  artifactKey: Guid(3ae9c15791082f74f95e77a9f34e4fbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_clover_01.prefab using Guid(3ae9c15791082f74f95e77a9f34e4fbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e896c636795d327b7ef1980dedbd9f16') in 0.040568 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_04_1.prefab
+  artifactKey: Guid(c0e4915921042894d9b37ff887b75761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_04_1.prefab using Guid(c0e4915921042894d9b37ff887b75761) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'db8ca9288c5e2d4cd05cb0d812302a93') in 0.048656 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_clover_01_flowery.prefab
+  artifactKey: Guid(6cb313b46e2108a47b6d5e0e6bae38ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_clover_01_flowery.prefab using Guid(6cb313b46e2108a47b6d5e0e6bae38ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9415b76150a22a6639eddd5b46bf96a5') in 0.045175 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_nettle_01_0.prefab
+  artifactKey: Guid(18bd61ca6ed5aa24e97d69a256aa640d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_nettle_01_0.prefab using Guid(18bd61ca6ed5aa24e97d69a256aa640d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ef8ce2dd6ced558e62a8065fa3f3fc43') in 0.042372 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_02.prefab
+  artifactKey: Guid(dc9ebae8f0fccf34a88de7cba39b0ba8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_02.prefab using Guid(dc9ebae8f0fccf34a88de7cba39b0ba8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e00fdfe7fd9a36db8ec615c4950bb615') in 0.043692 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 15.356426 seconds.
+  path: Assets/Grass And Flowers Pack 1/Bush
+  artifactKey: Guid(0f1819eb60455c748ba34dd13766d359) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Bush using Guid(0f1819eb60455c748ba34dd13766d359) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '60f9b908b24a021ef169e7ce20391f17') in 0.000898 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.760789 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower
+  artifactKey: Guid(60a83d7f78c211b4a94d58685940850d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower using Guid(60a83d7f78c211b4a94d58685940850d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4eb6713542a63a3e1603a2b8bca89d1b') in 0.000721 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.002482 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 2.png
+  artifactKey: Guid(787433db72de70645a866562e097cd8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 2.png using Guid(787433db72de70645a866562e097cd8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4f3f6161cdcf78d8df75899c01cd67b8') in 0.020170 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 3.png
+  artifactKey: Guid(6bce9d589cdb7b04c9f5a6ee81f8f1b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 3.png using Guid(6bce9d589cdb7b04c9f5a6ee81f8f1b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7033d9a6339e142239d0c248f7248121') in 0.019720 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 20.png
+  artifactKey: Guid(b24c3cd816cfc59488d60ce1c90ccb97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 20.png using Guid(b24c3cd816cfc59488d60ce1c90ccb97) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1fc46800b5d2b6c40376ebd5fd096311') in 0.022063 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 30.png
+  artifactKey: Guid(a01fc5cc3c7b674439a768a250c4c417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 30.png using Guid(a01fc5cc3c7b674439a768a250c4c417) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '11215a7024206fad8c3c0a87f5818ba9') in 0.020663 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 25.png
+  artifactKey: Guid(853633ced50f73942ab3dfa915bc40a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 25.png using Guid(853633ced50f73942ab3dfa915bc40a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7d75e5c16404ead007e5f09454512612') in 0.021138 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 13.png
+  artifactKey: Guid(29e3fe75c99d8e844968809f050301bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 13.png using Guid(29e3fe75c99d8e844968809f050301bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '66f4723a2711ec0e89e51179f7c16453') in 0.024288 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 6.png
+  artifactKey: Guid(89e512d99223f984e80f00a15314eb11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 6.png using Guid(89e512d99223f984e80f00a15314eb11) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd43c0a439f39318847d513ba7842a8cf') in 0.025100 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 15.png
+  artifactKey: Guid(9aec2d44e96e07f4d94104087a886541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 15.png using Guid(9aec2d44e96e07f4d94104087a886541) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0daa50414f34ed2053ec912653501a24') in 0.025316 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000048 seconds.
-  path: Assets/ProceduralTerrainPainter/_Demo/Textures/Ground_008_Albedo.png
-  artifactKey: Guid(f4c2b7e2446a93443a8602ed52450824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ProceduralTerrainPainter/_Demo/Textures/Ground_008_Albedo.png using Guid(f4c2b7e2446a93443a8602ed52450824) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 34.png
+  artifactKey: Guid(d24a3bc542abcb04e9737a765b05914f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 34.png using Guid(d24a3bc542abcb04e9737a765b05914f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '1170d58ae804657ee476388b410c001f') in 0.031512 seconds
+ -> (artifact id: 'd3513d94dd57f955433f22ad2b4bc0f5') in 0.021954 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 15.696273 seconds.
-  path: Assets/seaShell/seaShell Variant.prefab
-  artifactKey: Guid(2d141a6a383b7e448a7ccf492f3881f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/seaShell/seaShell Variant.prefab using Guid(2d141a6a383b7e448a7ccf492f3881f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '953b401031fcc054487675cd87e529ff') in 0.087736 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 36
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/seaShell/seaShell Variant 2.prefab
-  artifactKey: Guid(b90e8c6f4803ac2478b99a3624778104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/seaShell/seaShell Variant 2.prefab using Guid(b90e8c6f4803ac2478b99a3624778104) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'aa13062bf2fbaef173cabbfa35aab32b') in 0.077410 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 81
-========================================================================
-Received Import Request.
-  Time since last request: 47.743585 seconds.
-  path: Assets/PalmTreePack/Models/Palm1/Palm_1_1.fbx
-  artifactKey: Guid(a731333994ea95543af9b8a65692d261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm1/Palm_1_1.fbx using Guid(a731333994ea95543af9b8a65692d261) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '971ca564ac5bdacdb1b462d53aa4b094') in 0.152555 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 13
-========================================================================
-Received Import Request.
-  Time since last request: 0.000058 seconds.
-  path: Assets/PalmTreePack/Prefabs/Old/Palm_1_4.prefab
-  artifactKey: Guid(03d072ad20556224fb55c076591908e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Prefabs/Old/Palm_1_4.prefab using Guid(03d072ad20556224fb55c076591908e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '5c7dc2d7af0d1240441cae15a456e633') in 0.054996 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 10.646359 seconds.
-  path: Assets/CityGen3D/Meshes/Ambient-Occlusion/coconut palm leaf.png
-  artifactKey: Guid(39cfd7587e800bf4dae5527157592d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CityGen3D/Meshes/Ambient-Occlusion/coconut palm leaf.png using Guid(39cfd7587e800bf4dae5527157592d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '50f956cdf009c0921e6a859fb31ef36a') in 0.027647 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Forst/Lux Instant Vegetation/Demo/Content/Shared/TreeIt/Meshes/SM_TreeIt_Palm.fbx
-  artifactKey: Guid(0249f108144aaa74e8bc488bd4417fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Forst/Lux Instant Vegetation/Demo/Content/Shared/TreeIt/Meshes/SM_TreeIt_Palm.fbx using Guid(0249f108144aaa74e8bc488bd4417fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'e66859d8908dcffacda4cf57ec65adb2') in 0.116972 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/PalmTreePack/Prefabs/Old/Palm_2_2.prefab
-  artifactKey: Guid(d6dc7a3be7266144799475e1fc3cdc89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Prefabs/Old/Palm_2_2.prefab using Guid(d6dc7a3be7266144799475e1fc3cdc89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'cf9f4bce34c41127948be24fb03a78eb') in 0.047715 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.000065 seconds.
-  path: Assets/PalmTreePack/Textures/Palm/Trunk/1/Palm_Trunk_1_Albedo.tif
-  artifactKey: Guid(73c7d57fbdc4db546b7f39185dee61a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Textures/Palm/Trunk/1/Palm_Trunk_1_Albedo.tif using Guid(73c7d57fbdc4db546b7f39185dee61a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '3bcbb840982f8318d06dda251c896a98') in 0.026546 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Palm_2_3.fbx
-  artifactKey: Guid(02788f61674e5614d9ebf01a78c04d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Palm_2_3.fbx using Guid(02788f61674e5614d9ebf01a78c04d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '2024a19e9efb706031c13217822164e8') in 0.135887 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
 ========================================================================
 Received Import Request.
   Time since last request: 0.000050 seconds.
-  path: Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Palm_2_1.fbx
-  artifactKey: Guid(93520ebbbb7235b44bf4c3d30be2ae03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Palm_2_1.fbx using Guid(93520ebbbb7235b44bf4c3d30be2ae03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 36.png
+  artifactKey: Guid(b4eee9ec30f930c4ba69d5049bae7081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 36.png using Guid(b4eee9ec30f930c4ba69d5049bae7081) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '7666d495d76991b55fa97d037655825d') in 0.130002 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Materials/Palm_Trunk.mat
-  artifactKey: Guid(a64a34544572da340abaf94aa6e1395e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Materials/Palm_Trunk.mat using Guid(a64a34544572da340abaf94aa6e1395e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '99f7053bea5b1cad52a7fdd9ebd31a7e') in 0.051829 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/PalmTreePack/Textures/Palm/Trunk/3/Palm_Trunk_3_Albedo.tif
-  artifactKey: Guid(a5819fd46876a8f4290e35a28c4df2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Textures/Palm/Trunk/3/Palm_Trunk_3_Albedo.tif using Guid(a5819fd46876a8f4290e35a28c4df2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd1b264c422e527c68176b394cfd1b352') in 0.032855 seconds
+ -> (artifact id: 'ef071c3f8905538a3734de7b81213898') in 0.027893 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/PalmTreePack/Models/Palm_Style_Old/Palm1/Palm_1_4.fbx
-  artifactKey: Guid(5f56200849d170d489f11dbc4b80ef14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm_Style_Old/Palm1/Palm_1_4.fbx using Guid(5f56200849d170d489f11dbc4b80ef14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 5.png
+  artifactKey: Guid(922f990a2fc104c46808052d2857484f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 5.png using Guid(922f990a2fc104c46808052d2857484f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '03f644432360c954b535674eabaeef24') in 0.112136 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000066 seconds.
-  path: Assets/PalmTreePack/Textures/Palm/Trunk/2/Palm_Trunk_2_Albedo.png
-  artifactKey: Guid(b18fd5ba67f6c87479058de99ce36757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Textures/Palm/Trunk/2/Palm_Trunk_2_Albedo.png using Guid(b18fd5ba67f6c87479058de99ce36757) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'b848878e00b489b07a7ad200f597ba1d') in 0.027747 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/PalmTreePack/Models/Palm_Style_Old/Palm1/Palm_1_1.fbx
-  artifactKey: Guid(9acdc15a74f6bda43a941f1c8673bb05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm_Style_Old/Palm1/Palm_1_1.fbx using Guid(9acdc15a74f6bda43a941f1c8673bb05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd82af5219d10bbda0b4b5197810233b9') in 0.105388 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000057 seconds.
-  path: Assets/Forst/Lux Instant Vegetation/Demo/Content/URP/Materials/M_TreeIt_Palm_A_fully_procedural URP.mat
-  artifactKey: Guid(66ec748f1fe7ad34f86edc64ba1f9468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Forst/Lux Instant Vegetation/Demo/Content/URP/Materials/M_TreeIt_Palm_A_fully_procedural URP.mat using Guid(66ec748f1fe7ad34f86edc64ba1f9468) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '2f1cc38d09257221174ce99838f05b17') in 0.025916 seconds
+ -> (artifact id: '780e0bf80085475049e173cb4e1221b8') in 0.026425 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000045 seconds.
-  path: Assets/PalmTreePack/Prefabs/Old/Palm_1_3.prefab
-  artifactKey: Guid(16a7dfe0b5eea4b49a9f6ff39982bb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Prefabs/Old/Palm_1_3.prefab using Guid(16a7dfe0b5eea4b49a9f6ff39982bb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 19.png
+  artifactKey: Guid(5d905082679ef4b42b58a7f188275a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 19.png using Guid(5d905082679ef4b42b58a7f188275a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '085cab1fd85eb0aa4a69718ca3950062') in 0.054162 seconds
+ -> (artifact id: '5b06905b3450e132b5b401ed90123aae') in 0.023287 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000038 seconds.
-  path: Assets/CityGen3D/Meshes/Ambient-Occlusion/palm03_n.png
-  artifactKey: Guid(6c63a1d0af7ed8d4e867428a3c9a5b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CityGen3D/Meshes/Ambient-Occlusion/palm03_n.png using Guid(6c63a1d0af7ed8d4e867428a3c9a5b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 26.png
+  artifactKey: Guid(15acc82f435974f43809856015439b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 26.png using Guid(15acc82f435974f43809856015439b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '349c02ed99fa68be6095bae66142401d') in 0.034069 seconds
+ -> (artifact id: 'b1fe50d594fe5ca6ec1322bef3805a77') in 0.019304 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 4.png
+  artifactKey: Guid(ad92efd57360446408eb98ca805556d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 4.png using Guid(ad92efd57360446408eb98ca805556d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '99f42a0ec8c193037e627f9345c4ecbf') in 0.023930 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 17.png
+  artifactKey: Guid(6352122ace273d4408983006f6fa7f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 17.png using Guid(6352122ace273d4408983006f6fa7f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e5018d60008a813648970b09b16e6114') in 0.022854 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000043 seconds.
-  path: Assets/PalmTreePack/Textures/Palm/Trunk/1/Palm_Trunk_1_Normal.tif
-  artifactKey: Guid(f95eda9b67047b244a0ce7a9edcd7fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Textures/Palm/Trunk/1/Palm_Trunk_1_Normal.tif using Guid(f95eda9b67047b244a0ce7a9edcd7fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 21.png
+  artifactKey: Guid(16b15ea92740a214a8e28885b158e160) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 21.png using Guid(16b15ea92740a214a8e28885b158e160) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'b66bf019a1eb007a6d32719aa5c95f20') in 0.040419 seconds
+ -> (artifact id: '60d5eb96d8b5afa251681b24ca2f177c') in 0.022798 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/PalmTreePack/Models/Palm_Style_Old/Palm1/Materials/Palm_Leaf.mat
-  artifactKey: Guid(e5ad396e5653e4e4bae0d0f2765b7862) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm_Style_Old/Palm1/Materials/Palm_Leaf.mat using Guid(e5ad396e5653e4e4bae0d0f2765b7862) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 35.png
+  artifactKey: Guid(de18140a4fd9aee4dbe1683916e5dd4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 35.png using Guid(de18140a4fd9aee4dbe1683916e5dd4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9bb86a691abf339eaea5d0d6dd9f6af3') in 0.028551 seconds
+ -> (artifact id: 'aefd103837c0b6f6f9410b6d344b2fbf') in 0.027399 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Yughues Free Palm Trees/Meshes/PalmTreeSingleBended.FBX
-  artifactKey: Guid(806b4f37fa0522b4e83297e6870a09c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yughues Free Palm Trees/Meshes/PalmTreeSingleBended.FBX using Guid(806b4f37fa0522b4e83297e6870a09c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Grass And Flowers Pack 1/Flower/Flower 9.png
+  artifactKey: Guid(e88b3a1ea26570a46a88da80783d7e3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Flower/Flower 9.png using Guid(e88b3a1ea26570a46a88da80783d7e3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'c7cfa7d513892b4cfa05ad87ad23b2c2') in 0.121803 seconds
+ -> (artifact id: 'd373b9a9104af4650c301b81f88bf717') in 0.023936 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/CityGen3D/Meshes/Ambient-Occlusion/palm03.png
-  artifactKey: Guid(08183c304d0d80d408a12d946749dc4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CityGen3D/Meshes/Ambient-Occlusion/palm03.png using Guid(08183c304d0d80d408a12d946749dc4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 5.130647 seconds.
+  path: Assets/Grass And Flowers Pack 1/Ground Textures
+  artifactKey: Guid(a704069cf73012e4f9fb1d28a8d0a79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Ground Textures using Guid(a704069cf73012e4f9fb1d28a8d0a79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4cc45f025bcc18f460363c776d19082a') in 0.000906 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.574018 seconds.
+  path: Assets/Grass And Flowers Pack 1/Example Scene
+  artifactKey: Guid(cd358f53ed478f5418de169420646e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Example Scene using Guid(cd358f53ed478f5418de169420646e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1b0a921c527bd2106fb4a48a0de08c5d') in 0.000787 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.007729 seconds.
+  path: Assets/Grass And Flowers Pack 1/Example Scene/Camera 1.renderTexture
+  artifactKey: Guid(e58e100f64615ad48be32ea8d1635341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Example Scene/Camera 1.renderTexture using Guid(e58e100f64615ad48be32ea8d1635341) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '7d942ebe2fe6d411fbfd0992f9d7af91') in 0.028259 seconds
+ -> (artifact id: '036bff5ee48bb43f91adb3065acc74af') in 0.033842 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Grass And Flowers Pack 1/Example Scene/Camera 2.renderTexture
+  artifactKey: Guid(02cdf9448854f8940b8b930e5ee25c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Example Scene/Camera 2.renderTexture using Guid(02cdf9448854f8940b8b930e5ee25c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'caa354e9569bebf7346efb84826eee05') in 0.016222 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000039 seconds.
-  path: Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Materials/Palm_Center.mat
-  artifactKey: Guid(f0f0b16071924834ead95eb8a757a9d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Materials/Palm_Center.mat using Guid(f0f0b16071924834ead95eb8a757a9d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  path: Assets/Grass And Flowers Pack 1/Example Scene/Terrain Data.asset
+  artifactKey: Guid(eb06af58218e217438a524d2e88e107d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Example Scene/Terrain Data.asset using Guid(eb06af58218e217438a524d2e88e107d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd62228798d87773896e07abb8320216d') in 0.023986 seconds
+ -> (artifact id: '1e8f4719c3133bb34c97cbabf3bf6fef') in 0.401612 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 23
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000062 seconds.
-  path: Assets/Yughues Free Palm Trees/Meshes/PalmTreeSingleStraight.FBX
-  artifactKey: Guid(ef5cd9cdbb80e6849a5f7dd239d56605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yughues Free Palm Trees/Meshes/PalmTreeSingleStraight.FBX using Guid(ef5cd9cdbb80e6849a5f7dd239d56605) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '5d858892074accf10cc8d257e13cdbd4') in 0.122640 seconds
+  Time since last request: 2.676761 seconds.
+  path: Assets/Grass And Flowers Pack 1/Example Scene/Example Scene.unity
+  artifactKey: Guid(69584f8b5c7738d42bbe0a2b4145ff40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Grass And Flowers Pack 1/Example Scene/Example Scene.unity using Guid(69584f8b5c7738d42bbe0a2b4145ff40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '85d16571390041c802c61371944844e1') in 0.001006 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Yughues Free Palm Trees/Meshes/PalmTreeTrio.FBX
-  artifactKey: Guid(f9899d40134ed2642b1712b4bcede2de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yughues Free Palm Trees/Meshes/PalmTreeTrio.FBX using Guid(f9899d40134ed2642b1712b4bcede2de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '6896d3209bb8b59f58ba77f4d6665517') in 0.106612 seconds
+  Time since last request: 47.666221 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack
+  artifactKey: Guid(ed9d9161748df944a898d5abe0504c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack using Guid(ed9d9161748df944a898d5abe0504c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '17f6f566afcaeaa91e11299539b0e4fc') in 0.000753 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Palm_2_2.fbx
-  artifactKey: Guid(14c14d3b4a8e0e542b7d9761626664f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm_Style_Old/Palm2/Palm_2_2.fbx using Guid(14c14d3b4a8e0e542b7d9761626664f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'f947e569f225b57c914afb8175e0043c') in 0.112369 seconds
+  Time since last request: 2.796026 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo
+  artifactKey: Guid(c1f80563ab57b8949a463f85651d98c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo using Guid(c1f80563ab57b8949a463f85651d98c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b9ec98bcce4bf1ca9191d23f395399af') in 0.000664 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/PalmTreePack/Textures/Palm/Leafs/Palm_1_filled.psd
-  artifactKey: Guid(0211b574ec051624daf1f9c56c3b7820) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Textures/Palm/Leafs/Palm_1_filled.psd using Guid(0211b574ec051624daf1f9c56c3b7820) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 0.026949 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Demo Terrain.asset
+  artifactKey: Guid(920df2148c51e814fb992100b950d19a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Demo Terrain.asset using Guid(920df2148c51e814fb992100b950d19a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '6dc052e76bca9355473efeaec5a59922') in 0.025790 seconds
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3cb47f37163dce3f1e7c725e210f88c5') in 0.045211 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 65
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/PalmTreePack/Models/Palm1/Materials/Palm_Center.mat
-  artifactKey: Guid(f2a96c9f9ff77404e9ea75263adfb40f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm1/Materials/Palm_Center.mat using Guid(f2a96c9f9ff77404e9ea75263adfb40f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '798acbde2b41dfbbef271a94f481ba1f') in 0.045766 seconds
+  Time since last request: 0.000038 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/OverviewPostProcessingSettings Foliage.asset
+  artifactKey: Guid(49f228d53f6a8be48a64b92d43b3bc96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/OverviewPostProcessingSettings Foliage.asset using Guid(49f228d53f6a8be48a64b92d43b3bc96) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ff84eee16750b1825e4e2b434732d676') in 0.003709 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/PalmTreePack/Models/Palm2/Materials/Palm_Trunk.mat
-  artifactKey: Guid(6534b01fe12e85f46b5778e6615db898) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm2/Materials/Palm_Trunk.mat using Guid(6534b01fe12e85f46b5778e6615db898) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ee71dacbf62c996156a04cb964c5a7c4') in 0.046693 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/PalmTreePack/Models/Palm1/Materials/Palm_Trunk.mat
-  artifactKey: Guid(2d133c346d13d72409e954a9c23d5360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm1/Materials/Palm_Trunk.mat using Guid(2d133c346d13d72409e954a9c23d5360) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '1adc03f7a7d0cd8416ba19742fcdf7d9') in 0.043767 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/PalmTreePack/Prefabs/1/Palm_1_1.prefab
-  artifactKey: Guid(7db71e41a8717b1499eb3d01b97db7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Prefabs/1/Palm_1_1.prefab using Guid(7db71e41a8717b1499eb3d01b97db7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'da51113596f0a5e1086aa9b039225c2e') in 0.054467 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 13
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/PalmTreePack/Models/Palm_Style_Old/Palm1/Palm_1_3.fbx
-  artifactKey: Guid(f36dd19595afa5b4d827de38556bf798) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm_Style_Old/Palm1/Palm_1_3.fbx using Guid(f36dd19595afa5b4d827de38556bf798) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '6f73d7ef446e1f468ce3366c38d7a402') in 0.126608 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/PalmTreePack/Models/Palm2/Materials/Palm_Leaf.mat
-  artifactKey: Guid(b480bb2cca8bdab40af017af0353ee66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Models/Palm2/Materials/Palm_Leaf.mat using Guid(b480bb2cca8bdab40af017af0353ee66) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9fb8fba1e5cc4a3533f8b127f56b3c1c') in 0.037289 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 4.441721 seconds.
-  path: Assets/Yughues Free Palm Trees/Prefabs/PalmTreeDualBendedOneSided.prefab
-  artifactKey: Guid(38291ecd3571d294ead9e9d15c345a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yughues Free Palm Trees/Prefabs/PalmTreeDualBendedOneSided.prefab using Guid(38291ecd3571d294ead9e9d15c345a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '484f242ccb1e4a5b659dbb8949faeaf5') in 0.039944 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Yughues Free Palm Trees/Prefabs/PalmTreeSingleStraightOneSided.prefab
-  artifactKey: Guid(20ddc844cd25b244f8005cba06955856) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yughues Free Palm Trees/Prefabs/PalmTreeSingleStraightOneSided.prefab using Guid(20ddc844cd25b244f8005cba06955856) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'a2e2e7d0ae33055e484057d54183deec') in 0.041418 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 18
-========================================================================
-Received Import Request.
-  Time since last request: 0.000058 seconds.
-  path: Assets/Yughues Free Palm Trees/Prefabs/PalmTreeTrioOneSided.prefab
-  artifactKey: Guid(2ed7cc7e3c944414d8f3fabb4d533018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yughues Free Palm Trees/Prefabs/PalmTreeTrioOneSided.prefab using Guid(2ed7cc7e3c944414d8f3fabb4d533018) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '6d202ce7b88b411f663a8604cca78871') in 0.045795 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
+Number of asset objects unloaded after import = 7
 ========================================================================
 Received Import Request.
   Time since last request: 0.000050 seconds.
-  path: Assets/Yughues Free Palm Trees/Prefabs/PalmTreeSingleBendedTwoSided.prefab
-  artifactKey: Guid(8d67c8074b567ec459905d65232f7154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yughues Free Palm Trees/Prefabs/PalmTreeSingleBendedTwoSided.prefab using Guid(8d67c8074b567ec459905d65232f7154) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Terrain.mat
+  artifactKey: Guid(04d794d02ddb60240aea0ed606e9c815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Terrain.mat using Guid(04d794d02ddb60240aea0ed606e9c815) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'fd8e02f895e11c3d42d5d592ba0cd3c7') in 0.042773 seconds
+ -> (artifact id: 'd0934b174914c60f15f81aad67ca03a8') in 0.056341 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
+Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Yughues Free Palm Trees/Prefabs/PalmTreeDualStraightTwoSided.prefab
-  artifactKey: Guid(5e617e90ac28ce7488be6a63235b1f32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yughues Free Palm Trees/Prefabs/PalmTreeDualStraightTwoSided.prefab using Guid(5e617e90ac28ce7488be6a63235b1f32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '1c843ca628611447ab83e7411e26b487') in 0.046745 seconds
+  Time since last request: 0.000045 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/OverveiwePostProcess URP.asset
+  artifactKey: Guid(67458bfb05747994eb6c87aaf62f68f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/OverveiwePostProcess URP.asset using Guid(67458bfb05747994eb6c87aaf62f68f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bee2e00063cba951f2fb9997d436f5bf') in 0.002672 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
+Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000098 seconds.
-  path: Assets/Yughues Free Palm Trees/Prefabs/PalmTreeDualStraightOneSided.prefab
-  artifactKey: Guid(b9a200fc20bd2b54392b467e9411a431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yughues Free Palm Trees/Prefabs/PalmTreeDualStraightOneSided.prefab using Guid(b9a200fc20bd2b54392b467e9411a431) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '185ae75cb9601787e17c96b4586453ed') in 0.034589 seconds
+  Time since last request: 0.000045 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/OverviewSkyandFogSettings Foliage.asset
+  artifactKey: Guid(6ae3a6bd6cf83ab47b23b5e682f10e11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/OverviewSkyandFogSettings Foliage.asset using Guid(6ae3a6bd6cf83ab47b23b5e682f10e11) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7abeb504153b04f0cfc7d8ff3894483a') in 0.006855 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
+Number of asset objects unloaded after import = 8
 ========================================================================
 Received Import Request.
-  Time since last request: 86.313901 seconds.
-  path: Assets/PalmTreePack/Prefabs/Old/Palm_2_3.prefab
-  artifactKey: Guid(12f9a82c5b7ef59478254d7b307170cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Prefabs/Old/Palm_2_3.prefab using Guid(12f9a82c5b7ef59478254d7b307170cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'f393c93851fce9b001986dca59d48a1c') in 0.055050 seconds
-Number of updated asset objects reloaded before import = 12
-Number of asset objects unloaded after import = 14
+  Time since last request: 3.639745 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD RP Demo with Unity Grass.unity
+  artifactKey: Guid(1d79226781537914eaac4db06ab0ec67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD RP Demo with Unity Grass.unity using Guid(1d79226781537914eaac4db06ab0ec67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f54611253d5f3c8ad75299f8c43b1974') in 0.001424 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/PalmTreePack/Prefabs/Old/Palm_2_2.prefab
-  artifactKey: Guid(d6dc7a3be7266144799475e1fc3cdc89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Prefabs/Old/Palm_2_2.prefab using Guid(d6dc7a3be7266144799475e1fc3cdc89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '313f35e3a816c12b27eef585f2b32096') in 0.041703 seconds
+  Time since last request: 2.830053 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Demo with Unity Grass.unity
+  artifactKey: Guid(09d035cfac228ce43823f8bf116fcd61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Demo with Unity Grass.unity using Guid(09d035cfac228ce43823f8bf116fcd61) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0875245b7d73054ef4a71b88a326594c') in 0.000758 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Assets/PalmTreePack/Prefabs/Old/Palm_1_3.prefab
-  artifactKey: Guid(16a7dfe0b5eea4b49a9f6ff39982bb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Prefabs/Old/Palm_1_3.prefab using Guid(16a7dfe0b5eea4b49a9f6ff39982bb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '749d8296171c7da955fc86605838b713') in 0.037542 seconds
+  Time since last request: 33.166886 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Dirt_01_A_SmT_Ground_Dirt_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  artifactKey: Guid(205cbdb32c19c9540aaaadc3eba1d23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Dirt_01_A_SmT_Ground_Dirt_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(205cbdb32c19c9540aaaadc3eba1d23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dc5b304bad7b09d9e209dde0f1d3ac48') in 0.068964 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
+Number of asset objects unloaded after import = 5
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/PalmTreePack/Prefabs/Old/Palm_1_2.prefab
-  artifactKey: Guid(5d7a3c162dfad6d448efe4cab955c892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Prefabs/Old/Palm_1_2.prefab using Guid(5d7a3c162dfad6d448efe4cab955c892) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '7afa1aed3799446e3cfd03f8ce7c0ca8') in 0.043239 seconds
+  Time since last request: 0.000047 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Grass_02_A_SmT_Ground_Grass_02_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  artifactKey: Guid(062ea89dd87d6b146be4841f9260c6fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Grass_02_A_SmT_Ground_Grass_02_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(062ea89dd87d6b146be4841f9260c6fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c6ee8068979c392f8dd2063a05bb997b') in 0.029636 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Sand_02_A_SmT_Ground_Sand_02_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  artifactKey: Guid(c1ac7b2c2d847ae4a887e8ea8d54a8a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Sand_02_A_SmT_Ground_Sand_02_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(c1ac7b2c2d847ae4a887e8ea8d54a8a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1947a395e64db71dcf9c31a0979c3b47') in 0.030380 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Dirt_01_A_Sm.tga
+  artifactKey: Guid(dc3d67493512fbf40b7961d2c95fc065) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Dirt_01_A_Sm.tga using Guid(dc3d67493512fbf40b7961d2c95fc065) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '039165cdacde0fd0670ee82a4d04b3b1') in 0.025212 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Grass_01_4_A_SmT_Ground_Grass_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  artifactKey: Guid(618af7065c8b7ff46a68ba35319d8507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Grass_01_4_A_SmT_Ground_Grass_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(618af7065c8b7ff46a68ba35319d8507) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '645d1b959a4bc65554f572ef0786cac1') in 0.024722 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
 ========================================================================
 Received Import Request.
   Time since last request: 0.000035 seconds.
-  path: Assets/PalmTreePack/Prefabs/Old/Palm_1_1.prefab
-  artifactKey: Guid(8f5cb80bc537a4145bfbf907497c7681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PalmTreePack/Prefabs/Old/Palm_1_1.prefab using Guid(8f5cb80bc537a4145bfbf907497c7681) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '83c446b0044388fb0f37af449c0fba29') in 0.033780 seconds
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Roots_01_var_1_A_SmT_Ground_Roots_01_N(9.000,9.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  artifactKey: Guid(f70fe6fcce4c0da44b3530b3f4bb6de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Roots_01_var_1_A_SmT_Ground_Roots_01_N(9.000,9.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(f70fe6fcce4c0da44b3530b3f4bb6de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7d13cac0dfa718abdf7472c5a13abbe0') in 0.052604 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Forest_Moss_01_A_SmT_Ground_Forest_Moss_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  artifactKey: Guid(8fc1919df6492f147bd61cf9c1a5c3df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Forest_Moss_01_A_SmT_Ground_Forest_Moss_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(8fc1919df6492f147bd61cf9c1a5c3df) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8ed414b835febc28118633b9ea72a79c') in 0.030782 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 19.495079 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD RP Demo with Unity Grass/Lightmap-0_comp_dir.png
+  artifactKey: Guid(8eec5989f847dee4cb8358590d7728ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD RP Demo with Unity Grass/Lightmap-0_comp_dir.png using Guid(8eec5989f847dee4cb8358590d7728ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ba9b4972e3a4c8ed66e5b786832360dc') in 0.024590 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD RP Demo with Unity Grass/ReflectionProbe-2.exr
+  artifactKey: Guid(40981ce65bfc7904a86fa9af8b7be45d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD RP Demo with Unity Grass/ReflectionProbe-2.exr using Guid(40981ce65bfc7904a86fa9af8b7be45d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5f38dea5128eb68c18c616e2b39ed33d') in 0.052502 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD RP Demo with Unity Grass/ReflectionProbe-3.exr
+  artifactKey: Guid(8c89e9442ede74a48bcbb23ab4a77b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD RP Demo with Unity Grass/ReflectionProbe-3.exr using Guid(8c89e9442ede74a48bcbb23ab4a77b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f960d8f5f966e46157c1c9ec602fcaaa') in 0.043885 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.
 AssetImportWorker is now disconnected from the server
