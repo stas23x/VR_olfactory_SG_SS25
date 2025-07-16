@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using Valve.VR;
 
 
 
@@ -24,6 +25,11 @@ public class MenuController : MonoBehaviour
     private AudioSliderHandler audioHandler;
 
     private bool isMenuVisible = true;
+
+    public SteamVR_Action_Boolean menuToggleAction = SteamVR_Input.GetBooleanAction("MenuToggle");
+    public SteamVR_Action_Boolean selectAction = SteamVR_Input.GetBooleanAction("Select");
+
+
 
 
     void Start()
@@ -58,11 +64,19 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
+        // Keyboard input (M key)
         if (Input.GetKeyDown(KeyCode.M))
         {
             ToggleMenu();
         }
+
+        if (menuToggleAction.GetStateDown(SteamVR_Input_Sources.Any))
+        {
+            ToggleMenu();
+        }
+
     }
+
 
     public void ToggleMenu()
     {

@@ -837,6 +837,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6fd6faca-8396-46e2-a83d-76c08a8fffec",
+                    "path": "<ViveController>{RightHand}/trackpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
                     "path": "*/{Submit}",
                     "interactions": "",
@@ -915,7 +926,7 @@
                 {
                     "name": "",
                     "id": "7075de68-3a2b-4f47-9c52-5d9b0af0374a",
-                    "path": "<XRController>{RightHand}/{Point}",
+                    "path": "<ViveController>{RightHand}/{Point}",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
@@ -926,7 +937,7 @@
                 {
                     "name": "",
                     "id": "447da981-9af7-4f8e-9fa8-8b33efbdf34d",
-                    "path": "<XRController>{LeftHand}/{Point}",
+                    "path": "<ViveController>{LeftHand}/{Point}",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
@@ -970,7 +981,7 @@
                 {
                     "name": "",
                     "id": "bb9e6b34-44bf-4381-ac63-5aa15d19f677",
-                    "path": "<OpenVRControllerWMR>{RightHand}/{TriggerButton}",
+                    "path": "<ViveController>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
@@ -981,10 +992,10 @@
                 {
                     "name": "",
                     "id": "cefa631e-3d7f-4559-8101-247f8d6f0389",
-                    "path": "<OpenVRControllerWMR>{LeftHand}/{TriggerButton}",
+                    "path": "<ViveController>{LeftHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";XR",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false

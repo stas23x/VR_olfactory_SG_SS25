@@ -41,7 +41,7 @@ public class OlfactoryManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Entergin olfactory area without arduino");
+            Debug.Log("Entering olfactory area without arduino");
         }
         
     }

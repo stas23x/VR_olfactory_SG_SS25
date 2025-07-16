@@ -44,6 +44,10 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 2a10eb87dec3ae94c98184d04d842fdc
+    name: GlobalVolume
+  - guid: 8321b1443b8676f49b975133870ba810
+    name: LocalVolume
   - guid: 8fa9accaff8da4b42b0dd19d8d245c71
     name: MasterVolume
   m_AudioMixerGroupViews:
@@ -98,7 +102,9 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: d8436e130c236ba4b88c55f282d39831
-  m_FloatValues: {}
+  m_FloatValues:
+    2a10eb87dec3ae94c98184d04d842fdc: -19.928473
+    8fa9accaff8da4b42b0dd19d8d245c71: -0.27209902
   m_TransitionOverrides: {}
 --- !u!243 &2824903303721551524
 AudioMixerGroupController:
@@ -106,7 +112,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Nature
+  m_Name: Global
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 7cf3b220ec0b25b4bb0fa1f9cdcf8748
   m_Children: []
@@ -125,7 +131,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: River
+  m_Name: Local
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: b6febb5a4d96a684ab7b3a3393ed6484
   m_Children: []
