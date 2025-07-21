@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 using Valve.VR;
 using UnityEngine.XR.Interaction.Toolkit;
 using System.Numerics;
+using Unity.VisualScripting;
 // using UnityEngine.UIElements;
 
 
@@ -34,7 +35,30 @@ public class MenuController : MonoBehaviour
 
 
 
+    public UnityEngine.InputSystem.InputActionReference menuButtonAction;
 
+
+ private void OnEnable()
+    {
+        if (menuButtonAction != null)
+            menuButtonAction.action.performed += OnMenuButtonPressed;
+
+        menuButtonAction?.action.Enable();
+    }
+
+ private void OnDisable()
+    {
+        if (menuButtonAction != null)
+            menuButtonAction.action.performed -= OnMenuButtonPressed;
+
+        menuButtonAction?.action.Disable();
+    }
+ 
+    private void OnMenuButtonPressed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        Debug.Log("Vive Menu button pressed!");
+        ToggleMenu();
+    }
     void Start()
     {
         if (menuPanel != null)
