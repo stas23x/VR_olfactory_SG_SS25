@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using Valve.VR;
+using UnityEngine.XR.Interaction.Toolkit;
+using System.Numerics;
 
 
 
@@ -106,6 +108,7 @@ public class MenuController : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(selectedScene, LoadSceneMode.Single);
             GlobalSettings.Instance.currentSceneName = selectedScene;
+            setCameraStartPosition(selectedScene);
         }
 
         // Apply sky profile explicitly just in case
@@ -117,6 +120,51 @@ public class MenuController : MonoBehaviour
         ToggleMenu();
     }
 
+    void setCameraStartPosition(string sceneName) {
+        GameObject xrRig = GameObject.Find("XRRig");
+
+        if (xrRig == null)
+        {
+            Debug.Log("XR Rig not found!");
+        }
+        else
+        {
+            Debug.Log("Found XRRig and setting it into the following scene " + sceneName);
+            Camera camera = xrRig.GetComponentInChildren<Camera>();
+            camera.tag = "MainCamera";
+            
+            switch (sceneName)
+            {
+                case "TemplateScene":
+                    // Set camera position for TemplateScene
+                    break;
+                case "forest 1":
+                    xrRig.transform.position = new UnityEngine.Vector3(155.0f, 18.0f, 47.0f);
+                    xrRig.transform.rotation = UnityEngine.Quaternion.Euler(15.8f, 28.6f, 0f);
+                    break;
+                case "AmrumV2":
+                    // Set camera position for AmrumV2
+                    xrRig.transform.position = new UnityEngine.Vector3(796.0f, 58.0f, 596.0f);
+                    xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3f, -117f, 0f);
+                    break;
+                case "Stanislav beach":
+                    // Set camera position for Stanislav beach
+                    xrRig.transform.position = new UnityEngine.Vector3(216.0f, 19.0f, 269.0f);
+                    xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3.6f, 138f, 0f);
+                    break;
+                case "Konigssee":
+                    // Set camera position for Konigssee
+                    xrRig.transform.position = new UnityEngine.Vector3(500.0f, 30.0f, 979.0f);
+                    xrRig.transform.rotation = UnityEngine.Quaternion.Euler(11f, -151f, 0f);
+                    break;
+                default:
+                    Debug.LogWarning("Unknown scene name: " + sceneName);
+                    break;
+            }
+            
+        }
+        
+    }
 
     void CloseSerialPortIfNeeded()
     {

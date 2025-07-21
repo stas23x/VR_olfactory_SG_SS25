@@ -34,7 +34,34 @@ public class SceneDropdownHandler : MonoBehaviour
         {
             string path = SceneUtility.GetScenePathByBuildIndex(i);
             string name = System.IO.Path.GetFileNameWithoutExtension(path);
-            sceneNames.Add(name);
+
+            // Careful the order of the scenes is hardcoded right now according to the build 
+            // settings in the project
+            if (name == "TemplateScene")
+            {
+                sceneNames.Add("Start menu");
+            }
+            else if (name == "forest 1")
+            {
+                sceneNames.Add("Forest");
+            }
+            else if (name == "AmrumV2")
+            {
+                sceneNames.Add("Amrum");
+            }
+            else if (name == "Stanislav beach")
+            {
+                sceneNames.Add("Beach");
+            }
+            else if (name == "Konigssee")
+            {
+                sceneNames.Add("Konigssee");
+            }
+            else
+            {
+                Debug.Log("The following scene was not included in the dropdown:" + name);
+            }
+            
         }
     }
 
@@ -46,7 +73,21 @@ public class SceneDropdownHandler : MonoBehaviour
 
     public string GetSelectedScene()
     {
-        return sceneNames[sceneDropdown.value];
+        switch (sceneDropdown.value)
+        {
+            // Careful the order of the scenes is hardcoded right now according to the build 
+            // settings in the project
+            case 0: return "TemplateScene";
+            case 1: return "forest 1";
+            case 2: return "AmrumV2";
+            case 3: return "Stanislav beach";
+            case 4: return "Konigssee";
+            default: return "";
+        }
+        // If you want to use the dropdown value directly:
+        //
+        
+        // return sceneNames[sceneDropdown.value];
     }
 
     void OnSceneChanged(int index)
