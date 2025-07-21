@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.62f1 (4af31df58517) revision 4911901'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'de' Physical Memory: 32700 MB
+OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'en' Physical Memory: 16108 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe
 -name
 AssetImportWorker3
 -projectPath
-C:/StudentProjects/Serious game group 18/My project
+C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-57741
-Successfully changed project path to: C:/StudentProjects/Serious game group 18/My project
-C:/StudentProjects/Serious game group 18/My project
+60116
+Successfully changed project path to: C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
+C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,72 +49,68 @@ C:/StudentProjects/Serious game group 18/My project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [26060]  Target information:
+Player connection [14612]  Target information:
 
-Player connection [26060]  * "[IP] 192.168.253.171 [Port] 0 [Flags] 2 [Guid] 197475226 [EditorId] 197475226 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-66DGGND) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [14612]  * "[IP] 172.18.42.11 [Port] 0 [Flags] 2 [Guid] 3619683983 [EditorId] 3619683983 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-U50ELT3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [26060] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [26060] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [14612] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [14612] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 68.21 ms, found 12 plugins.
+Refreshing native plugins compatible for Editor in 78.39 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.62f1 (4af31df58517)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/StudentProjects/Serious game group 18/My project/Assets
+[Subsystems] Discovering subsystems at path C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Radeon RX Vega (ID=0x687f)
-    Vendor:   ATI
-    VRAM:     8119 MB
-    Driver:   31.0.12027.9001
-Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
-Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
-Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
-Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x46a6)
+    Vendor:   Intel
+    VRAM:     8054 MB
+    Driver:   31.0.101.4502
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56232
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56336
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.018915 seconds.
-- Loaded All Assemblies, in  0.629 seconds
+Registered in 0.012058 seconds.
+- Loaded All Assemblies, in  0.793 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.449 seconds
-Domain Reload Profiling: 1074ms
-	BeginReloadAssembly (198ms)
+- Finished resetting the current domain, in  0.834 seconds
+Domain Reload Profiling: 1626ms
+	BeginReloadAssembly (230ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (60ms)
-	RebuildNativeTypeToScriptingClass (20ms)
-	initialDomainReloadingComplete (108ms)
-	LoadAllAssembliesAndSetupDomain (238ms)
-		LoadAssemblies (194ms)
+	RebuildCommonClasses (67ms)
+	RebuildNativeTypeToScriptingClass (25ms)
+	initialDomainReloadingComplete (134ms)
+	LoadAllAssembliesAndSetupDomain (334ms)
+		LoadAssemblies (226ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (235ms)
-			TypeCache.Refresh (233ms)
-				TypeCache.ScanAssembly (213ms)
+		AnalyzeDomain (331ms)
+			TypeCache.Refresh (327ms)
+				TypeCache.ScanAssembly (296ms)
 			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (450ms)
+	FinalizeReload (835ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (365ms)
+		SetupLoadedEditorAssemblies (699ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (17ms)
-			SetLoadedEditorAssemblies (10ms)
+			InitializePlatformSupportModulesInManaged (25ms)
+			SetLoadedEditorAssemblies (24ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (253ms)
-			ProcessInitializeOnLoadMethodAttributes (83ms)
+			BeforeProcessingInitializeOnLoad (7ms)
+			ProcessInitializeOnLoadAttributes (492ms)
+			ProcessInitializeOnLoadMethodAttributes (151ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -123,7 +119,7 @@ Domain Reload Profiling: 1074ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.884 seconds
+- Loaded All Assemblies, in 10.095 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
@@ -136,46 +132,40 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  2.411 seconds
-Domain Reload Profiling: 4281ms
-	BeginReloadAssembly (264ms)
+- Finished resetting the current domain, in  7.909 seconds
+Domain Reload Profiling: 17938ms
+	BeginReloadAssembly (365ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (12ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (32ms)
-	RebuildCommonClasses (59ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (68ms)
-	LoadAllAssembliesAndSetupDomain (1458ms)
-		LoadAssemblies (885ms)
+		CreateAndSetChildDomain (58ms)
+	RebuildCommonClasses (61ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (9506ms)
+		LoadAssemblies (8362ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (737ms)
-			TypeCache.Refresh (625ms)
-				TypeCache.ScanAssembly (587ms)
-			ScanForSourceGeneratedMonoScriptInfo (80ms)
-			ResolveRequiredComponents (29ms)
-	FinalizeReload (2412ms)
+		AnalyzeDomain (1350ms)
+			TypeCache.Refresh (1076ms)
+				TypeCache.ScanAssembly (995ms)
+			ScanForSourceGeneratedMonoScriptInfo (191ms)
+			ResolveRequiredComponents (73ms)
+	FinalizeReload (7911ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1950ms)
+		SetupLoadedEditorAssemblies (6983ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (14ms)
-			SetLoadedEditorAssemblies (9ms)
+			InitializePlatformSupportModulesInManaged (27ms)
+			SetLoadedEditorAssemblies (26ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (226ms)
-			ProcessInitializeOnLoadAttributes (1154ms)
-			ProcessInitializeOnLoadMethodAttributes (521ms)
-			AfterProcessingInitializeOnLoad (25ms)
+			BeforeProcessingInitializeOnLoad (410ms)
+			ProcessInitializeOnLoadAttributes (3379ms)
+			ProcessInitializeOnLoadMethodAttributes (3119ms)
+			AfterProcessingInitializeOnLoad (21ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (20ms)
-WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+		AwakeInstancesAfterBackupRestoration (25ms)
 WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
@@ -188,17 +178,23 @@ WARNING: Shader If subshaders removal was intentional, you may have forgotten tu
 WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 35.75 ms, found 12 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.19 seconds
+Refreshing native plugins compatible for Editor in 222.88 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 9336 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 167 unused Assets / (7.6 MB). Loaded Objects now: 9875.
-Memory consumption went from 0.51 GB to 0.51 GB.
-Total: 12.456700 ms (FindLiveObjects: 1.200600 ms CreateObjectMapping: 0.815100 ms MarkObjects: 6.241700 ms  DeleteObjects: 4.196600 ms)
+Unloading 9381 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 400 unused Assets / (68.2 MB). Loaded Objects now: 9667.
+Memory consumption went from 480.1 MB to 411.9 MB.
+Total: 53.328400 ms (FindLiveObjects: 1.987100 ms CreateObjectMapping: 1.787600 ms MarkObjects: 11.837500 ms  DeleteObjects: 37.712900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -209,68 +205,297 @@ AssetImportParameters requested are different than current active one (requested
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1056608.067797 seconds.
-  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static/RocksTTFEL_C.prefab
-  artifactKey: Guid(2314966121d0f794d8c6b95b205b6f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static/RocksTTFEL_C.prefab using Guid(2314966121d0f794d8c6b95b205b6f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 328750.695226 seconds.
+  path: Assets/PalmTreePack/Models/Palm2/Palm_2_1.fbx
+  artifactKey: Guid(51cc191002f9a974da100b864ba08727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PalmTreePack/Models/Palm2/Palm_2_1.fbx using Guid(51cc191002f9a974da100b864ba08727) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'fa3847d46b3e79f0ee91d10c4a6ef57b') in 1.394537 seconds
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '20a28dcc8e897b950a95512797f823e8') in 3.973120 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 77
+Number of asset objects unloaded after import = 80
 ========================================================================
 Received Import Request.
-  Time since last request: 12.576631 seconds.
-  path: Assets/TerrainSampleAssets/Prefabs/Fern_B.prefab
-  artifactKey: Guid(5e7ace55a7bfd0d4f9ba3c05024e9d79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TerrainSampleAssets/Prefabs/Fern_B.prefab using Guid(5e7ace55a7bfd0d4f9ba3c05024e9d79) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 318.302441 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/Cobblestone.mat
+  artifactKey: Guid(0f3e9d866943df945a61fe1efe5aef05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/Cobblestone.mat using Guid(0f3e9d866943df945a61fe1efe5aef05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'eccd0336d94e402a266a3dc3ccebef76') in 1.425154 seconds
+ -> (artifact id: '30348e071c73106191153b21c0d9daba') in 1.762307 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
+Number of asset objects unloaded after import = 5
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/TerrainSampleAssets/Prefabs/Grass_A.prefab
-  artifactKey: Guid(4e6885e0d11bd224fa27617a4657c329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TerrainSampleAssets/Prefabs/Grass_A.prefab using Guid(4e6885e0d11bd224fa27617a4657c329) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 0.000117 seconds.
+  path: Assets/Stylized Stone/URP/material_URP/Solitary Stone(2.3.4).mat
+  artifactKey: Guid(ac450078f7652e24b9dee53cc5e89ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/URP/material_URP/Solitary Stone(2.3.4).mat using Guid(ac450078f7652e24b9dee53cc5e89ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'e4dbd14215a52e58a71b1f109fb2cffb') in 0.093991 seconds
+ -> (artifact id: '81504ed07c8fad43ff3e61c2e9317439') in 0.205430 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
+Number of asset objects unloaded after import = 8
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/TerrainSampleAssets/Prefabs/Heather_A.prefab
-  artifactKey: Guid(cce04f533c148314abf74aff71206ec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TerrainSampleAssets/Prefabs/Heather_A.prefab using Guid(cce04f533c148314abf74aff71206ec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 0.000110 seconds.
+  path: Assets/Stylized Stone/material/Solitary Stone(0.1).mat
+  artifactKey: Guid(0221125b945faa64c8330a2a7a251c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/material/Solitary Stone(0.1).mat using Guid(0221125b945faa64c8330a2a7a251c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '56e0066180a42b7f7afea7eb73c21356') in 0.045301 seconds
+ -> (artifact id: 'dc6ecc6868f581f999f805ef2e92dee9') in 0.388708 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
+Number of asset objects unloaded after import = 5
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000039 seconds.
+  Time since last request: 0.000073 seconds.
+  path: Assets/Stylized Stone/URP/material_URP/Solitary Stone(0.1).mat
+  artifactKey: Guid(7210bb3ae3b8ab341bd393232bc0123c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/URP/material_URP/Solitary Stone(0.1).mat using Guid(7210bb3ae3b8ab341bd393232bc0123c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3000e4a7b9b65da9ea314441859e577a') in 0.073371 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/CityGen3D/Textures/Roof/roof_stone_n.png
+  artifactKey: Guid(f4aac03842de57f4e8058c0c9192d964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Textures/Roof/roof_stone_n.png using Guid(f4aac03842de57f4e8058c0c9192d964) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2882859c0b9da256a781af3c5305b55c') in 0.106797 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/CityGen3D/Facades/Materials/Facade Stone Wall 01.mat
+  artifactKey: Guid(5d5a3b5e50b6ee6459f62c4d2ffacd91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Facades/Materials/Facade Stone Wall 01.mat using Guid(5d5a3b5e50b6ee6459f62c4d2ffacd91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4346dd3cc9aa9dc43d841a16b0c1f070') in 2.699963 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000086 seconds.
+  path: Assets/Stylized Stone/HDRP/material_HDRP/Solitary Stone(0.1).mat
+  artifactKey: Guid(1583d10fdd03db941ae7f1475d773716) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/HDRP/material_HDRP/Solitary Stone(0.1).mat using Guid(1583d10fdd03db941ae7f1475d773716) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e41c03842951ff55043df680d819e593') in 0.202350 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/CityGen3D/Facades/Textures/Facade_Stone_Wall_01_metallic.png
+  artifactKey: Guid(3fea8bcca73ae904b89693cfe9e02a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Facades/Textures/Facade_Stone_Wall_01_metallic.png using Guid(3fea8bcca73ae904b89693cfe9e02a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '41d7c0435699a1d39d4393120270f887') in 0.088691 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/CityGen3D/Facades/Textures/Facade_Stone_01_normal.png
+  artifactKey: Guid(db63cb1a1ea796d4991f3e984a276d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Facades/Textures/Facade_Stone_01_normal.png using Guid(db63cb1a1ea796d4991f3e984a276d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '93d01cfea316bfa06d18424ed4964f12') in 0.082055 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000095 seconds.
+  path: Assets/CityGen3D/Facades/Textures/Facade_Stone_01_metallic.png
+  artifactKey: Guid(083be08efeba57e4d81104e26d5dba14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Facades/Textures/Facade_Stone_01_metallic.png using Guid(083be08efeba57e4d81104e26d5dba14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f70e631378b46b44ee8a62d2f898f2fb') in 0.112322 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Stylized Stone/material/Solitary Stone(2.3.4).mat
+  artifactKey: Guid(5bcb0655b68736e4cac1828a9a08101d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/material/Solitary Stone(2.3.4).mat using Guid(5bcb0655b68736e4cac1828a9a08101d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fe3238fa214897f5138e37d39a647332') in 0.078557 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/PavedStone.mat
+  artifactKey: Guid(fbafde70391399d45a80e5cfed5615ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/PavedStone.mat using Guid(fbafde70391399d45a80e5cfed5615ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e44a8ef2f6ce27f6b5cca7f331bfc7d7') in 0.135200 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 6.061112 seconds.
+  path: Assets/Stylized Stone/model/Solitary_Stone_002.fbx
+  artifactKey: Guid(77f1543f8e6d40c45babc579aa073298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/model/Solitary_Stone_002.fbx using Guid(77f1543f8e6d40c45babc579aa073298) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '985cca649444f9e3f9d9ba82707c35d4') in 0.350795 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Stylized Stone/model/Solitary_Stone_003.fbx
+  artifactKey: Guid(ab490cdf1264dc0469c54a4a18816f6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/model/Solitary_Stone_003.fbx using Guid(ab490cdf1264dc0469c54a4a18816f6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '97c9a62c0ebac65a9cd3a1b7e2dcc3d6') in 0.240804 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.777550 seconds.
+  path: Assets/Stylized Stone/URP/prefab_URP/Solitary stone/Solitary_Stone .prefab
+  artifactKey: Guid(c786bf6ff3de2c94f96084f296422fe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/URP/prefab_URP/Solitary stone/Solitary_Stone .prefab using Guid(c786bf6ff3de2c94f96084f296422fe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1621b3eb1879eb0209b03cbd887f1a4c') in 0.152136 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Stylized Stone/prefab/Solitary stone/Solitary_Stone Variant.prefab
+  artifactKey: Guid(31666dac36c32694eaf51929a5d6e8ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/prefab/Solitary stone/Solitary_Stone Variant.prefab using Guid(31666dac36c32694eaf51929a5d6e8ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9a6f209d05b3d98db10fb8757fa9964e') in 0.108423 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 47
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/seaShell/Solitary_Stone_003.prefab
+  artifactKey: Guid(f82d2586452fc814ea0daba77156f013) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/Solitary_Stone_003.prefab using Guid(f82d2586452fc814ea0daba77156f013) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b9911dc98fad2b633d9693bd3fcbb0b6') in 0.056697 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 43
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Stylized Stone/prefab/Solitary stone/Solitary_Stone_001 Variant.prefab
+  artifactKey: Guid(df632aa2de1889849a2e3136a0bf2792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/prefab/Solitary stone/Solitary_Stone_001 Variant.prefab using Guid(df632aa2de1889849a2e3136a0bf2792) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6515e84f7ba9fd3fca8e735177fe1334') in 0.089178 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 47
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Stylized Stone/HDRP/prefab_HDRP/Solitary stone/Solitary_Stone Variant.prefab
+  artifactKey: Guid(82a04604c0621f249ae8083bfe165a9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/HDRP/prefab_HDRP/Solitary stone/Solitary_Stone Variant.prefab using Guid(82a04604c0621f249ae8083bfe165a9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bb7740cd117715a4f223c3d7018e9725') in 0.088495 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 0.000094 seconds.
+  path: Assets/seaShell/Solitary_Stone_002 Variant Variant.prefab
+  artifactKey: Guid(8e9a84ec02c948c408975d33eaa32b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/seaShell/Solitary_Stone_002 Variant Variant.prefab using Guid(8e9a84ec02c948c408975d33eaa32b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '28c8565f5db366060a5446c30097d30b') in 0.130893 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 56
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Stylized Stone/URP/prefab_URP/Solitary stone/Solitary_Stone_001 .prefab
+  artifactKey: Guid(b569b6267ae899b428fd555a614fd649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/URP/prefab_URP/Solitary stone/Solitary_Stone_001 .prefab using Guid(b569b6267ae899b428fd555a614fd649) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b853ee283da534f55812390dbfe10d74') in 0.130553 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 86.951090 seconds.
   path: Assets/TerrainSampleAssets/Prefabs/GrassDry_A.prefab
   artifactKey: Guid(9e8508e3025d9c844810b83c5607c09e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/TerrainSampleAssets/Prefabs/GrassDry_A.prefab using Guid(9e8508e3025d9c844810b83c5607c09e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '992cca58503b5c26c710123c350209b2') in 0.081455 seconds
+ -> (artifact id: '6cf8192beca65877de544b27ae1450fa') in 0.131416 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 12
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000075 seconds.
-  path: Assets/TerrainSampleAssets/Prefabs/GrassDry_C.prefab
-  artifactKey: Guid(8aa8def6286fc784ba128570ec475974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TerrainSampleAssets/Prefabs/GrassDry_C.prefab using Guid(8aa8def6286fc784ba128570ec475974) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 375.952810 seconds.
+  path: Assets/Stylized Stone/HDRP/prefab_HDRP/Solitary stone/Solitary_Stone_003 Variant.prefab
+  artifactKey: Guid(7e93da2d6e2e5b040a3755218963e529) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/HDRP/prefab_HDRP/Solitary stone/Solitary_Stone_003 Variant.prefab using Guid(7e93da2d6e2e5b040a3755218963e529) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '01748975733c71f9d1817694128e62a4') in 0.054026 seconds
+ -> (artifact id: 'ab294b8b3602c14a879bbae42ad39c2b') in 0.108140 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 0.000102 seconds.
+  path: Assets/Stylized Stone/URP/prefab_URP/Solitary stone/Solitary_Stone_004 .prefab
+  artifactKey: Guid(240875fb585254848996625e87d1518e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/URP/prefab_URP/Solitary stone/Solitary_Stone_004 .prefab using Guid(240875fb585254848996625e87d1518e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd28f0542d6274cd54508b4cbf95b7495') in 0.119263 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Stylized Stone/HDRP/prefab_HDRP/Solitary stone/Solitary_Stone_004 Variant.prefab
+  artifactKey: Guid(be8561951c0ee9a49a8eaecbae227b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stylized Stone/HDRP/prefab_HDRP/Solitary stone/Solitary_Stone_004 Variant.prefab using Guid(be8561951c0ee9a49a8eaecbae227b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e8c3b6113b16916335f2e9610385625f') in 0.136186 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/CityGen3D/Materials/Roof/Stone.mat
+  artifactKey: Guid(e3840edef5d6cdd41a8d93962f3ae170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Roof/Stone.mat using Guid(e3840edef5d6cdd41a8d93962f3ae170) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5638a485170f5acca7a8e6906523aaf5') in 1.141706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

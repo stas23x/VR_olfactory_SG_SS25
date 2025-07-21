@@ -9,13 +9,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker5
+AssetImportWorker12
 -projectPath
 C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
 -logFile
-Logs/AssetImportWorker5.log
+Logs/AssetImportWorker12.log
 -srvPort
-59134
+60116
 Successfully changed project path to: C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
 C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,15 +49,15 @@ C:/Users/Stanislav/Desktop/SgProj/VR_olfactory_SG_SS25
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [20804]  Target information:
+Player connection [22620]  Target information:
 
-Player connection [20804]  * "[IP] 172.18.30.89 [Port] 0 [Flags] 2 [Guid] 2801398218 [EditorId] 2801398218 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-U50ELT3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [22620]  * "[IP] 172.18.42.11 [Port] 0 [Flags] 2 [Guid] 1379784350 [EditorId] 1379784350 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-U50ELT3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [20804] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [20804] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [22620] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [22620] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 70.29 ms, found 12 plugins.
+Refreshing native plugins compatible for Editor in 132.42 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.62f1 (4af31df58517)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Resources/UnitySubsystems
@@ -73,44 +73,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56700
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56468
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007857 seconds.
-- Loaded All Assemblies, in  0.567 seconds
+Registered in 0.011122 seconds.
+- Loaded All Assemblies, in  0.933 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.441 seconds
-Domain Reload Profiling: 1007ms
-	BeginReloadAssembly (151ms)
+- Finished resetting the current domain, in  0.788 seconds
+Domain Reload Profiling: 1719ms
+	BeginReloadAssembly (346ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (57ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (103ms)
-	LoadAllAssembliesAndSetupDomain (240ms)
-		LoadAssemblies (149ms)
+	RebuildCommonClasses (78ms)
+	RebuildNativeTypeToScriptingClass (29ms)
+	initialDomainReloadingComplete (135ms)
+	LoadAllAssembliesAndSetupDomain (342ms)
+		LoadAssemblies (343ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (238ms)
-			TypeCache.Refresh (235ms)
-				TypeCache.ScanAssembly (215ms)
+		AnalyzeDomain (338ms)
+			TypeCache.Refresh (334ms)
+				TypeCache.ScanAssembly (307ms)
 			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (442ms)
+	FinalizeReload (789ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (369ms)
+		SetupLoadedEditorAssemblies (641ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (12ms)
-			SetLoadedEditorAssemblies (10ms)
+			InitializePlatformSupportModulesInManaged (33ms)
+			SetLoadedEditorAssemblies (22ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (234ms)
-			ProcessInitializeOnLoadMethodAttributes (109ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (449ms)
+			ProcessInitializeOnLoadMethodAttributes (132ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -119,7 +119,7 @@ Domain Reload Profiling: 1007ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.928 seconds
+- Loaded All Assemblies, in  3.657 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
@@ -132,36 +132,36 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  5.138 seconds
-Domain Reload Profiling: 8064ms
-	BeginReloadAssembly (182ms)
+- Finished resetting the current domain, in  4.423 seconds
+Domain Reload Profiling: 8083ms
+	BeginReloadAssembly (300ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (10ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (25ms)
-	RebuildCommonClasses (61ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (61ms)
-	LoadAllAssembliesAndSetupDomain (2608ms)
-		LoadAssemblies (1271ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (58ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (3229ms)
+		LoadAssemblies (1385ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1444ms)
-			TypeCache.Refresh (1211ms)
-				TypeCache.ScanAssembly (1132ms)
-			ScanForSourceGeneratedMonoScriptInfo (166ms)
-			ResolveRequiredComponents (56ms)
-	FinalizeReload (5139ms)
+		AnalyzeDomain (2014ms)
+			TypeCache.Refresh (1790ms)
+				TypeCache.ScanAssembly (1728ms)
+			ScanForSourceGeneratedMonoScriptInfo (163ms)
+			ResolveRequiredComponents (50ms)
+	FinalizeReload (4424ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (4256ms)
+		SetupLoadedEditorAssemblies (3618ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (21ms)
-			SetLoadedEditorAssemblies (20ms)
+			InitializePlatformSupportModulesInManaged (22ms)
+			SetLoadedEditorAssemblies (19ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (386ms)
-			ProcessInitializeOnLoadAttributes (2485ms)
-			ProcessInitializeOnLoadMethodAttributes (1333ms)
+			BeforeProcessingInitializeOnLoad (350ms)
+			ProcessInitializeOnLoadAttributes (2065ms)
+			ProcessInitializeOnLoadMethodAttributes (1149ms)
 			AfterProcessingInitializeOnLoad (11ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
@@ -184,17 +184,17 @@ WARNING: Shader If subshaders removal was intentional, you may have forgotten tu
 WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
-Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
-Refreshing native plugins compatible for Editor in 31.59 ms, found 12 plugins.
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
+Refreshing native plugins compatible for Editor in 115.76 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 9372 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 400 unused Assets / (68.0 MB). Loaded Objects now: 9659.
-Memory consumption went from 479.8 MB to 411.8 MB.
-Total: 38.650100 ms (FindLiveObjects: 1.020100 ms CreateObjectMapping: 0.702300 ms MarkObjects: 7.760500 ms  DeleteObjects: 29.164500 ms)
+Unloading 9381 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 397 unused Assets / (68.1 MB). Loaded Objects now: 9672.
+Memory consumption went from 482.3 MB to 414.2 MB.
+Total: 59.100800 ms (FindLiveObjects: 1.922900 ms CreateObjectMapping: 1.676600 ms MarkObjects: 11.898900 ms  DeleteObjects: 43.598800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -211,58 +211,10 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 569517.302633 seconds.
-  path: Assets/Scenes/Stanislav beach/Lightmap-0_comp_dir.png
-  artifactKey: Guid(2545dca0e268ce74482227ed7a9d91f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stanislav beach/Lightmap-0_comp_dir.png using Guid(2545dca0e268ce74482227ed7a9d91f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9a999a6f6ab4450f499c14f108c02859') in 0.240220 seconds
+  Time since last request: 330687.414786 seconds.
+  path: Assets/InputSystem.inputsettings.asset
+  artifactKey: Guid(9d6f5c4e6da8dfe43971c25666e42520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InputSystem.inputsettings.asset using Guid(9d6f5c4e6da8dfe43971c25666e42520) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fdfcf816d44df4f4aa68b7941570c30a') in 0.045481 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.243 seconds
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in 38.969 seconds
-Domain Reload Profiling: 40208ms
-	BeginReloadAssembly (430ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (17ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (200ms)
-	RebuildCommonClasses (43ms)
-	RebuildNativeTypeToScriptingClass (15ms)
-	initialDomainReloadingComplete (43ms)
-	LoadAllAssembliesAndSetupDomain (707ms)
-		LoadAssemblies (742ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (76ms)
-			TypeCache.Refresh (27ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (45ms)
-	FinalizeReload (38970ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1097ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (7ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (140ms)
-			ProcessInitializeOnLoadAttributes (776ms)
-			ProcessInitializeOnLoadMethodAttributes (151ms)
-			AfterProcessingInitializeOnLoad (13ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (99ms)
+Number of asset objects unloaded after import = 0
