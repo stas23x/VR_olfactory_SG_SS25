@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 using Valve.VR;
 using UnityEngine.XR.Interaction.Toolkit;
 using System.Numerics;
+// using UnityEngine.UIElements;
 
 
 
@@ -39,6 +40,11 @@ public class MenuController : MonoBehaviour
         if (menuPanel != null)
             menuPanel.SetActive(isMenuVisible);
 
+        // Version using UIElemnts. Not used anymore because cannot be used as game object in the inspector
+        // Add functionality to the continue button
+        // continueButton.clicked += OnContinueClicked;
+        // Add functionality to the exit button
+        // exitButton.clicked += OnExitClicked;
         // Add listeners to buttons
         if (continueButton != null)
             continueButton.onClick.AddListener(OnContinueClicked);
@@ -58,9 +64,9 @@ public class MenuController : MonoBehaviour
         sceneHandler.Initialize(sceneDropdown);
 
         audioHandler = GetComponent<AudioSliderHandler>();
-        if (audioHandler == null)
-            audioHandler = gameObject.AddComponent<AudioSliderHandler>();
-        audioHandler.Initialize(audioSlider, audioManager);
+        // if (audioHandler == null)
+        //     audioHandler = gameObject.AddComponent<AudioSliderHandler>();
+        // audioHandler.Initialize(audioSlider, audioManager);
 
     }
 
@@ -72,10 +78,10 @@ public class MenuController : MonoBehaviour
             ToggleMenu();
         }
 
-        if (menuToggleAction.GetStateDown(SteamVR_Input_Sources.Any))
-        {
-            ToggleMenu();
-        }
+        // if (menuToggleAction.GetStateDown(SteamVR_Input_Sources.Any))
+        // {
+        //     ToggleMenu();
+        // }
 
     }
 
@@ -136,7 +142,10 @@ public class MenuController : MonoBehaviour
             switch (sceneName)
             {
                 case "TemplateScene":
-                    // Set camera position for TemplateScene
+                    // When changing scenes the menu is alway toggeld. SO we toggle it here so
+                    // that after another toggel it is show again
+                    ToggleMenu();
+
                     break;
                 case "forest 1":
                     xrRig.transform.position = new UnityEngine.Vector3(155.0f, 18.0f, 47.0f);
