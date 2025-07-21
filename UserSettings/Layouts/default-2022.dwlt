@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 60
+  controlID: 59
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 61
+  controlID: 60
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 62
+  controlID: 61
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -305,9 +305,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 664.5
-    width: 973
-    height: 146.5
+    y: 566
+    width: 1090.5
+    height: 245
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -357,21 +357,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2cf7ffff68f7ffffa4f7fffff29d0000469e0000
+      m_ExpandedIDs: cafaffff629b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: lowPolyShell_LOD0
-        m_OriginalName: lowPolyShell_LOD0
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -2282
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -776,9 +776,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 631.39526, y: 101.94876, z: 43.480408}
+    m_Target: {x: -615.06287, y: -257.23532, z: -611.8775}
     speed: 2
-    m_Value: {x: 631.39526, y: 101.94876, z: 43.480408}
+    m_Value: {x: -615.06287, y: -257.23532, z: -611.8775}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -824,13 +824,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.18826687, y: 0.111694485, z: -0.021555575, w: 0.97551316}
+    m_Target: {x: -0.024672905, y: 0.9458915, z: -0.074068986, w: -0.3149895}
     speed: 2
-    m_Value: {x: 0.19397864, y: 0.11740667, z: -0.023389531, w: 0.9736739}
+    m_Value: {x: -0.02417957, y: 0.94509506, z: -0.07186745, w: -0.31787717}
   m_Size:
-    m_Target: 0.34899053
+    m_Target: 879.561
     speed: 2
-    m_Value: 0.33396223
+    m_Value: 646.736
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1033,7 +1033,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes/Stanislav beach
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1041,16 +1041,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets
+  - Assets/Scenes/Stanislav beach
   m_LastFoldersGridSize: 60
   m_LastProjectPath: C:\Users\Stanislav\Desktop\SgProj\VR_olfactory_SG_SS25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 9ca10000
-    m_LastClickedID: 41372
-    m_ExpandedIDs: 000000009ca100004aa4000058a40000f6a70000d8b00000dab0000000ca9a3b
+    scrollPos: {x: 0, y: 207}
+    m_SelectedIDs: 4aa40000
+    m_LastClickedID: 42058
+    m_ExpandedIDs: 00000000e49e000088a1000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1078,7 +1078,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009ca10000
+    m_ExpandedIDs: 00000000e49e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1106,7 +1106,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000a03dffff
+    m_ExpandedInstanceIDs: c6230000a03dffff1e940000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1155,9 +1155,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 658
-    width: 973
-    height: 153
+    y: 566
+    width: 1090.5
+    height: 245
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1170,8 +1170,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_MixersTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: -49760
+    m_SelectedIDs: 1e940000
+    m_LastClickedID: 37918
     m_ExpandedIDs: 12eb343c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1287,12 +1287,12 @@ MonoBehaviour:
       oldMaxSizes: 
       oldSplitSize: 0
     m_HorizontalSplitter:
-      ID: 260
+      ID: 1055
       splitterInitialOffset: 0
       currentActiveSplitter: -1
       realSizes:
-      - 292
-      - 681
+      - 327
+      - 763.5
       relativeSizes:
       - 0.3
       - 0.7
@@ -1302,7 +1302,7 @@ MonoBehaviour:
       maxSizes:
       - 0
       - 0
-      lastTotalSize: 973
+      lastTotalSize: 1090.5
       splitSize: 6
       xOffset: 0
       m_Version: 1
