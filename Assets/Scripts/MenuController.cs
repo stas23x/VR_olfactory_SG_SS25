@@ -28,7 +28,7 @@ public class MenuController : MonoBehaviour
     private SceneDropdownHandler sceneHandler;
     private AudioSliderHandler audioHandler;
 
-    private bool isMenuVisible = true;
+    public bool isMenuVisible = true;
 
     public SteamVR_Action_Boolean menuToggleAction = SteamVR_Input.GetBooleanAction("MenuToggle");
     public SteamVR_Action_Boolean selectAction = SteamVR_Input.GetBooleanAction("Select");

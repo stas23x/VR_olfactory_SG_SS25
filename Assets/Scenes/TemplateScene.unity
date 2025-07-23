@@ -2871,6 +2871,7 @@ MonoBehaviour:
   exitButton: {fileID: 2036864834}
   skyVolumeTarget: {fileID: 1812963944}
   audioManager: {fileID: 0}
+  isMenuVisible: 1
   menuToggleAction:
     actionPath: /actions/default/in/MenuToggle
     needsReinit: 0
@@ -3073,6 +3074,7 @@ GameObject:
   - component: {fileID: 941621727}
   - component: {fileID: 941621726}
   - component: {fileID: 941621728}
+  - component: {fileID: 941621729}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Player
@@ -3201,6 +3203,26 @@ MonoBehaviour:
   lookSpeed: 2
   minY: -80
   maxY: 80
+--- !u!114 &941621729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941621722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c8d09d99ada784090052b0f3bc9c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  actionMapName: Player
+  actionName: Movement
+  moveSpeed: 2
+  raycastDistance: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &974914971
 GameObject:
   m_ObjectHideFlags: 0
