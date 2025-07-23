@@ -9,7 +9,9 @@ public class OlfactoryManager : MonoBehaviour
     public string portName = "COM16";
     public int baudRate = 9600;
     private bool usingOlfactory = false;
-    void Start()
+
+    public static OlfactoryManager Instance { get; private set; }
+    void Awake()
     {
         Debug.Log("Making connection to arduino");
         try
@@ -19,6 +21,15 @@ public class OlfactoryManager : MonoBehaviour
             serialPort.DtrEnable = true;  // Optional: Reset Arduino
             Debug.Log("Serial port opened on " + portName);
             usingOlfactory = true;
+
+             // Singleton pattern: only one instance allowed
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject); // Optional: prevent duplicates
+                return;
+            }
+
+            Instance = this;
         }
         catch (System.Exception e)
         {
