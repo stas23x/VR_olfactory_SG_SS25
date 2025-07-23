@@ -33,6 +33,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-277371588272595727
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Seagull_global
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 667a97a9bb6539f4d86034e53505ed74
+  m_Children: []
+  m_Volume: 20fb43517523ffd489af67f9006b6d11
+  m_Pitch: eeb2e102136d3e2419d1893f3c344cb9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 8021777222216376745}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -53,6 +72,7 @@ AudioMixerController:
   - guids:
     - 1ba6c2df4c8db6e4da7631e418e233cb
     - 32f93eff0e63cfc46b673764bae3c552
+    - 667a97a9bb6539f4d86034e53505ed74
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -66,6 +86,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 1ba6c2df4c8db6e4da7631e418e233cb
   m_Children:
+  - {fileID: -277371588272595727}
   - {fileID: -3589432866562755151}
   m_Volume: 58dd07b2d8acbe74ab940a6a812fa54d
   m_Pitch: 14205d138a36ea940b8c00d9fc9d8d20
@@ -101,3 +122,17 @@ AudioMixerSnapshotController:
   m_SnapshotID: 6c93f1d24f95e444b8c8a2123309925d
   m_FloatValues: {}
   m_TransitionOverrides: {}
+--- !u!244 &8021777222216376745
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 73cda0d09bf56614a8e03a4175645986
+  m_EffectName: Attenuation
+  m_MixLevel: 95da13eefafb74046ba684b02dbabfe5
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
