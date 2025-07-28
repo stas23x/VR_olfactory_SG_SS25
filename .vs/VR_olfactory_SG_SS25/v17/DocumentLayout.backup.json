@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\danym\\Desktop\\Serious games updated\\VR_olfactory_SG_SS25\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F52B0950-CA83-9286-2165-9AFC41CECE4A}|Assembly-CSharp.csproj|c:\\users\\danym\\desktop\\serious games updated\\vr_olfactory_sg_ss25\\assets\\scripts\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F52B0950-CA83-9286-2165-9AFC41CECE4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F52B0950-CA83-9286-2165-9AFC41CECE4A}|Assembly-CSharp.csproj|c:\\users\\danym\\desktop\\serious games updated\\vr_olfactory_sg_ss25\\assets\\simplemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F52B0950-CA83-9286-2165-9AFC41CECE4A}|Assembly-CSharp.csproj|solutionrelative:assets\\simplemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,19 +23,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MenuController.cs",
-              "DocumentMoniker": "C:\\Users\\danym\\Desktop\\Serious games updated\\VR_olfactory_SG_SS25\\Assets\\Scripts\\MenuController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MenuController.cs",
-              "ToolTip": "C:\\Users\\danym\\Desktop\\Serious games updated\\VR_olfactory_SG_SS25\\Assets\\Scripts\\MenuController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MenuController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T20:48:46.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "SimpleMovement.cs",
               "DocumentMoniker": "C:\\Users\\danym\\Desktop\\Serious games updated\\VR_olfactory_SG_SS25\\Assets\\SimpleMovement.cs",
               "RelativeDocumentMoniker": "Assets\\SimpleMovement.cs",
@@ -52,7 +35,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SmoothHeightTool.cs",
               "DocumentMoniker": "C:\\Users\\danym\\Desktop\\Serious games updated\\VR_olfactory_SG_SS25\\Library\\PackageCache\\com.unity.terrain-tools@5.0.6\\Editor\\TerrainTools\\SmoothHeightTool.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.terrain-tools@5.0.6\\Editor\\TerrainTools\\SmoothHeightTool.cs",
@@ -60,7 +43,8 @@
               "RelativeToolTip": "Library\\PackageCache\\com.unity.terrain-tools@5.0.6\\Editor\\TerrainTools\\SmoothHeightTool.cs",
               "ViewState": "AgIAAFYAAAAAAAAAAAAtwGgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T21:04:58.325Z"
+              "WhenOpened": "2025-07-22T21:04:58.325Z",
+              "EditorCaption": ""
             }
           ]
         }
