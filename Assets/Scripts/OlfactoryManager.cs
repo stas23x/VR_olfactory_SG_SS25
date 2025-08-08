@@ -38,13 +38,13 @@ public class OlfactoryManager : MonoBehaviour
         
     }
 
-    public void StartScent(string scentType)
+    public void StartScent(string scentType, int frequency)
     {
         if (usingOlfactory)
         {
             string command = "setAPump:1";
             SendToArduino(command);
-            command = "setF:10";
+            command = $"setF:{frequency}";
             SendToArduino(command);
             command = "setStatus:1";
             SendToArduino(command);

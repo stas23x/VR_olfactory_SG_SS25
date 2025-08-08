@@ -2,33 +2,38 @@ using UnityEngine;
 
 public class ScentTrigger : MonoBehaviour
 {
-    private OlfactoryManager olfactoryManager;
     public string scentType = "default";
+
+    public float zone1Radius;
+    public float zone2Radius;
+    public float zone3Radius;
+
+
 
     void Start()
     {
-        olfactoryManager = OlfactoryManager.Instance;
-        if (olfactoryManager == null)
-        {
-            Debug.LogError("OlfactoryManager instance not found. Make sure it is initialized before ScentTrigger.");
-            return;
-        }
-        
-    }
-    public void OnTriggerEnter(Collider other)
-    {
-        // Debug.Log("Trigger scent: " + scentType);
-        olfactoryManager.StartScent(scentType);
-    }
 
-    public void OnTriggerStay(Collider other)
-    {
-        // Debug.Log("Updating inside: " + scentType);
-    }
-    public void OnTriggerExit(Collider other)
-    {
-        // Debug.Log("Stop scent: " + scentType);
-        olfactoryManager.StopScent(scentType);
+        Transform zone1 = transform.Find("Zone 1");
+        Transform zone2 = transform.Find("Zone 2");
+        Transform zone3 = transform.Find("Zone 3");
+
+        SphereCollider sphere1 = zone1.GetComponent<SphereCollider>();
+        SphereCollider sphere2 = zone2.GetComponent<SphereCollider>();
+        SphereCollider sphere3 = zone3.GetComponent<SphereCollider>();
+
+        sphere1.radius = zone1Radius;
+        sphere2.radius = zone2Radius;
+        sphere3.radius = zone3Radius;
+
+        zoneScentTrigger s1 = zone1.GetComponent<zoneScentTrigger>();
+        zoneScentTrigger s2 = zone2.GetComponent<zoneScentTrigger>();
+        zoneScentTrigger s3 = zone3.GetComponent<zoneScentTrigger>();
+        if (s1 == null) Debug.LogError("Script not found");
+        s1.frequency = 40;
+        s2.frequency = 20;
+        s3.frequency = 10;
+
+
     }
 
 }
