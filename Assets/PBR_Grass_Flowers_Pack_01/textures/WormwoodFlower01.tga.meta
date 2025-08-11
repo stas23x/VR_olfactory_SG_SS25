@@ -1,20 +1,12 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/SUIMONO - WATER SYSTEM 2/_DEMO/GUI/Textures/tex_SuimonoLogo.png.meta
-<<<<<<< HEAD
-guid: 91afd1ef29cbf11469fa7669df4acbe6
-=======
-guid: 278bca15f5587c648a2e4f8c5179268b
->>>>>>> 52ebd58282ab7f7affe9d9cab8dfc326fd609856
-========
 guid: ef513760667784b419ab5ce4a00bd2b3
->>>>>>>> main:Assets/PBR_Grass_Flowers_Pack_01/textures/WormwoodFlower01.tga.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -32,29 +24,26 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
-<<<<<<<< HEAD:Assets/SUIMONO - WATER SYSTEM 2/_DEMO/GUI/Textures/tex_SuimonoLogo.png.meta
-========
   vTOnly: 0
   ignoreMipmapLimit: 0
->>>>>>>> main:Assets/PBR_Grass_Flowers_Pack_01/textures/WormwoodFlower01.tga.meta
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 256
+  textureFormat: 1
+  maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
-    aniso: 16
-    mipBias: -100
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
-  nPOTScale: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -63,21 +52,16 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 0
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-<<<<<<<< HEAD:Assets/SUIMONO - WATER SYSTEM 2/_DEMO/GUI/Textures/tex_SuimonoLogo.png.meta
-  applyGammaDecoding: 1
-  platformSettings:
-  - serializedVersion: 3
-    buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
-========
   ignorePngGamma: 0
   applyGammaDecoding: 1
   swizzle: 50462976
@@ -112,7 +96,6 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
->>>>>>>> main:Assets/PBR_Grass_Flowers_Pack_01/textures/WormwoodFlower01.tga.meta
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -129,19 +112,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<<< HEAD:Assets/SUIMONO - WATER SYSTEM 2/_DEMO/GUI/Textures/tex_SuimonoLogo.png.meta
-  spritePackingTag: 
-========
     nameFileIdTable: {}
   mipmapLimitGroupName: 
->>>>>>>> main:Assets/PBR_Grass_Flowers_Pack_01/textures/WormwoodFlower01.tga.meta
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 
