@@ -16,6 +16,7 @@ public class GlobalSettings : MonoBehaviour
     public List<VolumeProfile> skyProfiles;
     public int selectedSkyProfileIndex = 0;
     public Volume globalVolume;
+    public string participantID = "P001";
 
     private void Awake()
     {
