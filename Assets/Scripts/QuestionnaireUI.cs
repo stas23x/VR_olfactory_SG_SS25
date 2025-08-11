@@ -1,6 +1,6 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using System;
 
 public class QuestionnaireUI : MonoBehaviour
@@ -8,8 +8,45 @@ public class QuestionnaireUI : MonoBehaviour
     public static QuestionnaireUI Instance;
 
     public TMP_Text questionText;
-    public TMP_Dropdown[] dropdowns; // One per question
+    public TMP_Dropdown[] dropdowns; 
     public Button submitButton;
+
+    // German IPQ items and anchors
+    private readonly string[] questions = new string[]
+    {
+        "In der computererzeugten Welt hatte ich den Eindruck, dort gewesen zu sein...",
+        "Ich hatte das Gefühl, daß die virtuelle Umgebung hinter mir weitergeht.",
+        "Ich hatte das Gefühl, nur Bilder zu sehen.",
+        "Ich hatte nicht das Gefühl, in dem virtuellen Raum zu sein.",
+        "Ich hatte das Gefühl, in dem virtuellen Raum zu handeln statt etwas von außen zu bedienen.",
+        "Ich fühlte mich im virtuellen Raum anwesend.",
+        "Wie bewußt war Ihnen die reale Welt, während Sie sich durch die virtuelle Welt bewegten (z.B. Geräusche, Raumtemperatur, andere Personen etc.)?",
+        "Meine reale Umgebung war mir nicht mehr bewußt.",
+        "Ich achtete noch auf die reale Umgebung.",
+        "Meine Aufmerksamkeit war von der virtuellen Welt völlig in Bann gezogen.",
+        "Wie real erschien Ihnen die virtuelle Umgebung?",
+        "Wie sehr glich Ihr Erleben der virtuellen Umgebung dem Erleben einer realen Umgebung?",
+        "Wie real erschien Ihnen die virtuelle Welt?",
+        "Die virtuelle Welt erschien mir wirklicher als die reale Welt."
+    };
+
+    private readonly string[][] anchors = new string[][]
+    {
+        new string[] { "überhaupt nicht", "sehr stark" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "hatte nicht das Gefühl", "hatte das Gefühl" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "extrem bewußt", "mittelmäßig bewußt", "unbewußt" }, // 3 anchors
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "vollkommen real", "weder noch", "gar nicht real" },
+        new string[] { "überhaupt nicht", "etwas", "vollständig" },
+        new string[] { "wie eine vorgestellte Welt", "nicht zu unterscheiden von der realen Welt" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" }
+    };
 
     private Action<string[]> onComplete;
 
@@ -18,19 +55,37 @@ public class QuestionnaireUI : MonoBehaviour
         Instance = this;
         submitButton.onClick.AddListener(Submit);
         gameObject.SetActive(false);
+
+        // Initialize dropdown options for each question
+        for (int i = 0; i < dropdowns.Length; i++)
+        {
+            dropdowns[i].ClearOptions();
+            var options = new System.Collections.Generic.List<string>(anchors[i]);
+            dropdowns[i].AddOptions(options);
+        }
     }
 
     public void Show(Action<string[]> callback)
     {
         gameObject.SetActive(true);
         onComplete = callback;
+
+        for (int i = 0; i < questions.Length; i++)
+        {
+            dropdowns[i].gameObject.SetActive(true);
+            // Assuming you have TMP_Text labels for questions (assign them in inspector)
+            // Or if you only have one questionText, update to current question here:
+            // For simplicity, let's say you have an array of question labels.
+        }
     }
 
     void Submit()
     {
         string[] responses = new string[dropdowns.Length];
         for (int i = 0; i < dropdowns.Length; i++)
-            responses[i] = dropdowns[i].value.ToString();
+        {
+            responses[i] = dropdowns[i].options[dropdowns[i].value].text;
+        }
 
         gameObject.SetActive(false);
         onComplete?.Invoke(responses);

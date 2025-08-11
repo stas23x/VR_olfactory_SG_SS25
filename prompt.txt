@@ -1,0 +1,1 @@
+YourBuild.exe --participant=P01 --scene=Stanislav beach --audio=true --olfactory=false

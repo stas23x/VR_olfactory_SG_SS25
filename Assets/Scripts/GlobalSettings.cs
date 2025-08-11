@@ -17,6 +17,9 @@ public class GlobalSettings : MonoBehaviour
     public int selectedSkyProfileIndex = 0;
     public Volume globalVolume;
     public string participantID = "P001";
+    public bool useAudio = true;
+    public bool useOlfactory = true;
+    public bool autoStartExperiment = false;
 
     private void Awake()
     {

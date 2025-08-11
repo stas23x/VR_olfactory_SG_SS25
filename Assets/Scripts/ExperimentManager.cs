@@ -1,77 +1,100 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using System.Collections.Generic;
 
 public class ExperimentManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class Condition
-    {
-        public string sceneName;
-        public bool useAudio;
-        public bool useOlfactory;
-    }
+    public int participantID;
+    public string[] sceneOrder = new string[] { "forest 1", "Stanislav beach", "Koenigssee", "AmrumV2" };
 
-    public List<Condition> conditions;
-    public float sceneDuration = 180f; // 3 minutes
-    private int currentConditionIndex = 0;
+    private int currentSceneIndex = 0;
 
     private Logger logger;
+    private AudioManager audioManager;
+    private OlfactoryManager olfactoryManager;
+
+    private QuestionnaireUI questionnaireUI;
+
+    private bool isExperimentRunning = false;
 
     void Start()
     {
         logger = FindObjectOfType<Logger>();
-        StartCoroutine(RunNextCondition());
+        audioManager = FindObjectOfType<AudioManager>();
+        olfactoryManager = FindObjectOfType<OlfactoryManager>();
+        questionnaireUI = QuestionnaireUI.Instance;
+
+
+        StartCoroutine(RunExperiment());
     }
 
-    IEnumerator RunNextCondition()
+    public IEnumerator RunExperiment()
     {
-        if (currentConditionIndex >= conditions.Count)
+        isExperimentRunning = true;
+        for (currentSceneIndex = 0; currentSceneIndex < sceneOrder.Length; currentSceneIndex++)
         {
-            ShowFinalQuestionnaire();
-            yield break;
+            string sceneName = sceneOrder[currentSceneIndex];
+
+            // Determine condition for this participant and scene
+            StimuliCondition condition = ConditionAssigner.GetConditionForParticipant(participantID, currentSceneIndex);
+            Debug.Log($"Loading scene '{sceneName}' with condition {condition}");
+
+            // Set conditions
+            ApplyCondition(condition);
+
+            // Load scene
+            yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+
+            // Log scene start
+            logger?.LogSceneStart(sceneName, condition == StimuliCondition.AudioOnly || condition == StimuliCondition.Both,
+                                          condition == StimuliCondition.OlfactoryOnly || condition == StimuliCondition.Both);
+
+            // Wait for experiment duration or user input
+            yield return RunSceneDuration();
+
+            // Show questionnaire and wait for responses
+            bool questionnaireDone = false;
+            questionnaireUI.Show((string[] responses) =>
+            {
+                logger?.LogQuestionnaireResponses(responses);
+                questionnaireDone = true;
+            });
+            while (!questionnaireDone)
+                yield return null;
         }
 
-        Condition current = conditions[currentConditionIndex];
+        Debug.Log("Experiment completed.");
+        isExperimentRunning = false;
 
-        ApplySensorySettings(current);
+        // Optionally return to template scene or quit
+        SceneManager.LoadScene("TemplateScene");
+    }
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(current.sceneName);
-        while (!asyncLoad.isDone)
+    void ApplyCondition(StimuliCondition condition)
+    {
+        bool useAudio = (condition == StimuliCondition.AudioOnly || condition == StimuliCondition.Both);
+        bool useOlfactory = (condition == StimuliCondition.OlfactoryOnly || condition == StimuliCondition.Both);
+
+        GlobalSettings.Instance.useAudio = useAudio;
+        GlobalSettings.Instance.useOlfactory = useOlfactory;
+
+        // Audio
+        audioManager?.SetMasterVolume(useAudio ? GlobalSettings.Instance.audioStrength : 0f);
+
+        // Olfactory
+        if (olfactoryManager != null)
+            olfactoryManager.enabled = useOlfactory;
+    }
+
+    IEnumerator RunSceneDuration()
+    {
+        // Placeholder: could be fixed time or wait for user input to continue
+        float experimentDuration = 120f; // 2 minutes per scene
+        float timer = 0f;
+        while (timer < experimentDuration)
+        {
+            timer += Time.deltaTime;
             yield return null;
-
-        logger.LogSceneStart(current.sceneName, current.useAudio, current.useOlfactory);
-
-        yield return new WaitForSeconds(sceneDuration);
-
-        ShowSceneQuestionnaire();
-    }
-
-    public void OnQuestionnaireSubmitted(string[] responses)
-    {
-        logger.LogQuestionnaireResponses(responses);
-        currentConditionIndex++;
-        StartCoroutine(RunNextCondition());
-    }
-
-    private void ApplySensorySettings(Condition condition)
-    {
-        AudioManager.Instance?.SetMasterVolume(condition.useAudio ? 1f : 0f);
-        if (condition.useOlfactory)
-            OlfactoryManager.Instance?.StartScent("default", 40);
-        else
-            OlfactoryManager.Instance?.StopScent("default");
-    }
-
-    private void ShowSceneQuestionnaire()
-    {
-        QuestionnaireUI.Instance.Show(OnQuestionnaireSubmitted);
-    }
-
-    private void ShowFinalQuestionnaire()
-    {
-        Debug.Log("Experiment complete.");
-        // Could show a final form or exit
+        }
     }
 }
