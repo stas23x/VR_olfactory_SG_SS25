@@ -1,0 +1,1987 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.62f1 (4af31df58517) revision 4911901'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'de' Physical Memory: 32700 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker8
+-projectPath
+C:/StudentProjects/Serious game group 18/My project
+-logFile
+Logs/AssetImportWorker8.log
+-srvPort
+54785
+Successfully changed project path to: C:/StudentProjects/Serious game group 18/My project
+C:/StudentProjects/Serious game group 18/My project
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [9844]  Target information:
+
+Player connection [9844]  * "[IP] 192.168.253.171 [Port] 0 [Flags] 2 [Guid] 3219685426 [EditorId] 3219685426 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-66DGGND) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [9844] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [9844] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Refreshing native plugins compatible for Editor in 49.29 ms, found 12 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.62f1 (4af31df58517)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/StudentProjects/Serious game group 18/My project/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon RX Vega (ID=0x687f)
+    Vendor:   ATI
+    VRAM:     8119 MB
+    Driver:   31.0.12027.9001
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56216
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.021998 seconds.
+- Loaded All Assemblies, in  0.563 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.430 seconds
+Domain Reload Profiling: 990ms
+	BeginReloadAssembly (169ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (27ms)
+	initialDomainReloadingComplete (106ms)
+	LoadAllAssembliesAndSetupDomain (206ms)
+		LoadAssemblies (164ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (203ms)
+			TypeCache.Refresh (202ms)
+				TypeCache.ScanAssembly (184ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (431ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (356ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (13ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (240ms)
+			ProcessInitializeOnLoadMethodAttributes (82ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.459 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  2.308 seconds
+Domain Reload Profiling: 3757ms
+	BeginReloadAssembly (197ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (55ms)
+	LoadAllAssembliesAndSetupDomain (1137ms)
+		LoadAssemblies (732ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (520ms)
+			TypeCache.Refresh (425ms)
+				TypeCache.ScanAssembly (398ms)
+			ScanForSourceGeneratedMonoScriptInfo (64ms)
+			ResolveRequiredComponents (29ms)
+	FinalizeReload (2309ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1935ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (362ms)
+			ProcessInitializeOnLoadAttributes (1122ms)
+			ProcessInitializeOnLoadMethodAttributes (416ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 36.21 ms, found 12 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 9401 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 167 unused Assets / (7.6 MB). Loaded Objects now: 9944.
+Memory consumption went from 0.53 GB to 0.52 GB.
+Total: 8.308900 ms (FindLiveObjects: 0.991900 ms CreateObjectMapping: 0.308000 ms MarkObjects: 4.554100 ms  DeleteObjects: 2.452700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 363603.144391 seconds.
+  path: Assets/Rowlan/Terrain/Stamps/Examples/Heightmaps/Rugged Rocks 02.png
+  artifactKey: Guid(e175b355d078a0343a0e100c00c7df64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rowlan/Terrain/Stamps/Examples/Heightmaps/Rugged Rocks 02.png using Guid(e175b355d078a0343a0e100c00c7df64) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '66f06a1ef8bf2f3974da26aa453b03b6') in 0.185846 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_01_A.tga
+  artifactKey: Guid(f16a298edde81074a90aed1c0ce45e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_01_A.tga using Guid(f16a298edde81074a90aed1c0ce45e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd97699243f00918babee2768a26f2671') in 0.036910 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Rowlan/Terrain/Stamps/Examples/Brushes/Rugged Sedimented Rocks 24.brush
+  artifactKey: Guid(37d3d4c740390764a9f1bc7677fe708e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rowlan/Terrain/Stamps/Examples/Brushes/Rugged Sedimented Rocks 24.brush using Guid(37d3d4c740390764a9f1bc7677fe708e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9ac5e56cb8dde914ef0e1052e7e86022') in 0.103021 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Rowlan/Terrain/Stamps/Examples/Brushes/Rugged Sedimented Rocks 08.brush
+  artifactKey: Guid(bc71c7af54a789847ba4d8dbbad13b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rowlan/Terrain/Stamps/Examples/Brushes/Rugged Sedimented Rocks 08.brush using Guid(bc71c7af54a789847ba4d8dbbad13b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a88d465feb58137100d7aa08971eb480') in 0.068417 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_02_AO.tga
+  artifactKey: Guid(02b99c0c2e9a36b459b91e1162bd22f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_02_AO.tga using Guid(02b99c0c2e9a36b459b91e1162bd22f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '45f2ba241c049be2c3ae4770eba199c9') in 0.029623 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_03_var_2_A_Sm.tga
+  artifactKey: Guid(56beb33a8b6fd9147a7938ee9a1f2565) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_03_var_2_A_Sm.tga using Guid(56beb33a8b6fd9147a7938ee9a1f2565) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '83159eb71c9ed3a89b6fd013a54e846b') in 0.029106 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_03_AO.tga
+  artifactKey: Guid(9f2f98c77dbf13f479f3424b7d5cb126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_03_AO.tga using Guid(9f2f98c77dbf13f479f3424b7d5cb126) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '574139b050a6a23495f7f965f76c9410') in 0.023348 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_04_A.tga
+  artifactKey: Guid(058e4875793f2474191fb2781b23640d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_04_A.tga using Guid(058e4875793f2474191fb2781b23640d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '04a494a6202f301bdb2978e8d5914ccb') in 0.029403 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/TerrainSampleAssets/Textures/Terrain/Soil_Rocks_MaskMap.tif
+  artifactKey: Guid(b1c590e575d73224eb6773fd8c1cbb64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TerrainSampleAssets/Textures/Terrain/Soil_Rocks_MaskMap.tif using Guid(b1c590e575d73224eb6773fd8c1cbb64) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c72ed2545b9324866f65bcf66aa3f15a') in 0.035170 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_02_A_Sm.tga
+  artifactKey: Guid(5d4d9236c9b524f40b5ea9073d846e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/T_Ground_Rocks_02_A_Sm.tga using Guid(5d4d9236c9b524f40b5ea9073d846e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '697b7235ace0314ca9ad347b0aeee1a0') in 0.027311 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Rock_03.mat
+  artifactKey: Guid(b8c0c6bf2c035b746b7e7b64817fb4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Rock_03.mat using Guid(b8c0c6bf2c035b746b7e7b64817fb4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7c0a842b18961470824386814f0cf3bb') in 1.304697 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 71
+========================================================================
+Received Import Request.
+  Time since last request: 95.867727 seconds.
+  path: Assets/Fristy stylize Modular Assets 2/Shaders/BIR/Rocks.shader
+  artifactKey: Guid(9eacab102e48d4b44969fef600718d5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fristy stylize Modular Assets 2/Shaders/BIR/Rocks.shader using Guid(9eacab102e48d4b44969fef600718d5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e61ad81acc68c9ac18eb94a4816e7eea') in 0.001575 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.117708 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Scripts/FPSController.cs
+  artifactKey: Guid(ddc3f9351cd4bd84b8f94b3a29b1c640) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Scripts/FPSController.cs using Guid(ddc3f9351cd4bd84b8f94b3a29b1c640) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3837bde2860b02a237b20d07986240d4') in 0.396915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_ground_foliage_04_0.prefab
+  artifactKey: Guid(f5597057df5daa74c94fac2f381d839c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_ground_foliage_04_0.prefab using Guid(f5597057df5daa74c94fac2f381d839c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '17e40be1bc296959c4561833a8f29801') in 0.086736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Static/CliffRockTTFEL_B.mat
+  artifactKey: Guid(dccbedd85c022fb4fbf5a6f78a83af25) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Static/CliffRockTTFEL_B.mat using Guid(dccbedd85c022fb4fbf5a6f78a83af25) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd36afe6254716b64cb0d3b520b7403ae') in 0.106840 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/TerrainSampleAssets/Prefabs/Water/Materials/WaterDepthBased.mat
+  artifactKey: Guid(606a2cf006c309d47bb99f421ada20ca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TerrainSampleAssets/Prefabs/Water/Materials/WaterDepthBased.mat using Guid(606a2cf006c309d47bb99f421ada20ca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6955d04ffb6126c221128ac7ffccaac6') in 0.148608 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Player
+  artifactKey: Guid(67717733cdc5ff14e8f00841fb0badd1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Player using Guid(67717733cdc5ff14e8f00841fb0badd1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a0d5b61368ad5e54fd32bf716fa00cf4') in 0.020317 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Meshes/Meshes_Vegetation/MV_Trees and Bushes
+  artifactKey: Guid(2064dff3d0a27554daca46ac7c401a08) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Meshes/Meshes_Vegetation/MV_Trees and Bushes using Guid(2064dff3d0a27554daca46ac7c401a08) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3a9863124ae604daad337daac9529031') in 0.016924 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_roots_small.prefab
+  artifactKey: Guid(ee97057eb3692ff4f83a7c6f513895d0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_roots_small.prefab using Guid(ee97057eb3692ff4f83a7c6f513895d0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1f3ed9667961fe3d376ccad65733098e') in 0.046269 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_forest_heather_01.prefab
+  artifactKey: Guid(acbb0ea6defc38b4c9a1a6d71f3b27ad) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_forest_heather_01.prefab using Guid(acbb0ea6defc38b4c9a1a6d71f3b27ad) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cdce7084b83b041af863a9b54bc0da93') in 0.049029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Materials/M_Unity_Grass_ground_foliage_04.mat
+  artifactKey: Guid(301a6df8ec7fc6840baeb20c666f85b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Materials/M_Unity_Grass_ground_foliage_04.mat using Guid(301a6df8ec7fc6840baeb20c666f85b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fc4a55a3f6c1ae033bd87906266b3f95') in 0.125050 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static
+  artifactKey: Guid(f8d62cc499b0ae642be0ae77145df635) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static using Guid(f8d62cc499b0ae642be0ae77145df635) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dcfdb8cf9c7a962dbc23744e144dcf97') in 0.015742 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_ground_foliage_02_2.prefab
+  artifactKey: Guid(ca9a0fb2f837fdb4d87ce335f4ef0986) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_ground_foliage_02_2.prefab using Guid(ca9a0fb2f837fdb4d87ce335f4ef0986) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '43f1196526a141808a2e7b43cc57004b') in 0.043599 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover_CutOut.shader
+  artifactKey: Guid(a2e815373b20e594e92c7acd0ecc5b63) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover_CutOut.shader using Guid(a2e815373b20e594e92c7acd0ecc5b63) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '808dfd2ed33a998242e705e3ffe59143') in 0.030988 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Tree Foliage.shader
+  artifactKey: Guid(6f53b8cb323b0614c82237d5b033019f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Tree Foliage.shader using Guid(6f53b8cb323b0614c82237d5b033019f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd2b5503364f6cea84115311323914b0d') in 0.023578 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Scripts/ExtendedFlycam.cs
+  artifactKey: Guid(27338251c0cc9334091a038668504ac2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Scripts/ExtendedFlycam.cs using Guid(27338251c0cc9334091a038668504ac2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '326d81304f1974bf114a26c327b12f11') in 0.020468 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/HD Settings/Diffusion Profiles Settings
+  artifactKey: Guid(da4eba1edb916bd488e932f081abef57) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/HD Settings/Diffusion Profiles Settings using Guid(da4eba1edb916bd488e932f081abef57) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '657bf945f108fec20ccad2fdeb211854') in 0.016499 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Terrain/(TTFE) Terrain Snow.mat
+  artifactKey: Guid(28c710ae5a5761446af9a0d5c9a079e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Terrain/(TTFE) Terrain Snow.mat using Guid(28c710ae5a5761446af9a0d5c9a079e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3d8f0b95a41a5bc147debf5659f58396') in 0.078391 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat
+  artifactKey: Guid(883ad5f860a992c44ad3de5f4d0fe2d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat using Guid(883ad5f860a992c44ad3de5f4d0fe2d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c7239dabf6afccd3603dba42051f9687') in 0.105461 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_grass_bush_01.prefab
+  artifactKey: Guid(809208046f28bca4086ea500244697ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_grass_bush_01.prefab using Guid(809208046f28bca4086ea500244697ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '77b65f97e42526e0339e12fd76c08bd1') in 0.045034 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_forest_heather_simple_01.prefab
+  artifactKey: Guid(efec0a39f8db55f4d9ff6524c6e4828a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_forest_heather_simple_01.prefab using Guid(efec0a39f8db55f4d9ff6524c6e4828a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ca0bc610985309cdcf757689200d0dbc') in 0.038536 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Prefabs Snow/Prefab_Snow_trunk_02.prefab
+  artifactKey: Guid(c6883d790d73dad49837c640235be46e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Prefabs Snow/Prefab_Snow_trunk_02.prefab using Guid(c6883d790d73dad49837c640235be46e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '789dcc3d6e6c01884f0c297131ea02f4') in 0.040463 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_03.prefab
+  artifactKey: Guid(2c386396ecf14504ea5faf696308db3d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_03.prefab using Guid(2c386396ecf14504ea5faf696308db3d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c9873d57d7bb565e10f3d1743bec9068') in 0.060327 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Helpers/MaterialCube.prefab
+  artifactKey: Guid(11938fd1c3f38eb45aac86da9a4e9729) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Helpers/MaterialCube.prefab using Guid(11938fd1c3f38eb45aac86da9a4e9729) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2f790b0dfae59d53a7cff4202bfeb6b1') in 0.060193 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/TerrainSampleAssets/Materials/Bush.asset
+  artifactKey: Guid(a48ad8aadb27f004390383c89862e6f3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TerrainSampleAssets/Materials/Bush.asset using Guid(a48ad8aadb27f004390383c89862e6f3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a34f7d88133c19fbb0e2e7ea66cd501c') in 0.091812 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/MasterMixer.mixer
+  artifactKey: Guid(6d915f3b1a8bc3d4ea16dca7a9836c9f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/MasterMixer.mixer using Guid(6d915f3b1a8bc3d4ea16dca7a9836c9f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Refreshing native plugins compatible for Editor in 37.91 ms, found 12 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+ -> (artifact id: '2439f55ce842d1dd5aa805d1fce82782') in 0.125187 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Terrains
+  artifactKey: Guid(088b2f1ccaf1e4f4c92e46f485b04c47) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Terrains using Guid(088b2f1ccaf1e4f4c92e46f485b04c47) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5b70ee9ab02f1f5ce8f94627f396c208') in 0.020497 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall/GrassShort_B_Fall.prefab
+  artifactKey: Guid(2a848622621cfee49802d284e2216eb1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall/GrassShort_B_Fall.prefab using Guid(2a848622621cfee49802d284e2216eb1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6ada4ac35a87890b20fd34ecb47ea260') in 0.043131 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/TerrainDemoScene_HDRP/Settings/DiffusionProfiles/Details.asset
+  artifactKey: Guid(8ae28b9a19c36784280380e4799243cb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TerrainDemoScene_HDRP/Settings/DiffusionProfiles/Details.asset using Guid(8ae28b9a19c36784280380e4799243cb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6d8f7334c2f649579334e8e73fe43b71') in 0.054982 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000727 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Terrain/(TTFE) Terrain Snow BasePass.shader
+  artifactKey: Guid(5dd8462d43339964481ee26e1fd84a44) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Terrain/(TTFE) Terrain Snow BasePass.shader using Guid(5dd8462d43339964481ee26e1fd84a44) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ae0511d7d131e98900193a374b418bec') in 0.023287 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_root_04.prefab
+  artifactKey: Guid(e84e689f4af3ca443a5cd8ae1b560d9b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_root_04.prefab using Guid(e84e689f4af3ca443a5cd8ae1b560d9b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dee85b125429979b4cfb4a464f32f678') in 0.043689 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Forest_Moss.mat
+  artifactKey: Guid(7f093fb253601df4497f0b2e8e7268d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Forest_Moss.mat using Guid(7f093fb253601df4497f0b2e8e7268d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4724d08d05c6e28d87fd3cc4a739d1b9') in 0.122409 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/SimpleMovement.cs
+  artifactKey: Guid(345d7d3068e56ea42bb5bb858f43ba1f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/SimpleMovement.cs using Guid(345d7d3068e56ea42bb5bb858f43ba1f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f958c58eaa7a0e87ef2fc13cb05eb24b') in 0.018691 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Leaves_03.mat
+  artifactKey: Guid(2803d6ef9b1dc1246906b869002f8e27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Leaves_03.mat using Guid(2803d6ef9b1dc1246906b869002f8e27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '473238db15098c036e5e936434b58e72') in 0.123459 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Mesh.shader
+  artifactKey: Guid(f4785d4487b747542b5955296c3cea7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Mesh.shader using Guid(f4785d4487b747542b5955296c3cea7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'da0efebdfc1ee07d2aab427761509ab4') in 0.025719 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_GrassSingle/Grass_Single_C2.prefab
+  artifactKey: Guid(0dff4a44798143a4dbe882e5ca27a170) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_GrassSingle/Grass_Single_C2.prefab using Guid(0dff4a44798143a4dbe882e5ca27a170) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '19ad4ee10ef58902271bc3cd4eff1b07') in 0.057669 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Meshes/Meshes_Vegetation
+  artifactKey: Guid(e55faf78bdcae404196d85771f6bf279) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Meshes/Meshes_Vegetation using Guid(e55faf78bdcae404196d85771f6bf279) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'de298170584016bfcbfbd9867b1f21cd') in 0.017957 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_02.prefab
+  artifactKey: Guid(1ce2545741b8b484888ff1d29ac36d7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_02.prefab using Guid(1ce2545741b8b484888ff1d29ac36d7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'db4baa9164563b78879f58e78e7b3b41') in 0.032682 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Grass_03.mat
+  artifactKey: Guid(057451d2456630849bd4b259e75f2185) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Grass_03.mat using Guid(057451d2456630849bd4b259e75f2185) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cad70d2557012949f6ed113206463e54') in 0.131037 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Skybox/SkyMapRHEWP_Summer A.mat
+  artifactKey: Guid(ca39abecbdf60ac49a4d33bc85798606) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Skybox/SkyMapRHEWP_Summer A.mat using Guid(ca39abecbdf60ac49a4d33bc85798606) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6d3bcb1fe8a5ad18472cc67e79dfe61d') in 0.036750 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static/RocksTTFEL_C.prefab
+  artifactKey: Guid(2314966121d0f794d8c6b95b205b6f02) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static/RocksTTFEL_C.prefab using Guid(2314966121d0f794d8c6b95b205b6f02) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '43d0e720f07ade238e757cce16c4d202') in 0.035716 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_clover_01.prefab
+  artifactKey: Guid(6f55446d10e4ac445bcf54fff2e165c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_clover_01.prefab using Guid(6f55446d10e4ac445bcf54fff2e165c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5b7ac63417a8e411f3b4ec20a0e9c3b2') in 0.043161 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_nettle_01_1.prefab
+  artifactKey: Guid(a7dd553ccbabc434996f83b7d543def0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_nettle_01_1.prefab using Guid(a7dd553ccbabc434996f83b7d543def0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ccfafbd54d5ea4a947466450fd5a2afd') in 0.045794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Grass_02.mat
+  artifactKey: Guid(4983ae17de4a30845884e0440b1a500f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Grass_02.mat using Guid(4983ae17de4a30845884e0440b1a500f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9cbe5197c9b46c0db597b4992a7495b2') in 0.074350 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/TerrainDemoScene_HDRP/Settings/DiffusionProfiles/Red_Bush_A_DiffusionProfile.asset
+  artifactKey: Guid(ced0ded1002e03b4cbe34e685c502de4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TerrainDemoScene_HDRP/Settings/DiffusionProfiles/Red_Bush_A_DiffusionProfile.asset using Guid(ced0ded1002e03b4cbe34e685c502de4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cd02309369c2389a46942592acb37784') in 0.040347 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_forest_heather_01.prefab
+  artifactKey: Guid(d2a1db6ab6d37ac4886c15220cf1c508) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_forest_heather_01.prefab using Guid(d2a1db6ab6d37ac4886c15220cf1c508) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c7348803a977a870441f0c9f8e5ebcd7') in 0.030770 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static/CliffRockTTFEL_A Grass.prefab
+  artifactKey: Guid(a9bce73b6ed66b64caa051b7bc93e634) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static/CliffRockTTFEL_A Grass.prefab using Guid(a9bce73b6ed66b64caa051b7bc93e634) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '565241114cdaf0a42d3f65d00f181e69') in 0.024485 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 36
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/TerrainSampleAssets/Materials/GrassDry.asset
+  artifactKey: Guid(0cf15945abe04ad4589592fd3bfcd17b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TerrainSampleAssets/Materials/GrassDry.asset using Guid(0cf15945abe04ad4589592fd3bfcd17b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '48faf046c21251269f51ff69d1db574b') in 0.032506 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Resources/Diffusion Profiles (HDRP)/DiffusionProfile_Leaves.asset
+  artifactKey: Guid(0df7a09a7fea3ae4eb77543501d5ef91) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Resources/Diffusion Profiles (HDRP)/DiffusionProfile_Leaves.asset using Guid(0df7a09a7fea3ae4eb77543501d5ef91) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8cbe717038cbb632cb767c3abd873b7a') in 0.026051 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Forest_01.mat
+  artifactKey: Guid(d406dfd93044bfc4ea02b003d9ee3492) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Forest_01.mat using Guid(d406dfd93044bfc4ea02b003d9ee3492) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8703a5a768cac7b816bd5d6b92e13f39') in 0.118496 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Terrain/Terrain_0_0_de89d689-0627-4dc1-9707-dd62f1b7dd02.asset
+  artifactKey: Guid(3260ca534dc6e104696c77baaa5434b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Terrain/Terrain_0_0_de89d689-0627-4dc1-9707-dd62f1b7dd02.asset using Guid(3260ca534dc6e104696c77baaa5434b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+The tree Palm_1_1 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.Search.AssetIndexer:IndexProperties (int&,string&,bool&)
+UnityEditor.Search.AssetIndexer:IndexDocument (string,bool)
+UnityEditor.Search.SearchIndexEntryImporter:OnImportAsset (UnityEditor.AssetImporters.AssetImportContext)
+UnityEditor.AssetImporters.ScriptedImporter:GenerateAssetData (UnityEditor.AssetImporters.AssetImportContext)
+
+[C:\build\output\unity\unity\Modules\Terrain\Public\TreeDatabase.cpp line 354]
+
+The tree Palm_2_3 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.Search.AssetIndexer:IndexProperties (int&,string&,bool&)
+UnityEditor.Search.AssetIndexer:IndexDocument (string,bool)
+UnityEditor.Search.SearchIndexEntryImporter:OnImportAsset (UnityEditor.AssetImporters.AssetImportContext)
+UnityEditor.AssetImporters.ScriptedImporter:GenerateAssetData (UnityEditor.AssetImporters.AssetImportContext)
+
+[C:\build\output\unity\unity\Modules\Terrain\Public\TreeDatabase.cpp line 354]
+
+The tree Palm_2_1 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.Search.AssetIndexer:IndexProperties (int&,string&,bool&)
+UnityEditor.Search.AssetIndexer:IndexDocument (string,bool)
+UnityEditor.Search.SearchIndexEntryImporter:OnImportAsset (UnityEditor.AssetImporters.AssetImportContext)
+UnityEditor.AssetImporters.ScriptedImporter:GenerateAssetData (UnityEditor.AssetImporters.AssetImportContext)
+
+[C:\build\output\unity\unity\Modules\Terrain\Public\TreeDatabase.cpp line 354]
+
+The tree Palm_1_4 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.Search.AssetIndexer:IndexProperties (int&,string&,bool&)
+UnityEditor.Search.AssetIndexer:IndexDocument (string,bool)
+UnityEditor.Search.SearchIndexEntryImporter:OnImportAsset (UnityEditor.AssetImporters.AssetImportContext)
+UnityEditor.AssetImporters.ScriptedImporter:GenerateAssetData (UnityEditor.AssetImporters.AssetImportContext)
+
+[C:\build\output\unity\unity\Modules\Terrain\Public\TreeDatabase.cpp line 354]
+
+The tree prefab_unity_grass_fern_01_1 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.Search.AssetIndexer:IndexProperties (int&,string&,bool&)
+UnityEditor.Search.AssetIndexer:IndexDocument (string,bool)
+UnityEditor.Search.SearchIndexEntryImporter:OnImportAsset (UnityEditor.AssetImporters.AssetImportContext)
+UnityEditor.AssetImporters.ScriptedImporter:GenerateAssetData (UnityEditor.AssetImporters.AssetImportContext)
+
+[C:\build\output\unity\unity\Modules\Terrain\Public\TreeDatabase.cpp line 354]
+
+ -> (artifact id: '1f3aaa78934e3bfb90dda0dcf820a3c0') in 0.286822 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 184
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Triplanar_Cover_Specular.shader
+  artifactKey: Guid(012a143e1d0d5af4681c46cca98baf66) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Triplanar_Cover_Specular.shader using Guid(012a143e1d0d5af4681c46cca98baf66) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3aa4beb38ee54e907413272aab4064c7') in 0.029368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Sand_02.mat
+  artifactKey: Guid(5e4f4540239b9c641a83fdd9ce54289e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Sand_02.mat using Guid(5e4f4540239b9c641a83fdd9ce54289e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a47c4e4331c106e7f5f9f32d553a1443') in 0.123391 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_clover_01_flowery.prefab
+  artifactKey: Guid(0bb8f7e0e6b4a914b854bcf0daba4aa2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_clover_01_flowery.prefab using Guid(0bb8f7e0e6b4a914b854bcf0daba4aa2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '692b605e46a914944d5f67a8f70e2d5a') in 0.052035 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Trees/VTSpecies_Shrub/ShrubTree(NR)_D.prefab
+  artifactKey: Guid(45041291efc670640a7ea77a57e53254) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Trees/VTSpecies_Shrub/ShrubTree(NR)_D.prefab using Guid(45041291efc670640a7ea77a57e53254) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '715e7a604944c2ef2aaf1860f39c9357') in 0.042560 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 52
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_clover_01.prefab
+  artifactKey: Guid(3ae9c15791082f74f95e77a9f34e4fbd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_clover_01.prefab using Guid(3ae9c15791082f74f95e77a9f34e4fbd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '165548a9c53e3d0df45af3067cdd478b') in 0.028966 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Resources/(TTFE) GLOBAL CONTROLLER/Scripts/Editor
+  artifactKey: Guid(776a3e34cb25bee4c87022989e2b17ce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Resources/(TTFE) GLOBAL CONTROLLER/Scripts/Editor using Guid(776a3e34cb25bee4c87022989e2b17ce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fce4cafd831767b76ed92c8ad4926aeb') in 0.018030 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Particle FX/Leaf_Orange.mat
+  artifactKey: Guid(b2e3619cfd4a8534f912c0324fc17028) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Particle FX/Leaf_Orange.mat using Guid(b2e3619cfd4a8534f912c0324fc17028) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cd22b4c5273ed8ee8f100b2d039c6551') in 1.532155 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Materials/M_Unity_Grass_ground_foliage_02.mat
+  artifactKey: Guid(4e74cb955ee1ea541a369de76c533180) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Materials/M_Unity_Grass_ground_foliage_02.mat using Guid(4e74cb955ee1ea541a369de76c533180) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ed3105448049675d8990b2997f272ec4') in 0.080760 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_ground_foliage_04_0.prefab
+  artifactKey: Guid(ce1acd70f28a9a449806805e271f3d5b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_ground_foliage_04_0.prefab using Guid(ce1acd70f28a9a449806805e271f3d5b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f4757f8510b1e7ee4912385213d62f90') in 0.042428 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Scripts/OlfactoryManager.cs
+  artifactKey: Guid(0ad215117922c2248a8d1fa9fb08e204) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/OlfactoryManager.cs using Guid(0ad215117922c2248a8d1fa9fb08e204) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2b72be067b4db129f1c0db5b24e55f3d') in 0.021328 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Meshes/Meshes_Vegetation/MV_Static
+  artifactKey: Guid(da4e4ed47e4e49542ba3ad4fb2267674) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Meshes/Meshes_Vegetation/MV_Static using Guid(da4e4ed47e4e49542ba3ad4fb2267674) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '14c61b17580f01ffd89e02359efc2a29') in 0.017881 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Scene Settings
+  artifactKey: Guid(499f2585e8b5ba94a9cda2be79d914de) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Scene Settings using Guid(499f2585e8b5ba94a9cda2be79d914de) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b22ec880d8989927fb6898211ee726b3') in 0.020367 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_ground_foliage_02_0.prefab
+  artifactKey: Guid(88d40d1d0a74ae94396191cf015e7eb3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_ground_foliage_02_0.prefab using Guid(88d40d1d0a74ae94396191cf015e7eb3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9bcc44e806312ee491ec51ed5290ac77') in 0.029955 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_Grass/GrassBig_A.prefab
+  artifactKey: Guid(abb51bb2cf0ed594d91fa1394d79d707) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_Grass/GrassBig_A.prefab using Guid(abb51bb2cf0ed594d91fa1394d79d707) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9df0731a5e7357b66ab6e82a2feab316') in 0.036103 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core
+  artifactKey: Guid(ca3636caf1e5f6a44ab85c4b0165a84e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core using Guid(ca3636caf1e5f6a44ab85c4b0165a84e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '292e46a982846c4ff110ad258455725d') in 0.015404 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Grass Foliage.shader
+  artifactKey: Guid(9836eda9c73d0e7419630eb145f848ab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Grass Foliage.shader using Guid(9836eda9c73d0e7419630eb145f848ab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'faaef77a252690f309c068e0f680e081') in 0.029215 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000090 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_ground_foliage_04.mat
+  artifactKey: Guid(d090b10d1de2f4d4baa2a049871be59c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_ground_foliage_04.mat using Guid(d090b10d1de2f4d4baa2a049871be59c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4dd9dbb73692342fb3fb640e6386a88b') in 0.062275 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/OverveiwePostProcess URP.asset
+  artifactKey: Guid(67458bfb05747994eb6c87aaf62f68f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/OverveiwePostProcess URP.asset using Guid(67458bfb05747994eb6c87aaf62f68f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3079ed3f7fbdbe0340537de837ac83b6') in 0.036894 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Materials/M_Unity_Grass_nettle_01.mat
+  artifactKey: Guid(0c987c97204cbf545a3189a55669035b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Materials/M_Unity_Grass_nettle_01.mat using Guid(0c987c97204cbf545a3189a55669035b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '096cc1c98c21c27604816bba88e4709c') in 0.047512 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_clover_01_flowery.prefab
+  artifactKey: Guid(6cb313b46e2108a47b6d5e0e6bae38ec) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_clover_01_flowery.prefab using Guid(6cb313b46e2108a47b6d5e0e6bae38ec) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1198ecc8418bb76edb820a6d211748b9') in 0.028785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Triplanar_Cover.shader
+  artifactKey: Guid(f79e2f3e76396684abac4061519155d4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Triplanar_Cover.shader using Guid(f79e2f3e76396684abac4061519155d4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '330d70b0d00f554df0a3fcc59c8eb557') in 0.026521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall/GrassShort_D_Fall.prefab
+  artifactKey: Guid(914c0aea023c53f46b75a47186494ae6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall/GrassShort_D_Fall.prefab using Guid(914c0aea023c53f46b75a47186494ae6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7cb834257668238d6f8ee6545b3b103b') in 0.038067 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)
+  artifactKey: Guid(8bb1bf11b9d76934193435b80f7e2655) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL) using Guid(8bb1bf11b9d76934193435b80f7e2655) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '86945658aa07f6288ae130880a60791e') in 0.017821 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_05.prefab
+  artifactKey: Guid(062e1b74396db504695dfe10abf40595) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_05.prefab using Guid(062e1b74396db504695dfe10abf40595) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '688c31aa52ed9685e3b06de101047e0a') in 0.028075 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Static/RocksTTFEL.mat
+  artifactKey: Guid(704fbb0e1e93ce54a8749a348b156bed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Static/RocksTTFEL.mat using Guid(704fbb0e1e93ce54a8749a348b156bed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c55893e20c24f7659b32bcf5ad408aea') in 0.039587 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_ground_foliage_01_flowery.prefab
+  artifactKey: Guid(ab70fed5e863c1b489650d34d5a8c977) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_ground_foliage_01_flowery.prefab using Guid(ab70fed5e863c1b489650d34d5a8c977) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cc9e4a912232426e4f48df78ce12021b') in 0.050122 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_forest_heather_01.prefab
+  artifactKey: Guid(1a32f82ec30468b498fc50b1e3e58498) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_forest_heather_01.prefab using Guid(1a32f82ec30468b498fc50b1e3e58498) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a5d5719431541d284c71e92d857cca78') in 0.056784 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_GrassSingle Fall/Grass_Single_B_Fall.prefab
+  artifactKey: Guid(f9996b4795009b44a924293dcabdab30) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_GrassSingle Fall/Grass_Single_B_Fall.prefab using Guid(f9996b4795009b44a924293dcabdab30) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '97f589de94659689ebb317137ce584cf') in 0.047096 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover_Specular.shader
+  artifactKey: Guid(162df11fc7ba9f845941731f2670ff02) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover_Specular.shader using Guid(162df11fc7ba9f845941731f2670ff02) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'de87c19f5847eb7e2d0896c39864b274') in 0.030982 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Particle FX/GodRays_Glow.mat
+  artifactKey: Guid(1c777695a130aac418f3adfe5a6df714) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Particle FX/GodRays_Glow.mat using Guid(1c777695a130aac418f3adfe5a6df714) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '037226c347dd6c97e71e4cbd016eecb9') in 0.061301 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Post Processing/PP_(HDRP)/TTFEL-DawnFog_SettingsProfile.asset
+  artifactKey: Guid(bc301382e9b04a746992c20f8f919083) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Post Processing/PP_(HDRP)/TTFEL-DawnFog_SettingsProfile.asset using Guid(bc301382e9b04a746992c20f8f919083) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '97ee07daa5a11f059acd8718ca01f995') in 0.072804 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall/GrassShort_A_Fall.prefab
+  artifactKey: Guid(8d7e5bce2f57dfc4ba95610779453301) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall/GrassShort_A_Fall.prefab using Guid(8d7e5bce2f57dfc4ba95610779453301) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '68d2866822963d854a595649c8c1175a') in 0.034951 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000112 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_ground_foliage_02_1.prefab
+  artifactKey: Guid(a5ccbc162888ca546b181cc382899bf5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_ground_foliage_02_1.prefab using Guid(a5ccbc162888ca546b181cc382899bf5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '74b346873a5a62e073b464ab684119db') in 0.146974 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs_Snow/prefab_Snow_crooked_root_01.prefab
+  artifactKey: Guid(04f58143611b4d04aae74b4c02fb3d06) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs_Snow/prefab_Snow_crooked_root_01.prefab using Guid(04f58143611b4d04aae74b4c02fb3d06) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b8c1877e1ff6acfd46ecb060402c4d88') in 0.049638 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_ground_foliage_03.prefab
+  artifactKey: Guid(5889f48d5787da84ba5469f2f2847bfe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_ground_foliage_03.prefab using Guid(5889f48d5787da84ba5469f2f2847bfe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '72e3a1d03a6d9fbdb30cc4f2e472eab3') in 0.045911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs_Snow
+  artifactKey: Guid(6eb4a58fb57d9f54aa06edf3bd8db50a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs_Snow using Guid(6eb4a58fb57d9f54aa06edf3bd8db50a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0e56dc26da6e4c0988ba692db360ac76') in 0.019652 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static/CliffRockTTFEL_B Grass.prefab
+  artifactKey: Guid(d8da1b6935a8e9547a0d2ac8d27d8ec0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Static/CliffRockTTFEL_B Grass.prefab using Guid(d8da1b6935a8e9547a0d2ac8d27d8ec0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bb2733522d3189ea08b9532b92c1ea04') in 0.042085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 36
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/seaShell/seaShell Variant.prefab
+  artifactKey: Guid(2d141a6a383b7e448a7ccf492f3881f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/seaShell/seaShell Variant.prefab using Guid(2d141a6a383b7e448a7ccf492f3881f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c2d4428090ec22f19d9da4b44d78d3ef') in 0.044463 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_Flowers/FlowersWTTFE-E.prefab
+  artifactKey: Guid(c429c64a8bd92474bbef70eb646a9739) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_Flowers/FlowersWTTFE-E.prefab using Guid(c429c64a8bd92474bbef70eb646a9739) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6193bae0c21fc38d433d47948cf5192a') in 0.128352 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_clover_01.prefab
+  artifactKey: Guid(f99e10818a498b341b8f13782c4b3964) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_clover_01.prefab using Guid(f99e10818a498b341b8f13782c4b3964) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1e5483ae2f79d7b860924d67d3791745') in 0.045269 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Skybox/TTFE Sky B 2.mat
+  artifactKey: Guid(fc2c019752615d04f8c427dc76af6571) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Skybox/TTFE Sky B 2.mat using Guid(fc2c019752615d04f8c427dc76af6571) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f9a72a47cbf21e1a9ca27548a3811510') in 0.073189 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials Snow/M_Snow_clover_01.mat
+  artifactKey: Guid(358e02caaeffcc54aa26506140bccb90) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials Snow/M_Snow_clover_01.mat using Guid(358e02caaeffcc54aa26506140bccb90) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '855afd3365f5677a8511bb725d0a7f1e') in 0.090821 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Overview Scene.unity
+  artifactKey: Guid(5739434b1af7f684781d5943b2b70f41) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Overview Scene.unity using Guid(5739434b1af7f684781d5943b2b70f41) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '21b51640256d6200cec2f908c3b6e523') in 0.018275 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials
+  artifactKey: Guid(5461bf15b74b3344ab13684a289cf0df) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials using Guid(5461bf15b74b3344ab13684a289cf0df) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0c41190cf007c3523e06cfbb325da29a') in 0.020249 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo
+  artifactKey: Guid(735f92852794d154580c6d95c5b64bea) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo using Guid(735f92852794d154580c6d95c5b64bea) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd353d01e497c1a34b25791c16d7c0ad4') in 0.022039 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Pebbles_01_A_SmT_Ground_Pebbles_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  artifactKey: Guid(084829096e1f0f54e81c34446c8e38de) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Pebbles_01_A_SmT_Ground_Pebbles_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(084829096e1f0f54e81c34446c8e38de) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fd0b012feb688d044f4522c260438670') in 0.110126 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Resources
+  artifactKey: Guid(3836e4d5645c9674d80a12d2f8f1c68b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Resources using Guid(3836e4d5645c9674d80a12d2f8f1c68b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2aa9d0e7af67a0ab729671bd87e099f1') in 0.021845 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Vegetation/MV_Plants/Grass Thick_Fall.mat
+  artifactKey: Guid(fcd3a0a792eace54e9a5deeb21c3400f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Vegetation/MV_Plants/Grass Thick_Fall.mat using Guid(fcd3a0a792eace54e9a5deeb21c3400f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8553a32cd9874ae3df912973234de93a') in 0.191412 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Terrain/(TTFE) Terrain Snow.shader
+  artifactKey: Guid(0f55ffeb4fde7b2419f649d730c22898) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Terrain/(TTFE) Terrain Snow.shader using Guid(0f55ffeb4fde7b2419f649d730c22898) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '986154d797dc87a98b732dff493c82a8') in 0.033452 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Tree Bark.shader
+  artifactKey: Guid(afdb1e1f380186d438f4f923b2100101) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Tree Bark.shader using Guid(afdb1e1f380186d438f4f923b2100101) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a98f41fa2252d3f0bb4b6c9e4514fddc') in 0.030077 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_grass_bush_simple_04.prefab
+  artifactKey: Guid(4237bad11094d7e478ef825d2e14085c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_grass_bush_simple_04.prefab using Guid(4237bad11094d7e478ef825d2e14085c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1f48ec10250096fec127c6a069ea7ac9') in 0.042802 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs_Snow/prefab_Snow_crooked_root_03.prefab
+  artifactKey: Guid(3a4eb0ab27a76574eb68c7b7e83814e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs_Snow/prefab_Snow_crooked_root_03.prefab using Guid(3a4eb0ab27a76574eb68c7b7e83814e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '210e4cc47a018dce6a79fbb614df0041') in 0.044096 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat
+  artifactKey: Guid(846647079a01dac4ba5d4a20d994921c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat using Guid(846647079a01dac4ba5d4a20d994921c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3669bd637c41eb34805392bcbe7a10b9') in 0.066256 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Sand_02_A_SmT_Ground_Sand_02_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  artifactKey: Guid(c1ac7b2c2d847ae4a887e8ea8d54a8a3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Sand_02_A_SmT_Ground_Sand_02_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(c1ac7b2c2d847ae4a887e8ea8d54a8a3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c40f7167351d302a9f923c9945178b0a') in 0.052477 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_grass_bush_01.prefab
+  artifactKey: Guid(95cc2ac5f6f9eb54e91e5a4e6c45f96d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_grass_bush_01.prefab using Guid(95cc2ac5f6f9eb54e91e5a4e6c45f96d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '937e8d130de4cdf50459406b45116657') in 0.039100 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Skybox/TTFE Sky A.mat
+  artifactKey: Guid(0f62be39b3eeaa840bb0169b77b88469) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Skybox/TTFE Sky A.mat using Guid(0f62be39b3eeaa840bb0169b77b88469) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1b76cefa4c6c833e77fec79fe151b042') in 0.062048 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_TTFE (Defaults)/TTFE_Leaves.mat
+  artifactKey: Guid(f23230ef521a56b42b71aed1fdf13a31) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_TTFE (Defaults)/TTFE_Leaves.mat using Guid(f23230ef521a56b42b71aed1fdf13a31) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '008545f847169f13f79a4e95528d5a88') in 0.060179 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_clover_01_flowery.prefab
+  artifactKey: Guid(de713cfe85587314498c3e3268c7845a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_clover_01_flowery.prefab using Guid(de713cfe85587314498c3e3268c7845a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '48872e567bfb9b68b860cae2be3d5a98') in 0.035541 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Meshes/Meshes_Vegetation/MV_Ground Plants
+  artifactKey: Guid(e94f25a89e89cf44292b02a092282e36) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Meshes/Meshes_Vegetation/MV_Ground Plants using Guid(e94f25a89e89cf44292b02a092282e36) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '16bdd1f6cbc179e012be3394b288035f') in 0.019310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall
+  artifactKey: Guid(b6987c54946979149b25a750c7eafdad) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall using Guid(b6987c54946979149b25a750c7eafdad) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e2ee2ea6a6d8ee0c3f4c0a5cb317a000') in 0.019321 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_02_0.prefab
+  artifactKey: Guid(a105041b33d4c3849a84c258fd29a56e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_02_0.prefab using Guid(a105041b33d4c3849a84c258fd29a56e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9ce09125ccb4bed0c76efaabb39749f3') in 0.036747 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs_Snow/prefab_Snow_crooked_root_02.prefab
+  artifactKey: Guid(56f8f389649d87e48ac0493c41820efd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs_Snow/prefab_Snow_crooked_root_02.prefab using Guid(56f8f389649d87e48ac0493c41820efd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f4ff9c574f72c6b236980f3ed003076e') in 0.043054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Grass_01.mat
+  artifactKey: Guid(dc4ca68f31ed9844db92a2896418c97e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Grass_01.mat using Guid(dc4ca68f31ed9844db92a2896418c97e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bf39049358a7ae1d658e6f09b4cc9afe') in 0.072034 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Textures/Textures_Static
+  artifactKey: Guid(b41beb6a2fb4fa04ab2ad9f665a0caf2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Textures/Textures_Static using Guid(b41beb6a2fb4fa04ab2ad9f665a0caf2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c1245a1a7b9f8c836107f4909726d007') in 0.017794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Vegetation/MV_Plants/Grass Thick.mat
+  artifactKey: Guid(767860a1d10519f469184dea5c10bd64) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Vegetation/MV_Plants/Grass Thick.mat using Guid(767860a1d10519f469184dea5c10bd64) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1753a2b79b9f37a0dbeebd604e425990') in 0.135084 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Toby Fredson
+  artifactKey: Guid(f4f05adb55fd18849a2a129c8ae85b78) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson using Guid(f4f05adb55fd18849a2a129c8ae85b78) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9f6cfa3dc7bfb0a55980fe72cddede9f') in 0.023801 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_root_03.prefab
+  artifactKey: Guid(0b4a274bdbcf97140b7b74651da323f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_root_03.prefab using Guid(0b4a274bdbcf97140b7b74651da323f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8adfe9f17d29c2bcc7fecbcfbfe68f90') in 0.033238 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Demo Terrain.asset
+  artifactKey: Guid(920df2148c51e814fb992100b950d19a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Demo Terrain.asset using Guid(920df2148c51e814fb992100b950d19a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd43581fe8ee1c5e5703bdfce73233a4c') in 0.060667 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 64
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/TerrainDemoScene_HDRP/Terrain/Materials/TerrainLit.mat
+  artifactKey: Guid(0b6d251ba3ab07a45beb3c4a6ac4b68b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TerrainDemoScene_HDRP/Terrain/Materials/TerrainLit.mat using Guid(0b6d251ba3ab07a45beb3c4a6ac4b68b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '78a22f67148fe3164fbb0594d93005c3') in 0.037550 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_01_flowery.prefab
+  artifactKey: Guid(80c5c2135cede4e4ea2a939d97a7b288) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_01_flowery.prefab using Guid(80c5c2135cede4e4ea2a939d97a7b288) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '79ab4c8923f89ecf12731714a85a4d1b') in 0.026661 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_04_1.prefab
+  artifactKey: Guid(c0e4915921042894d9b37ff887b75761) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_ground_foliage_04_1.prefab using Guid(c0e4915921042894d9b37ff887b75761) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'afb992f798f3ea3c9d8d87f888c17971') in 0.031830 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_Flowers/FlowersWTTFE-C.prefab
+  artifactKey: Guid(d69ebdcb1a1848e4c9790b9d8b9d5259) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_Flowers/FlowersWTTFE-C.prefab using Guid(d69ebdcb1a1848e4c9790b9d8b9d5259) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '15f8ee4a3a7ca7412c40c882602aaf5c') in 0.047915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Vegetation/MV_Tress/Shrub_Leaves_Bush.mat
+  artifactKey: Guid(d415fccedae7af845926471d4ffd519a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Vegetation/MV_Tress/Shrub_Leaves_Bush.mat using Guid(d415fccedae7af845926471d4ffd519a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0bbb474ecef912e2f0ab49c69b5e2068') in 0.995464 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Grass_01_4_A_SmT_Ground_Grass_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  artifactKey: Guid(618af7065c8b7ff46a68ba35319d8507) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/_TerrainAutoUpgrade/layer_T_Ground_Grass_01_4_A_SmT_Ground_Grass_01_N(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(618af7065c8b7ff46a68ba35319d8507) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '49a975334ca7f6cb91abb97a09839d9a') in 0.066862 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Textures/Textures_Billboards
+  artifactKey: Guid(6a655045389ed8b448de5e9ceff450c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Textures/Textures_Billboards using Guid(6a655045389ed8b448de5e9ceff450c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '48ddd3805976563587cf5c9981ce4e86') in 0.022256 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_Grass/GrassShort_A.prefab
+  artifactKey: Guid(c4c39c18ccae52e4faebc946a7928d71) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation/Vegetation_Plants/VP_Grass/GrassShort_A.prefab using Guid(c4c39c18ccae52e4faebc946a7928d71) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7afe0c5a7fac40a26e69ed7c2caaf2ac') in 0.048012 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Terrains/Trerrain Layers/TTFE-LightScene_Demo_Layers/TSLightDemo Layer_1.terrainlayer
+  artifactKey: Guid(69c22749538c9fd4792187ef9fdfbcf9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Terrains/Trerrain Layers/TTFE-LightScene_Demo_Layers/TSLightDemo Layer_1.terrainlayer using Guid(69c22749538c9fd4792187ef9fdfbcf9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bc862b798e8dbbd57ed8c7b0312786c3') in 0.143361 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_grass_bush_simple_05.prefab
+  artifactKey: Guid(689b5de1db86f4c4e845ffbf1b4a29c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_grass_bush_simple_05.prefab using Guid(689b5de1db86f4c4e845ffbf1b4a29c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9a342a7c59c71ddac2ab58bc87a7fb9a') in 0.034494 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Post Processing/PP_(Built-in)/The Toby Foliage Engine_PP.asset
+  artifactKey: Guid(069b2b2a0d94586448b5a830d50e9eff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Post Processing/PP_(Built-in)/The Toby Foliage Engine_PP.asset using Guid(069b2b2a0d94586448b5a830d50e9eff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9d96b084394c7e2e43367f7bc852c80d') in 0.049952 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures
+  artifactKey: Guid(aeaa218b040f21f4e8e7d6cd9f88b1b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures using Guid(aeaa218b040f21f4e8e7d6cd9f88b1b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c8c011c2c1d3830794bf9e899a07ce14') in 0.020504 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD SRP Overview Scene.unity
+  artifactKey: Guid(05b11a4f174355746b752b0518928711) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/HD SRP Overview Scene.unity using Guid(05b11a4f174355746b752b0518928711) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2783afd2df497e9f059e30eb9e8c89b4') in 0.019284 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Particle FX/Falling Leaves C.mat
+  artifactKey: Guid(64335484cc34c3d469128cba01c3d1e5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Particle FX/Falling Leaves C.mat using Guid(64335484cc34c3d469128cba01c3d1e5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'df72b50b17a71de038fc0f86859ccb58') in 0.040810 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Helpers/Helper.mat
+  artifactKey: Guid(7dd76ac03e815b44ba255d2eee2305c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Helpers/Helper.mat using Guid(7dd76ac03e815b44ba255d2eee2305c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '68f3d1bf048c0735e3c8663a7533b156') in 0.056378 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/NatureManufacture Assets/HD Settings
+  artifactKey: Guid(890326e48157f9141ac9bd545213762e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/HD Settings using Guid(890326e48157f9141ac9bd545213762e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0fbc5e2712035e7a793db241efdba988') in 0.021327 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Leaves_01.mat
+  artifactKey: Guid(89f71e4935de826489acade1266aed0c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Leaves_01.mat using Guid(89f71e4935de826489acade1266aed0c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b97c2d4c24af4abcd2b2e79f6f845509') in 0.067808 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Prefabs
+  artifactKey: Guid(5dd8c6070a8a1104a99b99ee1f0c3e26) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Prefabs using Guid(5dd8c6070a8a1104a99b99ee1f0c3e26) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9d1c7f31026bf48c27d8fc536c798613') in 0.020368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_fern_01_1.prefab
+  artifactKey: Guid(080d902ffd5411c4cbc753df07ec6960) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_fern_01_1.prefab using Guid(080d902ffd5411c4cbc753df07ec6960) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '89a6d327f8a17f3ac759bf44a71901c1') in 0.032725 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_01.prefab
+  artifactKey: Guid(0108c93873226ec458b7fd765c1dd7cf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs/prefab_unity_grass_grass_bush_simple_01.prefab using Guid(0108c93873226ec458b7fd765c1dd7cf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e379a0d36e8e9d0e14a822a9d2dd8fda') in 0.029495 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Particle FX/Polen.mat
+  artifactKey: Guid(a9a9a712886580f42b303e01be382f20) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Particle FX/Polen.mat using Guid(a9a9a712886580f42b303e01be382f20) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ef72d9b5a37ce366e7246957adc340f2') in 0.038718 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_ground_foliage_01.prefab
+  artifactKey: Guid(cefc1d9f30fbf494da5677307c75cfb6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs Snow/prefab_SM_ground_foliage_01.prefab using Guid(cefc1d9f30fbf494da5677307c75cfb6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bf6f5db669d60abca664dc9c2cc5fc13') in 0.045831 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/TerrainDemoScene_HDRP/Settings/DiffusionProfiles/Grass.asset
+  artifactKey: Guid(16c7c1d43c1734b4b9fd6e420650bca0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TerrainDemoScene_HDRP/Settings/DiffusionProfiles/Grass.asset using Guid(16c7c1d43c1734b4b9fd6e420650bca0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a3d74a7bfb3592dced1b212dcc2e5112') in 0.031307 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Demo with Unity Grass.unity
+  artifactKey: Guid(09d035cfac228ce43823f8bf116fcd61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Demo/Demo with Unity Grass.unity using Guid(09d035cfac228ce43823f8bf116fcd61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7bea9baf47ae8bb31a4305f74ddfa80a') in 0.019882 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/AudioFiles/mixkit-forest-birds-ambience-1210.wav
+  artifactKey: Guid(76f77fe4e25376448b33bd5382c786b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/AudioFiles/mixkit-forest-birds-ambience-1210.wav using Guid(76f77fe4e25376448b33bd5382c786b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8a413479759b994ebfd2b301abb1c1ae') in 0.123492 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Skybox
+  artifactKey: Guid(c2edfcbecbd87404cb6dfc57222b3588) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Materials/Materials_Skybox using Guid(c2edfcbecbd87404cb6dfc57222b3588) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '584f282fd0bf3a3978318eb26d19ebff') in 0.019006 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall/GrassShort_C_Fall.prefab
+  artifactKey: Guid(dd28f181951d4cf4c905bf7a995b1a61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_Grass Fall/GrassShort_C_Fall.prefab using Guid(dd28f181951d4cf4c905bf7a995b1a61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c49c7d7ea0a332bc05bed9b7467be466') in 0.038023 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/AudioFiles/mixkit-walking-in-the-forest-with-birds-1231.wav
+  artifactKey: Guid(57f593d94cd391647b02530408141744) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/AudioFiles/mixkit-walking-in-the-forest-with-birds-1231.wav using Guid(57f593d94cd391647b02530408141744) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b5cff0b99b42a428e0f0f766ed00eaee') in 0.129986 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Grass And Flowers Pack 1/Example Scene/UnlitMaterial 1.mat
+  artifactKey: Guid(66837b006e11a1a4d8fd5fb6f0a7836e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Grass And Flowers Pack 1/Example Scene/UnlitMaterial 1.mat using Guid(66837b006e11a1a4d8fd5fb6f0a7836e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8fcd948c95f104b1e09e7cc2f0575234') in 0.030320 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/AudioFiles/mixkit-footsteps-in-the-forest-ground-1230.wav
+  artifactKey: Guid(277c70b4e2d9ef64cbade19b4b2918a5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/AudioFiles/mixkit-footsteps-in-the-forest-ground-1230.wav using Guid(277c70b4e2d9ef64cbade19b4b2918a5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7a4a5922bc5cf4f13559df2222631e98') in 0.130257 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/AudioFiles/mixkit-dry-leaves-rustling-2430.wav
+  artifactKey: Guid(ca9a97fbf33fb7242a507322462adc9e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/AudioFiles/mixkit-dry-leaves-rustling-2430.wav using Guid(ca9a97fbf33fb7242a507322462adc9e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '82c12422f5e0c7c4456cbb8dc10ef808') in 0.123039 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Models/Materials/No Name.mat
+  artifactKey: Guid(d35a9f69ebf49c547abfcb58ee6fb9ed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Models/Materials/No Name.mat using Guid(d35a9f69ebf49c547abfcb58ee6fb9ed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b73bf804cfd1d3209f8b351e6d68030b') in 0.040134 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Scenes/forest 1.unity
+  artifactKey: Guid(5753e6577d574dd458293b0be4c6bb6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scenes/forest 1.unity using Guid(5753e6577d574dd458293b0be4c6bb6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2517b15df8510fac5b325f1cd48be053') in 0.019447 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Grass And Flowers Pack 1/Example Scene/Example Scene.unity
+  artifactKey: Guid(69584f8b5c7738d42bbe0a2b4145ff40) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Grass And Flowers Pack 1/Example Scene/Example Scene.unity using Guid(69584f8b5c7738d42bbe0a2b4145ff40) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2d9771bec9fa78527affcf23b68cc635') in 0.018912 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/TerrainSampleAssets/Materials/Fern.asset
+  artifactKey: Guid(405b9ff318b139d478492b258cc6f606) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TerrainSampleAssets/Materials/Fern.asset using Guid(405b9ff318b139d478492b258cc6f606) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b39efbaa25a853093160905f8ac70820') in 0.079833 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Grass And Flowers Pack 1/Example Scene/BlackMat.mat
+  artifactKey: Guid(d9c07eda3dceab04db68ebf814681197) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Grass And Flowers Pack 1/Example Scene/BlackMat.mat using Guid(d9c07eda3dceab04db68ebf814681197) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f511fdf9397f0a9eece137cafb260787') in 0.029923 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/SteamVR_Input/SteamVR_Input_Initialization.cs
+  artifactKey: Guid(d41ef7807ee5f574da8aa64797372ff7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/SteamVR_Input/SteamVR_Input_Initialization.cs using Guid(d41ef7807ee5f574da8aa64797372ff7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bee547106d72f2f8dceb13be08343ecd') in 0.021138 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/StreamingAssets/SteamVR/actions.json
+  artifactKey: Guid(dbf17beb1e8bed944a9b2bf124b7ee5a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/StreamingAssets/SteamVR/actions.json using Guid(dbf17beb1e8bed944a9b2bf124b7ee5a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f8a4434a6e9448d61c5283fb4983a881') in 0.016734 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/StreamingAssets/SteamVR/binding_vive_pro.json
+  artifactKey: Guid(5724d674236617c448b7a8072f749f38) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/StreamingAssets/SteamVR/binding_vive_pro.json using Guid(5724d674236617c448b7a8072f749f38) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9dc035f44bfe9099b5f9ec06905b4f3e') in 0.020437 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/SteamVR_Input/SteamVR_Input_ActionSets.cs
+  artifactKey: Guid(b3ad547c1604d27448b8f51071eb736a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/SteamVR_Input/SteamVR_Input_ActionSets.cs using Guid(b3ad547c1604d27448b8f51071eb736a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '997a46eff2febc7a49bc135f6e30560e') in 0.024775 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs
+  artifactKey: Guid(d19f7237884e14849afee9b41d7f8f5d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs using Guid(d19f7237884e14849afee9b41d7f8f5d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '74003ba00c17a313ff60d9f293586490') in 0.015747 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Materials/M_Unity_Grass_atlas_grass_01.mat
+  artifactKey: Guid(6727486d89fa8374c95834be9f113bb2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Materials/M_Unity_Grass_atlas_grass_01.mat using Guid(6727486d89fa8374c95834be9f113bb2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0240271326bfb6f21d12eff7f72ba0f8') in 0.042991 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Terrain/Terrain_0_0_c9ee25fa-2178-4a3c-9a00-dd8321a3f0af.asset
+  artifactKey: Guid(3e7ff025328f90843afe15f3360262c3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Terrain/Terrain_0_0_c9ee25fa-2178-4a3c-9a00-dd8321a3f0af.asset using Guid(3e7ff025328f90843afe15f3360262c3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c59f9036cfb4e8231857120cf598028f') in 0.202622 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 156
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/SteamVR_Input/ActionSetClasses/SteamVR_Input_ActionSet_mixedreality.cs
+  artifactKey: Guid(82efc4b7cd6b34540a9607fc36e2ffd8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/SteamVR_Input/ActionSetClasses/SteamVR_Input_ActionSet_mixedreality.cs using Guid(82efc4b7cd6b34540a9607fc36e2ffd8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7b4d4c4d11ff87b18e1a27f14f945e6f') in 0.022117 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Scripts/AudioManager.cs
+  artifactKey: Guid(1dddc4d1975a6e34fb1c9e500fdef820) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/AudioManager.cs using Guid(1dddc4d1975a6e34fb1c9e500fdef820) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '82cc510becdc23cbfe4e546b23700b3a') in 0.024709 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/InputSystem_Actions.inputactions
+  artifactKey: Guid(0455b516d2656594193444459a46896e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/InputSystem_Actions.inputactions using Guid(0455b516d2656594193444459a46896e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e41562f12eadae403228463b79ec560c') in 0.440448 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/TerrainSampleAssets/Prefabs/Rocks/Materials/Rock_Overgrown_C.mat
+  artifactKey: Guid(f4afc2a6a46b104478049f9e3aa57cfe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TerrainSampleAssets/Prefabs/Rocks/Materials/Rock_Overgrown_C.mat using Guid(f4afc2a6a46b104478049f9e3aa57cfe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c6af2cfc9b0a3ef90932b81c23f8b75b') in 0.188475 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat
+  artifactKey: Guid(60ebafc534e7d164ca554165a90ca71b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat using Guid(60ebafc534e7d164ca554165a90ca71b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '523735dbfc4d1bdc59170e2061dce9c8') in 0.055672 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Drawer/TTFE_Drawer_SingleLineTexture.cs
+  artifactKey: Guid(2edb1b41e0ee75b4cbdf728dbbe0b751) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Drawer/TTFE_Drawer_SingleLineTexture.cs using Guid(2edb1b41e0ee75b4cbdf728dbbe0b751) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0b8929601207f1e77c115e96ca2abd72') in 0.027454 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Simple Cliff Masked.shader
+  artifactKey: Guid(40281aef83c984b4b9afe49e6e17271e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Shaders/Default/(TTFE) Simple Cliff Masked.shader using Guid(40281aef83c984b4b9afe49e6e17271e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '067bfc982300250a6160a4a31f25f222') in 0.035251 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Terrains/Trerrain Layers/TTFE-LightScene_Demo_Layers/TSLightDemo Layer_3.terrainlayer
+  artifactKey: Guid(5d6ff95c0a11bf344bfb016666876f82) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Terrains/Trerrain Layers/TTFE-LightScene_Demo_Layers/TSLightDemo Layer_3.terrainlayer using Guid(5d6ff95c0a11bf344bfb016666876f82) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4a12d44ce1ad58818362af36852dc72b') in 0.107980 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_grass_bush_04.prefab
+  artifactKey: Guid(e63d1fef5ae11154a8a7ba7b3d76f9da) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_grass_bush_04.prefab using Guid(e63d1fef5ae11154a8a7ba7b3d76f9da) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '88374837bd043c1ca2884478abaf7cfd') in 0.041736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Moss_01.mat
+  artifactKey: Guid(ef1b6b6d22c2e7e49819b6fd60800740) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Moss_01.mat using Guid(ef1b6b6d22c2e7e49819b6fd60800740) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '509ae8003768e231db73b5fe5abee93a') in 0.121257 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_GrassSingle Fall/Grass_Single_E_Fall.prefab
+  artifactKey: Guid(49543d828361a7b48b6187c25e3790c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Demo/Prefabs/Prefabs_Vegetation - (SL)/Vegetation_Plants - (SL)/VP_GrassSingle Fall/Grass_Single_E_Fall.prefab using Guid(49543d828361a7b48b6187c25e3790c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0a8fa5014ddaeba632ffdaff8dfa1adf') in 0.032693 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Pebbles_01.mat
+  artifactKey: Guid(d6485d8e6ec6c4349b0fd5f264ab1bb7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Ground Textures/Materials/T_Ground_Pebbles_01.mat using Guid(d6485d8e6ec6c4349b0fd5f264ab1bb7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f41e4e1ee2b453b02e59c270c598e8f2') in 0.092012 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/NatureManufacture Assets/Foliage Shaders/NM_Foliage_Snow.shader
+  artifactKey: Guid(bfe77fded9cb8fc4d9c6c2504703c6c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Foliage Shaders/NM_Foliage_Snow.shader using Guid(bfe77fded9cb8fc4d9c6c2504703c6c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9dcf67d9ad21a5e6cd1b06c77ea04138') in 0.036904 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_nettle_01_1.prefab
+  artifactKey: Guid(4cbd466d0eefb3a4fa847e4b09fbe2f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_nettle_01_1.prefab using Guid(4cbd466d0eefb3a4fa847e4b09fbe2f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9707087279573f7f1bccc5e158ce9394') in 0.034829 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_ground_foliage_01.prefab
+  artifactKey: Guid(6f22c9620f06e3548bc9abd34d2dfe90) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_ground_foliage_01.prefab using Guid(6f22c9620f06e3548bc9abd34d2dfe90) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'efe46b2b5aea911ca1e077db75d3234a') in 0.039413 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_root_05.prefab
+  artifactKey: Guid(9189e96612dee9148a72e5c74964449c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_root_05.prefab using Guid(9189e96612dee9148a72e5c74964449c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5bfc15d0452f735b6ed4dcd1f3cb7ecf') in 0.038191 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Resources/(TTFE) GLOBAL CONTROLLER/TTFE_Wind Gizmo/TTFE_Utility Resources
+  artifactKey: Guid(084027efbce0dcd48ac6fd5d46f7a0f6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Toby Fredson/The Toby Foliage Engine/(TTFE)_Core/Resources/(TTFE) GLOBAL CONTROLLER/TTFE_Wind Gizmo/TTFE_Utility Resources using Guid(084027efbce0dcd48ac6fd5d46f7a0f6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e86d2d4b3c94acbbfb39c9776ae265b2') in 0.022316 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_grass_bush_03.prefab
+  artifactKey: Guid(454a172349fd4a84b950c60998f29b04) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/NatureManufacture Assets/Advanced Foliage Pack/Unity grass/Unity Grass Models/Prefabs Snow/prefab_unity_Snow_grass_grass_bush_03.prefab using Guid(454a172349fd4a84b950c60998f29b04) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '852d97ffddb6ff9ba3fca3d294ad8315') in 0.039449 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

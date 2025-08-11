@@ -1,13 +1,21 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SUIMONO - WATER SYSTEM 2/_DEMO/GUI/Textures/tex_ui_slider2.psd.meta
+<<<<<<< HEAD
+guid: d284509b3fcb68e449e6f82a7c919dd2
+=======
+guid: c7e4f2c03daac27449f0d691a96eca22
+>>>>>>> 52ebd58282ab7f7affe9d9cab8dfc326fd609856
+========
 guid: 00536cfca411dc9498406f26b35a70ec
+>>>>>>>> main:Assets/PBR_Grass_Flowers_Pack_01/textures/WormwoodFlower01_N.tga.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
-    sRGBTexture: 0
+    enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -21,14 +29,28 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+<<<<<<<< HEAD:Assets/SUIMONO - WATER SYSTEM 2/_DEMO/GUI/Textures/tex_ui_slider2.psd.meta
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+========
+>>>>>>>> main:Assets/PBR_Grass_Flowers_Pack_01/textures/WormwoodFlower01_N.tga.meta
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 1
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<<< HEAD:Assets/SUIMONO - WATER SYSTEM 2/_DEMO/GUI/Textures/tex_ui_slider2.psd.meta
+    filterMode: -1
+    aniso: 16
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+========
     filterMode: 2
     aniso: -1
     mipBias: -1
@@ -36,9 +58,10 @@ TextureImporter:
     wrapV: -1
     wrapW: -1
   nPOTScale: 1
+>>>>>>>> main:Assets/PBR_Grass_Flowers_Pack_01/textures/WormwoodFlower01_N.tga.meta
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -47,10 +70,20 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 1
+  textureType: 8
   textureShape: 1
+<<<<<<<< HEAD:Assets/SUIMONO - WATER SYSTEM 2/_DEMO/GUI/Textures/tex_ui_slider2.psd.meta
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+========
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -66,6 +99,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - buildTarget: Standalone
+>>>>>>>> main:Assets/PBR_Grass_Flowers_Pack_01/textures/WormwoodFlower01_N.tga.meta
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -80,7 +114,21 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape: []
+<<<<<<<< HEAD:Assets/SUIMONO - WATER SYSTEM 2/_DEMO/GUI/Textures/tex_ui_slider2.psd.meta
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 1
+  pSDShowRemoveMatteOption: 1
+========
+  spritePackingTag: 
+>>>>>>>> main:Assets/PBR_Grass_Flowers_Pack_01/textures/WormwoodFlower01_N.tga.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

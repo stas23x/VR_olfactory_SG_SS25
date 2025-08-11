@@ -85,6 +85,7 @@ public class MenuController : MonoBehaviour
         sceneHandler = GetComponent<SceneDropdownHandler>();
         if (sceneHandler == null)
             sceneHandler = gameObject.AddComponent<SceneDropdownHandler>();
+            
         sceneHandler.Initialize(sceneDropdown);
 
         audioHandler = GetComponent<AudioSliderHandler>();
