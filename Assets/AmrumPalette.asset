@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c509dbaa7b6f416409e3195321a2187e, type: 3}
+  m_Name: AmrumPalette
+  m_EditorClassIdentifier: 
+  PaletteLayers:
+  - {fileID: 8574412962073106934, guid: af9640187b77e454f8cfe02be6d63379, type: 2}
+  - {fileID: 8574412962073106934, guid: 6419f3b55c0780f4090e09b34ebf9085, type: 2}
+  - {fileID: 8574412962073106934, guid: 7c04aa2c46fbcb240a5797e66f29f87b, type: 2}
+  - {fileID: 8574412962073106934, guid: 2865cb67ccfc6e9429087bbb0cd803a1, type: 2}
+  - {fileID: 8574412962073106934, guid: d6c82a656a5f3ef48b5b4d368d1be35f, type: 2}
+  - {fileID: 8574412962073106934, guid: aede469333ca9bd4b8e8b8663099d8fa, type: 2}
+  - {fileID: 8574412962073106934, guid: 655e891c9b9904b4da4c53ccc663c74f, type: 2}
+  - {fileID: 8574412962073106934, guid: 593a1db0465248746b61ed06c03a5258, type: 2}
