@@ -122,13 +122,13 @@ MonoBehaviour:
     m_Value:
     - {fileID: 11400000, guid: 404820c4cf36ad944862fa59c56064f0, type: 2}
     - {fileID: 11400000, guid: 2384dbf2c1c420f45a792fbc315fbfb1, type: 2}
-    - {fileID: 11400000, guid: 78322c7f82657514ebe48203160e3f39, type: 2}
-    - {fileID: 11400000, guid: cb724139ea2be234da0b4c3fcd984446, type: 2}
-    - {fileID: 11400000, guid: dec8c2e05fee7ee488940010f9e0b0bc, type: 2}
-    - {fileID: 11400000, guid: aef3e2a5611531f4b8469806404f3454, type: 2}
-    - {fileID: 11400000, guid: 0df7a09a7fea3ae4eb77543501d5ef91, type: 2}
+    - {fileID: 11400000, guid: c14f5a7f6272d0a4d8d8358ebe2d218c, type: 2}
     - {fileID: 11400000, guid: cb824b513c3aa274db0944d6fb82a86c, type: 2}
-    - {fileID: 11400000, guid: a4f9b0b21cfa10140b76854ccb395dcf, type: 2}
+    - {fileID: 11400000, guid: 70aafa30c6b72c14783e903d0a166d14, type: 2}
+    - {fileID: 11400000, guid: 27b666e0ceb302644a8b4a4b91eeddae, type: 2}
+    - {fileID: 11400000, guid: 42223edfa8928074eb65da06a364ea9f, type: 2}
+    - {fileID: 11400000, guid: 76b7d15fe3464a04e838dbca89426eca, type: 2}
+    - {fileID: 11400000, guid: 0253175d6c5603f4cab9dafe05c0fb47, type: 2}
 --- !u!114 &-1016694868962581565
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -386,8 +386,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   cloudType:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
   skyAmbientMode:
     m_OverrideState: 0
     m_Value: 0
@@ -726,23 +726,23 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 4
   cascadeShadowSplit0:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.05
   cascadeShadowSplit1:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.15
   cascadeShadowSplit2:
-    m_OverrideState: 1
-    m_Value: 0.2529915
+    m_OverrideState: 0
+    m_Value: 0.3
   cascadeShadowBorder0:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.06905067
   cascadeShadowBorder1:
     m_OverrideState: 1
     m_Value: 0.05086228
   cascadeShadowBorder2:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   cascadeShadowBorder3:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
