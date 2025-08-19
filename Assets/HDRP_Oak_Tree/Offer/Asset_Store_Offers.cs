@@ -34,9 +34,9 @@ public class Asset_Store_Offers : EditorWindow
     private void OnGUI()
     {
         
-        Texture2D ad1 = EditorGUIUtility.Load("Assets/HDRP_Oak_Tree/Offer/Ads/ad1.psd") as Texture2D;
-        Texture2D ad2 = EditorGUIUtility.Load("Assets/HDRP_Oak_Tree/Offer/Ads/ad2.psd") as Texture2D;
-        Texture2D ad3 = EditorGUIUtility.Load("Assets/HDRP_Oak_Tree/Offer/Ads/ad3.psd") as Texture2D;
+        Texture2D ad1 = EditorGUIUtility.Load("Assets/PalmTreePack/Offer/Ads/ad1.psd") as Texture2D;
+        Texture2D ad2 = EditorGUIUtility.Load("Assets/PalmTreePack/Offer/Ads/ad2.psd") as Texture2D;
+        Texture2D ad3 = EditorGUIUtility.Load("Assets/PalmTreePack/Offer/Ads/ad3.psd") as Texture2D;
 
         EditorGUILayout.Space();
         EditorGUILayout.HelpBox("Asset Store Offers", MessageType.None);
@@ -51,8 +51,7 @@ public class Asset_Store_Offers : EditorWindow
                                                                 //  GUILayout.BeginVertical("Box");
 
         //_scrollPosition = EditorGUILayout.BeginScrollView(scrollViewRect, _scrollPosition, new Rect(0, 0, 2000, 2000));
-
-
+       
         if (GUILayout.Button(ad1, "", GUILayout.Width(600), GUILayout.Height(130)))
         {
             Application.OpenURL("https://assetstore.unity.com/packages/slug/107069");
@@ -78,8 +77,8 @@ public class Startup
 {
     static Startup()
     {
-        EditorPrefs.SetInt("showCounts_HDRP_Oak_Tree", EditorPrefs.GetInt("showCounts_HDRP_Oak_Tree") + 1);       
-        if (EditorPrefs.GetInt("showCounts_HDRP_Oak_Tree") == 10)
+        EditorPrefs.SetInt("showCounts_PalmTreePack", EditorPrefs.GetInt("showCounts_PalmTreePack") + 1);       
+        if (EditorPrefs.GetInt("showCounts_PalmTreePack") == 10)
         { 
             EditorApplication.ExecuteMenuItem("Window/Asset Store Offers");
         }         
