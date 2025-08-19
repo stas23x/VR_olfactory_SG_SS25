@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1043e08cdc375146bdb853794c4c0fd, type: 3}
+  m_Name: ProbeVolumeData
+  m_EditorClassIdentifier: 
+  m_Version: 5
+  cells:
+  - position: {x: -1, y: 0, z: 0}
+    index: 2
+    probeCount: 8512
+    minSubdiv: 0
+    maxSubdiv: 0
+    indexChunkCount: 2269
+    shChunkCount: 2
+    hasTwoScenarios: 0
+    shBands: 2
+  - position: {x: 0, y: 0, z: 0}
+    index: 3
+    probeCount: 178496
+    minSubdiv: 0
+    maxSubdiv: 0
+    indexChunkCount: 2269
+    shChunkCount: 22
+    hasTwoScenarios: 0
+    shBands: 2
+  cellCounts:
+  - bricksCount: 133
+    probesCount: 8512
+    offsetsCount: 8512
+    chunksCount: 2
+  - bricksCount: 2789
+    probesCount: 178496
+    offsetsCount: 178496
+    chunksCount: 22
+  totalCellCounts:
+    bricksCount: 2922
+    probesCount: 187008
+    offsetsCount: 187008
+    chunksCount: 24
+  maxCellPosition: {x: 0, y: 0, z: 0}
+  minCellPosition: {x: -1, y: 0, z: -1}
+  globalBounds:
+    m_Center: {x: 0, y: 486, z: 0}
+    m_Extent: {x: 972, y: 486, z: 972}
+  bands: 2
+  chunkSizeInBricks: 128
+  m_AssetFullPath: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD
+    RP RAM 3 Demo Tesseled/ProbeVolumeData.asset
+  cellSizeInBricks: 81
+  simplificationLevels: 4
+  minDistanceBetweenProbes: 4

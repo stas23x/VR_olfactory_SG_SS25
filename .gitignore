@@ -1,7 +1,11 @@
+# big files to ignore
 /Assets/ALP_Assets/Realistic Terrain Textures Lite/
 /Library/ArtifactDB
 /Library/Artifacts/
 /Library/PackageCache/
+Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo.unity
+Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo Tesseled.unity
+Assets/NatureManufacture Assets/River Auto Material 3/Decals/T_Decal_Wet_N.png
 Assets/NatureManufacture Assets/Coast Environment/
 Assets/NatureManufacture Assets/Coast & Dunes Environment Trial/
 
