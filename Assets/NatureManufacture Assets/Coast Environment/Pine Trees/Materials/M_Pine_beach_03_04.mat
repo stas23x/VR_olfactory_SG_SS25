@@ -11,11 +11,11 @@ Material:
   m_Shader: {fileID: 4800000, guid: 079e151410a701f4db7331c1fbdd03b4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _DISABLE_DECALS
-  - _DISABLE_SSR_TRANSPARENT
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _DISABLE_DBUFFER
+  - _DISABLE_DECALS
+  - _DISABLE_SSR_TRANSPARENT
   - _HEIGHTMAP0
   - _HEIGHTMAP1
   - _HEIGHT_BASED_BLEND
@@ -38,12 +38,12 @@ Material:
   m_CustomRenderQueue: 2000
   stringTagMap:
     MotionVector: User
+    RenderType: Opaque
   disabledShaderPasses:
   - RayTracingPrepass
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - TransparentBackface
-  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -355,10 +355,12 @@ Material:
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
+    - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
     - _AlphaCutoffPostpass: 0.5
     - _AlphaCutoffPrepass: 0.5
+    - _AlphaCutoff_1: 0.5
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
@@ -371,9 +373,13 @@ Material:
     - _BarkSmoothnessRemapMax: 1
     - _BarkSmoothnessRemapMin: 0
     - _BarkUseUV3: 1
+    - _Blend: 0
     - _BlendMode: 0
+    - _BlendModePreserveSpecular: 1
+    - _CastShadows: 1
     - _CoatMask: 0
     - _ConservativeDepthOffsetEnable: 0
+    - _Cull: 2
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -536,7 +542,10 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _PreRefractionPass: 0
+    - _QueueControl: 1
+    - _QueueOffset: 0
     - _RayTracing: 0
+    - _ReceiveShadows: 1
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
@@ -586,6 +595,7 @@ Material:
     - _SubsurfaceMask3: 1
     - _SupportDBuffer: 0
     - _SupportDecals: 0
+    - _Surface: 0
     - _SurfaceType: 0
     - _TessellationBackFaceCullEpsilon: -0.25
     - _TessellationFactor: 23.9
@@ -640,15 +650,19 @@ Material:
     - _UseShadowThreshold: 0
     - _VertexColorMode: 0
     - _Wind_Drag_Directionality: 1
+    - _WorkflowMode: 1
+    - _ZTest: 4
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
     - _ZTestModeDistortion: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - _BarkBaseColor: {r: 1, g: 0.94583195, b: 0.8443396, a: 1}
     - _BarkBlendMaskTilingOffset: {r: 1, g: 1, b: 0, a: 0}
     - _BarkTilingOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _Bark_Specular: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     - _BaseColor0: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor1: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
@@ -676,6 +690,7 @@ Material:
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TrunkBaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _TrunkTilingOffset: {r: 1, g: 1, b: 1, a: 0}
+    - _Trunk_Specular: {r: 0, g: 0, b: 0, a: 0}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVDetailsMappingMask0: {r: 1, g: 0, b: 0, a: 0}
     - _UVDetailsMappingMask1: {r: 1, g: 0, b: 0, a: 0}

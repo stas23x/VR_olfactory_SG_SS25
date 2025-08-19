@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.62f1 (4af31df58517) revision 4911901'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'de' Physical Memory: 32700 MB
+OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'de' Physical Memory: 32688 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe
 -name
 AssetImportWorker3
 -projectPath
-C:/StudentProjects/Serious game group 18/My project
+F:/VR_olfactory_SG_SS25
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-51449
-Successfully changed project path to: C:/StudentProjects/Serious game group 18/My project
-C:/StudentProjects/Serious game group 18/My project
+30903
+Successfully changed project path to: F:/VR_olfactory_SG_SS25
+F:/VR_olfactory_SG_SS25
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,26 +49,32 @@ C:/StudentProjects/Serious game group 18/My project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [25160]  Target information:
+Player connection [36560]  Target information:
 
-Player connection [25160]  * "[IP] 192.168.253.171 [Port] 0 [Flags] 2 [Guid] 939091073 [EditorId] 939091073 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-66DGGND) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [36560]  * "[IP] 192.168.219.1 [Port] 0 [Flags] 2 [Guid] 428092230 [EditorId] 428092230 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [25160] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [25160] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [36560]  * "[IP] 192.168.207.1 [Port] 0 [Flags] 2 [Guid] 428092230 [EditorId] 428092230 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36560]  * "[IP] 192.168.111.97 [Port] 0 [Flags] 2 [Guid] 428092230 [EditorId] 428092230 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36560]  * "[IP] 172.31.16.1 [Port] 0 [Flags] 2 [Guid] 428092230 [EditorId] 428092230 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36560] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [36560] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 63.11 ms, found 12 plugins.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+Refreshing native plugins compatible for Editor in 25.30 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.62f1 (4af31df58517)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/StudentProjects/Serious game group 18/My project/Assets
+[Subsystems] Discovering subsystems at path F:/VR_olfactory_SG_SS25/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Radeon RX Vega (ID=0x687f)
-    Vendor:   ATI
-    VRAM:     8119 MB
-    Driver:   31.0.21923.11000
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24142 MB
+    Driver:   32.0.15.8097
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
@@ -77,44 +83,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56624
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56336
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.016222 seconds.
-- Loaded All Assemblies, in  0.579 seconds
+Registered in 0.008990 seconds.
+- Loaded All Assemblies, in  0.273 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.410 seconds
-Domain Reload Profiling: 986ms
-	BeginReloadAssembly (193ms)
+- Finished resetting the current domain, in  0.205 seconds
+Domain Reload Profiling: 475ms
+	BeginReloadAssembly (85ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (52ms)
-	RebuildNativeTypeToScriptingClass (20ms)
-	initialDomainReloadingComplete (101ms)
-	LoadAllAssembliesAndSetupDomain (209ms)
-		LoadAssemblies (187ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (101ms)
+		LoadAssemblies (83ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (206ms)
-			TypeCache.Refresh (203ms)
-				TypeCache.ScanAssembly (187ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (410ms)
+		AnalyzeDomain (99ms)
+			TypeCache.Refresh (98ms)
+				TypeCache.ScanAssembly (88ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (205ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (334ms)
+		SetupLoadedEditorAssemblies (169ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (21ms)
-			SetLoadedEditorAssemblies (13ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (226ms)
-			ProcessInitializeOnLoadMethodAttributes (71ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (117ms)
+			ProcessInitializeOnLoadMethodAttributes (36ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -123,7 +129,7 @@ Domain Reload Profiling: 986ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.605 seconds
+- Loaded All Assemblies, in  0.840 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
@@ -136,40 +142,40 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  2.442 seconds
-Domain Reload Profiling: 4036ms
-	BeginReloadAssembly (227ms)
+- Finished resetting the current domain, in  2.298 seconds
+Domain Reload Profiling: 3136ms
+	BeginReloadAssembly (130ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (9ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (49ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (53ms)
-	LoadAllAssembliesAndSetupDomain (1250ms)
-		LoadAssemblies (821ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (640ms)
+		LoadAssemblies (393ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (560ms)
-			TypeCache.Refresh (456ms)
-				TypeCache.ScanAssembly (424ms)
-			ScanForSourceGeneratedMonoScriptInfo (71ms)
-			ResolveRequiredComponents (30ms)
-	FinalizeReload (2443ms)
+		AnalyzeDomain (321ms)
+			TypeCache.Refresh (263ms)
+				TypeCache.ScanAssembly (243ms)
+			ScanForSourceGeneratedMonoScriptInfo (43ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (2298ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2039ms)
+		SetupLoadedEditorAssemblies (2088ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (11ms)
-			SetLoadedEditorAssemblies (13ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (396ms)
-			ProcessInitializeOnLoadAttributes (1159ms)
-			ProcessInitializeOnLoadMethodAttributes (445ms)
-			AfterProcessingInitializeOnLoad (16ms)
-			EditorAssembliesLoaded (1ms)
+			BeforeProcessingInitializeOnLoad (102ms)
+			ProcessInitializeOnLoadAttributes (573ms)
+			ProcessInitializeOnLoadMethodAttributes (1394ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
 WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
@@ -188,23 +194,21 @@ WARNING: Shader If subshaders removal was intentional, you may have forgotten tu
 WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 51.05 ms, found 12 plugins.
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 26.02 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 9620 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 168 unused Assets / (7.0 MB). Loaded Objects now: 10182.
-Memory consumption went from 0.59 GB to 0.58 GB.
-Total: 19.759700 ms (FindLiveObjects: 1.559100 ms CreateObjectMapping: 1.826500 ms MarkObjects: 11.843900 ms  DeleteObjects: 4.528000 ms)
+Unloading 9643 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 168 unused Assets / (7.0 MB). Loaded Objects now: 10170.
+Memory consumption went from 0.63 GB to 0.62 GB.
+Total: 12.702900 ms (FindLiveObjects: 1.801500 ms CreateObjectMapping: 1.013100 ms MarkObjects: 7.384200 ms  DeleteObjects: 2.501400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
-  custom:scripting/monoscript/fileName/IEdge.cs: fe7a9aaf4a54b5490fcc9202df625cf8 -> 0494d7d5f0d1b45031a9cd6cb136dc6a
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:scripting/monoscript/fileName/Polygon.cs: c640e3c33f61e5c6af4a8a85b0baf4b1 -> e7dad1f97108afef27369b719731084e
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
@@ -214,211 +218,187 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
-  custom:scripting/monoscript/fileName/Edge.cs: 270eeb3545dc302af543cef48dee1505 -> a12660060e5312eed54e7d9918b8c5c2
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:scripting/monoscript/fileName/Log.cs: 5aa2393e0a24a42aa5b19bc88a4b8254 -> fcdca16ef9a1bd2266c8a5f32f0a0040
-  custom:scripting/monoscript/fileName/Mesh.cs: c12b335a3e7e9263d193dc0c30fa5e3f -> 23e2b3294fb7c0ac946d9987263b09ee
-  custom:scripting/monoscript/fileName/RamBuoyancyDebug.cs:  -> bb4d939af36d568fb4791dc5c4e54ead
-  custom:scripting/monoscript/fileName/RamBuoyancy.cs:  -> e434b883643ab0d5b08652b058123b90
-  custom:scripting/monoscript/fileName/TerrainManager.cs:  -> b55a8ab93bc5d95f3069482a92b831f2
-  custom:scripting/monoscript/fileName/SeaPhysicsCalculations.cs:  -> 91b4d2566774b608a460d702c33f6f00
-  custom:scripting/monoscript/fileName/QualityMesher.cs:  -> c014fbb5817e3ef9029ece193efedc72
-  custom:scripting/monoscript/fileName/LodManager.cs:  -> f5baa7a2c80db52dbe686abd01f43639
-  custom:scripting/monoscript/fileName/Segment.cs:  -> 5a56de370dae8ea960c97039552c9b09
-  custom:scripting/monoscript/fileName/LakePolygonProfileEditor.cs:  -> e256c29882cf24f4cd222a10eac74395
-  custom:scripting/monoscript/fileName/IQualityMesher.cs:  -> dd8fc767d9d3c5ea896b16f31ae89e03
-  custom:scripting/monoscript/fileName/DrawOnMeshData.cs:  -> 3f39e48df33a2458195db748bf36440c
-  custom:scripting/monoscript/fileName/RamSplitter.cs:  -> d88e5850664e387b6d074e6e3f15251c
-  custom:scripting/monoscript/fileName/RamMeshEvent.cs:  -> 1b9a1808438a941e09a127341e6d9edf
-  custom:scripting/monoscript/fileName/LakePolygonSimulationGenerator.cs:  -> 9f27a92e805a497e883a298bc327029a
-  custom:scripting/monoscript/fileName/RamTips.cs:  -> ddb88b275a38d259194cc11f592a6660
-  custom:scripting/monoscript/fileName/NmSplineEditor.cs:  -> 27af30a12dfe20d8e762a4394227582e
-  custom:scripting/monoscript/fileName/WaterfallSimulator.cs:  -> e044f3e54722140980287b9accf3c7d8
-  custom:scripting/monoscript/fileName/IPolygonFormat.cs:  -> 073c30c80485d370ab866db19042babe
-  custom:scripting/monoscript/fileName/VertexPaintNoiseData.cs:  -> 7af45365c6fe22c05b2580e12fe60879
-  custom:scripting/monoscript/fileName/TriangleQuadTree.cs:  -> 55f36255226471dbe83f3144b42ce8b3
-  custom:scripting/monoscript/fileName/FenceProfile.cs:  -> 05d6272f5f485e325ed50691563398fa
-  custom:scripting/monoscript/fileName/TerrainNoiseParametersDrawer.cs:  -> 641556caf4f484f321cfcdc2d90edead
-  custom:scripting/monoscript/fileName/TerrainLayerData.cs:  -> d7790e6833ad2a50cd99c903964b7bec
-  custom:scripting/monoscript/fileName/MeshColoringEditor.cs:  -> 0c2d6632e54436b4cd691e84fda81a65
-  custom:scripting/monoscript/fileName/ExtensionMethods.cs:  -> 5f0c620f39353758181b78a138df8d16
-  custom:scripting/monoscript/fileName/RamVertexColors.cs:  -> df81420e0d5c42e634c16981e1ed9102
-  custom:scripting/monoscript/fileName/FenceGeneratorEditor.cs:  -> 27fb2cc37dda2b986f27f2a5d34bf3b4
-  custom:scripting/monoscript/fileName/IGenerationEvents.cs:  -> bb761cc0f5ebdeb0b50091cce938716b
-  custom:scripting/monoscript/fileName/DemoMeshesChangeTerrain.cs:  -> bbb0dfe1429fc1c3bbf0be8d5dfee36a
-  custom:scripting/monoscript/fileName/LakeFlowmapGenerator.cs:  -> 438644e17cbb26e2643c786379345399
-  custom:scripting/monoscript/fileName/SeaPhysicsEditor.cs:  -> d20306464e198f19cb445ac1f2bf84b2
-  custom:scripting/monoscript/fileName/NmSpline.cs:  -> 8dcb1230837182f3dadcb1c3af1df9c0
-  custom:scripting/monoscript/fileName/SplineProfileEditor.cs:  -> e089b75ab5df48cd15b6d1c26609f935
-  custom:scripting/monoscript/fileName/LakePolygonEditor.cs:  -> 2ef67eefcd53d4369e65a1570b8b7799
-  custom:scripting/monoscript/fileName/TerrainConvexParameters.cs:  -> 35602bb6b1662d13df85508b877e7145
-  custom:scripting/monoscript/fileName/NMSplineOverlay.cs:  -> 4dee19b39124237b1cc9c39763b304c9
-  custom:scripting/monoscript/fileName/BadTriangle.cs:  -> edfe4239e803b78905bcba3e14178277
-  custom:scripting/monoscript/fileName/SeaPhysics.cs:  -> ec6ff1f711fdfc5820921b5197a52ec9
-  custom:scripting/monoscript/fileName/GenericMesher.cs:  -> 00566c95614a6e33ef9ac93882e9d1a0
-  custom:scripting/monoscript/fileName/NewLocation.cs:  -> a690cb41fd9b20465a68a94b197f5017
-  custom:scripting/monoscript/fileName/LakePolygonTips.cs:  -> 04eaae4013799bc28bb5932ddd97ca85
-  custom:scripting/monoscript/fileName/FenceAxis.cs:  -> 67622093041567f520eebf8f33083a37
-  custom:scripting/monoscript/fileName/NmSplinePointSearcher.cs:  -> 837cad92932aaf15a7b347f893017422
-  custom:scripting/monoscript/fileName/VoronoiRegion.cs:  -> b7a7a88abaf877736e5bf6dc96d55e54
-  custom:scripting/monoscript/fileName/FrancNormalSolver.cs:  -> 50485c0e84e33a0f094f4e863402bba7
-  custom:scripting/monoscript/fileName/MeshCurveKeyFrames.cs:  -> ec630a540238a959e3b2f24699c64288
-  custom:scripting/monoscript/fileName/DefaultVoronoiFactory.cs:  -> df88c1e5f4a6760afe342bfdd2460ab9
-  custom:scripting/monoscript/fileName/RamVegetationStudioIntegration.cs:  -> 5b2f81ee604ff2aaa2f736bcd90f9d3c
-  custom:scripting/monoscript/fileName/LakePolygonFactory.cs:  -> 915ecc0cd17b5331f18a52e2c2fbd69c
-  custom:scripting/monoscript/fileName/TriangleSampler.cs:  -> 656b9684b7034c90b19ac48d021f015b
-  custom:scripting/monoscript/fileName/LakeDebug.cs:  -> 1ea8d331fed4e31403ac284f10660ee8
-  custom:scripting/monoscript/fileName/ITriangle.cs:  -> 01cf4fd0e996305aa7b6d7e2e3b0ef90
-  custom:scripting/monoscript/fileName/ILogItem.cs:  -> 4cc2695f71e2ea20766599ba87fcbfef
-  custom:scripting/monoscript/fileName/StandardVoronoi.cs:  -> 2f7f5d8093de4cbdd3a73794acf97fd0
-  custom:scripting/monoscript/fileName/TriangleLocator.cs:  -> 58db471a0cf206a5226739938df2e236
-  custom:scripting/monoscript/fileName/TerrainLayerDataDrawer.cs:  -> 87cf3ecce994c0572da0047096e837ea
-  custom:scripting/monoscript/fileName/RiverAutomaticVertexColor.cs:  -> 3d53c94695c0977e3b7f7977aad12167
-  custom:scripting/monoscript/fileName/WaterfallConnection.cs:  -> a51ee0d029ed6ecba7299ed5e4acf955
-  custom:scripting/monoscript/fileName/Contour.cs:  -> 5cc3a6793e586ea60183fb3d920f9c60
-  custom:scripting/monoscript/fileName/Triangle.cs:  -> 3dc0fc14ffdd16ae99a6612574de6ab3
-  custom:scripting/monoscript/fileName/MeshDataSmoother.cs:  -> bb0777403867eb7f3caa77f89f3bdfba
-  custom:scripting/monoscript/fileName/TextureManager.cs:  -> b0fc6ead90358b4aea25138e51e0909b
-  custom:scripting/monoscript/fileName/VertexPainterEditor.cs:  -> 90647cc400823b41df847a6cbfc29026
-  custom:scripting/monoscript/fileName/FenceGenerator.cs:  -> 9dc25d949db4965d51a28c9ac893ec4c
-  custom:scripting/monoscript/fileName/VertexPaintHeight.cs:  -> 5101961bcb1c057d7ebae6e39340c34c
-  custom:scripting/monoscript/fileName/SplineTriangulator.cs:  -> 04eb5701a6e7870c164c62f204742d29
-  custom:scripting/monoscript/fileName/PolygonValidator.cs:  -> eb31075c60e43fe0c33fb4ad3c8e2496
-  custom:scripting/monoscript/fileName/TerrainSplineEditor.cs:  -> 20a4daad95e2faada08a3f24fae868ee
-  custom:scripting/monoscript/fileName/InputTriangle.cs:  -> bc55db5d7c59fdc2b22b35a07aeaeea7
-  custom:scripting/monoscript/fileName/IConstraintMesher.cs:  -> 4b7c048e1806dc2dafbad9ff68b54fa2
-  custom:scripting/monoscript/fileName/IVertexPaintable.cs:  -> a9211cc73f322a460b8de14427d677aa
-  custom:scripting/monoscript/fileName/FileProcessor.cs:  -> 0442e152b5922270e77c0344a2f34057
-  custom:scripting/monoscript/fileName/WaterfallProfile.cs:  -> 5172aaafbd6d5aa581244818922294f1
-  custom:scripting/monoscript/fileName/HalfEdge.cs:  -> 9babaa0912166f5af64fcbaf1a78cb75
-  custom:scripting/monoscript/fileName/RegionIterator.cs:  -> 2a98335151aba7b7c924131430a20084
-  custom:scripting/monoscript/fileName/IMeshFormat.cs:  -> 9f780583db1ad49aee42cf55053776db
-  custom:scripting/monoscript/fileName/Otri.cs:  -> d6e96b3b75b3dec94faf68e0e788b2ae
-  custom:scripting/monoscript/fileName/Behavior.cs:  -> 2dfe2f3dcd341809ac7d098375be32da
-  custom:scripting/monoscript/fileName/TerrainClearFoliage.cs:  -> 5bdf3d3af743338111309539d6ebcc89
-  custom:scripting/monoscript/fileName/IVoronoiFactory.cs:  -> 381d9b0f5f18d7e071d2ad55e3f39e3d
-  custom:scripting/monoscript/fileName/DemoRiversAlpha.cs:  -> 18f7208feaf4cef50645e32362434435
-  custom:scripting/monoscript/fileName/RegionPointer.cs:  -> fb1bc46e7d64ec56da6e9dfcb6acd8e0
-  custom:scripting/monoscript/fileName/Incremental.cs:  -> 235e5171058888d3a74ca101c3ee69d8
-  custom:scripting/monoscript/fileName/FenceObjectProbability.cs:  -> 6343595a33ae4bae4dfe5422f9d8d088
-  custom:scripting/monoscript/fileName/TerrainManagerEditor.cs:  -> 96e90f8a11fd2099d257ae8403b7b4a8
-  custom:scripting/monoscript/fileName/Configuration.cs:  -> 03bb6f700be800150e2dbcdb818cc567
-  custom:scripting/monoscript/fileName/TriangleFormat.cs:  -> 70763775d9afe7e5e8040439a2c34f72
-  custom:scripting/monoscript/fileName/TerrainSplinesManager.cs:  -> be8de5ae7b4e47931683ac386238d0db
-  custom:scripting/monoscript/fileName/BadSubseg.cs:  -> f47ce46585f6a1fcaff0dc39b6f863a2
-  custom:scripting/monoscript/fileName/NmSplineSceneGUI.cs:  -> ae048bfd53a9f52e57466834fa5c6b89
-  custom:scripting/monoscript/fileName/SimpleSplineEditor.cs:  -> 91bdcdaf149c1fd5241c63c22675df29
-  custom:scripting/monoscript/fileName/ISegment.cs:  -> c4bf6faa442211f033d7c81c5640a8d5
-  custom:scripting/monoscript/fileName/QualityOptions.cs:  -> 19eb8c7776fd3349245028ca6af0098d
-  custom:scripting/monoscript/fileName/RamSplineConnection.cs:  -> dd60aeb36ee646ca9640eade37295307
-  custom:scripting/monoscript/fileName/LakePolygonProfile.cs:  -> 11973a71acfaf77ecf22050ba5c9c2f9
-  custom:scripting/monoscript/fileName/DcelMesh.cs:  -> 61de51f15db0e0a10ae35f40905158dc
-  custom:scripting/monoscript/fileName/MeshColoring.cs:  -> ff39a70a9f7cc16c87663fcb4aedd80c
-  custom:scripting/monoscript/fileName/VertexSorter.cs:  -> 4f3b7d9205f282280387257d251267af
-  custom:scripting/monoscript/fileName/WaterfallConnectionUI.cs:  -> f3c06ebc2fbe37f35160974bb5d97790
-  custom:scripting/monoscript/fileName/LayerMaskField.cs:  -> 1fb15544fe1608400b7e2e2e17866239
-  custom:scripting/monoscript/fileName/NmSplineDataFenceScale.cs:  -> d96d279ec521ee06ddea329d22347178
-  custom:scripting/monoscript/fileName/TriangleReader.cs:  -> ae8420f3e4c1d769abb2c05dc3cd6729
-  custom:scripting/monoscript/fileName/Converter.cs:  -> 3f67ac40f42e73c297d5c74d0c69d62b
-  custom:scripting/monoscript/fileName/VertexCirculator.cs:  -> f32c4559259ece1f026b2318fddb7367
-  custom:scripting/monoscript/fileName/VertexPainterWindow.cs:  -> f6cc3cbf0dc1413a67d6e5874bbe88e1
-  custom:scripting/monoscript/fileName/MeshValidator.cs:  -> 585656e769f216e656f5cb91032ff8fc
-  custom:scripting/monoscript/fileName/TerrainPainterDataEditor.cs:  -> e36482caa2bbe01e842dab1f26c4a4a0
-  custom:scripting/monoscript/fileName/RamSpline.cs:  -> 83579e90b3c538354cb208ce6c81f7f5
-  custom:scripting/precompiled-assembly-types:RAM:  -> 10fa87551c21da3aaeeae017f3a22655
-  custom:scripting/monoscript/fileName/ILog.cs:  -> 90647cc400823b41df847a6cbfc29026
-  custom:scripting/monoscript/fileName/IProfile.cs:  -> 90647cc400823b41df847a6cbfc29026
-  custom:scripting/monoscript/fileName/RamMath.cs:  -> e7218b45600b5a4ef6de38bc20cd6c40
-  custom:scripting/monoscript/fileName/RamControlPoint.cs:  -> b630dc6eb75a9072f8f30ccd6fecedef
-  custom:scripting/monoscript/fileName/NMSplineExporter.cs:  -> 7b4b42620a58bc25775424b2819f1f25
-  custom:scripting/monoscript/fileName/SimpleVoronoi.cs:  -> ba2d900467a1abce492e43f548824441
-  custom:scripting/monoscript/fileName/BoundedVoronoiLegacy.cs:  -> 4f7e8ab7a6804680587dd8aead16ea8a
-  custom:scripting/monoscript/fileName/LakePolygonVegetationStudio.cs:  -> 170cfd61f88831868bd20ce4d56012c2
-  custom:scripting/monoscript/fileName/SubSegment.cs:  -> dc75f9c943a7558ae8b0e3ff0e1dfd8f
-  custom:scripting/monoscript/fileName/DemoConnectedRivers.cs:  -> 76d81c1cb71408c6e30889a07c8762d0
-  custom:scripting/monoscript/fileName/CarveData.cs:  -> 0d0c48f378ee09bd39d37c5ae3c5e315
-  custom:scripting/monoscript/fileName/RamBuoyancyEditor.cs:  -> 0f43073a18d09e56f45c831277869055
-  custom:scripting/monoscript/fileName/LodSystemGenerator.cs:  -> 1ec35942186fc9b95b830bbc36157c9e
-  custom:scripting/monoscript/fileName/Interpolation.cs:  -> 6334d25d84a4de8e1894d76d02667752
-  custom:scripting/monoscript/fileName/VoronoiBase.cs:  -> 7851b31ab6d6cfeb7d86203acb443782
-  custom:scripting/monoscript/fileName/TerrainConvexParametersDrawer.cs:  -> e360a44eedec2aff930b46145162ddf8
-  custom:scripting/monoscript/fileName/Point.cs:  -> f8c3b117a472a58cc3130dac0a6d6f34
-  custom:scripting/precompiled-assembly-types:RAMEditor:  -> a2e09260488de815b2078eeefef53f28
-  custom:scripting/monoscript/fileName/ConstraintMesher.cs:  -> 29df5e9448e8af00cea9556178068509
-  custom:scripting/monoscript/fileName/IVoronoi.cs:  -> e45108d75c81a6bfdf4d45f19821490f
-  custom:scripting/monoscript/fileName/ReplaceCameraShader.cs:  -> dec6b4c70fc03b24d4f48b1b54d40c52
-  custom:scripting/monoscript/fileName/RamBuoyancyArcadeEditor.cs:  -> 70ad18759996ef3bc9e65f05fe97ab50
-  custom:scripting/monoscript/fileName/NmSplineManager.cs:  -> 12a1ca7d243f418d3a344d22bf456b87
-  custom:scripting/monoscript/fileName/Statistic.cs:  -> 439411cdefb2225ef53ad04a418a02f9
-  custom:scripting/monoscript/fileName/SplineProfile.cs:  -> 9e2bac77268850d3b5fd455dd07743b1
-  custom:scripting/monoscript/fileName/ConstraintOptions.cs:  -> 910c99d28720ec94bc08d47beab2db3d
-  custom:scripting/monoscript/fileName/RamBuoyancyArcade.cs:  -> 1b509383de0d9d43c66475cb5662a208
-  custom:scripting/monoscript/fileName/SimpleSpline.cs:  -> 3f6b9174d214f94e8c0a929b5a6e074b
-  custom:scripting/monoscript/fileName/SweepLine.cs:  -> 8533c3d3839e139d5f7f8b8e179df011
-  custom:scripting/monoscript/fileName/NmSplineDataNoiseStrength.cs:  -> 78146271218ceede86ca663d9a5c3f58
-  custom:scripting/monoscript/fileName/SplinesOverlay.cs:  -> 0985ff92caacb9b41401a6acdac25a7a
-  custom:scripting/monoscript/fileName/ITerrainPainterGetData.cs:  -> 0342eccd47afb3fb1716c4ea65411d6b
-  custom:scripting/monoscript/fileName/IPolygon.cs:  -> f3ae97fa732f51134e1ec3154321114c
-  custom:scripting/monoscript/fileName/VoronoiFactory.cs:  -> fd019522fd8631e6cc04f4a0e8ef650f
-  custom:scripting/monoscript/fileName/WaterfallProfileEditor.cs:  -> 26219e177fa4cb21fc43d29ca563028e
-  custom:scripting/monoscript/fileName/RamTerrainManager.cs:  -> e5a8ea95c042b5423d3157e5f62491cf
-  custom:scripting/monoscript/fileName/NmIconAttribute.cs:  -> e033c1319435af60ab211a4026a4f17a
-  custom:scripting/monoscript/fileName/FenceObjectProbabilityExtensions.cs:  -> 92e696b98e1ea10dccf577439d4dc2b6
-  custom:scripting/monoscript/fileName/TrianglePool.cs:  -> 2a7efc4eaaefdd57dd5a2718cdf2f68e
-  custom:scripting/monoscript/fileName/TriangleWriter.cs:  -> d750261e20389d21e4cdc0674d67ee7b
-  custom:scripting/monoscript/fileName/CuthillMcKee.cs:  -> b6f6e091d31f3159fd43fcaa4363b99c
-  custom:scripting/monoscript/fileName/GPULodManager.cs:  -> da72555c87299a6855213db6eb8d740a
-  custom:scripting/monoscript/fileName/Rectangle.cs:  -> 80afc2e2ba93f428d404a5219d210dda
-  custom:scripting/monoscript/fileName/EdgeIterator.cs:  -> 2c563a33ab6e166775916c2e75e6c140
-  custom:scripting/monoscript/fileName/MeshTriangulationToVertices.cs:  -> 1f8f5283a5d815faf29de8f10fd850a0
-  custom:scripting/monoscript/fileName/DrawOnMesh.cs:  -> 3a5aa8666fa0fd2fad46f4bb1a001c5c
-  custom:scripting/precompiled-assembly-types:TriangleDotNet:  -> a96e254ca4d10fdedb2d7f044483a53a
-  custom:scripting/monoscript/fileName/Vertex.cs:  -> b5b70dfedf7d6886d54ba0bfaeaaaf8b
-  custom:scripting/monoscript/fileName/NmSplineDataBase.cs:  -> ad1ee154ecb6193d45f22be1033283f5
-  custom:scripting/monoscript/fileName/TerrainSpline.cs:  -> e8211c9af21e1cb94aafc53a8c9b0134
-  custom:scripting/monoscript/fileName/Face.cs:  -> 5944acfc774a4ef29acaa002fd6e6f31
-  custom:scripting/monoscript/fileName/IntersectionHelper.cs:  -> 0b86660eba9a449328c79c4b6323f360
-  custom:scripting/monoscript/fileName/LightningUtility.cs:  -> d93eead1ab39af20f7f13fc4e00b560e
-  custom:scripting/monoscript/fileName/LakeVertexColorGenerator.cs:  -> ad500c08b971b111539192ededc7bd56
-  custom:scripting/monoscript/fileName/WaterfallEditor.cs:  -> 997460767cb76df35182c63efb673e4b
-  custom:scripting/monoscript/fileName/RamConnectionUI.cs:  -> 23c45d6235fd60587f7c215453486da6
-  custom:scripting/monoscript/fileName/BadTriQueue.cs:  -> 0394a2ae46632c8176957b80cd4acca4
-  custom:scripting/monoscript/fileName/AdjacencyMatrix.cs:  -> 84c97bc22a3340b22ecdc68c3883a4bd
-  custom:scripting/monoscript/fileName/LogoRamUi.cs:  -> ec515f2972842e7835285ce73dc0f293
-  custom:scripting/monoscript/fileName/DebugWriter.cs:  -> 0a39ca1b731a0dfb11ea48d27c15ed21
-  custom:scripting/monoscript/fileName/FenceMeshBender.cs:  -> ff8802b181f46938d7c7c2427dbbdd25
-  custom:scripting/monoscript/fileName/TerrainSplinesManagerDataHolder.cs:  -> f8edef19445ae4995358a4020720c0af
-  custom:scripting/monoscript/fileName/ITriangulator.cs:  -> ab2037f67287709c7be666de0d7eaeda
-  custom:scripting/monoscript/fileName/LogItem.cs:  -> 79e68e10c7d4b23198832d3b607944b1
-  custom:scripting/monoscript/fileName/LakeMeshPartGenerator.cs:  -> 846eab53b577a8f9a19c38e9a6817790
-  custom:scripting/monoscript/fileName/Waterfall.cs:  -> 8f8d019d283f05e5b56d89f51a40c18c
-  custom:scripting/monoscript/fileName/IFileFormat.cs:  -> 9180fd20b946718acb93222373988911
-  custom:scripting/monoscript/fileName/IPredicates.cs:  -> 2c808f065b04eeea48ce6c61931a6c25
-  custom:scripting/monoscript/fileName/VertexPainterData.cs:  -> d0339f505a51c1acd32e9ad3afb8c52d
-  custom:scripting/monoscript/fileName/TerrainNoiseParameters.cs:  -> 7e93209c321aa4f60b2ae2eb1d331c6a
-  custom:scripting/monoscript/fileName/DemoRamAPI.cs:  -> 59edf8f3be847da1d06f16a66f664288
-  custom:scripting/monoscript/fileName/BoundedVoronoi.cs:  -> d54c89f28945e22e4990641ab66e8110
-  custom:scripting/monoscript/fileName/Dwyer.cs:  -> 7a30e10382a1a86eb08a71b086597ec7
-  custom:scripting/monoscript/fileName/QualityMeasure.cs:  -> e552e5f605a6206955836ac6cb0be67b
-  custom:scripting/monoscript/fileName/NmSplinePoint.cs:  -> 5a2c8871400906d9d37e38ba04eaa785
-  custom:scripting/monoscript/fileName/NmsVector2IntEqualityComparer.cs:  -> 37ae84b3f8d4386ae4ddb82c4721d86d
-  custom:scripting/monoscript/fileName/ISmoother.cs:  -> d5e8a7647500b280546e8d62475ea07e
-  custom:scripting/monoscript/fileName/RamBuoyancyCalculations.cs:  -> d7bb07f19d5bc9200f12650636c1319c
-  custom:scripting/monoscript/fileName/TerrainPainterData.cs:  -> c792651ee48ca770c2cebc2b390b185e
-  custom:scripting/monoscript/fileName/Osub.cs:  -> 94a5006af967a01524b23762d345c8d9
-  custom:scripting/monoscript/fileName/RobustPredicates.cs:  -> 919bbe2e0892d184db9ab6332c8e83fe
-  custom:scripting/monoscript/fileName/RamMeshPartGenerator.cs:  -> fcd6ef19c3748cdba3af4d15079a7028
-  custom:scripting/monoscript/fileName/RamDebug.cs:  -> 70ecc379c0360faa9a5860214f1d1c75
-  custom:scripting/monoscript/fileName/FenceProfileEditor.cs:  -> 6fe3cae3b83978f997081a047b1ee713
-  custom:scripting/monoscript/fileName/RamSplineEditor.cs:  -> fee660ba4f70e108528356602f99fdc3
-  custom:scripting/monoscript/fileName/NmSplineData.cs:  -> 90647cc400823b41df847a6cbfc29026
-  custom:scripting/monoscript/fileName/LakePolygon.cs:  -> 818936427eace680f644a7f50aeea602
-  custom:scripting/monoscript/fileName/WaterfallDebugger.cs:  -> 46e45e1354579cadc80fcfd79d931eff
-  custom:scripting/monoscript/fileName/IMesh.cs:  -> 8c6975d47a518025626074ddc394e350
-  custom:scripting/monoscript/fileName/RamSimulationGenerator.cs:  -> 3f17183083ac39e30f06a57ad8c62e8a
-  custom:scripting/monoscript/fileName/SimpleSmoother.cs:  -> 8dfb5b41dc11054f2c90734df0b94be2
-  custom:scripting/monoscript/fileName/RamPostProcessing.cs:  -> ddfa89f4a3d99e16f32b80d013a7ec82
+========================================================================
+Received Import Request.
+  Time since last request: 26337.180984 seconds.
+  path: Assets/AmrumPalette.asset
+  artifactKey: Guid(69e6c63216f1b3b46a55cfe503da4ab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmrumPalette.asset using Guid(69e6c63216f1b3b46a55cfe503da4ab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '92fd149872f15d77de423f522e34c8e6') in 0.051257 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/InputSystem_Actions.inputactions
+  artifactKey: Guid(0455b516d2656594193444459a46896e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InputSystem_Actions.inputactions using Guid(0455b516d2656594193444459a46896e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f31c56308f351d123082836a714ee271') in 0.011899 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/MasterMixer.mixer
+  artifactKey: Guid(6d915f3b1a8bc3d4ea16dca7a9836c9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MasterMixer.mixer using Guid(6d915f3b1a8bc3d4ea16dca7a9836c9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+Refreshing native plugins compatible for Editor in 33.92 ms, found 12 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+ -> (artifact id: '78715aa9174ffa948dfbb000d18aec1f') in 0.037735 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/New Terrain 4.asset
+  artifactKey: Guid(774f39f35bf322b4399e57a7e9e99893) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain 4.asset using Guid(774f39f35bf322b4399e57a7e9e99893) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '889a4437155755ab90a41321be1c9609') in 0.074951 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Beach test.mixer
+  artifactKey: Guid(4fac376d91b1a1f48b9ea10db1ade7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Beach test.mixer using Guid(4fac376d91b1a1f48b9ea10db1ade7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+Refreshing native plugins compatible for Editor in 17.62 ms, found 12 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+ -> (artifact id: '87b1bba8fe0c9b84c9e52f93e51ab217') in 0.020463 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/CityGen3D/Materials/Invisible.mat
+  artifactKey: Guid(bb1810d39f301054abfbcef012eb0883) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Invisible.mat using Guid(bb1810d39f301054abfbcef012eb0883) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '0199c521665ace141894437c0628b036') in 0.707054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 68
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/Sand.mat
+  artifactKey: Guid(543875c093f85bc428ccb7ea99e34bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/Sand.mat using Guid(543875c093f85bc428ccb7ea99e34bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'c67d381ad38098cd8f0b96fe327005a5') in 0.028261 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/Asphalt.mat
+  artifactKey: Guid(abc45d94bbfe2e543b2b773aea903a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/Asphalt.mat using Guid(abc45d94bbfe2e543b2b773aea903a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a4f750604f1850f80012f8675a39cd46') in 0.022153 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/Gravel.mat
+  artifactKey: Guid(e74da8c75e05aaf43a909a6451200409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/Gravel.mat using Guid(e74da8c75e05aaf43a909a6451200409) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '0fa0f0f9243635375bd656bb92ec5ca2') in 0.018408 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/Grass.mat
+  artifactKey: Guid(1f7987b225b23a14e9a314e87d0c3a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/Grass.mat using Guid(1f7987b225b23a14e9a314e87d0c3a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'fc254ca79e741a941c5d98aa709a4176') in 0.013651 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/AsphaltCracked.mat
+  artifactKey: Guid(229ff50172476a346b40eb8bc2896de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/AsphaltCracked.mat using Guid(229ff50172476a346b40eb8bc2896de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '47c4ba033f0ffd9da500b2162af1cdd1') in 0.012999 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/Soil.mat
+  artifactKey: Guid(3a6582abe71002949ab7d758afee1143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/Soil.mat using Guid(3a6582abe71002949ab7d758afee1143) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'bc65271731cedeee58e4402033655d0b') in 0.013775 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/CityGen3D/Materials/Misc/Plastic.mat
+  artifactKey: Guid(278ffae95112fbc41b70195f3370cb87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Misc/Plastic.mat using Guid(278ffae95112fbc41b70195f3370cb87) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'cf66cdcc7128dd551a1d73e594a89b41') in 0.888979 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/CityGen3D/Materials/Roof/TilesRed.mat
+  artifactKey: Guid(4ea848c2d85a34b438287d0a104af55d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Roof/TilesRed.mat using Guid(4ea848c2d85a34b438287d0a104af55d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '5f423d403667a8d2b90f7959abb11024') in 0.473387 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/Swamp.mat
+  artifactKey: Guid(88050144bbed80241b2c719520e46ac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/Swamp.mat using Guid(88050144bbed80241b2c719520e46ac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '187de545f9c537c66be857cdd801e0ea') in 0.301601 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/Riverbed.mat
+  artifactKey: Guid(7d40eb535e3d76f47b624608e5d2442a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/Riverbed.mat using Guid(7d40eb535e3d76f47b624608e5d2442a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '64d535077b5deb4401c6c5ed3b6647cb') in 0.015482 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/Rock.mat
+  artifactKey: Guid(fa291ae0f3cd90545b95401542ebacde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/Rock.mat using Guid(fa291ae0f3cd90545b95401542ebacde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '05de54ca65263ac84032805f0e82516a') in 0.012176 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/CityGen3D/Materials/Terrain/PavedHerringbone.mat
+  artifactKey: Guid(3da8d8f35fe854843a2daef6c9ef990f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityGen3D/Materials/Terrain/PavedHerringbone.mat using Guid(3da8d8f35fe854843a2daef6c9ef990f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e005e4b9b86ee6cd975878ef56497271') in 0.541495 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.
 AssetImportWorker is now disconnected from the server

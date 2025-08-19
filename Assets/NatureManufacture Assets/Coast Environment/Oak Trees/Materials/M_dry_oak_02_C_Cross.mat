@@ -13,10 +13,12 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHATEST_ON
-  - _DISABLE_DECALS
-  - _DISABLE_SSR_TRANSPARENT
+  - _SPECULAR_SETUP
+  - _USE_TRANSLUCENCY
   m_InvalidKeywords:
   - _DENSITY_MODE
+  - _DISABLE_DECALS
+  - _DISABLE_SSR_TRANSPARENT
   - _INFLUENCEMASK_MAP
   - _MAIN_LAYER_INFLUENCE_MODE
   - _MASKMAP0
@@ -41,7 +43,6 @@ Material:
   - TransparentDepthPostpass
   - TransparentBackface
   - RayTracingPrepass
-  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -162,6 +163,7 @@ Material:
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
+    - _AlphaClip: 1
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 1
     - _AlphaCutoffPostpass: 0.5
@@ -172,16 +174,21 @@ Material:
     - _AlphaRemapMin: 0
     - _AlphaShadowThreshold: 0.89
     - _AlphaSrcBlend: 1
+    - _AlphaToMask: 1
     - _Anisotropy: 0
     - _Backface_Brightness: -1
     - _Backface_Saturation: 1
     - _Backface_Thickness_Mask_Threshold: 1
+    - _Blend: 0
     - _BlendMode: 0
+    - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
+    - _CastShadows: 1
     - _CoatMask: 0
     - _ColorNoiseTilling: 2
     - _ConservativeDepthOffsetEnable: 0
     - _Cross_Backface_Mask_Power: 1
+    - _Cull: 2
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -225,6 +232,8 @@ Material:
     - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
+    - _Leaves_Metallic: 0
+    - _Leaves_Specular: 0
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0
@@ -240,7 +249,10 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
+    - _QueueControl: 1
+    - _QueueOffset: 0
     - _RayTracing: 0
+    - _ReceiveShadows: 1
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
@@ -267,11 +279,19 @@ Material:
     - _Stiffness: 1
     - _SubsurfaceMask: 1
     - _SupportDecals: 0
+    - _Surface: 0
     - _SurfaceType: 0
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1
+    - _ThicknessRemapMax: 1
+    - _ThicknessRemapMin: 0
     - _TouchReactActive: 0
+    - _Translucency_Intensivity: 3
+    - _Translucency_Intensivity_1: 0
+    - _Translucency_Self_Shadow_Reduction: 1
+    - _Translucency_Self_Shadow_Reduction_Smooth: 1
+    - _Translucency_Shadow_Reduction: 0.12
     - _TransmissionEnable: 1
     - _TransmissionMask: 1
     - _TransparentBackfaceEnable: 0
@@ -281,8 +301,11 @@ Material:
     - _TransparentSortPriority: 0
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
+    - _Trunk_Metallic: 0
     - _Trunk_Normal_Scale: 1
     - _Trunk_Smoothness_Remap_Max: 0.363
+    - _Trunk_Specular: 0
+    - _USE_TRANSLUCENCY: 1
     - _UVBase: 0
     - _UVDetail: 0
     - _UVEmissive: 0
@@ -290,10 +313,13 @@ Material:
     - _UseShadowThreshold: 1
     - _WindNormalInfluence: 0
     - _Wind_Drag_Directionality: 1
+    - _WorkflowMode: 0
+    - _ZTest: 4
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 3
     - _ZTestTransparent: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     - __dirty: 1
     m_Colors:
     - _Backface_Thickness_Mask_Remap: {r: 0.01, g: 1, b: 0, a: 0}
@@ -312,12 +338,16 @@ Material:
     - _HealthyColor: {r: 1, g: 1, b: 1, a: 0}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _Leaves_Specular: {r: 0.03921569, g: 0.03921569, b: 0.078431256, a: 0}
+    - _MeshNormalMultiply: {r: 1, g: 1, b: 1, a: 0}
     - _NewNormal: {r: 0, g: 0, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TilingOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _Translucency_Color: {r: 0.8501246, g: 0.86574405, b: 0.9056604, a: 1}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TrunkBaseColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Trunk_Specular: {r: 0, g: 0, b: 0, a: 0}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}

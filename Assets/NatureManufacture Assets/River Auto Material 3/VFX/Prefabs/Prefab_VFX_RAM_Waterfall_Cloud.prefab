@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989110930237852304}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.8578139, z: 0, w: 0.51396054}
-  m_LocalPosition: {x: 155.38, y: 96.03, z: 104.16}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -118.144, z: 0}
 --- !u!2083052967 &1989110930237852335
 VisualEffect:
@@ -47,6 +47,7 @@ VisualEffect:
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
@@ -134,7 +135,7 @@ VFXRenderer:
   m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 0
+  m_ReflectionProbeUsage: 2
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 257
@@ -158,7 +159,7 @@ VFXRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
 --- !u!205 &386201602261112230
 LODGroup:
   m_ObjectHideFlags: 0

@@ -94,17 +94,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2335f8fdaad78cd48b0d1c81b980a4b7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 126.650154
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2335f8fdaad78cd48b0d1c81b980a4b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.85175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2335f8fdaad78cd48b0d1c81b980a4b7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 606.5328
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2335f8fdaad78cd48b0d1c81b980a4b7,
         type: 3}
@@ -174,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 4742473837712756890, guid: 2335f8fdaad78cd48b0d1c81b980a4b7,
         type: 3}
       propertyPath: m_Size
-      value: 9.092937
+      value: 6.061958
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 2335f8fdaad78cd48b0d1c81b980a4b7,
         type: 3}
@@ -257,7 +257,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7234245441911033540, guid: 2335f8fdaad78cd48b0d1c81b980a4b7,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7304922618988637737}
+      addedObject: {fileID: 2024747951362042878}
   m_SourcePrefab: {fileID: 100100000, guid: 2335f8fdaad78cd48b0d1c81b980a4b7, type: 3}
 --- !u!4 &777308817078147456 stripped
 Transform:
@@ -271,7 +271,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 955668282340654699}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &7304922618988637737
+--- !u!136 &2024747951362042878
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
