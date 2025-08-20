@@ -40,8 +40,8 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
         _NMWaterSmoothness("Water Smoothness", Range(0, 1)) = 0.9
         _NMWaterSmoothness_far("Water Smoothness Far", Range(0, 1)) = 0.9
         _NMFoamSmoothness("Side Foam Smoothness", Range(0, 1)) = 0
-        _SmallCascadeSmoothness("Small Cascade Smoothness", Range(0, 1)) = 0.2
-        _BigCascadeSmoothness("Big Cascade Smoothness", Range(0, 1)) = 0.3
+        _SmallCascadeSmoothness("Small Cascade Smoothness", Range(0, 1)) = 0
+        _BigCascadeSmoothness("Big Cascade Smoothness", Range(0, 1)) = 0
         _Specular_Fresnel_Power("Specular Fresnel Power", Float) = 4
         _Specular_Distance("Specular Distance", Float) = 60
         _Specular_Distance_Blend("Specular Distance Blend", Range(0.001, 10)) = 4
@@ -49,9 +49,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
         _Specular_Depth_Blend("Specular Depth Blend", Range(0.001, 10)) = 4
         _Specular_Min("Specular Min", Range(0, 1)) = 0.04
         _Specular_Max("Specular Max", Range(0, 1)) = 1
-        _Side_Foam_Specular("Side Foam Specular", Range(0, 1)) = 0.04
-        _Small_Cascade_Foam_Specular("Small Cascade Foam Specular", Range(0, 1)) = 0.04
-        _Big_Cascade_Foam_Specular("Big Cascade Foam Specular", Range(0, 1)) = 0.04
+        _Side_Foam_Specular("Side Foam Specular", Range(0, 1)) = 0.19
+        _Small_Cascade_Foam_Specular("Small Cascade Foam Specular", Range(0, 1)) = 0.19
+        _Big_Cascade_Foam_Specular("Big Cascade Foam Specular", Range(0, 1)) = 0.19
         _AOPower("Water Ambient Occlusion", Range(0, 1)) = 1
         [DiffusionProfile]_NM_SSSSettings_Water_RAM("NM_SSSSettings_Water_RAM", Float) = 3.35746002197266
 [HideInInspector]_NM_SSSSettings_Water_RAM_Asset("NM_SSSSettings_Water_RAM", Vector) = (681503832613585000, -41622542256807100000000000000000, -145368187523340000000000000000000000000, 128896.0390625)
@@ -1375,7 +1375,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_ed037af44608420ab3265a7df6402025_Out_2_Vector2, _Multiply_9f698a12cfd24e9988639bec87590cfb_Out_2_Vector2);
             float _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float = _GlobalTiling;
             float _Divide_80f645f623c34bb094993687531f188c_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
+            Unity_Divide_float(1, _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -1390,14 +1390,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), float(0));
+              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_G_6_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.g;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_B_7_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.b;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_A_8_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.a;
             float _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float;
-            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, float(-0.25), _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
+            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, -0.25, _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
             float _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float = MacroWaveTessScale;
             float _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float;
             Unity_Multiply_float_float(_Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float, _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float, _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float);
@@ -1419,7 +1419,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_G_6_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.g;
@@ -1428,7 +1428,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_G_6_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.g;
@@ -1437,7 +1437,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float, _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float, _FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_FlowLerp_9_Float, _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float);
             float _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float;
-            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, float(-0.25), _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
+            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, -0.25, _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
             float _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float = _SlowWaterTessScale;
             float _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float;
             Unity_Multiply_float_float(_Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float, _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float, _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float);
@@ -1461,7 +1461,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_G_6_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.g;
@@ -1470,7 +1470,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_G_6_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.g;
@@ -1479,7 +1479,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float, _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float, _FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_FlowLerp_9_Float, _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float);
             float _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float;
-            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, float(-0.25), _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
+            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, -0.25, _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
             UnityTexture2D _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_eea4c8cfc6244f37bb18b800901879dc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_e8d5d8d771cd454ba415134901ad2233_Out_0_Vector2 = _NoiseTiling;
@@ -1498,7 +1498,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_R_5_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_G_6_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.g;
@@ -1507,7 +1507,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_R_5_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_G_6_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.g;
@@ -1524,7 +1524,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float;
             Unity_Multiply_float_float(_Power_954ebd27380c4ad6bc79a22a77a165f1_Out_2_Float, _Property_140feace70db4fd0a03c4d6a031435c4_Out_0_Float, _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float);
             float _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float;
-            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, float(0.4), float(1), _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
+            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, 0.4, 1, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
             float _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float;
             Unity_Multiply_float_float(_Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float, _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float);
             float _Property_3174f3b50d8f8b809685448270c41957_Out_0_Float = _SmallCascadeWaterTessScale;
@@ -1537,22 +1537,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -1567,22 +1567,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -1591,11 +1591,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_36f60bc2706a8a839dd567cffb1e3428_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float);
             float _Add_cdc607afa06c5886a21bf10afd2430c8_Out_2_Float;
@@ -1618,7 +1618,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_G_6_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.g;
@@ -1627,7 +1627,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), float(1));
+              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), 1);
             #endif
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_G_6_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.g;
@@ -1636,7 +1636,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float, _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float, _FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_FlowLerp_9_Float, _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float);
             float _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float;
-            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, float(-0.25), _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
+            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, -0.25, _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
             UnityTexture2D _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_da695384bc3e4638b2691bfef88f35bc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_c3a2c4515c494d9196e6b078cc1bc640_Out_0_Vector2 = _Big_Cascade_Noise_Tiling;
@@ -1655,7 +1655,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_R_5_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_G_6_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.g;
@@ -1664,7 +1664,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_R_5_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_G_6_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.g;
@@ -1681,7 +1681,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float;
             Unity_Multiply_float_float(_Power_27f23867abd54d28aaffca1f12d17784_Out_2_Float, _Property_3ec99b9f54704f13ade0a00edbde2c3e_Out_0_Float, _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float);
             float _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float;
-            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, float(0.6), float(1), _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
+            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, 0.6, 1, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
             float _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float;
             Unity_Multiply_float_float(_Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float, _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float);
             float _Property_f6b107e5e0d31d8c98e66eefbf3de6f2_Out_0_Float = _BigCascadeWaterTessScale;
@@ -1825,22 +1825,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -1849,11 +1849,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -1879,11 +1879,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -1911,7 +1911,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -1942,7 +1942,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -1977,7 +1977,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -2004,7 +2004,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -2130,22 +2130,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -2156,7 +2156,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -2188,7 +2188,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -2294,7 +2294,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -2376,7 +2376,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -2390,7 +2390,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -2402,7 +2402,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -2420,14 +2420,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -4441,22 +4441,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -4465,11 +4465,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -4495,11 +4495,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -4527,7 +4527,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -4558,7 +4558,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -4593,7 +4593,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -4620,7 +4620,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -4746,22 +4746,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -4772,7 +4772,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -4804,7 +4804,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -4910,7 +4910,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -4992,7 +4992,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -5006,7 +5006,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -5018,7 +5018,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -5027,7 +5027,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -5082,11 +5082,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -5103,7 +5103,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -5112,7 +5112,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -5141,25 +5141,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -5168,35 +5168,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -5225,9 +5225,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -5246,7 +5246,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -5260,9 +5260,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -5278,14 +5278,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -5325,7 +5325,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -5334,23 +5334,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -5364,7 +5364,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -5374,7 +5374,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -7352,7 +7352,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_ed037af44608420ab3265a7df6402025_Out_2_Vector2, _Multiply_9f698a12cfd24e9988639bec87590cfb_Out_2_Vector2);
             float _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float = _GlobalTiling;
             float _Divide_80f645f623c34bb094993687531f188c_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
+            Unity_Divide_float(1, _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -7367,14 +7367,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), float(0));
+              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_G_6_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.g;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_B_7_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.b;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_A_8_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.a;
             float _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float;
-            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, float(-0.25), _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
+            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, -0.25, _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
             float _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float = MacroWaveTessScale;
             float _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float;
             Unity_Multiply_float_float(_Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float, _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float, _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float);
@@ -7396,7 +7396,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_G_6_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.g;
@@ -7405,7 +7405,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_G_6_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.g;
@@ -7414,7 +7414,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float, _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float, _FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_FlowLerp_9_Float, _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float);
             float _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float;
-            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, float(-0.25), _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
+            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, -0.25, _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
             float _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float = _SlowWaterTessScale;
             float _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float;
             Unity_Multiply_float_float(_Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float, _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float, _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float);
@@ -7438,7 +7438,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_G_6_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.g;
@@ -7447,7 +7447,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_G_6_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.g;
@@ -7456,7 +7456,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float, _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float, _FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_FlowLerp_9_Float, _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float);
             float _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float;
-            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, float(-0.25), _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
+            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, -0.25, _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
             UnityTexture2D _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_eea4c8cfc6244f37bb18b800901879dc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_e8d5d8d771cd454ba415134901ad2233_Out_0_Vector2 = _NoiseTiling;
@@ -7475,7 +7475,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_R_5_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_G_6_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.g;
@@ -7484,7 +7484,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_R_5_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_G_6_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.g;
@@ -7501,7 +7501,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float;
             Unity_Multiply_float_float(_Power_954ebd27380c4ad6bc79a22a77a165f1_Out_2_Float, _Property_140feace70db4fd0a03c4d6a031435c4_Out_0_Float, _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float);
             float _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float;
-            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, float(0.4), float(1), _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
+            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, 0.4, 1, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
             float _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float;
             Unity_Multiply_float_float(_Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float, _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float);
             float _Property_3174f3b50d8f8b809685448270c41957_Out_0_Float = _SmallCascadeWaterTessScale;
@@ -7514,22 +7514,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -7544,22 +7544,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -7568,11 +7568,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_36f60bc2706a8a839dd567cffb1e3428_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float);
             float _Add_cdc607afa06c5886a21bf10afd2430c8_Out_2_Float;
@@ -7595,7 +7595,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_G_6_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.g;
@@ -7604,7 +7604,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), float(1));
+              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), 1);
             #endif
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_G_6_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.g;
@@ -7613,7 +7613,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float, _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float, _FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_FlowLerp_9_Float, _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float);
             float _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float;
-            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, float(-0.25), _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
+            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, -0.25, _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
             UnityTexture2D _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_da695384bc3e4638b2691bfef88f35bc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_c3a2c4515c494d9196e6b078cc1bc640_Out_0_Vector2 = _Big_Cascade_Noise_Tiling;
@@ -7632,7 +7632,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_R_5_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_G_6_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.g;
@@ -7641,7 +7641,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_R_5_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_G_6_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.g;
@@ -7658,7 +7658,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float;
             Unity_Multiply_float_float(_Power_27f23867abd54d28aaffca1f12d17784_Out_2_Float, _Property_3ec99b9f54704f13ade0a00edbde2c3e_Out_0_Float, _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float);
             float _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float;
-            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, float(0.6), float(1), _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
+            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, 0.6, 1, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
             float _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float;
             Unity_Multiply_float_float(_Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float, _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float);
             float _Property_f6b107e5e0d31d8c98e66eefbf3de6f2_Out_0_Float = _BigCascadeWaterTessScale;
@@ -7811,22 +7811,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -7835,11 +7835,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -7865,11 +7865,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -7897,7 +7897,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -7928,7 +7928,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -7963,7 +7963,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -7990,7 +7990,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -8116,22 +8116,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -8142,7 +8142,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -8174,7 +8174,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -8280,7 +8280,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -8362,7 +8362,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -8376,7 +8376,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -8388,7 +8388,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -8397,7 +8397,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -8452,11 +8452,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -8473,7 +8473,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -8482,7 +8482,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -8511,25 +8511,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -8538,35 +8538,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -8595,9 +8595,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -8616,7 +8616,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -8630,9 +8630,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -8648,14 +8648,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -8695,7 +8695,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -8704,23 +8704,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -8734,7 +8734,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -8744,7 +8744,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -10747,7 +10747,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_ed037af44608420ab3265a7df6402025_Out_2_Vector2, _Multiply_9f698a12cfd24e9988639bec87590cfb_Out_2_Vector2);
             float _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float = _GlobalTiling;
             float _Divide_80f645f623c34bb094993687531f188c_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
+            Unity_Divide_float(1, _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -10762,14 +10762,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), float(0));
+              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_G_6_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.g;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_B_7_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.b;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_A_8_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.a;
             float _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float;
-            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, float(-0.25), _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
+            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, -0.25, _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
             float _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float = MacroWaveTessScale;
             float _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float;
             Unity_Multiply_float_float(_Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float, _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float, _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float);
@@ -10791,7 +10791,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_G_6_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.g;
@@ -10800,7 +10800,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_G_6_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.g;
@@ -10809,7 +10809,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float, _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float, _FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_FlowLerp_9_Float, _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float);
             float _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float;
-            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, float(-0.25), _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
+            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, -0.25, _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
             float _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float = _SlowWaterTessScale;
             float _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float;
             Unity_Multiply_float_float(_Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float, _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float, _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float);
@@ -10833,7 +10833,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_G_6_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.g;
@@ -10842,7 +10842,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_G_6_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.g;
@@ -10851,7 +10851,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float, _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float, _FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_FlowLerp_9_Float, _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float);
             float _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float;
-            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, float(-0.25), _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
+            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, -0.25, _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
             UnityTexture2D _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_eea4c8cfc6244f37bb18b800901879dc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_e8d5d8d771cd454ba415134901ad2233_Out_0_Vector2 = _NoiseTiling;
@@ -10870,7 +10870,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_R_5_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_G_6_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.g;
@@ -10879,7 +10879,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_R_5_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_G_6_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.g;
@@ -10896,7 +10896,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float;
             Unity_Multiply_float_float(_Power_954ebd27380c4ad6bc79a22a77a165f1_Out_2_Float, _Property_140feace70db4fd0a03c4d6a031435c4_Out_0_Float, _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float);
             float _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float;
-            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, float(0.4), float(1), _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
+            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, 0.4, 1, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
             float _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float;
             Unity_Multiply_float_float(_Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float, _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float);
             float _Property_3174f3b50d8f8b809685448270c41957_Out_0_Float = _SmallCascadeWaterTessScale;
@@ -10909,22 +10909,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -10939,22 +10939,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -10963,11 +10963,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_36f60bc2706a8a839dd567cffb1e3428_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float);
             float _Add_cdc607afa06c5886a21bf10afd2430c8_Out_2_Float;
@@ -10990,7 +10990,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_G_6_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.g;
@@ -10999,7 +10999,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), float(1));
+              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), 1);
             #endif
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_G_6_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.g;
@@ -11008,7 +11008,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float, _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float, _FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_FlowLerp_9_Float, _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float);
             float _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float;
-            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, float(-0.25), _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
+            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, -0.25, _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
             UnityTexture2D _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_da695384bc3e4638b2691bfef88f35bc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_c3a2c4515c494d9196e6b078cc1bc640_Out_0_Vector2 = _Big_Cascade_Noise_Tiling;
@@ -11027,7 +11027,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_R_5_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_G_6_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.g;
@@ -11036,7 +11036,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_R_5_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_G_6_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.g;
@@ -11053,7 +11053,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float;
             Unity_Multiply_float_float(_Power_27f23867abd54d28aaffca1f12d17784_Out_2_Float, _Property_3ec99b9f54704f13ade0a00edbde2c3e_Out_0_Float, _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float);
             float _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float;
-            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, float(0.6), float(1), _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
+            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, 0.6, 1, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
             float _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float;
             Unity_Multiply_float_float(_Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float, _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float);
             float _Property_f6b107e5e0d31d8c98e66eefbf3de6f2_Out_0_Float = _BigCascadeWaterTessScale;
@@ -11206,22 +11206,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -11230,11 +11230,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -11260,11 +11260,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -11292,7 +11292,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -11323,7 +11323,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -11358,7 +11358,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -11385,7 +11385,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -11511,22 +11511,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -11537,7 +11537,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -11569,7 +11569,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -11675,7 +11675,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -11757,7 +11757,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -11771,7 +11771,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -11783,7 +11783,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -11792,7 +11792,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -11847,11 +11847,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -11868,7 +11868,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -11877,7 +11877,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -11906,25 +11906,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -11933,35 +11933,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -11990,9 +11990,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -12011,7 +12011,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -12025,9 +12025,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -12043,14 +12043,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -12090,7 +12090,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -12099,23 +12099,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -12129,7 +12129,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -12139,7 +12139,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -14151,7 +14151,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_ed037af44608420ab3265a7df6402025_Out_2_Vector2, _Multiply_9f698a12cfd24e9988639bec87590cfb_Out_2_Vector2);
             float _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float = _GlobalTiling;
             float _Divide_80f645f623c34bb094993687531f188c_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
+            Unity_Divide_float(1, _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -14166,14 +14166,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), float(0));
+              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_G_6_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.g;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_B_7_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.b;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_A_8_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.a;
             float _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float;
-            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, float(-0.25), _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
+            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, -0.25, _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
             float _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float = MacroWaveTessScale;
             float _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float;
             Unity_Multiply_float_float(_Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float, _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float, _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float);
@@ -14195,7 +14195,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_G_6_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.g;
@@ -14204,7 +14204,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_G_6_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.g;
@@ -14213,7 +14213,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float, _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float, _FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_FlowLerp_9_Float, _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float);
             float _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float;
-            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, float(-0.25), _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
+            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, -0.25, _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
             float _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float = _SlowWaterTessScale;
             float _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float;
             Unity_Multiply_float_float(_Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float, _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float, _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float);
@@ -14237,7 +14237,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_G_6_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.g;
@@ -14246,7 +14246,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_G_6_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.g;
@@ -14255,7 +14255,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float, _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float, _FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_FlowLerp_9_Float, _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float);
             float _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float;
-            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, float(-0.25), _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
+            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, -0.25, _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
             UnityTexture2D _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_eea4c8cfc6244f37bb18b800901879dc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_e8d5d8d771cd454ba415134901ad2233_Out_0_Vector2 = _NoiseTiling;
@@ -14274,7 +14274,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_R_5_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_G_6_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.g;
@@ -14283,7 +14283,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_R_5_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_G_6_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.g;
@@ -14300,7 +14300,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float;
             Unity_Multiply_float_float(_Power_954ebd27380c4ad6bc79a22a77a165f1_Out_2_Float, _Property_140feace70db4fd0a03c4d6a031435c4_Out_0_Float, _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float);
             float _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float;
-            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, float(0.4), float(1), _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
+            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, 0.4, 1, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
             float _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float;
             Unity_Multiply_float_float(_Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float, _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float);
             float _Property_3174f3b50d8f8b809685448270c41957_Out_0_Float = _SmallCascadeWaterTessScale;
@@ -14313,22 +14313,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -14343,22 +14343,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -14367,11 +14367,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_36f60bc2706a8a839dd567cffb1e3428_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float);
             float _Add_cdc607afa06c5886a21bf10afd2430c8_Out_2_Float;
@@ -14394,7 +14394,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_G_6_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.g;
@@ -14403,7 +14403,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), float(1));
+              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), 1);
             #endif
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_G_6_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.g;
@@ -14412,7 +14412,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float, _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float, _FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_FlowLerp_9_Float, _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float);
             float _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float;
-            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, float(-0.25), _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
+            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, -0.25, _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
             UnityTexture2D _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_da695384bc3e4638b2691bfef88f35bc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_c3a2c4515c494d9196e6b078cc1bc640_Out_0_Vector2 = _Big_Cascade_Noise_Tiling;
@@ -14431,7 +14431,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_R_5_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_G_6_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.g;
@@ -14440,7 +14440,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_R_5_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_G_6_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.g;
@@ -14457,7 +14457,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float;
             Unity_Multiply_float_float(_Power_27f23867abd54d28aaffca1f12d17784_Out_2_Float, _Property_3ec99b9f54704f13ade0a00edbde2c3e_Out_0_Float, _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float);
             float _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float;
-            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, float(0.6), float(1), _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
+            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, 0.6, 1, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
             float _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float;
             Unity_Multiply_float_float(_Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float, _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float);
             float _Property_f6b107e5e0d31d8c98e66eefbf3de6f2_Out_0_Float = _BigCascadeWaterTessScale;
@@ -14610,22 +14610,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -14634,11 +14634,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -14664,11 +14664,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -14696,7 +14696,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -14727,7 +14727,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -14762,7 +14762,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -14789,7 +14789,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -14915,22 +14915,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -14941,7 +14941,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -14973,7 +14973,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -15079,7 +15079,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -15161,7 +15161,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -15175,7 +15175,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -15187,7 +15187,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -15196,7 +15196,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -15251,11 +15251,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -15272,7 +15272,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -15281,7 +15281,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -15310,25 +15310,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -15337,35 +15337,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -15394,9 +15394,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -15415,7 +15415,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -15429,9 +15429,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -15447,14 +15447,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -15494,7 +15494,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -15503,23 +15503,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -15533,7 +15533,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -15543,7 +15543,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -17401,7 +17401,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_ed037af44608420ab3265a7df6402025_Out_2_Vector2, _Multiply_9f698a12cfd24e9988639bec87590cfb_Out_2_Vector2);
             float _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float = _GlobalTiling;
             float _Divide_80f645f623c34bb094993687531f188c_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
+            Unity_Divide_float(1, _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -17416,14 +17416,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), float(0));
+              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_G_6_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.g;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_B_7_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.b;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_A_8_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.a;
             float _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float;
-            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, float(-0.25), _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
+            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, -0.25, _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
             float _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float = MacroWaveTessScale;
             float _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float;
             Unity_Multiply_float_float(_Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float, _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float, _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float);
@@ -17445,7 +17445,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_G_6_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.g;
@@ -17454,7 +17454,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_G_6_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.g;
@@ -17463,7 +17463,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float, _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float, _FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_FlowLerp_9_Float, _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float);
             float _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float;
-            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, float(-0.25), _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
+            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, -0.25, _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
             float _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float = _SlowWaterTessScale;
             float _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float;
             Unity_Multiply_float_float(_Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float, _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float, _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float);
@@ -17487,7 +17487,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_G_6_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.g;
@@ -17496,7 +17496,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_G_6_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.g;
@@ -17505,7 +17505,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float, _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float, _FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_FlowLerp_9_Float, _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float);
             float _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float;
-            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, float(-0.25), _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
+            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, -0.25, _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
             UnityTexture2D _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_eea4c8cfc6244f37bb18b800901879dc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_e8d5d8d771cd454ba415134901ad2233_Out_0_Vector2 = _NoiseTiling;
@@ -17524,7 +17524,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_R_5_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_G_6_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.g;
@@ -17533,7 +17533,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_R_5_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_G_6_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.g;
@@ -17550,7 +17550,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float;
             Unity_Multiply_float_float(_Power_954ebd27380c4ad6bc79a22a77a165f1_Out_2_Float, _Property_140feace70db4fd0a03c4d6a031435c4_Out_0_Float, _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float);
             float _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float;
-            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, float(0.4), float(1), _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
+            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, 0.4, 1, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
             float _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float;
             Unity_Multiply_float_float(_Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float, _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float);
             float _Property_3174f3b50d8f8b809685448270c41957_Out_0_Float = _SmallCascadeWaterTessScale;
@@ -17563,22 +17563,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -17593,22 +17593,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -17617,11 +17617,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_36f60bc2706a8a839dd567cffb1e3428_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float);
             float _Add_cdc607afa06c5886a21bf10afd2430c8_Out_2_Float;
@@ -17644,7 +17644,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_G_6_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.g;
@@ -17653,7 +17653,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), float(1));
+              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), 1);
             #endif
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_G_6_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.g;
@@ -17662,7 +17662,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float, _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float, _FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_FlowLerp_9_Float, _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float);
             float _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float;
-            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, float(-0.25), _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
+            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, -0.25, _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
             UnityTexture2D _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_da695384bc3e4638b2691bfef88f35bc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_c3a2c4515c494d9196e6b078cc1bc640_Out_0_Vector2 = _Big_Cascade_Noise_Tiling;
@@ -17681,7 +17681,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_R_5_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_G_6_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.g;
@@ -17690,7 +17690,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_R_5_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_G_6_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.g;
@@ -17707,7 +17707,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float;
             Unity_Multiply_float_float(_Power_27f23867abd54d28aaffca1f12d17784_Out_2_Float, _Property_3ec99b9f54704f13ade0a00edbde2c3e_Out_0_Float, _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float);
             float _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float;
-            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, float(0.6), float(1), _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
+            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, 0.6, 1, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
             float _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float;
             Unity_Multiply_float_float(_Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float, _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float);
             float _Property_f6b107e5e0d31d8c98e66eefbf3de6f2_Out_0_Float = _BigCascadeWaterTessScale;
@@ -17853,22 +17853,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -17877,11 +17877,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -17907,11 +17907,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -17939,7 +17939,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -17970,7 +17970,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -18005,7 +18005,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -18032,7 +18032,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -18158,22 +18158,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -18184,7 +18184,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -18216,7 +18216,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -18322,7 +18322,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -18404,7 +18404,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -18418,7 +18418,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -18430,7 +18430,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -18448,14 +18448,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -18472,7 +18472,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Lerp_float(_Lerp_7f977b1796d54ab2a204de71327a33a9_Out_3_Float, _Property_baa3b3197ad6578199dc2da57e79bc4c_Out_0_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Lerp_35f90fcebe5a9481a5c0f41845b5239d_Out_3_Float);
             float _Property_19729c3fad203984b63630ce8edabf9d_Out_0_Float = _SmallCascadeSmoothness;
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -18498,9 +18498,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float _Lerp_cc8bb9fe6e021f8b98329d6377ba7058_Out_3_Float;
             Unity_Lerp_float(_Lerp_35f90fcebe5a9481a5c0f41845b5239d_Out_3_Float, _Property_19729c3fad203984b63630ce8edabf9d_Out_0_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float, _Lerp_cc8bb9fe6e021f8b98329d6377ba7058_Out_3_Float);
             float _Property_94efdcfe3a5a998bb3b399b34d6110a5_Out_0_Float = _BigCascadeSmoothness;
@@ -18520,7 +18520,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -18531,9 +18531,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float _Lerp_b93c8d58d001c08e84a1ed16444c27c9_Out_3_Float;
             Unity_Lerp_float(_Lerp_cc8bb9fe6e021f8b98329d6377ba7058_Out_3_Float, _Property_94efdcfe3a5a998bb3b399b34d6110a5_Out_0_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float, _Lerp_b93c8d58d001c08e84a1ed16444c27c9_Out_3_Float);
             float _Lerp_9cf31479c902a18aa7ae9fbd7db8432c_Out_3_Float;
@@ -20510,7 +20510,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_ed037af44608420ab3265a7df6402025_Out_2_Vector2, _Multiply_9f698a12cfd24e9988639bec87590cfb_Out_2_Vector2);
             float _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float = _GlobalTiling;
             float _Divide_80f645f623c34bb094993687531f188c_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
+            Unity_Divide_float(1, _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -20525,14 +20525,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), float(0));
+              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_G_6_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.g;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_B_7_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.b;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_A_8_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.a;
             float _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float;
-            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, float(-0.25), _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
+            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, -0.25, _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
             float _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float = MacroWaveTessScale;
             float _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float;
             Unity_Multiply_float_float(_Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float, _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float, _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float);
@@ -20554,7 +20554,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_G_6_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.g;
@@ -20563,7 +20563,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_G_6_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.g;
@@ -20572,7 +20572,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float, _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float, _FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_FlowLerp_9_Float, _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float);
             float _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float;
-            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, float(-0.25), _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
+            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, -0.25, _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
             float _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float = _SlowWaterTessScale;
             float _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float;
             Unity_Multiply_float_float(_Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float, _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float, _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float);
@@ -20596,7 +20596,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_G_6_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.g;
@@ -20605,7 +20605,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_G_6_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.g;
@@ -20614,7 +20614,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float, _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float, _FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_FlowLerp_9_Float, _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float);
             float _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float;
-            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, float(-0.25), _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
+            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, -0.25, _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
             UnityTexture2D _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_eea4c8cfc6244f37bb18b800901879dc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_e8d5d8d771cd454ba415134901ad2233_Out_0_Vector2 = _NoiseTiling;
@@ -20633,7 +20633,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_R_5_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_G_6_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.g;
@@ -20642,7 +20642,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_R_5_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_G_6_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.g;
@@ -20659,7 +20659,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float;
             Unity_Multiply_float_float(_Power_954ebd27380c4ad6bc79a22a77a165f1_Out_2_Float, _Property_140feace70db4fd0a03c4d6a031435c4_Out_0_Float, _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float);
             float _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float;
-            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, float(0.4), float(1), _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
+            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, 0.4, 1, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
             float _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float;
             Unity_Multiply_float_float(_Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float, _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float);
             float _Property_3174f3b50d8f8b809685448270c41957_Out_0_Float = _SmallCascadeWaterTessScale;
@@ -20672,22 +20672,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -20702,22 +20702,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -20726,11 +20726,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_36f60bc2706a8a839dd567cffb1e3428_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float);
             float _Add_cdc607afa06c5886a21bf10afd2430c8_Out_2_Float;
@@ -20753,7 +20753,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_G_6_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.g;
@@ -20762,7 +20762,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), float(1));
+              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), 1);
             #endif
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_G_6_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.g;
@@ -20771,7 +20771,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float, _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float, _FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_FlowLerp_9_Float, _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float);
             float _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float;
-            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, float(-0.25), _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
+            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, -0.25, _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
             UnityTexture2D _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_da695384bc3e4638b2691bfef88f35bc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_c3a2c4515c494d9196e6b078cc1bc640_Out_0_Vector2 = _Big_Cascade_Noise_Tiling;
@@ -20790,7 +20790,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_R_5_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_G_6_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.g;
@@ -20799,7 +20799,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_R_5_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_G_6_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.g;
@@ -20816,7 +20816,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float;
             Unity_Multiply_float_float(_Power_27f23867abd54d28aaffca1f12d17784_Out_2_Float, _Property_3ec99b9f54704f13ade0a00edbde2c3e_Out_0_Float, _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float);
             float _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float;
-            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, float(0.6), float(1), _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
+            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, 0.6, 1, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
             float _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float;
             Unity_Multiply_float_float(_Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float, _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float);
             float _Property_f6b107e5e0d31d8c98e66eefbf3de6f2_Out_0_Float = _BigCascadeWaterTessScale;
@@ -20969,22 +20969,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -20993,11 +20993,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -21023,11 +21023,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -21055,7 +21055,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -21086,7 +21086,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -21121,7 +21121,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -21148,7 +21148,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -21274,22 +21274,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -21300,7 +21300,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -21332,7 +21332,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -21438,7 +21438,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -21520,7 +21520,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -21534,7 +21534,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -21546,7 +21546,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -21555,7 +21555,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -21610,11 +21610,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -21631,7 +21631,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -21640,7 +21640,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -21669,25 +21669,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -21696,35 +21696,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -21753,9 +21753,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -21774,7 +21774,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -21788,9 +21788,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -21806,14 +21806,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -21853,7 +21853,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -21862,23 +21862,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -21892,7 +21892,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -21902,7 +21902,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -23962,7 +23962,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_ed037af44608420ab3265a7df6402025_Out_2_Vector2, _Multiply_9f698a12cfd24e9988639bec87590cfb_Out_2_Vector2);
             float _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float = _GlobalTiling;
             float _Divide_80f645f623c34bb094993687531f188c_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
+            Unity_Divide_float(1, _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -23977,14 +23977,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), float(0));
+              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_G_6_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.g;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_B_7_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.b;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_A_8_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.a;
             float _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float;
-            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, float(-0.25), _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
+            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, -0.25, _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
             float _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float = MacroWaveTessScale;
             float _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float;
             Unity_Multiply_float_float(_Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float, _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float, _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float);
@@ -24006,7 +24006,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_G_6_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.g;
@@ -24015,7 +24015,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_G_6_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.g;
@@ -24024,7 +24024,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float, _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float, _FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_FlowLerp_9_Float, _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float);
             float _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float;
-            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, float(-0.25), _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
+            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, -0.25, _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
             float _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float = _SlowWaterTessScale;
             float _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float;
             Unity_Multiply_float_float(_Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float, _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float, _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float);
@@ -24048,7 +24048,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_G_6_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.g;
@@ -24057,7 +24057,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_G_6_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.g;
@@ -24066,7 +24066,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float, _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float, _FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_FlowLerp_9_Float, _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float);
             float _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float;
-            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, float(-0.25), _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
+            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, -0.25, _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
             UnityTexture2D _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_eea4c8cfc6244f37bb18b800901879dc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_e8d5d8d771cd454ba415134901ad2233_Out_0_Vector2 = _NoiseTiling;
@@ -24085,7 +24085,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_R_5_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_G_6_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.g;
@@ -24094,7 +24094,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_R_5_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_G_6_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.g;
@@ -24111,7 +24111,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float;
             Unity_Multiply_float_float(_Power_954ebd27380c4ad6bc79a22a77a165f1_Out_2_Float, _Property_140feace70db4fd0a03c4d6a031435c4_Out_0_Float, _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float);
             float _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float;
-            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, float(0.4), float(1), _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
+            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, 0.4, 1, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
             float _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float;
             Unity_Multiply_float_float(_Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float, _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float);
             float _Property_3174f3b50d8f8b809685448270c41957_Out_0_Float = _SmallCascadeWaterTessScale;
@@ -24124,22 +24124,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -24154,22 +24154,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -24178,11 +24178,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_36f60bc2706a8a839dd567cffb1e3428_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float);
             float _Add_cdc607afa06c5886a21bf10afd2430c8_Out_2_Float;
@@ -24205,7 +24205,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_G_6_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.g;
@@ -24214,7 +24214,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), float(1));
+              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), 1);
             #endif
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_G_6_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.g;
@@ -24223,7 +24223,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float, _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float, _FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_FlowLerp_9_Float, _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float);
             float _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float;
-            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, float(-0.25), _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
+            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, -0.25, _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
             UnityTexture2D _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_da695384bc3e4638b2691bfef88f35bc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_c3a2c4515c494d9196e6b078cc1bc640_Out_0_Vector2 = _Big_Cascade_Noise_Tiling;
@@ -24242,7 +24242,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_R_5_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_G_6_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.g;
@@ -24251,7 +24251,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_R_5_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_G_6_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.g;
@@ -24268,7 +24268,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float;
             Unity_Multiply_float_float(_Power_27f23867abd54d28aaffca1f12d17784_Out_2_Float, _Property_3ec99b9f54704f13ade0a00edbde2c3e_Out_0_Float, _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float);
             float _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float;
-            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, float(0.6), float(1), _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
+            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, 0.6, 1, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
             float _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float;
             Unity_Multiply_float_float(_Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float, _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float);
             float _Property_f6b107e5e0d31d8c98e66eefbf3de6f2_Out_0_Float = _BigCascadeWaterTessScale;
@@ -24422,22 +24422,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -24446,11 +24446,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -24476,11 +24476,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -24508,7 +24508,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -24539,7 +24539,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -24574,7 +24574,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -24601,7 +24601,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -24727,22 +24727,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -24753,7 +24753,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -24785,7 +24785,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -24891,7 +24891,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -24973,7 +24973,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -24987,7 +24987,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -24999,7 +24999,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -25008,7 +25008,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -25063,11 +25063,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -25084,7 +25084,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -25093,7 +25093,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -25122,25 +25122,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -25149,35 +25149,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -25206,9 +25206,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -25227,7 +25227,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -25241,9 +25241,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -25259,14 +25259,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -25306,7 +25306,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -25315,23 +25315,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -25345,7 +25345,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -25355,7 +25355,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -27362,7 +27362,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_ed037af44608420ab3265a7df6402025_Out_2_Vector2, _Multiply_9f698a12cfd24e9988639bec87590cfb_Out_2_Vector2);
             float _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float = _GlobalTiling;
             float _Divide_80f645f623c34bb094993687531f188c_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
+            Unity_Divide_float(1, _Property_b74474a5130943aa9fda7cd532468d68_Out_0_Float, _Divide_80f645f623c34bb094993687531f188c_Out_2_Float);
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6013886b5ce44e75903c12f46fa0cdc4_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -27377,14 +27377,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), float(0));
+              float4 _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_cc9517d532e94d2d8880370b232142a3_Out_0_Texture2D.GetTransformedUV(_Add_5ee206f5134d4dfea140d929cf2312e3_Out_2_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_G_6_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.g;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_B_7_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.b;
             float _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_A_8_Float = _SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_RGBA_0_Vector4.a;
             float _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float;
-            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, float(-0.25), _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
+            Unity_Add_float(_SampleTexture2DLOD_5d2cb04ef7ae858081070f2ef761409d_R_5_Float, -0.25, _Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float);
             float _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float = MacroWaveTessScale;
             float _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float;
             Unity_Multiply_float_float(_Add_ade2e41264362e8b9ceb4250b3df2f88_Out_2_Float, _Property_4d0157e24de135829c50b5d0280cdea7_Out_0_Float, _Multiply_452196bbd5f3978fa74d9056c6a90072_Out_2_Float);
@@ -27406,7 +27406,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_G_6_Float = _SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_RGBA_0_Vector4.g;
@@ -27415,7 +27415,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_995bfc32abe341d89c2554104cd305fd_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_G_6_Float = _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_RGBA_0_Vector4.g;
@@ -27424,7 +27424,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_2172efb0d73b1c8faebb6f1914474f78_R_5_Float, _SampleTexture2DLOD_331a330b01b7b281bef496fce2a0a0de_R_5_Float, _FlowmapUV_30f4751fe0be42979f2ec470d6fb357b_FlowLerp_9_Float, _Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float);
             float _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float;
-            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, float(-0.25), _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
+            Unity_Add_float(_Lerp_25dd283ac3bfab87951ab2950c83bd23_Out_3_Float, -0.25, _Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float);
             float _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float = _SlowWaterTessScale;
             float _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float;
             Unity_Multiply_float_float(_Add_f5d3919f9d110f84be2db0b4e57905db_Out_2_Float, _Property_5f6191b3eec22f8691968a8c6e01b3ba_Out_0_Float, _Multiply_1716e0a2fbc64c82bb3125b8d0b85563_Out_2_Float);
@@ -27448,7 +27448,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_G_6_Float = _SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_RGBA_0_Vector4.g;
@@ -27457,7 +27457,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_8ed0eca72db34f1a90864927633b99c1_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_G_6_Float = _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_RGBA_0_Vector4.g;
@@ -27466,7 +27466,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_4f6be70774610b8d9dfa350c2a5d072b_R_5_Float, _SampleTexture2DLOD_477be41a2d869a8f8adf9d9278714191_R_5_Float, _FlowmapUV_ce4eb898757143ea8ee31cb9fdf9dc0b_FlowLerp_9_Float, _Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float);
             float _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float;
-            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, float(-0.25), _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
+            Unity_Add_float(_Lerp_79202e8722bd198a8e3c96b6f6ed9ee9_Out_3_Float, -0.25, _Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float);
             UnityTexture2D _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_eea4c8cfc6244f37bb18b800901879dc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_e8d5d8d771cd454ba415134901ad2233_Out_0_Vector2 = _NoiseTiling;
@@ -27485,7 +27485,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_R_5_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_G_6_Float = _SampleTexture2DLOD_8ba825dc46d54baebd76976958647f80_RGBA_0_Vector4.g;
@@ -27494,7 +27494,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_72d40fecd8c245be983cbc6f5919945f_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_4ce2f2d5b05f4106b6cfe41a2259b12d_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_R_5_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_G_6_Float = _SampleTexture2DLOD_27fcbac7963a4675b73d8a52b6d79401_RGBA_0_Vector4.g;
@@ -27511,7 +27511,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float;
             Unity_Multiply_float_float(_Power_954ebd27380c4ad6bc79a22a77a165f1_Out_2_Float, _Property_140feace70db4fd0a03c4d6a031435c4_Out_0_Float, _Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float);
             float _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float;
-            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, float(0.4), float(1), _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
+            Unity_Clamp_float(_Multiply_82fa83b39f3a43cb8120386e70efb615_Out_2_Float, 0.4, 1, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float);
             float _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float;
             Unity_Multiply_float_float(_Add_653ccc57b165d688b8b4122d29bdb348_Out_2_Float, _Clamp_bdc7a50fc7494d5786803b91136a7dc3_Out_3_Float, _Multiply_ca92bf23e935466ea7afb03497a725fc_Out_2_Float);
             float _Property_3174f3b50d8f8b809685448270c41957_Out_0_Float = _SmallCascadeWaterTessScale;
@@ -27524,22 +27524,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -27554,22 +27554,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -27578,11 +27578,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_36f60bc2706a8a839dd567cffb1e3428_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Multiply_b48714a1e38d5a80b19b3d47b680e90a_Out_2_Float);
             float _Add_cdc607afa06c5886a21bf10afd2430c8_Out_2_Float;
@@ -27605,7 +27605,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_G_6_Float = _SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_RGBA_0_Vector4.g;
@@ -27614,7 +27614,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), float(1));
+              float4 _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_7d88076b22b33b85897eb1e73803c57b_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_UV2_6_Vector2), 1);
             #endif
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_G_6_Float = _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_RGBA_0_Vector4.g;
@@ -27623,7 +27623,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float;
             Unity_Lerp_float(_SampleTexture2DLOD_91e8940818e35d8aafb21ad7e4fb03ce_R_5_Float, _SampleTexture2DLOD_1a0cba4d76b8dc819b6dfb46b89c0786_R_5_Float, _FlowmapUV_a2ad6ea446564f00b2e663a61df7b31b_FlowLerp_9_Float, _Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float);
             float _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float;
-            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, float(-0.25), _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
+            Unity_Add_float(_Lerp_a74bf7006e0ceb81af461eaab46f23b1_Out_3_Float, -0.25, _Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float);
             UnityTexture2D _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_Noise);
             float _Property_da695384bc3e4638b2691bfef88f35bc_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_c3a2c4515c494d9196e6b078cc1bc640_Out_0_Vector2 = _Big_Cascade_Noise_Tiling;
@@ -27642,7 +27642,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), float(0));
+              float4 _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV1_7_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_R_5_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_G_6_Float = _SampleTexture2DLOD_7e4a2bc27627482497ffe77735cb0ac5_RGBA_0_Vector4.g;
@@ -27651,7 +27651,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             #if defined(SHADER_API_GLES) && (SHADER_TARGET < 30)
               float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = float4(0.0f, 0.0f, 0.0f, 1.0f);
             #else
-              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), float(0));
+              float4 _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D_LOD(_Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat).samplerstate, _Property_e6b75e09b747463daeb232ed1b0caf6a_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_3670a9e2982f4a489da350459901c3fe_UV2_6_Vector2), 0);
             #endif
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_R_5_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.r;
             float _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_G_6_Float = _SampleTexture2DLOD_64a0e067b62840929ec7d2778e2a90e1_RGBA_0_Vector4.g;
@@ -27668,7 +27668,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float;
             Unity_Multiply_float_float(_Power_27f23867abd54d28aaffca1f12d17784_Out_2_Float, _Property_3ec99b9f54704f13ade0a00edbde2c3e_Out_0_Float, _Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float);
             float _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float;
-            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, float(0.6), float(1), _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
+            Unity_Clamp_float(_Multiply_385f1a462ad94cd5a15f60d8bd7071ba_Out_2_Float, 0.6, 1, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float);
             float _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float;
             Unity_Multiply_float_float(_Add_4a55e899a9299a83877d178ae45f49f1_Out_2_Float, _Clamp_df5091901e974814af8ae97a9694adcb_Out_3_Float, _Multiply_12bebb8a333846e69928580792ad1c91_Out_2_Float);
             float _Property_f6b107e5e0d31d8c98e66eefbf3de6f2_Out_0_Float = _BigCascadeWaterTessScale;
@@ -27821,22 +27821,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -27845,11 +27845,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -27875,11 +27875,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -27907,7 +27907,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -27938,7 +27938,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -27973,7 +27973,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -28000,7 +28000,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -28126,22 +28126,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -28152,7 +28152,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -28184,7 +28184,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -28290,7 +28290,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -28372,7 +28372,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -28386,7 +28386,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -28398,7 +28398,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -28407,7 +28407,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -28462,11 +28462,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -28483,7 +28483,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -28492,7 +28492,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -28521,25 +28521,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -28548,35 +28548,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -28605,9 +28605,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -28626,7 +28626,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -28640,9 +28640,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -28658,14 +28658,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -28705,7 +28705,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -28714,23 +28714,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -28744,7 +28744,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -28754,7 +28754,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -30736,22 +30736,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -30760,11 +30760,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -30790,11 +30790,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -30822,7 +30822,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -30853,7 +30853,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -30888,7 +30888,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -30915,7 +30915,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -31041,22 +31041,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -31067,7 +31067,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -31099,7 +31099,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -31205,7 +31205,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -31287,7 +31287,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -31301,7 +31301,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -31313,7 +31313,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -31322,7 +31322,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -31377,11 +31377,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -31398,7 +31398,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -31407,7 +31407,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -31436,25 +31436,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -31463,35 +31463,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -31520,9 +31520,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -31541,7 +31541,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -31555,9 +31555,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -31573,14 +31573,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -31620,7 +31620,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -31629,23 +31629,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -31659,7 +31659,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -31669,7 +31669,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -33473,22 +33473,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -33497,11 +33497,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -33527,11 +33527,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -33559,7 +33559,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -33590,7 +33590,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -33625,7 +33625,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -33652,7 +33652,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -33778,22 +33778,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -33804,7 +33804,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -33836,7 +33836,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -33942,7 +33942,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -34024,7 +34024,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -34038,7 +34038,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -34050,7 +34050,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -34059,7 +34059,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -34114,11 +34114,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -34135,7 +34135,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -34144,7 +34144,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -34173,25 +34173,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -34200,35 +34200,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -34257,9 +34257,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -34278,7 +34278,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -34292,9 +34292,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -34310,14 +34310,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -34357,7 +34357,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -34366,23 +34366,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -34396,7 +34396,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -34406,7 +34406,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -36228,22 +36228,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -36252,11 +36252,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -36282,11 +36282,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -36314,7 +36314,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -36345,7 +36345,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -36380,7 +36380,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -36407,7 +36407,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -36533,22 +36533,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -36559,7 +36559,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -36591,7 +36591,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -36697,7 +36697,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -36779,7 +36779,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -36793,7 +36793,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -36805,7 +36805,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -36814,7 +36814,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -36869,11 +36869,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -36890,7 +36890,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -36899,7 +36899,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -36928,25 +36928,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -36955,35 +36955,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -37012,9 +37012,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -37033,7 +37033,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -37047,9 +37047,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -37065,14 +37065,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -37112,7 +37112,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -37121,23 +37121,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -37151,7 +37151,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -37161,7 +37161,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -38981,22 +38981,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -39005,11 +39005,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -39035,11 +39035,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -39067,7 +39067,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -39098,7 +39098,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -39133,7 +39133,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -39160,7 +39160,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -39286,22 +39286,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -39312,7 +39312,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -39344,7 +39344,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -39450,7 +39450,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -39532,7 +39532,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -39546,7 +39546,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -39558,7 +39558,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -39567,7 +39567,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -39622,11 +39622,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -39643,7 +39643,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -39652,7 +39652,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -39681,25 +39681,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -39708,35 +39708,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -39765,9 +39765,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -39786,7 +39786,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -39800,9 +39800,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -39818,14 +39818,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -39865,7 +39865,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -39874,23 +39874,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -39904,7 +39904,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -39914,7 +39914,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;
@@ -41767,22 +41767,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float;
             Unity_Absolute_float(_Split_b9e7b4a6b4b5e58aa502d4b6d169b792_G_2_Float, _Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float);
             float _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float;
-            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, float(0), float(1), _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
+            Unity_Clamp_float(_Absolute_45576b7b972f7d8a82c937564b72f70b_Out_1_Float, 0, 1, _Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float);
             float _Property_6975119070a7eb84950e7da691463776_Out_0_Float = _BigCascadeAngle;
             float _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float;
-            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, float(45), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
+            Unity_Divide_float(_Property_6975119070a7eb84950e7da691463776_Out_0_Float, 45, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float);
             float _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float;
             Unity_OneMinus_float(_Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float);
             float _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float;
             Unity_Subtract_float(_Clamp_c2714660b22e6a86a3d1f402132434f1_Out_3_Float, _OneMinus_a7c4799546af71898266d38a4354b568_Out_1_Float, _Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float);
             float _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float;
-            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, float(0), float(2), _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
+            Unity_Clamp_float(_Subtract_e487cff09d7e158e8f03eeef153fbe43_Out_2_Float, 0, 2, _Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float);
             float _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
+            Unity_Divide_float(1, _Divide_86811ef0d01a1581b082fc982daa687c_Out_2_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float);
             float _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_001f24015dba2889ab4be2cbfefbc81f_Out_3_Float, _Divide_d1e47cd61e61c487be74fb1989b0bbb8_Out_2_Float, _Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float);
             float _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float;
-            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, float(0), float(1), _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
+            Unity_Clamp_float(_Multiply_a6dece8284b0dd89b3ad78540f989a2b_Out_2_Float, 0, 1, _Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float);
             float _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float;
             Unity_OneMinus_float(_Clamp_69414a1448338e8d9fc890185b317bc6_Out_3_Float, _OneMinus_b3ab3b092be02a8dbebaa86bf00ea51d_Out_1_Float);
             float _Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float;
@@ -41791,11 +41791,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float;
             Unity_Power_float(_Absolute_6cd65b456694da879b288dd44c7c10c6_Out_1_Float, _Property_f5a63fda0810468082350dfa23ec6bf3_Out_0_Float, _Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float);
             float _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float;
-            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, float(0), float(1), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
+            Unity_Clamp_float(_Power_0c67a131ce19048caeed8c043e033fb9_Out_2_Float, 0, 1, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float);
             float _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float;
-            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, float(0), _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
+            Unity_Lerp_float(_Multiply_4dfe464ddc0ba580a272fc742146df33_Out_2_Float, 0, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float);
             float _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float;
-            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, float(0), float(1), _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
+            Unity_Clamp_float(_Lerp_56eda20393c4ff89bed4bcfc1841a6f2_Out_3_Float, 0, 1, _Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float);
             UnityTexture2D _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
             float4 _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4 = SAMPLE_TEXTURE2D(_Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.tex, UnityBuildSamplerStateStruct(SamplerState_Linear_Repeat_Aniso8).samplerstate, _Property_94622aa721517985b36adf33b3a96214_Out_0_Texture2D.GetTransformedUV(_FlowmapUV_d5fcb249bb894f1cbcf0ff666310f11b_UV1_7_Vector2) );
             float _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_R_4_Float = _SampleTexture2D_f6eb47aeeabe878b991235bf880d85a1_RGBA_0_Vector4.r;
@@ -41821,11 +41821,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float;
             Unity_Multiply_float_float(_Power_0124bc21be997c86960ad1b455f9ffa5_Out_2_Float, _Property_3169243cdbb62885911a589c40568445_Out_0_Float, _Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float);
             float _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, float(0), float(1), _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_be7effbb7b36ea8aa1ad59e48a458bb0_Out_2_Float, 0, 1, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float);
             float _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_e6b29de69174a7848bf1c7a16206cc99_Out_3_Float, _Clamp_11dcdf044110fc83a2ca1e1f8f9d833c_Out_3_Float, _Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float);
             float _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float;
-            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, float(0), float(1), _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
+            Unity_Clamp_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, 0, 1, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float);
             float _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float;
             Unity_Multiply_float_float(_Property_7cfc9e3e212a43fc9caf25c7c7bf9ac4_Out_0_Float, _Clamp_104121bad36a4d5db99e09198c6d4d83_Out_3_Float, _Multiply_5ff01992934d4a28ab2861e196f4ce4e_Out_2_Float);
             float3 _NormalStrength_17f706e1e39845f791ca4d376dcc31f4_Out_2_Vector3;
@@ -41853,7 +41853,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_9eac4c1cd98e432d979be66b648258e3_Out_2_Vector2, _Multiply_7272c2e2b7774962b70803c6a25b6561_Out_2_Vector2);
             float _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float = _GlobalTiling;
             float _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
+            Unity_Divide_float(1, _Property_42b91ff5d6db4443a81ddea92914c9fd_Out_0_Float, _Divide_646db812f03c41db8fb79eb4f4a84e66_Out_2_Float);
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_6add6ed335d840a7ad7debbcefa4c3fe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -41884,7 +41884,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_ab6711ad135d408c866ce34b687037ac_G_2_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[1];
             float _Split_ab6711ad135d408c866ce34b687037ac_B_3_Float = _Sign_06f2975458415988a9d2092ea1f35bbe_Out_1_Vector3[2];
             float _Split_ab6711ad135d408c866ce34b687037ac_A_4_Float = 0;
-            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, float(1));
+            float2 _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2 = float2(_Split_ab6711ad135d408c866ce34b687037ac_G_2_Float, 1);
             float2 _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_88988996752b618593489d3deaa141a6_Out_0_Vector2, _Vector2_b24eca1782fd088587a625c1e2678201_Out_0_Vector2, _Multiply_fc925bb76a3b2e8097f63260903fa1c7_Out_2_Vector2);
             float _Split_2e8248d2a5a1c38b809ff9edce6c6583_R_1_Float = IN.WorldSpaceNormal[0];
@@ -41919,7 +41919,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             Unity_Multiply_float2_float2((IN.TimeParameters.x.xx), _Multiply_792380c3f9124c16b4290d3996b8f514_Out_2_Vector2, _Multiply_4af126c8eb5940d59c79f016691ffc9b_Out_2_Vector2);
             float _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float = _GlobalTiling;
             float _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float;
-            Unity_Divide_float(float(1), _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
+            Unity_Divide_float(1, _Property_a7113fb727f04863869a665d5c12c3c0_Out_0_Float, _Divide_80c2d12ac84c46bba7138e261509fcc5_Out_2_Float);
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_R_1_Float = IN.AbsoluteWorldSpacePosition[0];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_G_2_Float = IN.AbsoluteWorldSpacePosition[1];
             float _Split_985b822fe1ec481a9bbb146ea30f9cfe_B_3_Float = IN.AbsoluteWorldSpacePosition[2];
@@ -41946,7 +41946,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Split_0548217b63d05285854cfabbb781508c_G_2_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[1];
             float _Split_0548217b63d05285854cfabbb781508c_B_3_Float = _Sign_b9d756c867a4ea8f857aab0cb209376e_Out_1_Vector3[2];
             float _Split_0548217b63d05285854cfabbb781508c_A_4_Float = 0;
-            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, float(1));
+            float2 _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2 = float2(_Split_0548217b63d05285854cfabbb781508c_G_2_Float, 1);
             float2 _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2;
             Unity_Multiply_float2_float2(_Vector2_f79b423a6789348cae48351010f2d347_Out_0_Vector2, _Vector2_4a56919441183d8d9e62bd7f4aeb722d_Out_0_Vector2, _Multiply_74fbc0525b3cf58cbd6b0ef100b2c2f9_Out_2_Vector2);
             float _Split_318346bc38e47581b38968cd15acc1a8_R_1_Float = IN.WorldSpaceNormal[0];
@@ -42072,22 +42072,22 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float;
             Unity_Absolute_float(_Split_e8815c5687c0c188b222e57b486e0e5d_G_2_Float, _Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float);
             float _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float;
-            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, float(0), float(1), _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
+            Unity_Clamp_float(_Absolute_af2e8d067a75a385bc8da51b27457800_Out_1_Float, 0, 1, _Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float);
             float _Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float = _SmallCascadeAngle;
             float _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float;
-            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, float(45), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
+            Unity_Divide_float(_Property_f6e7c7b7064d56849dcc327504a5af65_Out_0_Float, 45, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float);
             float _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float;
             Unity_OneMinus_float(_Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float);
             float _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float;
             Unity_Subtract_float(_Clamp_6461e1158ec9fc888d6226acfef2903e_Out_3_Float, _OneMinus_51d362fe4abf8088a515cede6efdeae6_Out_1_Float, _Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float);
             float _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float;
-            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, float(0), float(2), _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
+            Unity_Clamp_float(_Subtract_df7e03fdbee60f829e8414ab56aebd63_Out_2_Float, 0, 2, _Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float);
             float _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float;
-            Unity_Divide_float(float(1), _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
+            Unity_Divide_float(1, _Divide_9e59ae67ac09cc85ac256679eb8a92df_Out_2_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float);
             float _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_93c899dfdaf23a869025d2fe37cbc17b_Out_3_Float, _Divide_99e399b80aa3d78c9b8289ae31f1e13c_Out_2_Float, _Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float);
             float _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, float(0), float(1), _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7079e8acdf5057888843275dbbdb199c_Out_2_Float, 0, 1, _Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float);
             float _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float;
             Unity_OneMinus_float(_Clamp_6b3d8b850a8e5188b8a540162210198d_Out_3_Float, _OneMinus_464327f0009fbb8fa990d2cb702b2da9_Out_1_Float);
             float _Absolute_7b20625d60e2458b89c9ca794a5039a5_Out_1_Float;
@@ -42098,7 +42098,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float;
             Unity_Subtract_float(_Power_1bc1b18487206481a5ce3274075c24a1_Out_2_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float);
             float _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float;
-            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, float(0), float(1), _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
+            Unity_Clamp_float(_Subtract_f5a0254d84d483809c75d54a89dbc25e_Out_2_Float, 0, 1, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float);
             float3 _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3;
             Unity_Lerp_float3(_NormalBlend_c2e681267ab1c484a14ba7302a704a55_Out_2_Vector3, _Lerp_dd9598f6e61c5d85886c8f9a886b7d1b_Out_3_Vector3, (_Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float.xxx), _Lerp_487f552ff02d4137836da996772c37c9_Out_3_Vector3);
             float3 _ChannelMask_65f73eb9fcbb828fa2b54f75016ad536_Out_1_Vector3;
@@ -42130,7 +42130,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float;
             Unity_Multiply_float_float(_Power_8bca46078c439783ba234de17d8dbe27_Out_2_Float, _Property_85bf6216e686fd8a80460e8fa62f59ac_Out_0_Float, _Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float);
             float _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float);
             float _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float;
             Unity_Multiply_float_float(_Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Clamp_551182f8710a48cbac66d9f3562fce17_Out_3_Float, _Multiply_413e148bbe8045738c9928951c082902_Out_2_Float);
             float4 _Clamp_7387e311e0d249208624b7202b017c9e_Out_3_Vector4;
@@ -42236,7 +42236,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float;
             Unity_Multiply_float_float(_Power_bcfbc7c00abcb182a829a14c5e9f4d42_Out_2_Float, _Property_acf97c8ef4c39e8e8c70e05a8c49953c_Out_0_Float, _Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float);
             float _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_24d02b125e6a4338a726b2de69bc0177_Out_3_Float);
             UnityTexture2D _Property_a886abe301c94e97809acd8413dd86a6_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(BigCascadeWaterTess);
             float _Property_b7109f4bbd38b98d9cbae4fba5543a46_Out_0_Boolean = _UVVDirection1UDirection0;
             float2 _Property_1c3d54765bc6a585ac8690ff98875af6_Out_0_Vector2 = _BigCascadeTiling;
@@ -42318,7 +42318,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float3 _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_9acdff15ea1f028ebb1bf29af8cd5036_Out_3_Vector3, _NormalBlend_271635c1efe448b7bad621edec0b2208_Out_2_Vector3, (_Split_992c0de0de817484b2d52aeb19e22ee0_B_3_Float.xxx), _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3);
             float _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float = _FarNormalPower;
-            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, float(1));
+            float3 _Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3 = float3(_Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, _Property_dcab09e6901f2486a7577da53d9e74a5_Out_0_Float, 1);
             float3 _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3;
             Unity_Multiply_float3_float3(_Vector3_cc253cdfe9d1cc8ebd129ba482ed22ef_Out_0_Vector3, _Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3);
             float _Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float;
@@ -42332,7 +42332,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float;
             Unity_Power_float(_Absolute_983555b4d2175182aaf33f0c93a822dc_Out_1_Float, _Property_f280e83eba1f348d94c9869ddef0b7e4_Out_0_Float, _Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float);
             float _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float;
-            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, float(0), float(1), _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
+            Unity_Clamp_float(_Power_3818f8ce8770a38b826324e0d9051811_Out_2_Float, 0, 1, _Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float);
             float3 _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_96e3d45f6f02b6878bce0903bc412481_Out_3_Vector3, _Multiply_ebeeeb15929c228d9cf9ea4106aa039e_Out_2_Vector3, (_Clamp_00236bae3cead48882c2d1c372013a4e_Out_3_Float.xxx), _Lerp_e1a089f0b8e23b80aa4f164d07b1322f_Out_3_Vector3);
             float3 _Normalize_f7fc2717624c388ebf2451ef6a32ed01_Out_1_Vector3;
@@ -42344,7 +42344,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float4 _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4;
             float3 _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3;
             float2 _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2;
-            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, float(0), float(0), _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
+            Unity_Combine_float(_Split_68246b194708098988894c52ed841038_R_1_Float, _Split_68246b194708098988894c52ed841038_G_2_Float, 0, 0, _Combine_3e7eba45ae0aa38280cf04a546560420_RGBA_4_Vector4, _Combine_3e7eba45ae0aa38280cf04a546560420_RGB_5_Vector3, _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2);
             float2 _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2;
             Unity_Multiply_float2_float2((_Property_7be063d957af468180e6d5402ca51556_Out_0_Float.xx), _Combine_3e7eba45ae0aa38280cf04a546560420_RG_6_Vector2, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2);
             Bindings_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6;
@@ -42353,7 +42353,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float2 _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2;
             float _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float;
             SG_ColorBelowWater_2c2c5862d013f204087863efbdcea3d1_float(_ScreenPosition_1ca45c3863274e299d340571e742d92e_Out_0_Vector4, _Multiply_cea681d75736c38b93219ae5b57431a3_Out_2_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, _ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_depthDifference_2_Float);
-            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, float(0), 1.0);
+            float3 _HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3 = Unity_HDRP_SampleSceneColor_float((float4(_ColorBelowWater_7ef50ef1520c400492bd37d44413f8e6_uvFixed_1_Vector2, 0.0, 1.0)).xy, 0, 1.0);
             float _Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float = _Clean_Water_Background_Brightness;
             float3 _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3;
             Unity_Multiply_float3_float3(_HDSceneColor_cc61f37e10bcd487895dff278a02899e_Output_2_Vector3, (_Property_6dca336f498f4e9cad2ea93b2b21d3e0_Out_0_Float.xxx), _Multiply_66407a3b06914504b1ac6ed2e025b012_Out_2_Vector3);
@@ -42408,11 +42408,11 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float;
             Unity_Multiply_float_float(_Property_2a04c32f33fb1c8a8d487c1c18a0f672_Out_0_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float);
             float _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float;
-            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, float(100), _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
+            Unity_Lerp_float(_Power_aaf82c5db3291a8bb2095cce38670a92_Out_2_Float, 100, _Multiply_097cbada59f56b8b81826bc433f0d8e5_Out_2_Float, _Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float);
             float _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float;
             Unity_Saturate_float(_Lerp_801d3d778aeeb287b05727f83b764636_Out_3_Float, _Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float);
             float _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float;
-            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, float(0), float(1), _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
+            Unity_Clamp_float(_Saturate_ad5b4b8242b08088a70a691ffa09f856_Out_1_Float, 0, 1, _Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float);
             float4 _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4;
             Unity_Lerp_float4(_Property_4bd0c6ca665a3d8c94ecdc6712294e47_Out_0_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_f5baa0daace6e28ea726519de4641bc4_Out_3_Float.xxxx), _Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4);
             UnityTexture2D _Property_41129ce6f3864e24a39ed049bdd0dd7d_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SlowWaterTesselation);
@@ -42429,7 +42429,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float;
             Unity_Add_float(_Multiply_553b27ba18812385b3edeb01111e3afc_Out_2_Float, _Multiply_ba79d06b2bdd5187b353f36022c2fb5d_Out_2_Float, _Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float);
             float _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float);
             float _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_d9190fa5aad64387a59eae8b234267b1_Out_3_Float, _Clamp_fc9847cf57d04c4bb850cfb41e699d8c_Out_3_Float, _Multiply_b8f1f66e012444748a5399a2d420e66c_Out_2_Float);
             float _Property_0df722775dd3688ca7a7ade41a296dd8_Out_0_Float = _SmallCascadeTranslucencyMultiply;
@@ -42438,7 +42438,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float;
             Unity_Lerp_float(_Add_70ae6d3f98a0a88bace99051beeb15bc_Out_2_Float, _Multiply_cedd466dada6798f993bfcbf5ccdce43_Out_2_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_3b1a76f7837c4d8d925516e125c66cb9_Out_3_Float);
             float _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0.4), float(1), _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0.4, 1, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float);
             float _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float;
             Unity_Multiply_float_float(_Lerp_79f8c8161fb394818f7c8937b1054b53_Out_3_Float, _Clamp_4e31aaf25744462abf6f6812aeeb1c74_Out_3_Float, _Multiply_39976508865f491a80a3d400351013ba_Out_2_Float);
             float _Property_2b0ab6f613f4d0899434e3bc5aa7e5d8_Out_0_Float = _BigCascadeTranslucencyMultiply;
@@ -42467,25 +42467,25 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float;
             Unity_Divide_float(_Distance_ef06dafb6a74ec8dae5da5f128939e4e_Out_2_Float, _Property_0f7d30d7be1c278d86e8769fec43ded8_Out_0_Float, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float);
             float _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float;
-            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, float(0), _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
+            Unity_Lerp_float(_Multiply_6185b8454ea08281a1edf20ca75388d8_Out_2_Float, 0, _Divide_fcb6cb1452e71089998b585e2812051a_Out_2_Float, _Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float);
             float _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float = _Shore_Translucency_Multiply;
             float _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_18a24bfd76cc4d0a82f9b2dea805f3eb_Out_0_Float, _Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float);
             float _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, float(0), float(1), _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_7197d9c34e564d62b23d0d03ab122e55_Out_2_Float, 0, 1, _Clamp_719353ece27844d991b309464820b3f0_Out_3_Float);
             float _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float;
             Unity_Absolute_float(_Clamp_719353ece27844d991b309464820b3f0_Out_3_Float, _Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float);
             float _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float = _Shore_Translucency_Power;
             float _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float;
             Unity_Power_float(_Absolute_f444da60db18483aa82cd84b4af5b07f_Out_1_Float, _Property_5fc6816ec4284c70b2d8a0566629f231_Out_0_Float, _Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float);
             float _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float;
-            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, float(0), float(1), _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
+            Unity_Clamp_float(_Power_127cacea973a4b6189b7ea3517ad68a5_Out_2_Float, 0, 1, _Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float);
             float _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float;
             Unity_OneMinus_float(_Clamp_b696be4ae9bc4530828511a7b06650a6_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float);
             float _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float;
             Unity_Add_float(_Lerp_1eb2bcd04c4cc78caee01a4d2ab0dd15_Out_3_Float, _OneMinus_f1d5e8aa8e244667b152c77937084880_Out_1_Float, _Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float);
             float _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float;
-            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, float(0), float(1), _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
+            Unity_Clamp_float(_Add_0957863a3ee14e18ade8a7abddebd6c4_Out_2_Float, 0, 1, _Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float);
             float4 _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4;
             Unity_Lerp_float4(_Lerp_bff7238223fec786b08d9cf92a09754c_Out_3_Vector4, _Property_7094041d89afbd878cb83460f4ab68b8_Out_0_Vector4, (_Clamp_56479483c53d998bb0b061f07c73a672_Out_3_Float.xxxx), _Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4);
             float3 _Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3;
@@ -42494,35 +42494,35 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_95cc041261b02688b3c2aad43d0a9648_Out_0_Float, _Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float);
             float _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float;
-            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, float(0), float(1), _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
+            Unity_Clamp_float(_Multiply_38b111f222a00188a7d2d28d839a68db_Out_2_Float, 0, 1, _Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float);
             float _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float;
             Unity_Absolute_float(_Clamp_96f2856e0c5bed86b3c1f95a092ab806_Out_3_Float, _Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float);
             float _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float = _WaterAlphaPower;
             float _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float;
             Unity_Power_float(_Absolute_7974c9eb17ccbb879d0c737f91a454a5_Out_1_Float, _Property_2fce18d058a79c8296f64abc9455303d_Out_0_Float, _Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float);
             float _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float;
-            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, float(0), float(1), _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
+            Unity_Clamp_float(_Power_d421e0d81cfbeb8ab0229cf84114298d_Out_2_Float, 0, 1, _Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float);
             float3 _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3;
             Unity_Lerp_float3(_Multiply_13bfc3ad146599869e362f6298776454_Out_2_Vector3, (_Lerp_fa0a19a2f0b82a8da4e702f2b5eac30e_Out_3_Vector4.xyz), (_Clamp_53b80a517a00b78baa4367e982c4f9a9_Out_3_Float.xxx), _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3);
             float _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float = _CleanFalloffMultiply;
             float _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepthDistortion_2_Float, _Property_a887c93266ebda8fbf7fa2426fd08088_Out_0_Float, _Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float);
             float _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float;
-            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, float(0), float(1), _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
+            Unity_Clamp_float(_Multiply_1727b2cc4cab2b889161b05cede2a830_Out_2_Float, 0, 1, _Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float);
             float _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float;
             Unity_Absolute_float(_Clamp_b1b90ad6d1d94a8d928998aae0fc2a0f_Out_3_Float, _Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float);
             float _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float = _CleanFalloffPower;
             float _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float;
             Unity_Power_float(_Absolute_2efac825a986e28190f26200795ca9ec_Out_1_Float, _Property_150ab2ec8c4a8983b5372fb8ee1209a7_Out_0_Float, _Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float);
             float _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float;
-            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, float(0), float(1), _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
+            Unity_Clamp_float(_Power_f4a310d75a76d28bb72f53cb07b7cf22_Out_2_Float, 0, 1, _Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float);
             float3 _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_e662f5050bd54fc894f4454af4fc1067_Out_3_Vector3, _Lerp_dbfea6d25d3ee0879590bf2292f4bdc1_Out_3_Vector3, (_Clamp_1b643e9f17afdf8eb0042c0268373325_Out_3_Float.xxx), _Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3);
             float3 _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3 = _FoamColor;
             float3 _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_a7ccae053e10458884ca0ff8aee8dc43_Out_3_Vector3, _Property_f49ef488b0d93b8f961a81bda8efb6bf_Out_0_Vector3, (_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float.xxx), _Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3);
             float _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float;
-            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, float(0), float(1), _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
+            Unity_Clamp_float(_Multiply_fcadbe8da631b6808af696c6f4d38fa2_Out_2_Float, 0, 1, _Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float);
             float _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_82f5b62da2a50a86993ed93d824fc156_Out_3_Float, _Power_ad6d0c765c17462cb693c0e18cc6c0e4_Out_2_Float, _Multiply_2b8bc5d30ac146af85a0136e89c1efb1_Out_2_Float);
             UnityTexture2D _Property_416b2573e211708fb7af409507174e09_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_SmallCascade);
@@ -42551,9 +42551,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float;
             Unity_Power_float(_Absolute_a74bb12daff95a86a83cc2ea34a1bb83_Out_1_Float, _Property_a1f8a122c18e2582b5d4c5da5aaa8a36_Out_0_Float, _Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float);
             float _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float;
-            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, float(0), float(1), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
+            Unity_Clamp_float(_Power_daf4d77f02ce648e9e473598c24d29d3_Out_2_Float, 0, 1, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float);
             float _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_258d6dfc5429ec8c98b3380a44764ede_Out_3_Float, _Clamp_08c896054837bb88bc0374bd536ee024_Out_3_Float, _Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float);
             float3 _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_ac993e99fc82e68c8176cda4658af0cf_Out_3_Vector3, _Multiply_16971dced2f6f384b7d2d65006f03b46_Out_2_Vector3, (_Lerp_068f89f1f6f13b84a778e1b6fc60b821_Out_3_Float.xxx), _Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3);
             UnityTexture2D _Property_0be3b3e72a830881bf032d5b81dee190_Out_0_Texture2D = UnityBuildTexture2DStructNoScale(_BigCascade);
@@ -42572,7 +42572,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float;
             Unity_Multiply_float_float(_Blend_38bc5b6d5d117b848e5b1966a4c0f584_Out_2_Float, _OneMinus_0ee12b4ccaab465e9ba4fb80c92f1da1_Out_1_Float, _Multiply_9e8ac7e5ae1b4ee29c675a15efe218a5_Out_2_Float);
             float _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float;
-            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, float(0), float(1), _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
+            Unity_Clamp_float(_Multiply_24f3f886bab68f83a5b29cde2e2e94d0_Out_2_Float, 0, 1, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float);
             float _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float;
             Unity_Multiply_float_float(_Power_7362a1eccf9b450fb9b06fda32bed46c_Out_2_Float, _Clamp_63b82c1f23c47d81a328645b3f532f82_Out_3_Float, _Multiply_45805fa79b7549c48b12dcea55632a44_Out_2_Float);
             float _Multiply_69f804f04e80c984997dcb09092c7798_Out_2_Float;
@@ -42586,9 +42586,9 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float;
             Unity_Power_float(_Absolute_792dd1223a136286928cd4b0fdbd9844_Out_1_Float, _Property_21219d8c0f70278698ff2f797020cb45_Out_0_Float, _Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float);
             float _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float;
-            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, float(0), float(1), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
+            Unity_Clamp_float(_Power_1b0e31e397f0218bb71a103629ead254_Out_2_Float, 0, 1, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float);
             float _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float;
-            Unity_Lerp_float(float(0), _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
+            Unity_Lerp_float(0, _Clamp_c92dad54caea1f8a9b028c1dd46bd3cd_Out_3_Float, _Clamp_c8349812bf696286b9429cd182d4670a_Out_3_Float, _Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float);
             float3 _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3;
             Unity_Lerp_float3(_Lerp_cd0b2060e6116c8383d81eaddc5fce73_Out_3_Vector3, _Multiply_f73b703611c2ee8ea1b712546ec1fdc8_Out_2_Vector3, (_Lerp_8bce0d19e13b318db02ac1da573c89cb_Out_3_Float.xxx), _Lerp_b22c5b23caf16689b8199ecdaef259d5_Out_3_Vector3);
             float3 _Lerp_baa67bfb5abaa58c8d0403650c760cf5_Out_3_Vector3;
@@ -42604,14 +42604,14 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float;
             Unity_Multiply_float_float(_DepthTestAdvanced_09b4062d82844a05b0289b180f140de6_OutDepth_1_Float, _Property_b07807457465d9888ebbafde4985aec5_Out_0_Float, _Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float);
             float _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float;
-            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, float(0), float(1), _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
+            Unity_Clamp_float(_Multiply_37d7a63a02de2687962fc9ab3b465f54_Out_2_Float, 0, 1, _Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float);
             float _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float;
             Unity_Absolute_float(_Clamp_9ab1abcafcc780828aefe81e94d2d2f0_Out_3_Float, _Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float);
             float _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float = _EdgeFalloffPower;
             float _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float;
             Unity_Power_float(_Absolute_6cb1df40e7ebba8aaba182213a093619_Out_1_Float, _Property_cebdd951e5c3538186f4aa0c47c236d1_Out_0_Float, _Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float);
             float _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float;
-            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, float(0), float(1), _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
+            Unity_Clamp_float(_Power_3f6c249b083fb38f9c9a991d95ebbff4_Out_2_Float, 0, 1, _Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float);
             float _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_15ee0b057c033d89ab388dcce1681ad9_Out_3_Float, _Split_992c0de0de817484b2d52aeb19e22ee0_A_4_Float, _Multiply_06c67b054679ab8c8ba6fd612fb6221d_Out_2_Float);
             float _Property_eabac5d7ac87d98387d75d4be9794688_Out_0_Float = _BackfaceAlpha;
@@ -42651,7 +42651,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float;
             Unity_Multiply_float_float(_DotProduct_ebc2e300707640d7972ec9cb6d537f21_Out_2_Float, -1, _Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float);
             float _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float;
-            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, float(0), float(1), _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
+            Unity_Clamp_float(_Multiply_b38e2459807a46f2aa2efb71f568b827_Out_2_Float, 0, 1, _Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float);
             float _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float = _Translucency_Direct_Sun_Power;
             float _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float;
             Unity_Multiply_float_float(_Clamp_895f16ad24964d30a42710759a7264ec_Out_3_Float, _Property_b46daffa94ab448386576248bf4aaf0c_Out_0_Float, _Multiply_b6c039e2b8f94c6c9cad7feb1d444fe2_Out_2_Float);
@@ -42660,23 +42660,23 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float;
             Unity_Add_float(_Multiply_00734efd601f4d41878eb6341c6619b0_Out_2_Float, _Multiply_ce7604107d7b4898a64431d4ee40acbc_Out_2_Float, _Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float);
             float _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float;
-            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(1), _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
+            Unity_Add_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 1, _Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float);
             float _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float = _Side_Foam_Translucency;
             float _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float = _Side_Foam_Translucency_Hardness;
             float _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float;
             Unity_Multiply_float_float(_Multiply_bcdc13921823768ab6b3757e1fc5c3b1_Out_2_Float, _Property_d20755995b454ea9b0dcf324a6be968a_Out_0_Float, _Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float);
             float _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float;
-            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, float(0), float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
+            Unity_Clamp_float(_Multiply_f39b1e7d19b24f65aa264cd6ef6d1114_Out_2_Float, 0, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float);
             float _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float;
             Unity_Lerp_float(_Add_8fb357f63a6343989061f5c2e642382b_Out_2_Float, _Property_b312fb205ca849c9bf22a4209306a124_Out_0_Float, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_9ea9539e80e24e89b2c4fd882f1bd5a8_Out_3_Float);
             float _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float;
-            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, float(0), float(1), _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
+            Unity_Clamp_float(_Add_39b3793c19e444c4893fab6c062ba57e_Out_2_Float, 0, 1, _Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float);
             float _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float;
             Unity_OneMinus_float(_Clamp_fc5a26a07c67412ba29badb2c886a150_Out_3_Float, _OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float);
             float _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float;
-            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, float(1), _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
+            Unity_Lerp_float(_OneMinus_61859b369e024614997fc2712d802fee_Out_1_Float, 1, _Clamp_58d14a62c86d4a128d074a79ec29669d_Out_3_Float, _Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float);
             float _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float;
-            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, float(0), float(1), _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
+            Unity_Clamp_float(_Lerp_b25e11abfd984b6d8b217537fc2502eb_Out_3_Float, 0, 1, _Clamp_e1d8e858458b475284cd41fe202c84cb_Out_3_Float);
             float _Property_25fe3b231a2241209dbd5dc398824dbc_Out_0_Float = _NM_SSSSettings_Water_RAM;
             float _Property_dd2a9a6630b74b0683e060e1c2ad97b9_Out_0_Float = _Specular_Fresnel_Power;
             float _FresnelEffect_45bd324d70c14c058144482016afa7e1_Out_3_Float;
@@ -42690,7 +42690,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float;
             Unity_Power_float(_Absolute_55a55ace06ad4cd88ae86894ec723a4a_Out_1_Float, _Property_f6fbd38de8bd43ba8946ea6dd4af62bf_Out_0_Float, _Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float);
             float _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float;
-            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, float(0), float(1), _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
+            Unity_Clamp_float(_Power_20d6dacc921d45388c0c214f8b330151_Out_2_Float, 0, 1, _Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float);
             float _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float = _Specular_Depth;
             float _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float;
             Unity_Divide_float(_DepthTestAdvanced_07d14b553bb44a3ba4dd571e297c0644_OutDepth_1_Float, _Property_d14042c66cb447b2afde11dd15858924_Out_0_Float, _Divide_d6c0a56a2896460cb174a538d42b35ba_Out_2_Float);
@@ -42700,7 +42700,7 @@ Shader "NatureManufacture/HDRP/Water/River Tesselation"
             float _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float;
             Unity_Power_float(_Absolute_33d66ab82bb74b8ba541e1e0195e5ef0_Out_1_Float, _Property_4c386f7bbd4e4a469b0ccedc9a174de5_Out_0_Float, _Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float);
             float _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float;
-            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, float(0), float(1), _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
+            Unity_Clamp_float(_Power_31cc8ef4a4174250b95f22f1eb8bdb14_Out_2_Float, 0, 1, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float);
             float _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float;
             Unity_Minimum_float(_Clamp_26398c0b7e8e41a49850ab49f012a9b1_Out_3_Float, _Clamp_ee3db7dd984343fdb3aeb43dfbbc85e6_Out_3_Float, _Minimum_f8f65996b8434279962e0364b6045e01_Out_2_Float);
             float _Multiply_5a928fcb34114c21a59401904e1eca50_Out_2_Float;

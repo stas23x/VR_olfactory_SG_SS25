@@ -28,13 +28,12 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHATEST_ON
-  - _SPECULAR_SETUP
-  - _USE_TRANSLUCENCY
-  m_InvalidKeywords:
-  - _DISABLE_DBUFFER
   - _DISABLE_DECALS
   - _DISABLE_SSR_TRANSPARENT
   - _DOUBLESIDED_ON
+  m_InvalidKeywords:
+  - _ALPHAPREMULTIPLY_ON
+  - _DISABLE_DBUFFER
   - _MATERIAL_FEATURE_TRANSMISSION
   - _NORMALMAP_TANGENT_SPACE
   m_LightmapFlags: 2
@@ -46,9 +45,10 @@ Material:
     RenderType: TransparentCutout
   disabledShaderPasses:
   - RayTracingPrepass
-  - TransparentBackface
+  - MOTIONVECTORS
   - TransparentDepthPrepass
   - TransparentDepthPostpass
+  - TransparentBackface
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -156,8 +156,7 @@ Material:
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
-    - _AlphaClip: 1
-    - _AlphaCutoff: 0.24
+    - _AlphaCutoff: 0.2
     - _AlphaCutoffEnable: 1
     - _AlphaCutoffPostpass: 0.5
     - _AlphaCutoffPrepass: 0.5
@@ -166,22 +165,17 @@ Material:
     - _AlphaDstBlend: 0
     - _AlphaShadowThreshold: 0.5
     - _AlphaSrcBlend: 1
-    - _AlphaToMask: 1
+    - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
     - _Anisotropy: 0
     - _Backface_Brightness: 0
     - _Backface_Saturation: 1
     - _Backface_Thickness_Mask_Threshold: 1
-    - _Blend: 0
     - _BlendMode: 0
-    - _BlendModePreserveSpecular: 1
-    - _Boolean: 0
-    - _CastShadows: 1
     - _CoatMask: 0
     - _ColorNoiseSpread: 6
     - _ColorNoiseTilling: 2
     - _ConservativeDepthOffsetEnable: 0
-    - _Cull: 0
     - _CullFarDistance: 20
     - _CullFarStart: 60
     - _CullMode: 0
@@ -229,7 +223,6 @@ Material:
     - _EnableWind: 1
     - _EnergyConservingSpecularColor: 1
     - _ExcludeFromTUAndAA: 0
-    - _Float: 3
     - _HdrpVersion: 1
     - _HealthyandDryColorNoisePower: 1
     - _HeightAmplitude: 0.02
@@ -259,10 +252,7 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _PreRefractionPass: 0
-    - _QueueControl: 1
-    - _QueueOffset: 0
     - _RayTracing: 0
-    - _ReceiveShadows: 1
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionMode: 0
@@ -275,7 +265,6 @@ Material:
     - _Smoothness: 0
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
-    - _Specular: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
     - _SrcBlend: 1
@@ -293,18 +282,11 @@ Material:
     - _SubsurfaceMask: 0
     - _SupportDBuffer: 0
     - _SupportDecals: 0
-    - _Surface: 0
     - _SurfaceType: 0
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1
     - _ThicknessMultiplier: 1
-    - _ThicknessRemapMax: 0.32
-    - _ThicknessRemapMin: 0
-    - _Translucency_Intensivity: 4
-    - _Translucency_Self_Shadow_Reduction: 1
-    - _Translucency_Self_Shadow_Reduction_Smooth: 1
-    - _Translucency_Shadow_Reduction: 0.12
     - _TransmissionEnable: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -314,13 +296,12 @@ Material:
     - _TransparentWritingMotionVec: 0
     - _TransparentWritingVelocity: 0
     - _TransparentZWrite: 0
-    - _USE_TRANSLUCENCY: 1
     - _UVBase: 0
     - _UVDetail: 0
     - _UVEmissive: 0
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
-    - _WINDCOLORMIX: 0
+    - _WINDCOLORMIX: 1
     - _WindColorMix: 0
     - _WindColorThreshold: 0.225
     - _WindNormalInfluence: 0
@@ -328,14 +309,11 @@ Material:
     - _Wind_Color_Mix_Contrast: 1
     - _Wind_Color_Speed: 1
     - _Wind_Drag_Directionality: 1
-    - _WorkflowMode: 0
-    - _ZTest: 4
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 3
     - _ZTestModeDistortion: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - _ZWriteControl: 0
     m_Colors:
     - _Backface_Thickness_Mask_Remap: {r: 0.01, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
@@ -351,13 +329,10 @@ Material:
     - _HealthyColor: {r: 0.8196079, g: 0.8196079, b: 0.8196079, a: 0}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _MeshNormalMultiply: {r: 1, g: 1, b: 1, a: 0}
     - _NewNormal: {r: 0, g: 0, b: 0, a: 0}
-    - _Specular: {r: 0.03921569, g: 0.03921569, b: 0.07843123, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TilingOffset: {r: 1, g: 1, b: 0, a: 0}
-    - _Translucency_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
@@ -365,5 +340,5 @@ Material:
     - _VertexNormalMultiply: {r: 0, g: 0, b: 0, a: 0}
     - _WindColorInfluence: {r: 0.1, g: 0.1, b: 0.1, a: 0}
     - _Wind_Color_1: {r: 1, g: 1, b: 1, a: 1}
-    - _Wind_Color_2: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
+    - _Wind_Color_2: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

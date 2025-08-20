@@ -15,7 +15,7 @@ F:/VR_olfactory_SG_SS25
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-31288
+32978
 Successfully changed project path to: F:/VR_olfactory_SG_SS25
 F:/VR_olfactory_SG_SS25
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,21 +49,21 @@ F:/VR_olfactory_SG_SS25
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [24660]  Target information:
+Player connection [41804]  Target information:
 
-Player connection [24660]  * "[IP] 192.168.219.1 [Port] 0 [Flags] 2 [Guid] 1168724302 [EditorId] 1168724302 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [41804]  * "[IP] 192.168.219.1 [Port] 0 [Flags] 2 [Guid] 3793282568 [EditorId] 3793282568 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [24660]  * "[IP] 192.168.207.1 [Port] 0 [Flags] 2 [Guid] 1168724302 [EditorId] 1168724302 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [41804]  * "[IP] 192.168.207.1 [Port] 0 [Flags] 2 [Guid] 3793282568 [EditorId] 3793282568 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [24660]  * "[IP] 192.168.111.97 [Port] 0 [Flags] 2 [Guid] 1168724302 [EditorId] 1168724302 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [41804]  * "[IP] 192.168.111.97 [Port] 0 [Flags] 2 [Guid] 3793282568 [EditorId] 3793282568 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [24660]  * "[IP] 172.31.16.1 [Port] 0 [Flags] 2 [Guid] 1168724302 [EditorId] 1168724302 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [41804]  * "[IP] 172.31.16.1 [Port] 0 [Flags] 2 [Guid] 3793282568 [EditorId] 3793282568 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [24660] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [24660] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [41804] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [41804] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
 [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
-Refreshing native plugins compatible for Editor in 28.06 ms, found 12 plugins.
+Refreshing native plugins compatible for Editor in 31.87 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.62f1 (4af31df58517)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Resources/UnitySubsystems
@@ -83,53 +83,53 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56540
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56592
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008797 seconds.
-- Loaded All Assemblies, in  0.573 seconds
+Registered in 0.007866 seconds.
+- Loaded All Assemblies, in  0.300 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.222 seconds
-Domain Reload Profiling: 793ms
-	BeginReloadAssembly (379ms)
+- Finished resetting the current domain, in  0.226 seconds
+Domain Reload Profiling: 524ms
+	BeginReloadAssembly (90ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
 	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (51ms)
-	LoadAllAssembliesAndSetupDomain (106ms)
-		LoadAssemblies (377ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (54ms)
+	LoadAllAssembliesAndSetupDomain (118ms)
+		LoadAssemblies (87ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (104ms)
-			TypeCache.Refresh (102ms)
-				TypeCache.ScanAssembly (93ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
+		AnalyzeDomain (116ms)
+			TypeCache.Refresh (115ms)
+				TypeCache.ScanAssembly (103ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (223ms)
+	FinalizeReload (227ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (183ms)
+		SetupLoadedEditorAssemblies (186ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (8ms)
 			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (122ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
+			ProcessInitializeOnLoadAttributes (129ms)
+			ProcessInitializeOnLoadMethodAttributes (41ms)
 			AfterProcessingInitializeOnLoad (0ms)
-			EditorAssembliesLoaded (0ms)
+			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (0ms)
 ========================================================================
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.148 seconds
+- Loaded All Assemblies, in  0.890 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
@@ -142,37 +142,37 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  2.829 seconds
-Domain Reload Profiling: 3976ms
-	BeginReloadAssembly (125ms)
+- Finished resetting the current domain, in  2.307 seconds
+Domain Reload Profiling: 3194ms
+	BeginReloadAssembly (170ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (19ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (29ms)
-	LoadAllAssembliesAndSetupDomain (957ms)
-		LoadAssemblies (651ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (637ms)
+		LoadAssemblies (430ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (378ms)
-			TypeCache.Refresh (304ms)
-				TypeCache.ScanAssembly (280ms)
-			ScanForSourceGeneratedMonoScriptInfo (50ms)
-			ResolveRequiredComponents (20ms)
-	FinalizeReload (2830ms)
+		AnalyzeDomain (320ms)
+			TypeCache.Refresh (266ms)
+				TypeCache.ScanAssembly (247ms)
+			ScanForSourceGeneratedMonoScriptInfo (39ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (2307ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2561ms)
+		SetupLoadedEditorAssemblies (2117ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (6ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (132ms)
-			ProcessInitializeOnLoadAttributes (690ms)
-			ProcessInitializeOnLoadMethodAttributes (1713ms)
-			AfterProcessingInitializeOnLoad (12ms)
+			BeforeProcessingInitializeOnLoad (95ms)
+			ProcessInitializeOnLoadAttributes (650ms)
+			ProcessInitializeOnLoadMethodAttributes (1351ms)
+			AfterProcessingInitializeOnLoad (9ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (7ms)
@@ -195,16 +195,16 @@ WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshad
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
-Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
 Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 20.20 ms, found 12 plugins.
+Refreshing native plugins compatible for Editor in 14.03 ms, found 12 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 9644 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 168 unused Assets / (7.0 MB). Loaded Objects now: 10172.
-Memory consumption went from 0.63 GB to 0.63 GB.
-Total: 9.308300 ms (FindLiveObjects: 1.384900 ms CreateObjectMapping: 0.946200 ms MarkObjects: 5.044900 ms  DeleteObjects: 1.931200 ms)
+Unloading 9647 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 168 unused Assets / (7.0 MB). Loaded Objects now: 10176.
+Memory consumption went from 0.62 GB to 0.62 GB.
+Total: 5.828900 ms (FindLiveObjects: 0.610500 ms CreateObjectMapping: 0.278800 ms MarkObjects: 3.650400 ms  DeleteObjects: 1.288400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -222,34 +222,786 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 28069.702843 seconds.
-  path: Assets/AudioFiles/mixkit-running-through-the-forest-1232.wav
-  artifactKey: Guid(d37edae7e77095a43bb81518a2ec01db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AudioFiles/mixkit-running-through-the-forest-1232.wav using Guid(d37edae7e77095a43bb81518a2ec01db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+  Time since last request: 77791.639305 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_05_BC.png
+  artifactKey: Guid(76c6fd31425d59645837f125d0927e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_05_BC.png using Guid(76c6fd31425d59645837f125d0927e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
- -> (artifact id: 'd44035be519bbb6fdab269c1cbd5c6c3') in 0.155106 seconds
+ -> (artifact id: '5e9a209ced776048e37cd58d15c9ca31') in 0.140854 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_12_BC.png
+  artifactKey: Guid(5d1819e353bd4894cba85295686e6b16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_12_BC.png using Guid(5d1819e353bd4894cba85295686e6b16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '14a8f2836f1c05d6ed200be08a614d95') in 0.015289 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 169.142948 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Decals/M_Decal_Leaves.mat
+  artifactKey: Guid(4f4d3fcfe713ec94bbce18715a708fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Decals/M_Decal_Leaves.mat using Guid(4f4d3fcfe713ec94bbce18715a708fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '3e577c2862d19e63c0569072a518c027') in 2.342592 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 71
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Decals/T_Decal_Wet_BC_M.tga
+  artifactKey: Guid(21d75888cfd199d4793c901bbf688eb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Decals/T_Decal_Wet_BC_M.tga using Guid(21d75888cfd199d4793c901bbf688eb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f2a8f029268431614fc9b39f022d5ea3') in 0.075993 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Decals/Prefab_Decal_Sand_Projector.prefab
+  artifactKey: Guid(a23a6088a3ed9f247b8cb10139785fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Decals/Prefab_Decal_Sand_Projector.prefab using Guid(a23a6088a3ed9f247b8cb10139785fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '4fc40087f2d3768a5a9a4f864b31cf84') in 0.025984 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Decals/Prefab_Decal_Leaves.prefab
+  artifactKey: Guid(5460a89aaf360cc41891b0285e3aaf62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Decals/Prefab_Decal_Leaves.prefab using Guid(5460a89aaf360cc41891b0285e3aaf62) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '2f916d7cde8743b459fa6d43c06084e6') in 0.032666 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Decals/T_Decal_Wet_02_AO_H_SM.tga
+  artifactKey: Guid(716cf134542669f43882e1b571a24feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Decals/T_Decal_Wet_02_AO_H_SM.tga using Guid(716cf134542669f43882e1b571a24feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '88b0419e1e934b70495503237e17d581') in 0.022086 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.236610 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/Directional Light Sun.prefab
+  artifactKey: Guid(d5e632ee863b0cb43a3f6be63b296c06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/Directional Light Sun.prefab using Guid(d5e632ee863b0cb43a3f6be63b296c06) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '0e6c9439125026938f8b359f1ea9b781') in 0.003253 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.041113 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/LOD1_Terrain_HP_Source.asset
+  artifactKey: Guid(d6e241e124172a24a92b0b0f8c40933d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/LOD1_Terrain_HP_Source.asset using Guid(d6e241e124172a24a92b0b0f8c40933d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '93d03934728b56d1562bc6fa81d3629e') in 0.379162 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/M_Terrain_LP.mat
+  artifactKey: Guid(0873d793487e7b34995e53e9f88b3236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/M_Terrain_LP.mat using Guid(0873d793487e7b34995e53e9f88b3236) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '3d94b0dd42a94677fdce09a17f075615') in 0.352193 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/PostProcessVolumeProfile RAM Mobile.asset
+  artifactKey: Guid(2678b9d564c18704d8d1221ff1aa0abd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/PostProcessVolumeProfile RAM Mobile.asset using Guid(2678b9d564c18704d8d1221ff1aa0abd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '5d1666bd0a1591a55e94f70b3af0b667') in 0.001456 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/M_Text.mat
+  artifactKey: Guid(e0cc07138144c0649b8e7d2f4556978c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/M_Text.mat using Guid(e0cc07138144c0649b8e7d2f4556978c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'd9952566a93b5dcb974b77fad8c00759') in 0.089697 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo_Mobile.asset
+  artifactKey: Guid(80126b824781c1445b237c55748b94cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo_Mobile.asset using Guid(80126b824781c1445b237c55748b94cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'd651cec7c09da94726cc3bd11f72703a') in 0.596467 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAMSceneSkyandFogSettings.asset
+  artifactKey: Guid(47801fc5777b2d54abf85a3bcb8ee8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAMSceneSkyandFogSettings.asset using Guid(47801fc5777b2d54abf85a3bcb8ee8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'c09ef3118c8f1ee8063a6c72738db801') in 0.003434 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAMScenePostProcessingSettings.asset
+  artifactKey: Guid(81ef4de44b4fe3e4c81238895bd05f69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAMScenePostProcessingSettings.asset using Guid(81ef4de44b4fe3e4c81238895bd05f69) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '11b8370fc1c94065ce525148693c51c0') in 0.002117 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/T_RAM 3 Demo_Mobile_BC.png
+  artifactKey: Guid(2237cbd1c7bf2bd48960193fb7df5c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/T_RAM 3 Demo_Mobile_BC.png using Guid(2237cbd1c7bf2bd48960193fb7df5c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '7ccfbb2b5f5ab26321d1c76ff09103f9') in 0.015772 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/T_RAM 3 Demo_Mobile_N.png
+  artifactKey: Guid(f4afe98024054944d9b7819fe4c25429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/T_RAM 3 Demo_Mobile_N.png using Guid(f4afe98024054944d9b7819fe4c25429) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '7a671fd0d13ddc7036ab228c66188bec') in 0.013565 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/T_RAM 3 Demo_Mobile_MT_AO_SM.png
+  artifactKey: Guid(4f00f2e95f4e73c47b8300da5c98dd50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/T_RAM 3 Demo_Mobile_MT_AO_SM.png using Guid(4f00f2e95f4e73c47b8300da5c98dd50) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '400ff328f6361716dc4c6b1d01bfb9d7') in 0.141699 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo.asset
+  artifactKey: Guid(26ef7976a1ddef246872f56e9881c2f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo.asset using Guid(26ef7976a1ddef246872f56e9881c2f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '7a4a5f11f1aa8a86bea085997fc55b5b') in 0.032852 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/M_Terrain.mat
+  artifactKey: Guid(0649582e48c877c4ea31a007c138c864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/M_Terrain.mat using Guid(0649582e48c877c4ea31a007c138c864) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '5df1bfe988a2ac12d507d6b62338a905') in 0.852101 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 5.366125 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset
+  artifactKey: Guid(fc42a23e1e8a89d4f82a150a944f2264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset using Guid(fc42a23e1e8a89d4f82a150a944f2264) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '7a1928f51e9f2d2bacabcb1e75093c68') in 0.000480 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.014645 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/LightingData.asset
+  artifactKey: Guid(06c82fe1ef7b75444aba476228d9aaa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/LightingData.asset using Guid(06c82fe1ef7b75444aba476228d9aaa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '8a4ea2c354cd0149d6aa9cbb2056dde9') in 0.002503 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.103474 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/Lightmap-0_comp_light.exr
+  artifactKey: Guid(652c7e00843cacc4a92891360cffa9cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/Lightmap-0_comp_light.exr using Guid(652c7e00843cacc4a92891360cffa9cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '62667d270568f020103c5609b8414f84') in 0.165368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.008823 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/Lightmap-1_comp_light.exr
+  artifactKey: Guid(6839b82e25d9e414ba744c8d1d77184d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/Lightmap-1_comp_light.exr using Guid(6839b82e25d9e414ba744c8d1d77184d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '807f457e71298ccfd85c451b3bba896b') in 0.085345 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.034240 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-0.exr
+  artifactKey: Guid(b1a452a133aada2478dffe837791623c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-0.exr using Guid(b1a452a133aada2478dffe837791623c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '8d4d1c99fbe69ff43b8edebf1a3769f4') in 0.020264 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.033929 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-2.exr
+  artifactKey: Guid(8e77b1d3e29c692479a7070f0ceb9292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-2.exr using Guid(8e77b1d3e29c692479a7070f0ceb9292) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '627796b2c9fa862a25a5572002949c0c') in 0.015563 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.020169 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-4.exr
+  artifactKey: Guid(2e78e74e1281adc4497bd9308a2b1617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-4.exr using Guid(2e78e74e1281adc4497bd9308a2b1617) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'eab58ad12a3f4067ab20aa91d2287fac') in 0.009825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.010168 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-6.exr
+  artifactKey: Guid(6246c861e8214c64aaff5d13e525a013) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-6.exr using Guid(6246c861e8214c64aaff5d13e525a013) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'b6de3b4240c2820e3e5d985868445fc0') in 0.009043 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.029048 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-8.exr
+  artifactKey: Guid(24fa0668844a9a14b84049ece4d0e39f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-8.exr using Guid(24fa0668844a9a14b84049ece4d0e39f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '91fb7ca6a18c0dea353f24dadc166df2') in 0.009432 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-10.exr
+  artifactKey: Guid(4042d6471f3a742479aa43de4015d99e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-10.exr using Guid(4042d6471f3a742479aa43de4015d99e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '3bafc9e5112df183f4784d0fe0069bf7') in 0.009355 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-12.exr
+  artifactKey: Guid(232eaf96f0c0b49468ba2912aeaefba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-12.exr using Guid(232eaf96f0c0b49468ba2912aeaefba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6984c5817b456294909535a46c209cab') in 0.010654 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-15.exr
+  artifactKey: Guid(153a942b3c8c5fd4092b1028c92c3c54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-15.exr using Guid(153a942b3c8c5fd4092b1028c92c3c54) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'b7fc56552dbd390f5e6cd7186c25dd35') in 0.009060 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-18.exr
+  artifactKey: Guid(0e0d48cdd77812e47b98d516facbbc8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-18.exr using Guid(0e0d48cdd77812e47b98d516facbbc8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'af67dac3471a9ad2fd27fbb8d55fbbbd') in 0.076560 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-19.exr
+  artifactKey: Guid(8dbf7ee6f8a0785449c1be7f1d4fbf60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-19.exr using Guid(8dbf7ee6f8a0785449c1be7f1d4fbf60) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '2505c5c6018ff7d55e02042a086d3337') in 0.009614 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000930 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-17.exr
+  artifactKey: Guid(f2636032fa7663745b53ef573fe82b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-17.exr using Guid(f2636032fa7663745b53ef573fe82b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6355bac66d6a57555f3a29c83ded9f2a') in 0.009414 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-22.exr
+  artifactKey: Guid(fa4c1fc56cc55344091d2906aa91051b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset/ReflectionProbe-22.exr using Guid(fa4c1fc56cc55344091d2906aa91051b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'abbe4ee974174539fcfc48a332304047') in 0.015336 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 5.213285 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo Mobile.unity
+  artifactKey: Guid(d0c01c06bb79ab1489a95b20f0ff3eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo Mobile.unity using Guid(d0c01c06bb79ab1489a95b20f0ff3eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '033b7215267a320f6a66ee2ece6f11c5') in 0.000481 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.270089 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo Tesseled.unity
+  artifactKey: Guid(ab87c2102e283ac4db41e03e1361fb1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo Tesseled.unity using Guid(ab87c2102e283ac4db41e03e1361fb1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '006a69e06d415d897fb8a4f8f29db386') in 0.000479 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.002780 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo.unity
+  artifactKey: Guid(4f56cd54d611dc040bc442c4d328b04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/RAM 3 Demo.unity using Guid(4f56cd54d611dc040bc442c4d328b04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '724709fe43df0ce0e83b6edc9715c628') in 0.000436 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.523774 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset.unity
+  artifactKey: Guid(b39f02de02c87424a8401c6645986416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Offset.unity using Guid(b39f02de02c87424a8401c6645986416) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '9186fb9345c4cef991f2e91c89d14027') in 0.000436 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.520772 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Tesseled.unity
+  artifactKey: Guid(2325b20578f1ceb43a18d25cf0fd876f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Demo/HD RP RAM 3 Demo Tesseled.unity using Guid(2325b20578f1ceb43a18d25cf0fd876f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '91df36b533aab9c31079bd47d338e8fc') in 0.000866 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.935319 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/README.txt
+  artifactKey: Guid(af15ad8c0797fdd4ab3a73f01b9f5872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/README.txt using Guid(af15ad8c0797fdd4ab3a73f01b9f5872) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '8a01ceebea27e567d48aee11a198fad0') in 0.000906 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 3.399545 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Stone Wall/Prefab_Water_wall_stone_01.prefab
+  artifactKey: Guid(8ceb9eabb3477dc4e97c99d721a648ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Stone Wall/Prefab_Water_wall_stone_01.prefab using Guid(8ceb9eabb3477dc4e97c99d721a648ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'd4a2bb60f3b713845b7b609483a3b0b2') in 0.506551 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 63
+========================================================================
+Received Import Request.
+  Time since last request: 7.216705 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_11_Grass_BC_SM.tga
+  artifactKey: Guid(18dcc4b2f25262e4185cd1a114b7929b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_11_Grass_BC_SM.tga using Guid(18dcc4b2f25262e4185cd1a114b7929b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '77227d5c427c456e0a65fd39a6ac3cb8') in 0.176282 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_11_Grass_N.png
+  artifactKey: Guid(e4425ffe21f4733469ff0c709cafd491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_11_Grass_N.png using Guid(e4425ffe21f4733469ff0c709cafd491) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e752172e81bb56f52a61b111355e3563') in 0.112160 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Forest_Dirt_01_A_M.tga
+  artifactKey: Guid(842906dcd17945a4d860f2dec999191d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Forest_Dirt_01_A_M.tga using Guid(842906dcd17945a4d860f2dec999191d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e0fcaf0a216d318e0f311a5649943684') in 0.011546 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.016141 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Forest_Dirt_01_A_SM.tga
+  artifactKey: Guid(a620c84d6422ef3459a570ceff7a0bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Forest_Dirt_01_A_SM.tga using Guid(a620c84d6422ef3459a570ceff7a0bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '2bb7252d87680c92b978243ac208e34e') in 0.116203 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.010872 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Forest_Dirt_01_MT_AO_H_SM.tga
+  artifactKey: Guid(ed1c388b5f6e5fc459f5e6e3f5bb1dde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Forest_Dirt_01_MT_AO_H_SM.tga using Guid(ed1c388b5f6e5fc459f5e6e3f5bb1dde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '14ab13846541bf707d3e80375f586197') in 0.098323 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.119846 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Forest_Pebbles_Path_01_Mt_AO_H_SM.tga
+  artifactKey: Guid(bc1eb4e684103b74eb088ee3f413d9ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Forest_Pebbles_Path_01_Mt_AO_H_SM.tga using Guid(bc1eb4e684103b74eb088ee3f413d9ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '49f178142573aee1c9bf3faef0f3ba3d') in 0.221957 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Grass_1_BC_SM.tga
+  artifactKey: Guid(c45fbda100c9bdd45b88e01fcf1ba635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Grass_1_BC_SM.tga using Guid(c45fbda100c9bdd45b88e01fcf1ba635) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'c0d7013dfe46f51155050d4454410baf') in 0.206833 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Grass_1_H.png
+  artifactKey: Guid(9c5aa03cc6cc3034e965ba940b3add15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Grass_1_H.png using Guid(9c5aa03cc6cc3034e965ba940b3add15) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '9047ff0636de67ec6d9fbe1d5ca4c852') in 0.055427 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Moss_01_A_SM_2.tga
+  artifactKey: Guid(10212ea8f16769242a717063e056fc61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Moss_01_A_SM_2.tga using Guid(10212ea8f16769242a717063e056fc61) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'faef975c2aec6bcb477a0a9308ee9423') in 0.464728 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_ground_rock_01_A_SM.tga
+  artifactKey: Guid(576d0f813a04b4241b8b4cc2cd4a802b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_ground_rock_01_A_SM.tga using Guid(576d0f813a04b4241b8b4cc2cd4a802b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'ea3edfc369d1fe5fc50b3f5bbe889cca') in 0.156139 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_ground_rock_01_AO.tga
+  artifactKey: Guid(360dd741591f63a4eb04095b6a23a6a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_ground_rock_01_AO.tga using Guid(360dd741591f63a4eb04095b6a23a6a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '48fda4f08b30f7aa2d350f91b2b6d943') in 0.259693 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Rocks_02_A_SM.tga
+  artifactKey: Guid(987ea01dfb6b0ca44994a1d7e81ed134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Rocks_02_A_SM.tga using Guid(987ea01dfb6b0ca44994a1d7e81ed134) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6dc023cc88fe448331a516294122c3bf') in 0.480303 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Moss_01_Mt_AO_H_SM.tga
+  artifactKey: Guid(502630addd0f8ec4197c9a0b2f50f95e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Moss_01_Mt_AO_H_SM.tga using Guid(502630addd0f8ec4197c9a0b2f50f95e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a662fd5584f17afe8523eb1549e5cc3a') in 0.223500 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000025 seconds.
-  path: Assets/AudioFiles/mixkit-night-forest-with-insects-2414.wav
-  artifactKey: Guid(7bdc24b988f677b4d8be9e5cacde130f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AudioFiles/mixkit-night-forest-with-insects-2414.wav using Guid(7bdc24b988f677b4d8be9e5cacde130f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Rocks_01_A_SM.tga
+  artifactKey: Guid(c9d0b5833127c524e9e23ce25c083b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Rocks_01_A_SM.tga using Guid(c9d0b5833127c524e9e23ce25c083b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
- -> (artifact id: 'e65c89ae020aaa3bfdcf14306cce1cfc') in 0.016567 seconds
+ -> (artifact id: 'd4cc622f934dc91e4dc32b1ad771cc0b') in 0.232840 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/AudioFiles/mixkit-forest-birds-ambience-1210.wav
-  artifactKey: Guid(76f77fe4e25376448b33bd5382c786b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AudioFiles/mixkit-forest-birds-ambience-1210.wav using Guid(76f77fe4e25376448b33bd5382c786b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Sand_01_Mt_AO_H_SM.tga
+  artifactKey: Guid(e7b998fb21025de4991ad0997307fff6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Sand_01_Mt_AO_H_SM.tga using Guid(e7b998fb21025de4991ad0997307fff6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
- -> (artifact id: 'd50080c2f404fa684e076f2712f6bcd3') in 0.013575 seconds
+ -> (artifact id: '644e3012eca8313855661208f3def2a5') in 0.170636 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Moss_01_A_SM.tga
+  artifactKey: Guid(e36840a860082674a8f2c663aa878789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Moss_01_A_SM.tga using Guid(e36840a860082674a8f2c663aa878789) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'b15426735a4f95bcfb0766add384e579') in 0.354311 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_ground_rock_01_N.png
+  artifactKey: Guid(cc9e8612e46995f48b855e16d7a4b3e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_ground_rock_01_N.png using Guid(cc9e8612e46995f48b855e16d7a4b3e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '237814de9e48cc3d5ef389bc6d4c67bf') in 0.215189 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Sand_02_Mt_AO_H_SM.tga
+  artifactKey: Guid(a9bda8bd17dfaec4b80c531457d42144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Ground Textures/T_Ground_Sand_02_Mt_AO_H_SM.tga using Guid(a9bda8bd17dfaec4b80c531457d42144) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a290eb842570d0cef4cddc66204c5002') in 0.134230 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 251.688894 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Global_Automatic_Terrain_Paint.asset
+  artifactKey: Guid(4c87963ce53d17c4397d7f8894919c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Global_Automatic_Terrain_Paint.asset using Guid(4c87963ce53d17c4397d7f8894919c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'ecdc3abe025fb89c70d93d9c7563a6af') in 0.002787 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.044049 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Lake_Terrain_Paint.asset
+  artifactKey: Guid(ef2c633412300364d88d77579145c0ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Lake_Terrain_Paint.asset using Guid(ef2c633412300364d88d77579145c0ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'eb9d1bfe5fdbeeaf91711c51276846e2') in 0.001269 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.014056 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_River_Stream_Terrain_Paint.asset
+  artifactKey: Guid(2f664d72b230d2245941334bf799f9dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_River_Stream_Terrain_Paint.asset using Guid(2f664d72b230d2245941334bf799f9dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f2a3772fd2f3a7b514d8a763fd262338') in 0.001189 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Road_Terrain_Paint.asset
+  artifactKey: Guid(0896f3463139d584fa2bdb6e20538db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Road_Terrain_Paint.asset using Guid(0896f3463139d584fa2bdb6e20538db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'd703bf11ec4e0f87e9dbd92a3c7ee460') in 0.001272 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Sea_Terrain_Paint.asset
+  artifactKey: Guid(b1fad461f9124ec42aa9b71d19603cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Sea_Terrain_Paint.asset using Guid(b1fad461f9124ec42aa9b71d19603cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f39c145a490681bedb8133069f829b36') in 0.001162 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001333 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Swamp_Terrain_Paint.asset
+  artifactKey: Guid(03d41743ad3f82e4bbb24cd4f2d32436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Terrain Painter/R3_Swamp_Terrain_Paint.asset using Guid(03d41743ad3f82e4bbb24cd4f2d32436) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '18b51ceb200ff630d82fd4f6b9d5cc44') in 0.001313 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 369.745526 seconds.
+  path: Assets/NatureManufacture Assets/NatureManufacture Wind
+  artifactKey: Guid(a1bc2fc75e8c45348a852d8d971ed114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/NatureManufacture Wind using Guid(a1bc2fc75e8c45348a852d8d971ed114) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'fda89ab7f1693dba7b42ecf74b4ccc15') in 0.026935 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.774209 seconds.
+  path: Assets/NatureManufacture Assets/NatureManufacture Wind/3DNoise.psd
+  artifactKey: Guid(eb58c36f965ff024cb94d9bba46e33e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/NatureManufacture Wind/3DNoise.psd using Guid(eb58c36f965ff024cb94d9bba46e33e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '297e6226d3b1824a35b8d0b4f35e74f7') in 0.013678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.008530 seconds.
+  path: Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind.prefab
+  artifactKey: Guid(8dfd17a03533a0241b37daf2264ebdfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind.prefab using Guid(8dfd17a03533a0241b37daf2264ebdfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'bcb09d87192dc188aaec45d7314da5ae') in 0.032849 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind_Spherical.prefab
+  artifactKey: Guid(974d54ebddd687440a7c9ae08430aa0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind_Spherical.prefab using Guid(974d54ebddd687440a7c9ae08430aa0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '7a1c5295285867caab7bd54093508cb4') in 0.001710 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 2.017164 seconds.
+  path: Assets/NatureManufacture Assets/Object Shaders/NM_indirect.cginc
+  artifactKey: Guid(5b01e3d9186192744b1a3d97021bf2a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Object Shaders/NM_indirect.cginc using Guid(5b01e3d9186192744b1a3d97021bf2a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'bf5b06d346724185bae72c30c32b1d22') in 0.001310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.560971 seconds.
+  path: Assets/NatureManufacture Assets/HD Settings/Render_Coast.asset
+  artifactKey: Guid(04420c971ab779c488f11e07d3c84e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/HD Settings/Render_Coast.asset using Guid(04420c971ab779c488f11e07d3c84e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '61aa0795725f9c8da0d55a5e262c7a15') in 0.004045 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 1.720594 seconds.
+  path: Assets/NatureManufacture Assets/Foliage Shaders/NM_Foliage_VSPro_Indirect.cginc
+  artifactKey: Guid(559eee01f465b9a459de8661f2f599e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Foliage Shaders/NM_Foliage_VSPro_Indirect.cginc using Guid(559eee01f465b9a459de8661f2f599e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'd7705056587018173ee7cbd37d24c28b') in 0.007844 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/Foliage Shaders/NMWindNoShiver.cginc
+  artifactKey: Guid(41a44dc6f4c76bf429bfb60cfaadc25e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Foliage Shaders/NMWindNoShiver.cginc using Guid(41a44dc6f4c76bf429bfb60cfaadc25e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '48bc9b5888683e9b876169618b029d0a') in 0.000934 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 2.597931 seconds.
+  path: Assets/NatureManufacture Assets/Coast & Dunes Environment Trial/Coast Assets Readme.txt
+  artifactKey: Guid(1e42a8c4b2387854c853dc6995f42884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast & Dunes Environment Trial/Coast Assets Readme.txt using Guid(1e42a8c4b2387854c853dc6995f42884) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e03d572b7aa0c9e592edf905aeccf82e') in 0.000943 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 430.933723 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Cliff.asset
+  artifactKey: Guid(926f3e8ff3762654d91cfa6f2774022b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Cliff.asset using Guid(926f3e8ff3762654d91cfa6f2774022b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a229e4e2ced95743791c9091e7f31d74') in 0.189764 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Pipe with post.asset
+  artifactKey: Guid(12f2adbc74b0b534fa1781dcb3ca0bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Pipe with post.asset using Guid(12f2adbc74b0b534fa1781dcb3ca0bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '32250701b977ea7a62185b03c38a742e') in 0.157507 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Decal Sand.asset
+  artifactKey: Guid(b2335e05346047d468de2bb200f31479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Decal Sand.asset using Guid(b2335e05346047d468de2bb200f31479) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '71f392a43a3bff69ae5bc3cbce8afa5c') in 0.002628 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Stone Wall.asset
+  artifactKey: Guid(2d30ea67bae366e4293343bbca7382e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Stone Wall.asset using Guid(2d30ea67bae366e4293343bbca7382e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '31ee29be11669fc923d425d5a2e3df18') in 0.010530 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.
 AssetImportWorker is now disconnected from the server

@@ -27,10 +27,10 @@ Material:
   m_Shader: {fileID: 4800000, guid: cec4fd4e62ec189459f566e627df0df8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _DISABLE_SSR_TRANSPARENT
   m_InvalidKeywords:
   - _DENSITY_MODE
-  - _DISABLE_SSR_TRANSPARENT
   - _HEIGHTMAP
   - _HEIGHTMAP0
   - _HEIGHTMAP1
@@ -57,7 +57,6 @@ Material:
   m_CustomRenderQueue: 2225
   stringTagMap:
     MotionVector: User
-    RenderType: Opaque
   disabledShaderPasses:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
@@ -412,7 +411,6 @@ Material:
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
-    - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
     - _AlphaCutoffPostpass: 0.5
@@ -452,10 +450,7 @@ Material:
     - _BaseSmoothnessRemapMax: 1
     - _BaseSmoothnessRemapMin: 0
     - _BaseUsePlanarUV: 0
-    - _Blend: 0
     - _BlendMode: 0
-    - _BlendModePreserveSpecular: 1
-    - _CastShadows: 1
     - _CoatMask: 0
     - _ConservativeDepthOffsetEnable: 0
     - _CoverAORemapMax: 1
@@ -484,7 +479,6 @@ Material:
     - _Cover_UV0_UV2: 0
     - _Cover_UV0_UV3: 0
     - _Cover_Use_Layer_Mask_G: 1
-    - _Cull: 2
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -650,10 +644,7 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
-    - _QueueControl: 1
-    - _QueueOffset: 0
     - _RayTracing: 0
-    - _ReceiveShadows: 1
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
@@ -695,7 +686,6 @@ Material:
     - _SubsurfaceMask2: 1
     - _SubsurfaceMask3: 1
     - _SupportDecals: 1
-    - _Surface: 0
     - _SurfaceType: 0
     - _TexWorldScale: 1
     - _TexWorldScale0: 1
@@ -754,13 +744,10 @@ Material:
     - _VertexColorMode: 0
     - _WETNESS_T_HEAT_F: 0
     - _WetSmoothness: 1
-    - _WorkflowMode: 1
-    - _ZTest: 4
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - _ZWriteControl: 0
     m_Colors:
     - _Base2Color: {r: 1, g: 1, b: 1, a: 0}
     - _Base2TilingOffset: {r: 1, g: 1, b: 0, a: 0}

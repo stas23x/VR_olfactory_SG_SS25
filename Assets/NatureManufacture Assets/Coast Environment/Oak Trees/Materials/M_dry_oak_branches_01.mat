@@ -46,13 +46,11 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHATEST_ON
-  - _SPECULAR_SETUP
-  - _USE_TRANSLUCENCY
-  m_InvalidKeywords:
-  - _DENSITY_MODE
   - _DISABLE_DECALS
   - _DISABLE_SSR_TRANSPARENT
   - _DOUBLESIDED_ON
+  m_InvalidKeywords:
+  - _DENSITY_MODE
   - _INFLUENCEMASK_MAP
   - _MAIN_LAYER_INFLUENCE_MODE
   - _MASKMAP
@@ -79,6 +77,7 @@ Material:
   - TransparentDepthPostpass
   - TransparentBackface
   - RayTracingPrepass
+  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -398,7 +397,6 @@ Material:
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
-    - _AlphaClip: 1
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 1
     - _AlphaCutoffPostpass: 0.5
@@ -408,7 +406,7 @@ Material:
     - _AlphaDstBlend: 0
     - _AlphaShadowThreshold: 0.5
     - _AlphaSrcBlend: 1
-    - _AlphaToMask: 1
+    - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
     - _Anisotropy: 0
     - _Backface_Brightness: 0
@@ -421,17 +419,12 @@ Material:
     - _BarkSmoothnessRemapMax: 1
     - _BarkSmoothnessRemapMin: 0
     - _BarkUseUV3: 1
-    - _Blend: 0
     - _BlendMode: 0
-    - _BlendModePreserveSpecular: 1
-    - _Boolean: 0
-    - _CastShadows: 1
     - _CoatMask: 0
     - _ColorNoiseSpread: 1
     - _ColorNoiseSpread_1: 2
     - _ColorNoiseTilling: 2
     - _ConservativeDepthOffsetEnable: 0
-    - _Cull: 0
     - _CullFarDistance: 20
     - _CullFarStart: 60
     - _CullMode: 0
@@ -481,7 +474,6 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _ExcludeFromTUAndAA: 0
-    - _Float: 3
     - _HealthyandDryColorNoisePower: 1
     - _HeightAmplitude: 0.02
     - _HeightAmplitude0: 0.02
@@ -591,10 +583,7 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
-    - _QueueControl: 1
-    - _QueueOffset: 0
     - _RayTracing: 0
-    - _ReceiveShadows: 1
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
@@ -626,7 +615,6 @@ Material:
     - _SnowSmoothnessRemapMin: 0
     - _SnowUseUv3: 1
     - _Snow_Amount: 0
-    - _Specular: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
     - _SpecularOcclusionMode: 1
@@ -648,7 +636,6 @@ Material:
     - _SubsurfaceMask2: 1
     - _SubsurfaceMask3: 1
     - _SupportDecals: 0
-    - _Surface: 0
     - _SurfaceType: 0
     - _TexWorldScale: 1
     - _TexWorldScale0: 1
@@ -662,12 +649,6 @@ Material:
     - _Thickness1: 1
     - _Thickness2: 1
     - _Thickness3: 1
-    - _ThicknessRemapMax: 4
-    - _ThicknessRemapMin: 0
-    - _Translucency_Intensivity: 1
-    - _Translucency_Self_Shadow_Reduction: 1
-    - _Translucency_Self_Shadow_Reduction_Smooth: 1
-    - _Translucency_Shadow_Reduction: 0.12
     - _TransmissionEnable: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -682,7 +663,6 @@ Material:
     - _TrunkNormalScale: 1
     - _TrunkSmoothnessRemapMax: 1
     - _TrunkSmoothnessRemapMin: 0
-    - _USE_TRANSLUCENCY: 1
     - _UVBase: 0
     - _UVBase0: 0
     - _UVBase1: 3
@@ -706,13 +686,10 @@ Material:
     - _Wind_Color_Mix_Contrast: 1
     - _Wind_Color_Speed: 1
     - _Wind_Drag_Directionality: 1
-    - _WorkflowMode: 0
-    - _ZTest: 4
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 3
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - _ZWriteControl: 0
     m_Colors:
     - _Backface_Thickness_Mask_Remap: {r: 0.01, g: 1, b: 0, a: 0}
     - _BarkBaseColor: {r: 1, g: 1, b: 1, a: 0}
@@ -740,11 +717,9 @@ Material:
     - _HealthyColor: {r: 1, g: 1, b: 1, a: 0}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _MeshNormalMultiply: {r: 1, g: 1, b: 1, a: 0}
     - _NewNormal: {r: 0, g: 0, b: 0, a: 0}
     - _SnowBaseColor: {r: 1, g: 1, b: 1, a: 0}
     - _SnowTilingOffset: {r: 1, g: 1, b: 0, a: 0}
-    - _Specular: {r: 0.03921569, g: 0.03921569, b: 0.07843123, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _ThicknessRemap0: {r: 0, g: 1, b: 0, a: 0}
@@ -752,7 +727,6 @@ Material:
     - _ThicknessRemap2: {r: 0, g: 1, b: 0, a: 0}
     - _ThicknessRemap3: {r: 0, g: 1, b: 0, a: 0}
     - _TilingOffset: {r: 1, g: 1, b: 0, a: 0}
-    - _Translucency_Color: {r: 0.8501246, g: 0.86574405, b: 0.9056604, a: 1}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TrunkBaseColor: {r: 1, g: 1, b: 1, a: 0}
     - _TrunkTilingOffset: {r: 1, g: 1, b: 0, a: 0}
