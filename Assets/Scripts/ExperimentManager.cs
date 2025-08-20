@@ -82,7 +82,9 @@ public class ExperimentManager : MonoBehaviour
             StimuliCondition condition = ConditionAssigner.GetConditionForParticipant(participantID, currentSceneIndex);
             // Debug.Log($"Loading scene '{sceneName}' with condition {condition}");
             // yield return new WaitForSeconds(10.0f);
-          
+
+
+
 
             // Set conditions
             ApplyCondition(condition);
@@ -97,21 +99,23 @@ public class ExperimentManager : MonoBehaviour
             movementProvider.enabled = true;
             turnProvider.enabled = true;
 
-            // Log scene start
-            logger?.LogSceneStart(sceneName, condition == StimuliCondition.AudioOnly || condition == StimuliCondition.Both,
-                                          condition == StimuliCondition.OlfactoryOnly || condition == StimuliCondition.Both);
+            // START logging
+            logger?.StartLogging(participantID, sceneName, condition);
 
             // Wait for experiment duration or user input
             //yield return RunSceneDuration();
             Debug.Log($"Pre delay: " + sceneName);
             await Task.Delay(System.TimeSpan.FromSeconds(experimentDuration));
             Debug.Log($"waited 10 sec");
+            
+            // STOP logging
+            logger?.StopLogging();
             //Show questionnaire and wait for responses
             // bool questionnaireDone = false;
             // questionnairePrefab.SetActive(true);
-            
+
             // Debug.Log($"opened a questionnaire");
-                // questionnaireUI.Show((string[] responses) =>
+            // questionnaireUI.Show((string[] responses) =>
             // {   
             //     Debug.Log($"Python bitche");
             //     logger?.LogQuestionnaireResponses(responses);

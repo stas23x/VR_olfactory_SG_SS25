@@ -1238,3 +1238,44 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:scripting/monoscript/fileName/StartExperiment.cs: 5b7e41d2674edc882545477febff3780 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1395.427310 seconds.
+  path: Assets/Terrain/Terrain_0_0_8a5bebe1-2e4f-40ac-bf8c-2b425e6783b9.asset
+  artifactKey: Guid(0e747c8a0c0f17943a02a28bec4a97f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain/Terrain_0_0_8a5bebe1-2e4f-40ac-bf8c-2b425e6783b9.asset using Guid(0e747c8a0c0f17943a02a28bec4a97f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0423386e8c1d556449f4b67252d282ce') in 0.061881 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Terrain/TerrainData_bc3afb3a-ba9a-4e08-b4f5-422e78cd4106.asset
+  artifactKey: Guid(b668002ad272e5d45acabd968ca57e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain/TerrainData_bc3afb3a-ba9a-4e08-b4f5-422e78cd4106.asset using Guid(b668002ad272e5d45acabd968ca57e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0422827f74d40493024aacfc66d080ee') in 0.189527 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Terrain/Terrain_0_0_de89d689-0627-4dc1-9707-dd62f1b7dd02.asset
+  artifactKey: Guid(3260ca534dc6e104696c77baaa5434b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain/Terrain_0_0_de89d689-0627-4dc1-9707-dd62f1b7dd02.asset using Guid(3260ca534dc6e104696c77baaa5434b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+The tree Palm_1_1 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+The tree Palm_2_3 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+The tree Palm_2_1 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+The tree Palm_1_4 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+The tree prefab_unity_grass_fern_01_1 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+Tree prefab at index 6 is missing.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9c6cbe2685e3b6c8724d8009505c6a75') in 0.326462 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 159
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

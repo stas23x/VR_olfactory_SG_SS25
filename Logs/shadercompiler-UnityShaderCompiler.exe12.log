@@ -534,3 +534,4 @@ Cmd: compileSnippet
   error: 1 plat 4 at Assets/CityGen3D/Shaders/FacadeSimple.citygenshader(2734): implicit truncation of vector type
  ok=1 outsize=6622
 
+Cmd: shutdown

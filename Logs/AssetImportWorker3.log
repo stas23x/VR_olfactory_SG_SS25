@@ -1229,3 +1229,49 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:scripting/monoscript/fileName/StartExperiment.cs: 5b7e41d2674edc882545477febff3780 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 632177.521505 seconds.
+  path: Assets/Terrain/Terrain_0_0_8eb7964e-f9e3-4afa-9670-5926d7511c15.asset
+  artifactKey: Guid(9e538eca3e25e254c81a071990f57e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain/Terrain_0_0_8eb7964e-f9e3-4afa-9670-5926d7511c15.asset using Guid(9e538eca3e25e254c81a071990f57e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f8d47e03b156878542fa2ef921bf6be3') in 0.061739 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Terrain/TerrainData_33e4d6dd-9d4c-4de9-b6a3-c2f911a63708.asset
+  artifactKey: Guid(48f7045463e6df449a9b1229992279a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain/TerrainData_33e4d6dd-9d4c-4de9-b6a3-c2f911a63708.asset using Guid(48f7045463e6df449a9b1229992279a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3c2ba4e65f459a9f9754f5c10efc1ab7') in 0.181940 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Terrain/Terrain_0_0_c9ee25fa-2178-4a3c-9a00-dd8321a3f0af.asset
+  artifactKey: Guid(d13a817d666a3a047a8f1b100dcce5f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain/Terrain_0_0_c9ee25fa-2178-4a3c-9a00-dd8321a3f0af.asset using Guid(d13a817d666a3a047a8f1b100dcce5f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '500f8b41598bbf90e963d405b393ab27') in 0.201521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 223
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Terrain/Terrain_0_0_75875ca5-c699-48cc-861d-3610acf62c2f.asset
+  artifactKey: Guid(cf0bc048bdd484e40b5dc85a55346cc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain/Terrain_0_0_75875ca5-c699-48cc-861d-3610acf62c2f.asset using Guid(cf0bc048bdd484e40b5dc85a55346cc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f7e6aab4a3fb8be27578ded42e666989') in 0.159468 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
