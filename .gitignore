@@ -38,3 +38,4 @@ Thumbs.db
 
 # Unity package manager
 Packages/packages-lock.json
+*.log
