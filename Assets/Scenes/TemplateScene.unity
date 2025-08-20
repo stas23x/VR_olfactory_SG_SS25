@@ -2159,7 +2159,7 @@ RectTransform:
   m_Father: {fileID: 1739385579}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3099,7 +3099,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67c483567e561d4f9701c7ac7b8c47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  participantID: 0
+  participantID: 1
+  isExperimentActive: 1
+  ExperimentMenu: {fileID: 880646026}
+  PlayerMenu: {fileID: 857109171}
+  eventSystem: {fileID: 1696746869}
+  experimentDuration: 20
+  questionnairePrefab: {fileID: 1463540422}
   sceneOrder:
   - forest 1
   - Stanislav beach
@@ -3114,11 +3120,11 @@ Transform:
   m_GameObject: {fileID: 696355758}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07010913, y: -0.043147683, z: 1.8639343}
+  m_LocalPosition: {x: 0.06910913, y: -2.2631478, z: 0.8651931}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 887247098}
+  m_Father: {fileID: 941621724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757160611
 GameObject:
@@ -3377,12 +3383,12 @@ GameObject:
   - component: {fileID: 857109177}
   - component: {fileID: 857109178}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: PlayerMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &857109172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3485,7 +3491,7 @@ MonoBehaviour:
   continueButton: {fileID: 1004485229}
   exitButton: {fileID: 2036864834}
   skyVolumeTarget: {fileID: 1812963944}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 77071792}
   isMenuVisible: 1
   menuToggleAction:
     actionPath: /actions/default/in/MenuToggle
@@ -3562,9 +3568,9 @@ GameObject:
   - component: {fileID: 880646031}
   - component: {fileID: 880646030}
   - component: {fileID: 880646029}
-  - component: {fileID: 880646028}
+  - component: {fileID: 880646035}
   m_Layer: 5
-  m_Name: StartMenu
+  m_Name: ExperimentMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3590,22 +3596,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.12000001, y: -0.099999905}
   m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &880646028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880646026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d90653c1481d39f47903542a3e94e156, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startMenuPanel: {fileID: 880646026}
-  participantIDDropdown: {fileID: 1384930955}
-  startButton: {fileID: 946025681}
-  menuButtonAction: {fileID: -1787167279109485405, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!65 &880646029
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3722,6 +3712,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &880646035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880646026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1edcf30749bf9a84db2ebe8c9889ce59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startButton: {fileID: 946025681}
+  participantDropdown: {fileID: 1384930955}
 --- !u!1 &887247097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,7 +3759,6 @@ Transform:
   - {fileID: 126989550}
   - {fileID: 1463540426}
   - {fileID: 941621724}
-  - {fileID: 696355760}
   - {fileID: 1161825080}
   - {fileID: 2100624586}
   - {fileID: 77071791}
@@ -3905,6 +3908,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 696355760}
   - {fileID: 1696746870}
   - {fileID: 7131203}
   - {fileID: 1777646577}
@@ -4254,7 +4258,7 @@ RectTransform:
   m_Father: {fileID: 1162675802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6022,6 +6026,7 @@ GameObject:
   - component: {fileID: 1463540424}
   - component: {fileID: 1463540423}
   - component: {fileID: 1463540427}
+  - component: {fileID: 1463540428}
   m_Layer: 5
   m_Name: QuestionnaireUI
   m_TagString: Untagged
@@ -6131,9 +6136,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04d3b1ff1ecaa440abb2659233388b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionText: {fileID: 0}
+  questionText: {fileID: 1915881930}
   dropdowns: []
-  submitButton: {fileID: 0}
+  submitButton: {fileID: 1864141707}
+--- !u!114 &1463540428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463540422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096eefd6c124ee948bf3508d9417192a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1713723376}
 --- !u!1 &1470751870
 GameObject:
   m_ObjectHideFlags: 0
@@ -6785,7 +6803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 2044876165}
+  m_FirstSelected: {fileID: 1384930953}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1696746870
