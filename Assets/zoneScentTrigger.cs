@@ -9,6 +9,9 @@ public class zoneScentTrigger : MonoBehaviour
 
     private OlfactoryManager olfactoryManager;
 
+    private bool inZone3 = false;
+    private bool inZone2 = false;
+    private bool inZone1 = false;
     void Start()
     {
         olfactoryManager = OlfactoryManager.Instance;
@@ -23,18 +26,23 @@ public class zoneScentTrigger : MonoBehaviour
     {
         if (other.name != "XRRig")
         {
+
+            Debug.Log("Other collision");
             return;
         }
-        if (gameObject.name == "Zone 3")
+        if (gameObject.name == "Zone 3" & !inZone3)
         {
-            Debug.Log("Entering zone 3");
+            inZone3 = true;
+            Debug.Log("Entering zone 3: " + other.name);
         }
-        else if (gameObject.name == "Zone 2")
+        else if (gameObject.name == "Zone 2" & !inZone2)
         {
+            inZone2 = true;
             Debug.Log("Entering zone 2");
         }
-        else if (gameObject.name == "Zone 1")
+        else if (gameObject.name == "Zone 1" & !inZone1)
         {
+            inZone1 = true;
             Debug.Log("Entering zone 1");
         }
 
@@ -46,16 +54,19 @@ public class zoneScentTrigger : MonoBehaviour
         {
             return;
         }
-        if (gameObject.name == "Zone 3")
+        if (gameObject.name == "Zone 3" & inZone3)
         {
+            inZone3 = false;
             Debug.Log("Exit zone 3");
         }
-        else if (gameObject.name == "Zone 2")
+        else if (gameObject.name == "Zone 2" & inZone2)
         {
+            inZone2 = false;
             Debug.Log("Exit zone 2");
         }
-        else if (gameObject.name == "Zone 1")
+        else if (gameObject.name == "Zone 1" & inZone1)
         {
+            inZone1 = false;
             Debug.Log("Exit zone 1");
         }
 
