@@ -351,7 +351,7 @@ MonoBehaviour:
   threshold: 2
   thresholdDistance: 2
   colorMeshLive: 0
-  autoColor: 1
+  autoColor: 0
   layer:
     serializedVersion: 2
     m_Bits: 16

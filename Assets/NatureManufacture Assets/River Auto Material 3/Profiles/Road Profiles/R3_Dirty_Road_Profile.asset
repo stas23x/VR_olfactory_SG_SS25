@@ -305,6 +305,7 @@ MonoBehaviour:
   noiseSizeXFlowMap: 2
   noiseSizeZFlowMap: 2
   floatSpeed: 10
+  floatSpeedWaterfallMultiplier: 3
   flowLerpDistance: 40
   meshFlowSpeed: 1
   vertexPainterNoiseData:

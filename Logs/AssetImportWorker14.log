@@ -1,0 +1,623 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.62f1 (4af31df58517) revision 4911901'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'de' Physical Memory: 32688 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker14
+-projectPath
+F:/VR_olfactory_SG_SS25
+-logFile
+Logs/AssetImportWorker14.log
+-srvPort
+32978
+Successfully changed project path to: F:/VR_olfactory_SG_SS25
+F:/VR_olfactory_SG_SS25
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [35292]  Target information:
+
+Player connection [35292]  * "[IP] 192.168.219.1 [Port] 0 [Flags] 2 [Guid] 3798681448 [EditorId] 3798681448 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [35292]  * "[IP] 192.168.207.1 [Port] 0 [Flags] 2 [Guid] 3798681448 [EditorId] 3798681448 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [35292]  * "[IP] 192.168.111.97 [Port] 0 [Flags] 2 [Guid] 3798681448 [EditorId] 3798681448 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [35292]  * "[IP] 172.31.16.1 [Port] 0 [Flags] 2 [Guid] 3798681448 [EditorId] 3798681448 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HUEKJSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [35292] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [35292] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+Refreshing native plugins compatible for Editor in 28.20 ms, found 12 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.62f1 (4af31df58517)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/VR_olfactory_SG_SS25/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24142 MB
+    Driver:   32.0.15.8097
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56492
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.005908 seconds.
+- Loaded All Assemblies, in  0.247 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.196 seconds
+Domain Reload Profiling: 440ms
+	BeginReloadAssembly (77ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (91ms)
+		LoadAssemblies (75ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (89ms)
+			TypeCache.Refresh (88ms)
+				TypeCache.ScanAssembly (80ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (196ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (162ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (112ms)
+			ProcessInitializeOnLoadMethodAttributes (36ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.674 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.960 seconds
+Domain Reload Profiling: 2632ms
+	BeginReloadAssembly (107ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (16ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (508ms)
+		LoadAssemblies (291ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (279ms)
+			TypeCache.Refresh (229ms)
+				TypeCache.ScanAssembly (211ms)
+			ScanForSourceGeneratedMonoScriptInfo (34ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (1961ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1778ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (94ms)
+			ProcessInitializeOnLoadAttributes (489ms)
+			ProcessInitializeOnLoadMethodAttributes (1176ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves 2': fallback shader 'TransparentCutout' not found
+Shader 'Fristy/Nature/Leaves': fallback shader 'TransparentCutout' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 13.39 ms, found 12 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 9648 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 168 unused Assets / (7.1 MB). Loaded Objects now: 10178.
+Memory consumption went from 0.64 GB to 0.63 GB.
+Total: 6.610400 ms (FindLiveObjects: 0.568500 ms CreateObjectMapping: 0.676800 ms MarkObjects: 3.840500 ms  DeleteObjects: 1.523500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 81866.189657 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_B.prefab
+  artifactKey: Guid(90cc20d9af144c34eb55003a2400f244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_B.prefab using Guid(90cc20d9af144c34eb55003a2400f244) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'baf018dc17c4747873eb27ba3d8a14cd') in 1.814001 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 93
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_pole_A.prefab
+  artifactKey: Guid(78b5b9eab2676124a97ad56f489c0c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_pole_A.prefab using Guid(78b5b9eab2676124a97ad56f489c0c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a7c39c1541335c732c2cb78abe76256d') in 0.024779 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_C.prefab
+  artifactKey: Guid(962a83c14618f0e42ab5d4e66d62ce02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_C.prefab using Guid(962a83c14618f0e42ab5d4e66d62ce02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'cac573d3e23444dbf650b0f448ac0ae2') in 0.023012 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_end_left.prefab
+  artifactKey: Guid(09e0fa6572560874ea334ce0d34ebf3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_end_left.prefab using Guid(09e0fa6572560874ea334ce0d34ebf3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f310df301d5eab0c6332c975c393bc82') in 0.025008 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_end_right.prefab
+  artifactKey: Guid(78d8137d4811758468937c31440378f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_end_right.prefab using Guid(78d8137d4811758468937c31440378f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'df5e038af76d7c9f256ce35e296da60c') in 0.021153 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_rope.prefab
+  artifactKey: Guid(17abad54c4e0ebb4e84a5f116bed66ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Prefabs/Prefab_wooden_fence_rope.prefab using Guid(17abad54c4e0ebb4e84a5f116bed66ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'c2bb70855a79033a20a2f936cee43d41') in 0.021157 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 15.997217 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Pales/Prefabs/Prefab_wooden_pales_1_04.prefab
+  artifactKey: Guid(08e6598dffe3b0842b85bbd1a5f45701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Pales/Prefabs/Prefab_wooden_pales_1_04.prefab using Guid(08e6598dffe3b0842b85bbd1a5f45701) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '28fa3158462c8f0595c25037167e037c') in 3.229305 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 43
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Pales/Prefabs/Prefab_wooden_pales_4_01.prefab
+  artifactKey: Guid(22f5efb1949eec74f9145f23ff403c5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Pales/Prefabs/Prefab_wooden_pales_4_01.prefab using Guid(22f5efb1949eec74f9145f23ff403c5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '594d5039b267e4855150e3e3d273bb98') in 0.158354 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 43
+========================================================================
+Received Import Request.
+  Time since last request: 2.716985 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Models/wooden_fence_D.fbx
+  artifactKey: Guid(ccdc5442caca1144bb08b748aa4c423c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Models/wooden_fence_D.fbx using Guid(ccdc5442caca1144bb08b748aa4c423c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f9433ed5ed5e957eaf034c84f296a231') in 0.150776 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Models/wooden_fence_pole_D.fbx
+  artifactKey: Guid(d5a99881abd5978449571da875704dbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Models/wooden_fence_pole_D.fbx using Guid(d5a99881abd5978449571da875704dbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '761d27e21128033e872b00168cff3d79') in 0.083432 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Models/wooden_fence_pole_C.fbx
+  artifactKey: Guid(067f31fdba0650346ab0755aba917f3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Models/wooden_fence_pole_C.fbx using Guid(067f31fdba0650346ab0755aba917f3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '63addb411b6c9bf635331f80f6aaf14a') in 0.066773 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Models/wooden_fence_end_right.fbx
+  artifactKey: Guid(87ed4162fc0ff8c48a8b2d793b4f291c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Wooden Fence/Models/wooden_fence_end_right.fbx using Guid(87ed4162fc0ff8c48a8b2d793b4f291c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'd0edb1c90d0ec89549e0e33b40b858e1') in 0.053118 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 21.812402 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/Lightmap-1_comp_dir.png
+  artifactKey: Guid(f4c000df54a648d45a3e9e3707c17a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/Lightmap-1_comp_dir.png using Guid(f4c000df54a648d45a3e9e3707c17a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '67809f1363bd77eb850cada8a268dd8d') in 0.233943 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.015293 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/Lightmap-1_comp_light.exr
+  artifactKey: Guid(5fcf2c7f08abc894bb7b05358e265dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/Lightmap-1_comp_light.exr using Guid(5fcf2c7f08abc894bb7b05358e265dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '75e4bd34f055784d38b9f92d04546144') in 0.229122 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.069609 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/Lightmap-2_comp_light.exr
+  artifactKey: Guid(70350134e8a13654d87167f8563c2e3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/Lightmap-2_comp_light.exr using Guid(70350134e8a13654d87167f8563c2e3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '4680f3396839a3346800001833748b1e') in 0.225299 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 1.979576 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-3.exr
+  artifactKey: Guid(b12abe99db918d84ca53082db75b2ebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-3.exr using Guid(b12abe99db918d84ca53082db75b2ebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '78c8ddf536cb2a9f84c6be1ecd471946') in 0.108690 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-5.exr
+  artifactKey: Guid(c3c6a054ce1486441880a2e78c08cd05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-5.exr using Guid(c3c6a054ce1486441880a2e78c08cd05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f7e954a3a74db0be067a0805a512fb31') in 0.196304 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-10.exr
+  artifactKey: Guid(c4837e3ab8e7ef442a896f0ae2f36abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-10.exr using Guid(c4837e3ab8e7ef442a896f0ae2f36abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '304fe41d286a4a019992b367931346c3') in 0.016222 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.040268 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-15.exr
+  artifactKey: Guid(9e4f24f1ca478dd4b84562876bb124a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-15.exr using Guid(9e4f24f1ca478dd4b84562876bb124a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '1d437faaffa394ab287fb5356315fcb2') in 0.151165 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-18.exr
+  artifactKey: Guid(05b78e145dd37a5418b830fe6125ca96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-18.exr using Guid(05b78e145dd37a5418b830fe6125ca96) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6a4a891f0464a0aae4a1416d4cf1c8e2') in 0.009543 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-17.exr
+  artifactKey: Guid(2da5292421e9d8741b4a5527accbdbe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-17.exr using Guid(2da5292421e9d8741b4a5527accbdbe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '2d04baa441fed7d7dd05686417274b34') in 0.027548 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-22.exr
+  artifactKey: Guid(36052c334f06eeb41a27945c61e97e68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-22.exr using Guid(36052c334f06eeb41a27945c61e97e68) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '3b19fb36850c5dda67a64dd7d832e130') in 0.014912 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.034677 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-26.exr
+  artifactKey: Guid(09430ec1c3038624bb944484d60ba55a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-26.exr using Guid(09430ec1c3038624bb944484d60ba55a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '728d796393dad1294e3187110398a4f7') in 0.156657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.339459 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-35.exr
+  artifactKey: Guid(f771cac5dab1274468a41ce22b8bc94c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-35.exr using Guid(f771cac5dab1274468a41ce22b8bc94c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a32e74fe7c29bc4db4236b7c064f3e8b') in 0.062413 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 1.757870 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-57.exr
+  artifactKey: Guid(159206039cd04bc4a9fd3f673e344e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Demo Scene/Coast Demo/ReflectionProbe-57.exr using Guid(159206039cd04bc4a9fd3f673e344e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '9af1ba4cab5fa4256f43f6827c024626') in 0.295315 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 8.846952 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Details/Unity Terrain Prefabs/Prefab_seaweed_01_B_Unity_Terrain.prefab
+  artifactKey: Guid(6a04777cb55adfe48b99bd60ebeb2289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Details/Unity Terrain Prefabs/Prefab_seaweed_01_B_Unity_Terrain.prefab using Guid(6a04777cb55adfe48b99bd60ebeb2289) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '576b542c4f272a739ab32411853de958') in 1.372543 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Details/Unity Terrain Prefabs/Prefab_shells_01_A_Unity_Terrain.prefab
+  artifactKey: Guid(1f6365801243b334780b20ceae539859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Details/Unity Terrain Prefabs/Prefab_shells_01_A_Unity_Terrain.prefab using Guid(1f6365801243b334780b20ceae539859) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '0064f0a333e4ad4f38edee8618ab12ec') in 0.067329 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 4.341906 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Oak Trees/Prefabs/Prefab_dry_oak_01_D.prefab
+  artifactKey: Guid(02ec7b7246477d240bc0e263d54e143b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Oak Trees/Prefabs/Prefab_dry_oak_01_D.prefab using Guid(02ec7b7246477d240bc0e263d54e143b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '2c0278336fcc0c84ee46cf37151c431a') in 6.439154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 65
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Oak Trees/Prefabs/Prefab_dry_oak_02_B.prefab
+  artifactKey: Guid(bd3469306fa6de440bc63c557b9caa7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Oak Trees/Prefabs/Prefab_dry_oak_02_B.prefab using Guid(bd3469306fa6de440bc63c557b9caa7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '41ad21ec6ed7df91c6ef35d889c18984') in 1.105933 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 65
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/VFX/Prefabs/Textures/T_hash_blue_Noise.png
+  artifactKey: Guid(1ca81a98efab96f449032e4f7c360230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/VFX/Prefabs/Textures/T_hash_blue_Noise.png using Guid(1ca81a98efab96f449032e4f7c360230) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6f95f4fabeb8851f4aeb7a47e1a86d8d') in 0.198741 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/VFX/Prefabs/Textures/T_sand_particle_f64.png
+  artifactKey: Guid(088eb48853b40c64199ce1c7c0430655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/VFX/Prefabs/Textures/T_sand_particle_f64.png using Guid(088eb48853b40c64199ce1c7c0430655) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'b8274cf1dc51cab7012721758ac2c01c') in 0.149541 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/VFX/Prefabs/Prefab_particle_sand_litter.prefab
+  artifactKey: Guid(dde7f27897f86284c9885ec7cf8b7817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/VFX/Prefabs/Prefab_particle_sand_litter.prefab using Guid(dde7f27897f86284c9885ec7cf8b7817) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'd250ec36dd85c4234c23d5b75c21b461') in 0.109113 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/VFX/Prefabs/Textures/T_wind_vector_field_01_N.png
+  artifactKey: Guid(f57ab9dea1377ed4799e575bfd99579a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/VFX/Prefabs/Textures/T_wind_vector_field_01_N.png using Guid(f57ab9dea1377ed4799e575bfd99579a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '0ddb39d015184654605cf79b0ba7a134') in 0.404515 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Oak Trees/Prefabs/Prefab_dry_oak_01_E.prefab
+  artifactKey: Guid(6e14d59b30eace44b929cba310c29c3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Oak Trees/Prefabs/Prefab_dry_oak_01_E.prefab using Guid(6e14d59b30eace44b929cba310c29c3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e267976f82da7491c555868d924300ce') in 0.753821 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 65
+========================================================================
+Received Import Request.
+  Time since last request: 35.555864 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/River Profiles/R3_Profile_River_Stream.asset
+  artifactKey: Guid(f8c57faab4bdb0f4095ed15976f92093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/River Profiles/R3_Profile_River_Stream.asset using Guid(f8c57faab4bdb0f4095ed15976f92093) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'aa08ee51244d3d6d90ff0e9629af260a') in 0.079747 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/River Profiles/R3_Profile_River_Swamp.asset
+  artifactKey: Guid(bef952bf144461b42a929e482ef7c480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/River Profiles/R3_Profile_River_Swamp.asset using Guid(bef952bf144461b42a929e482ef7c480) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '15a61d55717606cd1d899680f4792580') in 0.034295 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 10.209180 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Road Profiles/R3_Road_Mobile_Profile.asset
+  artifactKey: Guid(c5f9f1fc3800b5649802f89c78926254) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Road Profiles/R3_Road_Mobile_Profile.asset using Guid(c5f9f1fc3800b5649802f89c78926254) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '4c7b1a7f7668e239307518679326e0bc') in 0.001612 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
