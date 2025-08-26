@@ -785,3 +785,570 @@ Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/F
  -> (artifact id: '07736bfe2ab4cbe3ec7f68b5754ac62a') in 0.003538 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 2258.704199 seconds.
+  path: Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Pipe with post 1.asset
+  artifactKey: Guid(9ddb0f37768b3cb42be28d19995b92ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/River Auto Material 3/Profiles/Fence Profiles/Pipe with post 1.asset using Guid(9ddb0f37768b3cb42be28d19995b92ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '707018a9d9239c3e605fa330daeeb743') in 0.004620 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 63.442434 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Water Materials/M_R3_River_Tesseled.mat
+  artifactKey: Guid(5def3649090a6e7408186d0e8d3083f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Water Materials/M_R3_River_Tesseled.mat using Guid(5def3649090a6e7408186d0e8d3083f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'eaef205d83159ed6e7ce4d79b320e404') in 8.253807 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Water Materials/M_R3_Sea_Sea_Shore.mat
+  artifactKey: Guid(ecc1d1860fe07a141bfce49a67043230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Water Materials/M_R3_Sea_Sea_Shore.mat using Guid(ecc1d1860fe07a141bfce49a67043230) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '30addca6567229e5fb30816ac6f7f792') in 0.039710 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Water Materials/M_R3_Sea_Background.mat
+  artifactKey: Guid(4c6e4937c3ac3904a906f08b6cd14d1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Water Materials/M_R3_Sea_Background.mat using Guid(4c6e4937c3ac3904a906f08b6cd14d1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '40f3dd0d01805ab5c7fd1ee65df16155') in 7.195900 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 4.126430 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_01_1.prefab
+  artifactKey: Guid(ef8d984422e53f3489d9a3df341d47aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_01_1.prefab using Guid(ef8d984422e53f3489d9a3df341d47aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f6719e13d661767092bf7dcae8518be5') in 1.176275 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_01_hp_1.prefab
+  artifactKey: Guid(151a02495a5da2c4eaa1630b6092e848) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_01_hp_1.prefab using Guid(151a02495a5da2c4eaa1630b6092e848) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'aff41ca786e9e4ff2ca3c18f7d1775ce') in 0.069348 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_03_1.prefab
+  artifactKey: Guid(a3ebe7097487f634aa070685699dd8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_03_1.prefab using Guid(a3ebe7097487f634aa070685699dd8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '188a0e8f9a49dbb736d582b230dc6c75') in 1.944875 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_hedge_bedstraw_01.prefab
+  artifactKey: Guid(362d736dbac69e845a19f82640e6311e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_hedge_bedstraw_01.prefab using Guid(362d736dbac69e845a19f82640e6311e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '343ab7106cc6f2d001c7e45cd76b11c6') in 0.073315 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_02_2.prefab
+  artifactKey: Guid(234104f2833b5ed47b46132704f91fa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_02_2.prefab using Guid(234104f2833b5ed47b46132704f91fa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a1bf7641c171ec6ef35c4b8adb3173b6') in 0.093841 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_rough_horsetail_01.prefab
+  artifactKey: Guid(7a3c6e2ce7340984d8685ad083e66206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_rough_horsetail_01.prefab using Guid(7a3c6e2ce7340984d8685ad083e66206) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'ed6a394d8d046fef5fe96bc0a845f6c4') in 0.241016 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_rough_horsetail_03.prefab
+  artifactKey: Guid(e7a4c604f529518458702a753342d3d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_rough_horsetail_03.prefab using Guid(e7a4c604f529518458702a753342d3d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'c6ad3558aa5331915f83373648fe8482') in 0.224160 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_sea_wormwood_01.prefab
+  artifactKey: Guid(01addfd062be8bf4ea30c3238196739b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_sea_wormwood_01.prefab using Guid(01addfd062be8bf4ea30c3238196739b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '02c9f191e6eb55608b77628a5405db7e') in 1.266928 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_eastern_groundsel_02.prefab
+  artifactKey: Guid(873cd08fccd9cbe4ab31dcf6a4a7c3f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_eastern_groundsel_02.prefab using Guid(873cd08fccd9cbe4ab31dcf6a4a7c3f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e7b050c835bdea3d368c53202a5b8fa5') in 0.064065 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_01_4.prefab
+  artifactKey: Guid(6f16dd178554ed842922be6c41c46c72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_01_4.prefab using Guid(6f16dd178554ed842922be6c41c46c72) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a4eef2391816a6b0f3f9bdb6619485ad') in 0.083549 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_petasites_spurius_02.prefab
+  artifactKey: Guid(cbe69d70a0df26f46ab939f71ef13801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_petasites_spurius_02.prefab using Guid(cbe69d70a0df26f46ab939f71ef13801) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'b8ddae2b4313079ef83e316a32a4e077') in 0.065502 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_03_2.prefab
+  artifactKey: Guid(2ad80c4d4a086a64ba59a90ca7740d91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/Prefab_beach_grass_03_2.prefab using Guid(2ad80c4d4a086a64ba59a90ca7740d91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e8a65df500281364f02401bc0b987f9c') in 0.052149 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/prefab_stonecrop_01.prefab
+  artifactKey: Guid(9f4353993a7a660478bc62c28c4e0930) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Foliage and Grass/Prefabs/prefab_stonecrop_01.prefab using Guid(9f4353993a7a660478bc62c28c4e0930) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '340a4f9606f0fade9914f5f26dcc3d04') in 0.055074 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 22.459893 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers
+  artifactKey: Guid(29d9127bd02804b4492790070380c329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers using Guid(29d9127bd02804b4492790070380c329) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'c99396775392461305da198df41e0585') in 0.000631 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.511078 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_algae_01.terrainlayer
+  artifactKey: Guid(1ca41d55503865744b19cce1c2c39182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_algae_01.terrainlayer using Guid(1ca41d55503865744b19cce1c2c39182) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'c82f73852d340ad5285f998c1c9b5b1c') in 0.026080 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Cliff_Clay_01.terrainlayer
+  artifactKey: Guid(52d3c302b024b7542b615d51801434c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Cliff_Clay_01.terrainlayer using Guid(52d3c302b024b7542b615d51801434c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6a1233d939eacbb4c3023c09b7ffa82f') in 0.958914 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Sand_14.terrainlayer
+  artifactKey: Guid(9b6e70f4a54b19746a11c731d5a67b70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Sand_14.terrainlayer using Guid(9b6e70f4a54b19746a11c731d5a67b70) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '0299cc4a94079ed2b867c7910ad4d4a1') in 1.394604 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Sand_03.terrainlayer
+  artifactKey: Guid(d853f7b771155284eabf24cb4fabab7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Sand_03.terrainlayer using Guid(d853f7b771155284eabf24cb4fabab7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f59f7ad9c6785a3dc1550bc2db557b39') in 0.902038 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Sand_13.terrainlayer
+  artifactKey: Guid(6df367cf9682495489aa5e4419eb75b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Sand_13.terrainlayer using Guid(6df367cf9682495489aa5e4419eb75b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '265b6af3d1279df19a642dda150690ef') in 1.141462 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Sand_17.terrainlayer
+  artifactKey: Guid(d8fd11d7ff0ea234f82d1f28e4f20fee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Ground Layers/Terrain_Layer_Sand_17.terrainlayer using Guid(d8fd11d7ff0ea234f82d1f28e4f20fee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '89b144a3b3fd4675fa8f826ef2c756ae') in 0.857248 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 1.704789 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_16_BC.png
+  artifactKey: Guid(e845d436668ac3b49b59fae5d4590a46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_16_BC.png using Guid(e845d436668ac3b49b59fae5d4590a46) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6833eab2f343409b36aeb223ea00a8b5') in 0.048991 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2.464605 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_09_BC.png
+  artifactKey: Guid(8b519b23606fdff4ca70facfc412f2ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_09_BC.png using Guid(8b519b23606fdff4ca70facfc412f2ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'b1b4fc599af07ab7649e893318acd46a') in 0.027044 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 4.373560 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_17_BC.png
+  artifactKey: Guid(64f07db0999a76a43990a716659cdb46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_17_BC.png using Guid(64f07db0999a76a43990a716659cdb46) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'dc48dbc91056dbc311c2c2a395671b70') in 0.013529 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 874.248881 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_06_BC.png
+  artifactKey: Guid(3773e8841969b3e49b5ec8030ac62bec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_06_BC.png using Guid(3773e8841969b3e49b5ec8030ac62bec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '1f2537d19b2d81d717216414f8091840') in 0.029508 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_06_AO_H_SM.png
+  artifactKey: Guid(73de8f17f260f4849954763de6c62346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_06_AO_H_SM.png using Guid(73de8f17f260f4849954763de6c62346) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6b53e0177efd2a77f1e556f37af4273d') in 0.019986 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 148.328805 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_01_N.png
+  artifactKey: Guid(650cee954e59c59449b3c8da3b1576e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_01_N.png using Guid(650cee954e59c59449b3c8da3b1576e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e6670e315dd5b355d3968f082ccaeee6') in 0.019184 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_04_H.png
+  artifactKey: Guid(ca738e8c1d5ff37489797b1af16788b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_04_H.png using Guid(ca738e8c1d5ff37489797b1af16788b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '9bf1de9fc24bb8190349402b29a45b4f') in 0.088140 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_08_H.png
+  artifactKey: Guid(57c82002ef2fed24aad4c7bae5f7c512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_08_H.png using Guid(57c82002ef2fed24aad4c7bae5f7c512) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f4458896b77df6963010854503ba823f') in 0.064970 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_02_H.png
+  artifactKey: Guid(26c7f0b768c533a47b47024647f18f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_02_H.png using Guid(26c7f0b768c533a47b47024647f18f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '4ecce759a666862201e448e1d8fedfd8') in 0.144608 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_15_a_H.png
+  artifactKey: Guid(f8a197c7beb9ab942874fdeeaec46d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_15_a_H.png using Guid(f8a197c7beb9ab942874fdeeaec46d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'cfb664833ee1ca32644d4e9ee00c8c04') in 0.138669 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_07_BC.png
+  artifactKey: Guid(3462e4c933cab4d488afbb5fd84b459c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_07_BC.png using Guid(3462e4c933cab4d488afbb5fd84b459c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'b669e1a59c1770b23f3a114cc47bc521') in 0.014801 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_07_H.png
+  artifactKey: Guid(6cc90abf6b6ab724bb6650be8384d5cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_07_H.png using Guid(6cc90abf6b6ab724bb6650be8384d5cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'e9a71beaa29978b18e686f214f6f32f0') in 0.085995 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_05_AO_H_SM.png
+  artifactKey: Guid(b47a2af18b8d8a64a89758db8febd81e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_05_AO_H_SM.png using Guid(b47a2af18b8d8a64a89758db8febd81e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '70072a23851de2a900f143e453407a04') in 0.018935 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_03_BC.png
+  artifactKey: Guid(8dc58dc31e9d40b46a1dba836fcd4282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_03_BC.png using Guid(8dc58dc31e9d40b46a1dba836fcd4282) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '4d7ce360be2635c76700d8dbab411a67') in 0.017216 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_10_H.png
+  artifactKey: Guid(d413993b543688a47ac763409304ed2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_10_H.png using Guid(d413993b543688a47ac763409304ed2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'fbf9791a3981eb754c256ecba3064721') in 0.137545 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_10_AO_H_SM.png
+  artifactKey: Guid(137cbd1dd139e6f45ab9897ad8df8ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_10_AO_H_SM.png using Guid(137cbd1dd139e6f45ab9897ad8df8ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '3b7ec7f5b1132e1ab628a965a5d657fc') in 0.013040 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_15_a_N.png
+  artifactKey: Guid(56f19fdbbe6fa5a4c95263fffad283ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_15_a_N.png using Guid(56f19fdbbe6fa5a4c95263fffad283ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'b5622c0e92ee3cff8c420446038878f0') in 0.015764 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_14_H.png
+  artifactKey: Guid(f8a6473e2de80d447b3516ac4dd04827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_14_H.png using Guid(f8a6473e2de80d447b3516ac4dd04827) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'c867b99891e0782c7fee831075099168') in 0.142948 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_17_b_N.png
+  artifactKey: Guid(bb6bc8db89404d54c8592fe058cbc67b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_17_b_N.png using Guid(bb6bc8db89404d54c8592fe058cbc67b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'd107b75862c28417d5ef6be3fa8c7e3d') in 0.145489 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_14_N.png
+  artifactKey: Guid(1beb80bca778d194480e20f15bd3447b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_14_N.png using Guid(1beb80bca778d194480e20f15bd3447b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '10cf48bad3c2c1aee50db1df35fe8edc') in 0.013109 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_12_AO_H_SM.png
+  artifactKey: Guid(4f954952d5037694e9d52737cdc29946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_12_AO_H_SM.png using Guid(4f954952d5037694e9d52737cdc29946) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '6890ae53e77c1f73b8fc04fa4b7a7d21') in 0.013026 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_07_N.png
+  artifactKey: Guid(07ca111ef38dde24e827d6eabcc1d80f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_07_N.png using Guid(07ca111ef38dde24e827d6eabcc1d80f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '06faa606b9939e27f0cb09feac8cb7d1') in 0.013138 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_11_N.png
+  artifactKey: Guid(108d68c830d458344bc29a0f43dcce0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_11_N.png using Guid(108d68c830d458344bc29a0f43dcce0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a7aae6b7fdadfe9a4664994f2a09228d') in 0.013093 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_17_a_H.png
+  artifactKey: Guid(865c4b5922d296846954e759fb6b3aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_17_a_H.png using Guid(865c4b5922d296846954e759fb6b3aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'a9529a535766f7628d9aca0a3d35edf7') in 0.064808 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_11_H.png
+  artifactKey: Guid(8a4d0245e4b16fe4dbcb035a0952d0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_11_H.png using Guid(8a4d0245e4b16fe4dbcb035a0952d0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '2506181ea4721ae8127f35a1663d469c') in 0.101253 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_15_b_N.png
+  artifactKey: Guid(7719e6dca1d6a8f46b54c1072519b7fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_15_b_N.png using Guid(7719e6dca1d6a8f46b54c1072519b7fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '4bb9020b082aed5745ddb4bf10b7862f') in 0.108465 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_14_AO_H_SM.png
+  artifactKey: Guid(785b344b5ba59e34287fdc6fedd84e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_14_AO_H_SM.png using Guid(785b344b5ba59e34287fdc6fedd84e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '34a12b25b232d820f21c7fb77ad152c0') in 0.013227 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_13_N.png
+  artifactKey: Guid(f9e281ff5855db5408e381218b8e08c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_13_N.png using Guid(f9e281ff5855db5408e381218b8e08c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '85edf01cb1c7ce5b84d9701dda05246f') in 0.016719 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_12_H.png
+  artifactKey: Guid(c9ae898945b98d045bee05690a7029fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_12_H.png using Guid(c9ae898945b98d045bee05690a7029fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'eea47ed4d29b1d1655c94398a70622bd') in 0.090602 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_07_AO_H_SM.png
+  artifactKey: Guid(e1a5b536dc02bdc449db3e813896d6d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_07_AO_H_SM.png using Guid(e1a5b536dc02bdc449db3e813896d6d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '4128fcc302fb515c02f3a5983202cfb6') in 0.292995 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_13_BC.png
+  artifactKey: Guid(7c7e3cc8219ed6641a1216e87591347b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_13_BC.png using Guid(7c7e3cc8219ed6641a1216e87591347b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'eb67a21f5c56d0a00abc7b23d21a5d27') in 0.014886 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_11_AO_H_SM.png
+  artifactKey: Guid(6d2b3022084896e4a9c5291b3d48c4cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_11_AO_H_SM.png using Guid(6d2b3022084896e4a9c5291b3d48c4cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: 'f470683ab8aacaa186dadf4f09c1015a') in 0.058163 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_15_a_AO_H_SM.png
+  artifactKey: Guid(645e99654dd70774fabe11a2b6f787d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NatureManufacture Assets/Coast Environment/Ground/Textures/T_ground_sand_15_a_AO_H_SM.png using Guid(645e99654dd70774fabe11a2b6f787d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 32 workers.
+ -> (artifact id: '76cf8aaab565bdada4cd88fe3e689fd4') in 0.031445 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
