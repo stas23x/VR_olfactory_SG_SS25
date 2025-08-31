@@ -81,7 +81,7 @@ public class SceneDropdownHandler : MonoBehaviour
             case 1: return "forest 1";
             case 2: return "AmrumV2";
             case 3: return "Stanislav beach";
-            case 4: return "Konigssee";
+            case 4: return "Koenigssee";
             default: return "";
         }
         // If you want to use the dropdown value directly:

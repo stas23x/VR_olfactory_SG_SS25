@@ -154,7 +154,7 @@ public class MenuController : MonoBehaviour
         }
 
         // Update GlobalSettings for sky and audio are done automatically via handlers
-
+        Debug.Log("Calling -------------------------");
         // Load selected scene
         string selectedScene = sceneHandler.GetSelectedScene();
         string currentScene = SceneManager.GetActiveScene().name;
@@ -213,7 +213,7 @@ public class MenuController : MonoBehaviour
                     xrRig.transform.position = new UnityEngine.Vector3(216.0f, 21.0f, 269.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3.6f, 138f, 0f);
                     break;
-                case "Konigssee":
+                case "Koenigssee":
                     // Set camera position for Konigssee
                     // xrRig.transform.position = new UnityEngine.Vector3(500.0f, 30.0f, 979.0f);
                     xrRig.transform.position = new UnityEngine.Vector3(500.0f, 32.0f, 979.0f);
