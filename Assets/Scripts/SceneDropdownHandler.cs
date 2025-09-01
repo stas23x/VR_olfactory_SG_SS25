@@ -53,9 +53,9 @@ public class SceneDropdownHandler : MonoBehaviour
             {
                 sceneNames.Add("Beach");
             }
-            else if (name == "Konigssee")
+            else if (name == "Koenigssee")
             {
-                sceneNames.Add("Konigssee");
+                sceneNames.Add("Koenigssee");
             }
             else
             {

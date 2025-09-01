@@ -8,8 +8,6 @@ public class ScentTrigger : MonoBehaviour
     public float zone2Radius;
     public float zone3Radius;
 
-
-
     void Start()
     {
 
@@ -32,8 +30,5 @@ public class ScentTrigger : MonoBehaviour
         s1.frequency = 40;
         s2.frequency = 20;
         s3.frequency = 10;
-
-
     }
-
 }

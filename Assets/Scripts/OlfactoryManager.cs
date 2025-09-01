@@ -18,14 +18,13 @@ public class OlfactoryManager : MonoBehaviour
         {
             serialPort = new SerialPort(portName, baudRate);
             serialPort.Open();
-            serialPort.DtrEnable = true;  // Optional: Reset Arduino
+            serialPort.DtrEnable = true;  
             Debug.Log("Serial port opened on " + portName);
             usingOlfactory = true;
 
-             // Singleton pattern: only one instance allowed
             if (Instance != null && Instance != this)
             {
-                Destroy(gameObject); // Optional: prevent duplicates
+                Destroy(gameObject);
                 return;
             }
 

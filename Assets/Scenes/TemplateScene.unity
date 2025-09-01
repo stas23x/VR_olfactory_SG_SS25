@@ -3756,6 +3756,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1226069693}
+  - {fileID: 1242868235}
   - {fileID: 126989550}
   - {fileID: 1463540426}
   - {fileID: 941621724}
@@ -5581,13 +5583,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226069689}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0031, y: 1.06, z: -1.6767}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0015181, y: 0.9923802, z: 0.32204115}
   m_LocalScale: {x: 2.4654, y: 1, z: 2.182}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 887247098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1242868235 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+  m_PrefabInstance: {fileID: 1346167302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1301571160
 GameObject:
   m_ObjectHideFlags: 0
@@ -5630,8 +5637,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 887247098}
     m_Modifications:
+    - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: scentType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: zone1Radius
       value: 1
@@ -5658,15 +5669,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.45
+      value: -4.448418
       objectReference: {fileID: 0}
     - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.34
+      value: 3.27238
       objectReference: {fileID: 0}
     - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.84
+      value: 0.15874112
       objectReference: {fileID: 0}
     - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9741,5 +9752,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 887247098}
   - {fileID: 1360296612}
-  - {fileID: 1346167302}
-  - {fileID: 1226069693}
