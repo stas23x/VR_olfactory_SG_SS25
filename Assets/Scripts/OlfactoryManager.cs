@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO.Ports;
 using System.Data;
+using System.Collections.Generic;
 
 public class OlfactoryManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class OlfactoryManager : MonoBehaviour
     public string portName = "COM16";
     public int baudRate = 9600;
     private bool usingOlfactory = false;
+    Stack<int>  frequencies = new Stack<int>();
 
     public static OlfactoryManager Instance { get; private set; }
     void Awake()
@@ -55,7 +57,29 @@ public class OlfactoryManager : MonoBehaviour
         }
         
     }
+    public void SetFrequency(int frequency)
+    {
+    if (usingOlfactory)
+    {
+        string command = $"setF:{frequency}";
+        SendToArduino(command);
+        Debug.Log("Changed frequency to " + frequency);
+    }
+    else
+    {
+        Debug.Log("Changing frequency without arduino. Freq: " + frequency);
+    }
+    }
+        public void PushFrequency(int frequency)
+    {
+        frequencies.Push(frequency);
+    }
 
+    public void ReturnToPreviousFrequency()
+    {
+        int f = frequencies.Pop();
+        SetFrequency(f);
+    }
     public void StopScent(string scentType)
     {
         if (usingOlfactory)
@@ -68,7 +92,7 @@ public class OlfactoryManager : MonoBehaviour
         {
             Debug.Log("Exiting olfactory area without arduino.");
         }
-        
+
     }
 
     private void SendToArduino(string message)
@@ -78,15 +102,52 @@ public class OlfactoryManager : MonoBehaviour
             serialPort.WriteLine(message);
         }
     }
-
-    void OnApplicationQuit()
+public void DisableAllPumps()
+{
+    if (usingOlfactory && serialPort != null && serialPort.IsOpen)
     {
-        if (serialPort != null && serialPort.IsOpen)
-        {
-            serialPort.Close();
-            Debug.Log("Serial port closed.");
-        }
-    }
+        Debug.Log("Disabling all pumps...");
 
+        // Send commands to disable all pumps (assuming you have multiple pumps numbered 1-8 or similar)
+        // Adjust the range based on your actual pump configuration
+        for (int i = 1; i <= 8; i++)
+        {
+            string command = "setAPump:" + i;
+            SendToArduino(command);
+            System.Threading.Thread.Sleep(50); // Small delay between commands
+
+            command = "setStatus:0";
+            SendToArduino(command);
+            System.Threading.Thread.Sleep(50); // Small delay between commands
+        }
+
+        Debug.Log("All pumps disabled.");
+    }
+    else
+    {
+        Debug.Log("Cannot disable pumps - no olfactory connection available.");
+    }
+}
+void OnApplicationQuit()
+{
+    DisableAllPumps(); // Disable all pumps before closing
+
+    if (serialPort != null && serialPort.IsOpen)
+    {
+        serialPort.Close();
+        Debug.Log("Serial port closed.");
+    }
+}
+void OnDestroy()
+{
+    // This will be called when the object is destroyed (e.g., scene change)
+    DisableAllPumps();
+
+    if (serialPort != null && serialPort.IsOpen)
+    {
+        serialPort.Close();
+        Debug.Log("Serial port closed on destroy.");
+    }
+}
 
 }

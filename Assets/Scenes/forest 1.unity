@@ -2466,6 +2466,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f611d77947a7ec74692548d60ef94887, type: 3}
+--- !u!1001 &1421870068
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: scentType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: zone1Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: zone2Radius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: zone3Radius
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706250564501300453, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_Name
+      value: OlphactoryZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 178.3189
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.49741
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 85.33043
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
 --- !u!4 &1423256955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8807064048693926011, guid: c06ecca5c3d565e42808724839b39b6f, type: 3}
@@ -2600,6 +2673,10 @@ PrefabInstance:
     - target: {fileID: 2706250564501300453, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: m_Name
       value: OlfactorySphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706250564501300453, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7017052626363575624, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: m_LocalScale.x
@@ -4342,3 +4419,4 @@ SceneRoots:
   - {fileID: 1758765440}
   - {fileID: 819660657}
   - {fileID: 1505507425}
+  - {fileID: 1421870068}

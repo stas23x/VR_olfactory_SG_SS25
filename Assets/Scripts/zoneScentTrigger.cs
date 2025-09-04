@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 
 public class zoneScentTrigger : MonoBehaviour
@@ -71,36 +72,43 @@ public class zoneScentTrigger : MonoBehaviour
             return;
         }
 
-        Debug.Log($"Entering {gameObject.name}, starting scent {scentType} at {frequency}Hz");
+        // Debug.Log($"Entering {gameObject.name}, starting scent {scentType} at {frequency}Hz");
 
-        if (olfactoryManager != null)
+        // if (olfactoryManager != null)
+        // {
+        //     olfactoryManager.StartScent(scentType, frequency);
+        // }
+        // else
+        // {
+        //     Debug.LogError("OlfactoryManager instance is null. Cannot start scent.");
+        // }
+
+        if (olfactoryManager == null)
+        { 
+        Debug.Log("Olfactory manager couldnt be found in the zoneScentTrigger");
+        return;
+        }
+
+        if (gameObject.name == "Zone 3" & !inZone3)
         {
+            inZone3 = true;
             olfactoryManager.StartScent(scentType, frequency);
+            olfactoryManager.PushFrequency(frequency);
+            Debug.Log("Entering zone 3: " + other.name);
         }
-        else
+        else if (gameObject.name == "Zone 2" & !inZone2)
         {
-            Debug.LogError("OlfactoryManager instance is null. Cannot start scent.");
+            inZone2 = true;
+            olfactoryManager.SetFrequency(frequency);
+            olfactoryManager.PushFrequency(frequency);
+            Debug.Log("Entering zone 2");
         }
-
-
-        // if (gameObject.name == "Zone 3" & !inZone3)
-        // {
-        //     inZone3 = true;
-        //     Debug.Log("Entering zone 3: " + other.name);
-        // }
-        // else if (gameObject.name == "Zone 2" & !inZone2)
-        // {
-        //     inZone2 = true;
-        //     Debug.Log("Entering zone 2");
-        // }
-        // else if (gameObject.name == "Zone 1" & !inZone1)
-        // {
-        //     inZone1 = true;
-        //     Debug.Log("Entering zone 1");
-        // }
-
-
-        // olfactoryManager.StartScent("Sample", frequency);
+        else if (gameObject.name == "Zone 1" & !inZone1)
+        {
+            inZone1 = true;
+            olfactoryManager.SetFrequency(frequency);
+            Debug.Log("Entering zone 1");
+        }
     }
     void OnTriggerExit(Collider other)
     {
@@ -110,35 +118,43 @@ public class zoneScentTrigger : MonoBehaviour
         }
 
 
-        Debug.Log($"Exiting {gameObject.name}, stopping scent {scentType}");
+        // Debug.Log($"Exiting {gameObject.name}, stopping scent {scentType}");
 
-        if (olfactoryManager != null)
+        // if (olfactoryManager != null)
+        // {
+        //     olfactoryManager.StopScent(scentType);
+        // }
+        // else
+        // {
+        //     Debug.LogError("OlfactoryManager instance is null. Cannot stop scent.");
+        // }
+
+        if (olfactoryManager == null)
+        { 
+        Debug.Log("Olfactory manager couldnt be found in the zoneScentTrigger");
+        return;
+        }
+
+        if (gameObject.name == "Zone 3" & inZone3)
         {
+            inZone3 = false;
             olfactoryManager.StopScent(scentType);
+            Debug.Log("Exit zone 3");
         }
-        else
+        else if (gameObject.name == "Zone 2" & inZone2)
         {
-            Debug.LogError("OlfactoryManager instance is null. Cannot stop scent.");
+            inZone2 = false;
+            olfactoryManager.ReturnToPreviousFrequency();
+            Debug.Log("Exit zone 2");
+        }
+        else if (gameObject.name == "Zone 1" & inZone1)
+        {
+            inZone1 = false;
+            olfactoryManager.ReturnToPreviousFrequency();
+            Debug.Log("Exit zone 1");
         }
 
-
-        // if (gameObject.name == "Zone 3" & inZone3)
-        // {
-        //     inZone3 = false;
-        //     Debug.Log("Exit zone 3");
-        // }
-        // else if (gameObject.name == "Zone 2" & inZone2)
-        // {
-        //     inZone2 = false;
-        //     Debug.Log("Exit zone 2");
-        // }
-        // else if (gameObject.name == "Zone 1" & inZone1)
-        // {
-        //     inZone1 = false;
-        //     Debug.Log("Exit zone 1");
-        // }
-
-        // olfactoryManager.StartScent("Sample", frequency);
+       
     }
     
 }
