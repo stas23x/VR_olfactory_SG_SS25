@@ -1391,7 +1391,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: scentType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2706250564501300453, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: m_Name
@@ -2973,7 +2973,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: scentType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: zone1Radius
@@ -3165,7 +3165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: scentType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2706250564501300453, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: m_Name

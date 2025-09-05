@@ -14,6 +14,7 @@ using System.Collections;
 public class MenuController : MonoBehaviour
 {
     [Header("UI Elements")]
+    public GameObject playerMenu;
     public GameObject menuPanel;
     public Dropdown sceneDropdown;
     public Dropdown skyDropdown;
@@ -128,6 +129,8 @@ public class MenuController : MonoBehaviour
 
         if (menuPanel != null)
             menuPanel.SetActive(isMenuVisible);
+        if (playerMenu != null)
+            playerMenu.SetActive(isMenuVisible);
 
         if (isMenuVisible)
         {

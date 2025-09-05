@@ -206,6 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7131203}
+  - component: {fileID: 7131204}
   m_Layer: 0
   m_Name: Camera Offset
   m_TagString: Untagged
@@ -222,15 +223,45 @@ Transform:
   m_GameObject: {fileID: 7131202}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 880646027}
   - {fileID: 1713723376}
+  - {fileID: 913996813}
   - {fileID: 857109172}
   m_Father: {fileID: 941621724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7131204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c352be98d9e2a4f9587c4ab29339b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMenu: {fileID: 857109171}
+  menuPanel: {fileID: 385787441}
+  sceneDropdown: {fileID: 2044876167}
+  skyDropdown: {fileID: 1033492340}
+  audioSlider: {fileID: 278179176}
+  continueButton: {fileID: 1004485229}
+  exitButton: {fileID: 2036864834}
+  skyVolumeTarget: {fileID: 1812963944}
+  audioManager: {fileID: 77071792}
+  isMenuVisible: 1
+  menuToggleAction:
+    actionPath: /actions/default/in/MenuToggle
+    needsReinit: 0
+  selectAction:
+    actionPath: /actions/default/in/Select
+    needsReinit: 0
+  menuButtonAction: {fileID: -1787167279109485405, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &43366871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,7 +1425,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77071792}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: SetMasterVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &303333641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,13 +3147,13 @@ MonoBehaviour:
   ExperimentMenu: {fileID: 880646026}
   PlayerMenu: {fileID: 857109171}
   eventSystem: {fileID: 1696746869}
-  experimentDuration: 20
+  experimentDuration: 10
   questionnairePrefab: {fileID: 1463540422}
   sceneOrder:
+  - AmrumV2
   - forest 1
   - Stanislav beach
   - Koenigssee
-  - AmrumV2
 --- !u!4 &696355760
 Transform:
   m_ObjectHideFlags: 0
@@ -3479,11 +3522,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857109171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14c352be98d9e2a4f9587c4ab29339b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMenu: {fileID: 0}
   menuPanel: {fileID: 385787441}
   sceneDropdown: {fileID: 2044876167}
   skyDropdown: {fileID: 1033492340}
@@ -3871,8 +3915,6 @@ GameObject:
   m_Component:
   - component: {fileID: 941621724}
   - component: {fileID: 941621723}
-  - component: {fileID: 941621727}
-  - component: {fileID: 941621726}
   - component: {fileID: 941621725}
   - component: {fileID: 941621731}
   - component: {fileID: 941621730}
@@ -3902,7 +3944,7 @@ MonoBehaviour:
   m_RequestedTrackingMode: 0
   m_TrackingOriginMode: 1
   m_TrackingSpace: 0
-  m_CameraYOffset: 0
+  m_CameraYOffset: 1
 --- !u!4 &941621724
 Transform:
   m_ObjectHideFlags: 0
@@ -3916,7 +3958,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 913996813}
   - {fileID: 696355760}
   - {fileID: 1696746870}
   - {fileID: 7131203}
@@ -3942,56 +3983,6 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 7131202}
   m_RequestedTrackingOriginMode: 0
   m_CameraYOffset: 1.1176
---- !u!136 &941621726
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941621722}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Height: 1.7
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &941621727
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941621722}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &941621730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4005,7 +3996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 941621731}
-  m_MoveSpeed: 2
+  m_MoveSpeed: 4
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -4106,7 +4097,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 4
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -4127,6 +4118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedThreshold: 0.2
   fadeSpeed: 2
+  volume: 0
 --- !u!1 &946025679
 GameObject:
   m_ObjectHideFlags: 0
@@ -6734,7 +6726,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 941621724}
+    m_TransformParent: {fileID: 7131203}
     m_Modifications:
     - target: {fileID: 334320433943011786, guid: f9508f7ab848c224ebfcc961aa485c49, type: 3}
       propertyPath: m_audioClip
@@ -6746,7 +6738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 836688007590567833, guid: f9508f7ab848c224ebfcc961aa485c49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 836688007590567833, guid: f9508f7ab848c224ebfcc961aa485c49, type: 3}
       propertyPath: m_LocalPosition.z

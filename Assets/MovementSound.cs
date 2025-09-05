@@ -4,7 +4,7 @@ public class MovementSound : MonoBehaviour
 {
     public float speedThreshold = 0.2f;  // Minimum speed before sound plays
     public float fadeSpeed = 2f;         // How fast volume fades in/out
-
+    public float volume;
     private AudioSource audioSource;
     private Vector3 lastPosition;
 
@@ -38,7 +38,7 @@ public class MovementSound : MonoBehaviour
                 audioSource.Play();
 
             // Fade in volume
-            audioSource.volume = Mathf.MoveTowards(audioSource.volume, 1f, fadeSpeed * Time.deltaTime);
+            audioSource.volume = Mathf.MoveTowards(audioSource.volume, 0.09f, fadeSpeed * Time.deltaTime);
         }
         else
         {

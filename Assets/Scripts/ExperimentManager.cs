@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+#if UNITY_EDITOR
+using UnityEditor; // You must include this for EditorApplication
+#endif
 
 public class ExperimentManager : MonoBehaviour
 {
@@ -106,8 +109,8 @@ public class ExperimentManager : MonoBehaviour
             //yield return RunSceneDuration();
             Debug.Log($"Pre delay: " + sceneName);
             await Task.Delay(System.TimeSpan.FromSeconds(experimentDuration));
-            Debug.Log($"waited 10 sec");
-            
+            // Debug.Log($"waited 10 sec");
+
             // STOP logging
             logger?.StopLogging();
             //Show questionnaire and wait for responses
@@ -125,11 +128,19 @@ public class ExperimentManager : MonoBehaviour
             // while (!questionnaireDone)
             //     yield return null;
         }
-        
+
 
         Debug.Log("Experiment completed.");
         isExperimentRunning = false;
-
+        
+        #if UNITY_EDITOR
+        // Stop Play mode in Editor
+        EditorApplication.isPlaying = false;
+        #else
+        // Quit built application
+        Application.Quit();
+        #endif
+        
         // // Optionally return to template scene or quit
         // SceneManager.LoadScene("TemplateScene");
 

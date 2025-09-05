@@ -234,7 +234,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: scentType
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2706250564501300453, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: m_Name
@@ -1621,7 +1621,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 100000
+  m_Intensity: 74611.914
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1662,7 +1662,7 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
@@ -1679,13 +1679,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463990500}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.69981164, y: -0.30307037, z: 0.6458812, w: -0.035348624}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: -260, z: -150}
 --- !u!114 &463990503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 100000
+  m_Intensity: 74611.914
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -6820,7 +6820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: scentType
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: zone1Radius
