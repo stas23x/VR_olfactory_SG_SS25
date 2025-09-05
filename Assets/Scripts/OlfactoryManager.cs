@@ -2,6 +2,8 @@ using UnityEngine;
 using System.IO.Ports;
 using System.Data;
 using System.Collections.Generic;
+using System.Collections;
+using System.Threading;
 
 public class OlfactoryManager : MonoBehaviour
 {
@@ -12,8 +14,11 @@ public class OlfactoryManager : MonoBehaviour
     private bool usingOlfactory = false;
     Stack<int>  frequencies = new Stack<int>();
 
+     private bool isConnecting = false;
+
+
     public static OlfactoryManager Instance { get; private set; }
-    void Awake()
+    /*void Awake()
     {
         Debug.Log("Making connection to arduino");
         try
@@ -38,12 +43,122 @@ public class OlfactoryManager : MonoBehaviour
         }
         
     }
+    */
+    void Awake()
+    {
+        Debug.Log("Making connection to arduino");
+        string[] availablePorts = SerialPort.GetPortNames();
+        Debug.Log("Available COM ports: " + string.Join(", ", availablePorts));
+
+            AutoConnectSerial();
+            //serialPort = new SerialPort(portName, baudRate);
+            //serialPort.Open();
+            //serialPort.DtrEnable = true;  
+            //Debug.Log("Serial port opened on " + portName);
+            usingOlfactory = true;
+
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+        Instance = this;
+        
+    }
+    
+
+    
+        private void AutoConnectSerial()
+    {
+        isConnecting = true;
+        string[] availablePorts = SerialPort.GetPortNames();
+
+        Debug.Log($"Found {availablePorts.Length} available serial ports");
+
+        foreach (string port in availablePorts)
+        {
+            Debug.Log($"Trying to connect to {port}...");
+
+            if (TryConnectToPort(port))
+            {
+                Debug.Log($"Successfully connected to olfactory device on {port}");
+                portName = port;
+                usingOlfactory = true;
+                isConnecting = false;
+                break;
+            }
+        }
+
+        Debug.LogWarning("No olfactory device found on any available COM port");
+        isConnecting = false;
+    }
+
+    private bool TryConnectToPort(string port)
+    {
+        try
+        {
+            // Close existing connection if any
+            if (serialPort != null && serialPort.IsOpen)
+            {
+                serialPort.Close();
+            }
+            
+            serialPort = new SerialPort(port, baudRate);
+            serialPort.ReadTimeout = 2000; // 2 second timeout for reading
+            serialPort.WriteTimeout = 2000; // 2 second timeout for writing
+            serialPort.Open();
+            serialPort.DtrEnable = true;
+            
+            
+            // Send test command
+            SendToArduino("setAPump:1");
+            
+            // Wait for response
+            Thread.Sleep(100);
+            
+            // Check if there's data available to read
+            if (serialPort.BytesToRead > 0)
+            {
+                string response = serialPort.ReadExisting().Trim();
+                Debug.Log($"Received response from {port}: {response}");
+                
+                if (response.Contains("Channel"))
+                {
+                    Debug.Log($"Device initialized successfully on {port}");
+                    return true;
+                }
+            }
+            
+            // If we get here, the device didn't respond correctly
+            serialPort.Close();
+            return false;
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log($"Failed to connect to {port}: {e.Message}");
+            
+            if (serialPort != null && serialPort.IsOpen)
+            {
+                try
+                {
+                    serialPort.Close();
+                }
+                catch (System.Exception closeEx)
+                {
+                    Debug.LogError($"Error closing port {port}: {closeEx.Message}");
+                }
+            }
+            
+            return false;
+        }
+    }
 
     public void StartScent(string scentType, int frequency)
     {
         if (usingOlfactory)
-        {   
-            string command = "setAPump:"+scentType;
+        {
+            string command = "setAPump:" + scentType;
             SendToArduino(command);
             command = $"setF:{frequency}";
             SendToArduino(command);
@@ -55,7 +170,7 @@ public class OlfactoryManager : MonoBehaviour
         {
             Debug.Log("Entering olfactory area without arduino");
         }
-        
+
     }
     public void SetFrequency(int frequency)
     {
