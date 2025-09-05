@@ -6,6 +6,7 @@ using Valve.VR;
 using UnityEngine.XR.Interaction.Toolkit;
 using System.Numerics;
 using Unity.VisualScripting;
+using System.Collections;
 // using UnityEngine.UIElements;
 
 
@@ -39,6 +40,8 @@ public class MenuController : MonoBehaviour
     private CharacterController characterController;
     private ActionBasedContinuousMoveProvider movementProvider;
     private ActionBasedContinuousTurnProvider turnProvider;
+
+    private OlfactoryManager olfactoryManager;
 
 
 
@@ -145,7 +148,7 @@ public class MenuController : MonoBehaviour
             // SendMessage("OnMenuOpened", SendMessageOptions.DontRequireReceiver);
     }
 
-    void OnContinueClicked()
+    /*void OnContinueClicked()
     {
         if (GlobalSettings.Instance == null)
         {
@@ -174,6 +177,63 @@ public class MenuController : MonoBehaviour
 
         ToggleMenu();
     }
+    */
+
+        void OnContinueClicked()
+    {
+        if (GlobalSettings.Instance == null)
+        {
+            Debug.LogError("GlobalSettings instance not found!");
+            return;
+        }
+
+        // Update GlobalSettings for sky and audio are done automatically via handlers
+        Debug.Log("Calling -------------------------");
+        // Load selected scene
+        string selectedScene = sceneHandler.GetSelectedScene();
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (selectedScene != currentScene)
+        {
+            // Disable all pumps before switching scenes
+            olfactoryManager = OlfactoryManager.Instance;
+            if (olfactoryManager != null)
+            {
+                olfactoryManager.DisableAllPumps();
+            }
+            
+            StartCoroutine(LoadSceneAndSpawn(selectedScene));
+            GlobalSettings.Instance.currentSceneName = selectedScene;
+        }
+
+        // Apply sky profile explicitly just in case
+        GlobalSettings.Instance.ApplySkyProfile();
+
+        // Apply audio volume explicitly just in case
+        audioManager?.SetMasterVolume(GlobalSettings.Instance.audioStrength);
+
+        ToggleMenu();
+    }
+     private IEnumerator LoadSceneAndSpawn(string selectedScene)
+    {
+        var op = SceneManager.LoadSceneAsync(selectedScene, LoadSceneMode.Single);
+        op.allowSceneActivation = false;
+
+        // Wait until the scene is 90% loaded
+        while (op.progress < 0.9f)
+        {
+            yield return null;
+        }
+
+        // Now activate the scene
+        op.allowSceneActivation = true;
+
+        // Wait until the scene is fully loaded
+        yield return op;
+
+        // Set camera position after the scene is fully loaded
+        setCameraStartPosition(selectedScene);
+    }  
 
     void setCameraStartPosition(string sceneName) {
         GameObject xrRig = GameObject.Find("XRRig");
@@ -239,7 +299,12 @@ public class MenuController : MonoBehaviour
 
 
     void OnExitClicked()
-    {
+    {   
+         olfactoryManager = OlfactoryManager.Instance;
+            if (olfactoryManager != null)
+            {
+                olfactoryManager.DisableAllPumps();
+            }
         CloseSerialPortIfNeeded();
         Application.Quit();
 
