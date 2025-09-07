@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71cab1c61c75824ea55d9837f802751, type: 3}
+  m_Name: Wooden Fence Generator
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  triangleDensity: 3
+  distanceMultiplier: 1
+  additionalDistance: 0
+  bendMeshes: 0
+  firstSpan:
+    gameObject: {fileID: 0}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  lastSpan:
+    gameObject: {fileID: 0}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  posts:
+  - gameObject: {fileID: 3641797952036654121, guid: 78b5b9eab2676124a97ad56f489c0c37,
+      type: 3}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: -1.39, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  - gameObject: {fileID: 8094082553184570915, guid: edabf40cce885ae4cb3087817c7d0a91,
+      type: 3}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: -1.39, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  - gameObject: {fileID: 7979005144842697955, guid: 7ef58f9c5651b5c4b8bc4ae7740eb5e0,
+      type: 3}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: -1.39, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  - gameObject: {fileID: 2398861723304315698, guid: 4309ae85cc92b69468933b9e83930270,
+      type: 3}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: -1.39, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  postRandomType: 0
+  spans:
+  - gameObject: {fileID: 9000001566453820424, guid: 3c10d3a17d0e7854c9caad619656f60c,
+      type: 3}
+    probability: 1
+    forward: 3
+    up: 1
+    positionOffset: {x: 0, y: -1.39, z: -0.03}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 0
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  spanRandomType: 0
+  lengthType: 1
+  scaleMesh: 0
+  scaleMeshUnified: 1
+  holdUp: 0
+  randomSeed: 1
+  seed: 1935811906
+  offset: {x: 0, y: 1.3, z: 0}

@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71cab1c61c75824ea55d9837f802751, type: 3}
+  m_Name: High Cliff Sand 1 Fence Generator
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  triangleDensity: 2
+  distanceMultiplier: 1
+  additionalDistance: 0
+  bendMeshes: 1
+  normalFromTerrain: 1
+  normalFromTerrainDistance: 1
+  normalFromTerrainNormalTolerance: 45
+  normalFromTerrainCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6
+      inSlope: -0.30871323
+      outSlope: -0.30871323
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13978496
+    - serializedVersion: 3
+      time: 0.6
+      value: 0
+      inSlope: -0.8150435
+      outSlope: -0.8150435
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.52258056
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  firstSpan:
+    gameObject: {fileID: 1216486851274191754, guid: 50d26623270ed034d95662cf37c12f3a,
+      type: 3}
+    probability: 1
+    forward: 3
+    up: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 2
+  lastSpan:
+    gameObject: {fileID: 5310391203366785198, guid: 331fa5dd920ed374980dfa75f9da84f9,
+      type: 3}
+    probability: 1
+    forward: 3
+    up: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  posts: []
+  postRandomType: 0
+  spans:
+  - gameObject: {fileID: 4115120093190937527, guid: 61f79d0815e45ab4bb594fee59873d79,
+      type: 3}
+    probability: 1
+    forward: 3
+    up: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  - gameObject: {fileID: 4513262411373924713, guid: f6a70d5255cce774e95900b417e049cc,
+      type: 3}
+    probability: 1
+    forward: 3
+    up: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  - gameObject: {fileID: 5903626313099538940, guid: d407b4d52fec6d349a5567b3a49f0022,
+      type: 3}
+    probability: 1
+    forward: 3
+    up: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  spanRandomType: 0
+  lengthType: 0
+  scaleMesh: 1
+  scaleMeshUnified: 1
+  holdUp: 0
+  randomSeed: 0
+  seed: 889538764
+  offset: {x: 0, y: 0, z: 0}
