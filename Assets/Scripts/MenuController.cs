@@ -267,7 +267,7 @@ public class MenuController : MonoBehaviour
                 case "AmrumV2":
                     // Set camera position for AmrumV2
                     // xrRig.transform.position = new UnityEngine.Vector3(796.0f, 58.0f, 596.0f);
-                    xrRig.transform.position = new UnityEngine.Vector3(796.0f, 60.0f, 596.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(455.0f, 56.0f, 494.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3f, -117f, 0f);
                     break;
                 case "Stanislav beach":
