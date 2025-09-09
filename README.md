@@ -14,7 +14,7 @@ simon.heinrich.weiss@outlook.de
 ## 1. Requirements
 
 ### Software
-- **Unity**: 2022.3.61f (LTS)
+- **Unity**: 2022.3.62f (LTS)
 - **SteamVR plugin**: Install via Unity Asset Store or Package Manager
 - **Unity Input System**: Enabled in Project Settings
 - **TextMeshPro (TMP)**: For questionnaire UI
