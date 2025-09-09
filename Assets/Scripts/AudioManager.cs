@@ -2,6 +2,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// Manages global audio settings using an Audio Mixer. 
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
 
@@ -13,7 +16,10 @@ public class AudioManager : MonoBehaviour
 
     // Call this to set volume (value 0 to 1 from UI slider)
 
-     private void Awake()
+    /// <summary>
+    /// Ensures a single instance of AudioManager exists and initializes the global audio mixer.
+    /// </summary>
+    private void Awake()
     {
         if (Instance != null && Instance != this)
         {
@@ -26,6 +32,11 @@ public class AudioManager : MonoBehaviour
         if (globalMixer == null)
             Debug.LogWarning("Global AudioMixer not assigned in GlobalAudioManager!");
     }
+
+    /// <summary>
+    /// Sets the master volume of the audio mixer based on a linear slider value (0 to 1).
+    /// </summary>
+    /// <param name="volume"></param>
     public void SetMasterVolume(float volume)
     {
         // Convert linear slider (0-1) to decibels (-80 to 0)

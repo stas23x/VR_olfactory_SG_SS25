@@ -2,25 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Sets up local audio sources to use the "Local" mixer group from the global audio mixer.
+/// </summary>
 public class localAudioSetUp : MonoBehaviour
 {
-
     // Audio specified by the user when modifying the audion source parameters
     private AudioSource audioSource;
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    /// <summary>
+    /// Initializes the local audio source to use the "Local" mixer group from the global audio mixer.
+    /// </summary>
     void Start()
     {
         // Connect to the audio source defined in the inspector which is modified for each 
         // instance on the scenes
         audioSource = GetComponent<AudioSource>();
-      
-        
+
         if (AudioManager.Instance != null)
         {
             // Assign the mixer group's master or any exposed group from globalMixer
@@ -40,20 +38,4 @@ public class localAudioSetUp : MonoBehaviour
             Debug.LogWarning("GlobalAudioManager instance not found! Cannot assign AudioMixer.");
         }
     }
-
-    // void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         audioSource.Play();
-    //     }
-    // }
-
-    // void OnTriggerExit(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         audioSource.Stop();
-    //     }
-    // }
 }

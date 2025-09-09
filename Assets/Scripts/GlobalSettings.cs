@@ -2,8 +2,13 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using System.Collections.Generic;
 
+/// <summary>
+/// Singleton class to hold global settings for the application.
+/// This includes audio settings, scene settings, sky settings, and participant information.
+/// </summary>
 public class GlobalSettings : MonoBehaviour
 {
+    // Singleton instance that can be accessed globally
     public static GlobalSettings Instance;
 
     [Header("Audio Settings")]
@@ -21,6 +26,10 @@ public class GlobalSettings : MonoBehaviour
     public bool useOlfactory = true;
     public bool autoStartExperiment = false;
 
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// Implements the singleton pattern to ensure only one instance exists.
+    /// </summary>
     private void Awake()
     {
         if (Instance == null)
@@ -34,6 +43,9 @@ public class GlobalSettings : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Applies the selected sky profile to the global volume.
+    /// </summary>
     public void ApplySkyProfile()
     {
         if (globalVolume != null &&

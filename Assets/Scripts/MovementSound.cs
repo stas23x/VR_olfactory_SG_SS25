@@ -1,13 +1,19 @@
 using UnityEngine;
 
+/// <summary>
+/// Plays a movement sound when the player moves above a certain speed threshold.
+/// </summary>
 public class MovementSound : MonoBehaviour
 {
     public float speedThreshold = 0.2f;  // Minimum speed before sound plays
-    public float fadeSpeed = 2f;         // How fast volume fades in/out
+    public float fadeSpeed = 2f; // How fast volume fades in/out
     public float volume;
     private AudioSource audioSource;
     private Vector3 lastPosition;
 
+    /// <summary>
+    /// Initializes the audio source and sets initial parameters.
+    /// </summary>
     void Start()
     {
         audioSource = GetComponentInChildren<AudioSource>();
@@ -24,6 +30,9 @@ public class MovementSound : MonoBehaviour
         audioSource.volume = 0f;   // Start silent
     }
 
+    /// <summary>
+    /// Updates the audio playback based on player movement speed.
+    /// </summary>
     void Update()
     {
         if (audioSource == null) return;
