@@ -198,14 +198,19 @@ public class MenuController : MonoBehaviour
     /// <returns></returns>
      private IEnumerator LoadSceneAndSpawn(string selectedScene)
     {
-        var op = SceneManager.LoadSceneAsync(selectedScene, LoadSceneMode.Single);
-        op.allowSceneActivation = false;
+        // Set camera position after the scene is fully loaded
+        // ! changing coordinates before changing the scene, as sometimes the PC needs more time to load the scene and 
+        // the player falls indefinitelly
+        setCameraStartPosition(selectedScene);        
 
-        // Wait until the scene is 90% loaded
-        while (op.progress < 0.9f)
-        {
-            yield return null;
-        }
+        var op = SceneManager.LoadSceneAsync(selectedScene, LoadSceneMode.Single);
+        // op.allowSceneActivation = false;
+
+        // // Wait until the scene is 90% loaded
+        // while (op.progress < 0.9f)
+        // {
+        //     yield return null;
+        // }
 
         // Now activate the scene
         op.allowSceneActivation = true;
@@ -213,8 +218,7 @@ public class MenuController : MonoBehaviour
         // Wait until the scene is fully loaded
         yield return op;
 
-        // Set camera position after the scene is fully loaded
-        setCameraStartPosition(selectedScene);
+
     }  
 
     /// <summary>
@@ -249,7 +253,7 @@ public class MenuController : MonoBehaviour
                     break;
                 case "AmrumV2":
                     // Set camera position for AmrumV2
-                    xrRig.transform.position = new UnityEngine.Vector3(455.0f, 56.0f, 494.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(455.0f, 156.0f, 494.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3f, -117f, 0f);
                     break;
                 case "Stanislav beach":

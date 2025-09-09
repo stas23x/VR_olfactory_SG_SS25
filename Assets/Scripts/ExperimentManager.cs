@@ -52,7 +52,6 @@ public class ExperimentManager : MonoBehaviour
         olfactoryManager = FindObjectOfType<OlfactoryManager>();
         questionnaireUI = QuestionnaireUI.Instance;
 
-
         if (isExperimentActive)
         {
             PlayerMenu.SetActive(false); // Hide the player menu initially
@@ -93,8 +92,13 @@ public class ExperimentManager : MonoBehaviour
             string previousscene = SceneManager.GetActiveScene().name;
 
             // Load scene
-            AsyncOperation loadOp = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+
+            // Set camera position after the scene is fully loaded
+            // ! changing coordinates before changing the scene, as sometimes the PC needs more time to load the scene and 
+            // the player falls indefinitelly
             setCameraStartPosition(sceneName);
+
+            AsyncOperation loadOp = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
             characterController.enabled = true;
             movementProvider.enabled = true;
             turnProvider.enabled = true;
@@ -103,7 +107,7 @@ public class ExperimentManager : MonoBehaviour
             logger?.StartLogging(participantID, sceneName, condition);
 
             // Wait for experiment duration or user input
-            Debug.Log($"Pre delay: " + sceneName);
+            // Debug.Log($"Pre delay: " + sceneName);
             await Task.Delay(System.TimeSpan.FromSeconds(experimentDuration));
 
             // STOP logging
@@ -173,7 +177,7 @@ public class ExperimentManager : MonoBehaviour
                     break;
                 case "AmrumV2":
                     // Set camera position for AmrumV2
-                    xrRig.transform.position = new UnityEngine.Vector3(796.0f, 60.0f, 596.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(796.0f, 160.0f, 596.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3f, -117f, 0f);
                     break;
                 case "Stanislav beach":
