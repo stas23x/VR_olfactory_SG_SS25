@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Handles simple first-person movement and looking around with mouse input.
+/// </summary>
 public class SimpleMovement : MonoBehaviour
 {
     public float moveSpeed = 3f;
@@ -7,9 +10,11 @@ public class SimpleMovement : MonoBehaviour
     public float lookSpeed = 2f;
     public float minY = -80f;
     public float maxY = 80f;
-
     private float rotationY = 0f;
 
+    /// <summary>
+    /// Handles movement input and looking around with mouse.
+    /// </summary>
     void Update()
     {
         // --- Movement ---

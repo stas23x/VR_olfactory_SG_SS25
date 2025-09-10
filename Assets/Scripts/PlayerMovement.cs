@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 
+/// <summary>
+/// Handles player movement in an XR Rig using D-pad or joystick input, with terrain following.
+/// </summary>
 public class XRRigDpadMover : MonoBehaviour
 {
     [Header("Input Action Asset")]
@@ -22,6 +25,9 @@ public class XRRigDpadMover : MonoBehaviour
 
     private MenuController menuController;
 
+    /// <summary>
+    /// Enables the input action for movement when the script is enabled.
+    /// </summary>
     void OnEnable()
     {
         // Get the action
@@ -34,11 +40,17 @@ public class XRRigDpadMover : MonoBehaviour
         moveAction.Enable();
     }
 
+    /// <summary>
+    /// Disables the input action when the script is disabled.
+    /// </summary>
     void OnDisable()
     {
         moveAction.Disable();
     }
 
+    /// <summary>
+    /// Initializes references to Rigidbody, MenuController, and camera transform.
+    /// </summary>
     void Awake()
     {
 
@@ -65,6 +77,9 @@ public class XRRigDpadMover : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles movement input and moves the player while following terrain height.
+    /// </summary>
     void Update()
     {
         if (!menuController.isMenuVisible)
@@ -72,9 +87,11 @@ public class XRRigDpadMover : MonoBehaviour
             moveInput = moveAction.ReadValue<Vector2>();
             MoveWithTerrainFollow();
         }
-        
     }
 
+    /// <summary>
+    /// Moves the player based on input while adjusting height to follow terrain.
+    /// </summary>
     void MoveWithTerrainFollow()
     {
         if (moveInput == Vector2.zero)
@@ -99,16 +116,16 @@ public class XRRigDpadMover : MonoBehaviour
 
             // Raycast down from above target position
             Vector3 rayOrigin = targetPosition + Vector3.up * (raycastDistance / 2);
+            
             if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, raycastDistance, groundLayer))
             {
                 targetPosition.y = hit.point.y;
                 Debug.Log("Target position: " + hit.point.y);
 
-            }  
-            rb.MovePosition(targetPosition);
-            Debug.Log("Target position: " + targetPosition);
             }
 
-        
+            rb.MovePosition(targetPosition);
+            Debug.Log("Target position: " + targetPosition);
+        }
     }
 }

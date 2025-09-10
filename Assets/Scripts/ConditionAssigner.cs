@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Defines the different stimuli conditions for participants.
+/// </summary>
 public enum StimuliCondition
 {
     None,
@@ -8,6 +11,9 @@ public enum StimuliCondition
     Both
 }
 
+/// <summary>
+/// Assigns stimuli conditions to participants based on their ID and the scene index.
+/// </summary>
 public static class ConditionAssigner
 {
     public static StimuliCondition GetConditionForParticipant(int participantID, int sceneIndex)
@@ -17,11 +23,7 @@ public static class ConditionAssigner
 
         // Rotate conditions for each scene by adding scene index
         int conditionIndex = (mod + sceneIndex) % 4;
-
-        // Debug.Log(participantID);
-        // Debug.Log(sceneIndex);
-        // Debug.Log(conditionIndex);
-
+        
         return (StimuliCondition)conditionIndex;
     }
 }

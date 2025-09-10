@@ -3,11 +3,19 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
+/// <summary>
+/// Handles the scene selection dropdown in the menu.
+/// </summary>
 public class SceneDropdownHandler : MonoBehaviour
 {
     public Dropdown sceneDropdown;
     private List<string> sceneNames = new List<string>();
 
+    /// <summary>
+    /// Initializes the dropdown with scene names from build settings.
+    /// ! Important: You have to open the build settings and add all scenes you want to include in the dropdown there.
+    /// </summary>
+    /// <param name="dropdown"></param>
     public void Initialize(Dropdown dropdown)
     {
         sceneDropdown = dropdown;
@@ -25,6 +33,9 @@ public class SceneDropdownHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Loads scene names from the build settings and maps them to user-friendly names.
+    /// </summary>
     void LoadSceneNamesFromBuildSettings()
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
@@ -61,16 +72,23 @@ public class SceneDropdownHandler : MonoBehaviour
             {
                 Debug.Log("The following scene was not included in the dropdown:" + name);
             }
-            
+
         }
     }
 
+    /// <summary>
+    /// Populates the dropdown with the loaded scene names.
+    /// </summary>
     void PopulateDropdown()
     {
         sceneDropdown.ClearOptions();
         sceneDropdown.AddOptions(sceneNames);
     }
 
+    /// <summary>
+    /// Gets the selected scene name based on the dropdown value.
+    /// </summary>
+    /// <returns></returns>
     public string GetSelectedScene()
     {
         switch (sceneDropdown.value)
@@ -85,11 +103,13 @@ public class SceneDropdownHandler : MonoBehaviour
             default: return "";
         }
         // If you want to use the dropdown value directly:
-        //
-        
         // return sceneNames[sceneDropdown.value];
     }
 
+    /// <summary>
+    /// Handles scene change when a new option is selected in the dropdown.
+    /// </summary>
+    /// <param name="index"></param>
     void OnSceneChanged(int index)
     {
         // We won't load scene immediately here. Scene loading will be controlled by MenuController on Continue.

@@ -1,21 +1,20 @@
 using UnityEngine;
 
+/// <summary>
+/// Makes the GameObject follow the XR camera's position and orientation.
+/// Attach this script to the GameObject you want to follow the headset.
+/// </summary>
 public class FollowHeadset : MonoBehaviour
 {
     public Transform target;  // Assign the XR Camera
-    // public Vector3 offset = new Vector3(0, -0.2f, 0.5f);
-    // public float followSpeed = 5f;
-
+   
+   /// <summary>
+   /// Update is called once per frame and repositions the object you want to 
+   /// follow the camera accordingly to the camera position and orientation.
+   /// </summary>
     void Update()
     {
         if (target == null) return;
-
-        // Vector3 targetPosition = target.position + target.forward * offset.z + target.up * offset.y + target.right * offset.x;
-        // transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
-
-        // // Optional: smoothly rotate to face camera
-        // Quaternion targetRotation = Quaternion.LookRotation(target.position - transform.position);
-        // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * followSpeed);
 
         // Calculate the new position
         Vector3 cameraPosition = target.position;

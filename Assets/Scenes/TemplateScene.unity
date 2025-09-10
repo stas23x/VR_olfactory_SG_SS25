@@ -255,12 +255,6 @@ MonoBehaviour:
   skyVolumeTarget: {fileID: 1812963944}
   audioManager: {fileID: 77071792}
   isMenuVisible: 1
-  menuToggleAction:
-    actionPath: /actions/default/in/MenuToggle
-    needsReinit: 0
-  selectAction:
-    actionPath: /actions/default/in/Select
-    needsReinit: 0
   menuButtonAction: {fileID: -1787167279109485405, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &43366871
 GameObject:
@@ -3142,18 +3136,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67c483567e561d4f9701c7ac7b8c47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  participantID: 1
+  participantID: 2
   isExperimentActive: 0
   ExperimentMenu: {fileID: 880646026}
   PlayerMenu: {fileID: 857109171}
   eventSystem: {fileID: 1696746869}
   experimentDuration: 10
-  questionnairePrefab: {fileID: 1463540422}
   sceneOrder:
-  - AmrumV2
   - forest 1
   - Stanislav beach
   - Koenigssee
+  - AmrumV2
 --- !u!4 &696355760
 Transform:
   m_ObjectHideFlags: 0
@@ -3537,12 +3530,6 @@ MonoBehaviour:
   skyVolumeTarget: {fileID: 1812963944}
   audioManager: {fileID: 77071792}
   isMenuVisible: 1
-  menuToggleAction:
-    actionPath: /actions/default/in/MenuToggle
-    needsReinit: 0
-  selectAction:
-    actionPath: /actions/default/in/Select
-    needsReinit: 0
   menuButtonAction: {fileID: -1787167279109485405, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &857109177
 MonoBehaviour:
@@ -3810,7 +3797,6 @@ Transform:
   - {fileID: 77071791}
   - {fileID: 1649059886}
   - {fileID: 446452907}
-  - {fileID: 1745669935}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &887247099
@@ -3953,8 +3939,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941621722}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: 2.22, z: 0.99874115}
+  m_LocalRotation: {x: 0.13318594, y: 0.24465486, z: -0.03394867, w: 0.95981926}
+  m_LocalPosition: {x: 155.00159, y: 40, z: 48.99874}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4095,7 +4081,7 @@ CharacterController:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Height: 4
   m_Radius: 0.5
@@ -7532,50 +7518,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1745669934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1745669935}
-  - component: {fileID: 1745669936}
-  m_Layer: 0
-  m_Name: Bootstrapper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1745669935
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745669934}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0010001082, y: 3.0700002, z: 0.99874115}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 887247098}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1745669936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745669934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c83f07d7a8eb1e4c89a750e9c26318f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1753246182
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,35 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles the experiment menu UI, including participant ID selection and starting the experiment.
+/// </summary>
 public class ExperimentMenu : MonoBehaviour
 {
-
     public Button startButton;
     public Dropdown participantDropdown;
 
-
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initializes the experiment menu by setting up button listeners.
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
         if (startButton != null)
             startButton.onClick.AddListener(OnStartClicked);
     }
 
-
+    /// <summary>
+    /// Called when the Start button is clicked. Retrieves the selected participant ID and starts the experiment.
+    /// </summary>
     void OnStartClicked()
     {
 
         int participantID = participantDropdown.value;
-        // StartCoroutine(GameObject.Find("ExperimentManager").GetComponent<ExperimentManager>().RunExperiment(participantID));
-
-        // // Hide the experiment menu
-        // gameObject.SetActive(false);
-
+        
         _ = GameObject.Find("ExperimentManager").GetComponent<ExperimentManager>().RunExperiment(participantID);
         gameObject.SetActive(false);
     }
-    
-    
-    
-
 }

@@ -3,12 +3,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+/// <summary>
+/// Manages the questionnaire UI for collecting user responses.
+/// ! Important: This script assumes there are exactly 14 questions and corresponding dropdowns set up in the Unity Editor.
+/// It is also incomplete and not fully tested due to time constraints.
+/// </summary>
 public class QuestionnaireUI : MonoBehaviour
 {
+    // Singleton instance of the QuestionnaireUI, accessible globally
     public static QuestionnaireUI Instance;
 
     public TMP_Text questionText;
-    public TMP_Dropdown[] dropdowns; 
+    public TMP_Dropdown[] dropdowns;
     public Button submitButton;
 
     // German IPQ items and anchors
@@ -50,6 +56,9 @@ public class QuestionnaireUI : MonoBehaviour
 
     private Action<string[]> onComplete;
 
+    /// <summary>
+    /// Initializes the singleton instance and sets up the UI elements.
+    /// </summary>
     void Awake()
     {
         Instance = this;
@@ -65,6 +74,10 @@ public class QuestionnaireUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shows the questionnaire UI and sets the callback for when it's completed.
+    /// </summary>
+    /// <param name="callback"></param>
     public void Show(Action<string[]> callback)
     {
         gameObject.SetActive(true);
@@ -79,6 +92,9 @@ public class QuestionnaireUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles the submission of the questionnaire and invokes the callback with responses.
+    /// </summary>
     void Submit()
     {
         string[] responses = new string[dropdowns.Length];

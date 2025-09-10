@@ -1,6 +1,9 @@
 using UnityEngine;
 using Valve.VR;
 
+/// <summary>
+/// Handles player movement in an XR Rig using SteamVR D-pad input.
+/// </summary>
 public class SteamVRDpadMovement : MonoBehaviour
 {
     [Header("SteamVR DPad Actions")]
@@ -13,13 +16,16 @@ public class SteamVRDpadMovement : MonoBehaviour
     public float speed = 1.5f;
     public Transform head; // Usually Camera in XR Rig
 
+    /// <summary>
+    /// Handles movement input and moves the player relative to head direction.
+    /// </summary>
     void Update()
     {
         Vector2 moveDir = Vector2.zero;
 
-        if (moveUp.state)    moveDir.y += 1;
-        if (moveDown.state)  moveDir.y -= 1;
-        if (moveLeft.state)  moveDir.x -= 1;
+        if (moveUp.state) moveDir.y += 1;
+        if (moveDown.state) moveDir.y -= 1;
+        if (moveLeft.state) moveDir.x -= 1;
         if (moveRight.state) moveDir.x += 1;
 
         Vector3 direction = new Vector3(moveDir.x, 0, moveDir.y).normalized;

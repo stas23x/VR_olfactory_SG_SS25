@@ -1,16 +1,20 @@
 using UnityEngine;
 
+/// <summary>
+/// Sets up scent zones with different radii and frequencies.
+/// </summary>
 public class ScentTrigger : MonoBehaviour
 {
     public string scentType = "default";
-
     public float zone1Radius;
     public float zone2Radius;
     public float zone3Radius;
 
+    /// <summary>
+    /// Initializes the scent zones with specified radii and frequencies.
+    /// </summary>
     void Start()
     {
-
         Transform zone1 = transform.Find("Zone 1");
         Transform zone2 = transform.Find("Zone 2");
         Transform zone3 = transform.Find("Zone 3");
