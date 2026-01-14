@@ -21,7 +21,8 @@ public class ExperimentManager : MonoBehaviour
     public GameObject PlayerMenu;
     public EventSystem eventSystem;
     public float experimentDuration = 10f;
-    public string[] sceneOrder = new string[] { "forest 1", "Stanislav beach", "Koenigssee", "AmrumV2" };
+    public string scene = "Stanislav beach";
+    public int seqLenght = 4;
     private int currentSceneIndex = 0;
 
     private Logger logger;
@@ -80,12 +81,10 @@ public class ExperimentManager : MonoBehaviour
         isExperimentRunning = true;
         participantID = partID;
 
-        for (currentSceneIndex = 0; currentSceneIndex < sceneOrder.Length; currentSceneIndex++)
+        for (int currentCondition = 0; currentCondition < seqLenght; currentCondition++)
         {
-            string sceneName = sceneOrder[currentSceneIndex];
-
             // Determine condition for this participant and scene
-            StimuliCondition condition = ConditionAssigner.GetConditionForParticipant(participantID, currentSceneIndex);
+            StimuliCondition condition = ConditionAssigner.GetConditionForParticipant(participantID, currentCondition);
 
             // Set conditions
             ApplyCondition(condition);
@@ -94,20 +93,20 @@ public class ExperimentManager : MonoBehaviour
             // Load scene
 
             // Set camera position after the scene is fully loaded
-            // ! changing coordinates before changing the scene, as sometimes the PC needs more time to load the scene and 
+            // ! changing coordinates before changing the condition, as sometimes the PC needs more time to load the scene and 
             // the player falls indefinitelly
-            setCameraStartPosition(sceneName);
+            setCameraStartPosition(condition);
 
-            AsyncOperation loadOp = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+            AsyncOperation loadOp = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
             characterController.enabled = true;
             movementProvider.enabled = true;
             turnProvider.enabled = true;
 
             // START logging
-            logger?.StartLogging(participantID, sceneName, condition);
+            logger?.StartLogging(partID , scene, condition);
 
             // Wait for experiment duration or user input
-            // Debug.Log($"Pre delay: " + sceneName);
+            // Debug.Log($"Pre delay: " + scene);
             await Task.Delay(System.TimeSpan.FromSeconds(experimentDuration));
 
             // STOP logging
@@ -152,8 +151,8 @@ public class ExperimentManager : MonoBehaviour
     /// <summary>
     /// Sets the starting position and rotation of the XR Rig based on the scene name.
     /// </summary>
-    /// <param name="sceneName"></param>
-    void setCameraStartPosition(string sceneName)
+    /// <param name="scene"></param>
+    void setCameraStartPosition(StimuliCondition condition)
     {
         GameObject xrRig = GameObject.Find("XRRig");
 
@@ -163,35 +162,35 @@ public class ExperimentManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Found XRRig and setting it into the following scene " + sceneName);
+            Debug.Log("Found XRRig and setting it into the following scene " + scene);
             Camera camera = xrRig.GetComponentInChildren<Camera>();
             camera.tag = "MainCamera";
 
-            switch (sceneName)
+            switch (condition)
             {
 
-                case "forest 1":
-                    // Set camera position for forest 1
+                case StimuliCondition.None:
+                    // Set camera position for condition == none
                     xrRig.transform.position = new UnityEngine.Vector3(155.0f, 20.0f, 47.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(15.8f, 28.6f, 0f);
                     break;
-                case "AmrumV2":
-                    // Set camera position for AmrumV2
+                case StimuliCondition.AudioOnly:
+                    // Set camera position for condition == AudioOnly
                     xrRig.transform.position = new UnityEngine.Vector3(796.0f, 160.0f, 596.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3f, -117f, 0f);
                     break;
-                case "Stanislav beach":
-                    // Set camera position for Stanislav beach
+                case StimuliCondition.OlfactoryOnly:
+                    // Set camera position for condition == OlfactoryOnly
                     xrRig.transform.position = new UnityEngine.Vector3(216.0f, 21.0f, 269.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3.6f, 138f, 0f);
                     break;
-                case "Koenigssee":
-                    // Set camera position for Konigssee
+                case StimuliCondition.Both:
+                    // Set camera position for condition == both
                     xrRig.transform.position = new UnityEngine.Vector3(500.0f, 32.0f, 979.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(11f, -151f, 0f);
                     break;
                 default:
-                    Debug.LogWarning("Unknown scene name: " + sceneName);
+                    Debug.LogWarning("Problem with setting coordinates");
                     break;
             }
         }

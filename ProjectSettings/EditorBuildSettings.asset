@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/forest 1.unity
     guid: 5753e6577d574dd458293b0be4c6bb6d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AmrumV2.unity
     guid: e2114043729029747884b9c5b7b32cd3
   - enabled: 1

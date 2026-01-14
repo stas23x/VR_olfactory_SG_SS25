@@ -16,13 +16,10 @@ public enum StimuliCondition
 /// </summary>
 public static class ConditionAssigner
 {
-    public static StimuliCondition GetConditionForParticipant(int participantID, int sceneIndex)
+    public static StimuliCondition GetConditionForParticipant(int participantID, int currentCondition)
     {
-        participantID -= 1;
-        int mod = participantID % 4;
-
-        // Rotate conditions for each scene by adding scene index
-        int conditionIndex = (mod + sceneIndex) % 4;
+        // Rotate conditions for each condition by adding scene index
+        int conditionIndex = (participantID + currentCondition) % 4;
         
         return (StimuliCondition)conditionIndex;
     }

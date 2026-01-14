@@ -17,6 +17,8 @@ public class Logger : MonoBehaviour
     private float logInterval = 0f; // Set >0 to throttle if needed
     private float timeSinceLastLog = 0f;
 
+    int partID;
+
     /// <summary>
     /// Ensures the logger persists across scenes.
     /// </summary>
@@ -53,14 +55,15 @@ public class Logger : MonoBehaviour
         currentCondition = condition.ToString();
 
         string safeScene = sceneName.Replace(" ", "_");
-        string fileName = $"log_Participant_{participantID}_{safeScene}_{currentCondition}.csv";
+        string fileName = $"log_participant_{participantID}_{safeScene}_{currentCondition}.csv";
         logPath = Path.Combine(Application.persistentDataPath, fileName);
 
-        File.WriteAllText(logPath, "Timestamp,Scene,Condition,XRPosition,XRRotation\n");
+        File.WriteAllText(logPath, "participantID,Timestamp,Scene,Condition,XRPosition,XRRotation\n");
 
         isLogging = true;
 
         Debug.Log($"Logger started. Saving to: {logPath}");
+        partID = participantID;
     }
 
     /// <summary>
@@ -92,7 +95,7 @@ public class Logger : MonoBehaviour
             rotStr = $"{rot.eulerAngles.x:F2};{rot.eulerAngles.y:F2};{rot.eulerAngles.z:F2}";
         }
 
-        string line = $"{timestamp},{currentScene},{currentCondition},{posStr},{rotStr}\n";
+        string line = $"{partID},{timestamp},{currentScene},{currentCondition},{posStr},{rotStr}\n";
         File.AppendAllText(logPath, line);
     }
 }

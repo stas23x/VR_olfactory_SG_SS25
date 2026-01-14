@@ -21,7 +21,7 @@ public class GlobalSettings : MonoBehaviour
     public List<VolumeProfile> skyProfiles;
     public int selectedSkyProfileIndex = 0;
     public Volume globalVolume;
-    public string participantID = "P001";
+    public string participantID = "1";
     public bool useAudio = true;
     public bool useOlfactory = true;
     public bool autoStartExperiment = false;
