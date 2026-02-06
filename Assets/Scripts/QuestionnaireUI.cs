@@ -61,7 +61,7 @@ public class QuestionnaireUI : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        Instance = this;
+        Instance = this;    
         submitButton.onClick.AddListener(Submit);
         gameObject.SetActive(false);
 
@@ -93,7 +93,7 @@ public class QuestionnaireUI : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles the submission of the questionnaire and invokes the callback with responses.
+    /// Handles the submission of the questionnaire and invokes the callback with responses.    
     /// </summary>
     void Submit()
     {

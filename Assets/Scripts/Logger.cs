@@ -98,4 +98,25 @@ public class Logger : MonoBehaviour
         string line = $"{partID},{timestamp},{currentScene},{currentCondition},{posStr},{rotStr}\n";
         File.AppendAllText(logPath, line);
     }
+
+    //add Questionary NEW
+    public void LogQuestionnaire(int participantID, StimuliCondition condition, string[] answers)
+    {
+    string fileName = $"questionnaire_participant_{participantID}_{condition}.csv";
+    string path = Path.Combine(Application.persistentDataPath, fileName);
+
+    // Header
+    if (!File.Exists(path))
+    {
+        File.WriteAllText(path, "participantID,condition,questionIndex,answer\n");
+    }
+    //Data
+    for (int i = 0; i < answers.Length; i++)
+    {
+        string line = $"{participantID},{condition},{i},{answers[i]}\n";
+        File.AppendAllText(path, line);
+    }
+
+    Debug.Log($"Questionnaire saved to {path}");
+    }
 }
