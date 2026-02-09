@@ -13,7 +13,7 @@ public class QuestionnaireUI : MonoBehaviour
     // Singleton instance of the QuestionnaireUI, accessible globally
     public static QuestionnaireUI Instance;
 
-    public TMP_Text questionText;
+    public TMP_Text[] questionText;
     public TMP_Dropdown[] dropdowns;
     public Button submitButton;
 
@@ -65,6 +65,12 @@ public class QuestionnaireUI : MonoBehaviour
         submitButton.onClick.AddListener(Submit);
         gameObject.SetActive(false);
 
+        //initialize questions
+        for (int i = 0; i < questions.Length; i++)
+        {
+            questionText[i].text = questions[i];
+        }
+
         // Initialize dropdown options for each question
         for (int i = 0; i < dropdowns.Length; i++)
         {
@@ -95,13 +101,22 @@ public class QuestionnaireUI : MonoBehaviour
     /// <summary>
     /// Handles the submission of the questionnaire and invokes the callback with responses.    
     /// </summary>
-    void Submit()
+    public void Submit()
     {
+        submitButton.interactable = false;
+
         string[] responses = new string[dropdowns.Length];
         for (int i = 0; i < dropdowns.Length; i++)
         {
             responses[i] = dropdowns[i].options[dropdowns[i].value].text;
         }
+        //TO DO: Check if all answered
+        // if (dropdowns.Any(d => d.value < 0))
+        // {
+        //     Debug.LogWarning("Not all questions answered!");
+        //     return;
+        // }
+        
 
         gameObject.SetActive(false);
         onComplete?.Invoke(responses);

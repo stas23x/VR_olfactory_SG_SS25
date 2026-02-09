@@ -112,20 +112,37 @@ public class ExperimentManager : MonoBehaviour
             // STOP logging
             logger?.StopLogging();
 
-            // TODO: add questionnaire and logging of questionnaire responses
+            //questionnaire and logging of questionnaire responses
+            // Disable movement while answering
+            movementProvider.enabled = false;
+            turnProvider.enabled = false;
+            characterController.enabled = false;
 
+            // SHOW questionnaire and WAIT for answers
+            var tcs = new TaskCompletionSource<string[]>();
+            questionnaireUI.Show((responses) =>{tcs.SetResult(responses);});
+            string[] answers = await tcs.Task;
+            
+
+            // LOG questionnaire answers
+            logger?.LogQuestionnaire(participantID, condition, answers);
+
+            // Re-enable movement (optional, since next scene loads anyway)
+            movementProvider.enabled = true;
+            turnProvider.enabled = true;
+            characterController.enabled = true;
         }
 
         Debug.Log("Experiment completed.");
         isExperimentRunning = false;
 
-#if UNITY_EDITOR
-        // Stop Play mode in Editor
-        EditorApplication.isPlaying = false;
-#else
-        // Quit built application
-        Application.Quit();
-#endif
+        #if UNITY_EDITOR
+                // Stop Play mode in Editor
+                EditorApplication.isPlaying = false;
+        #else
+                // Quit built application
+                Application.Quit();
+        #endif
     }
 
     /// <summary>
@@ -194,5 +211,17 @@ public class ExperimentManager : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private Task<string[]> ShowQuestionnaireAsync()
+    {
+    var tcs = new TaskCompletionSource<string[]>();
+
+    questionnaireUI.Show((responses) =>
+    {
+        tcs.SetResult(responses);
+    });
+
+    return tcs.Task;
     }
 }
