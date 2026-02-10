@@ -22,7 +22,7 @@ public class QuestionnaireUI : MonoBehaviour
     {
         "In der computererzeugten Welt hatte ich den Eindruck, dort gewesen zu sein...",
         "Ich hatte das Gefühl, daß die virtuelle Umgebung hinter mir weitergeht.",
-        "Ich hatte das Gefühl, nur Bilder zu sehen."
+        "Ich hatte das Gefühl, nur Bilder zu sehen.",
         // "Ich hatte nicht das Gefühl, in dem virtuellen Raum zu sein.",
         // "Ich hatte das Gefühl, in dem virtuellen Raum zu handeln statt etwas von außen zu bedienen.",
         // "Ich fühlte mich im virtuellen Raum anwesend.",
@@ -103,7 +103,7 @@ public class QuestionnaireUI : MonoBehaviour
     /// </summary>
     public void Submit()
     {
-        submitButton.interactable = false;
+        //submitButton.interactable = false;
 
         string[] responses = new string[dropdowns.Length];
         for (int i = 0; i < dropdowns.Length; i++)

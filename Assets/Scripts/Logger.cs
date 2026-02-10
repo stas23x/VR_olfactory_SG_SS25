@@ -116,7 +116,7 @@ public class Logger : MonoBehaviour
         string line = $"{participantID},{condition},{i},{answers[i]}\n";
         File.AppendAllText(path, line);
     }
-
+    //TO DELETE
     Debug.Log($"Questionnaire saved to {path}");
     }
 }
