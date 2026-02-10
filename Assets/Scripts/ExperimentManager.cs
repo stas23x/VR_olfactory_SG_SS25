@@ -88,6 +88,7 @@ public class ExperimentManager : MonoBehaviour
 
             // Set conditions
             ApplyCondition(condition);
+            //TO DELETE
             string previousscene = SceneManager.GetActiveScene().name;
 
             // Load scene
@@ -213,15 +214,15 @@ public class ExperimentManager : MonoBehaviour
         }
     }
 
-    private Task<string[]> ShowQuestionnaireAsync()
-    {
-    var tcs = new TaskCompletionSource<string[]>();
+    //TO DELETE
+    // private Task<string[]> ShowQuestionnaireAsync()
+    // {
+    // var tcs = new TaskCompletionSource<string[]>();
 
-    questionnaireUI.Show((responses) =>
-    {
-        tcs.SetResult(responses);
-    });
-
-    return tcs.Task;
-    }
+    // questionnaireUI.Show((responses) =>
+    // {
+    //     tcs.SetResult(responses);
+    // });
+    // return tcs.Task;
+    // }
 }

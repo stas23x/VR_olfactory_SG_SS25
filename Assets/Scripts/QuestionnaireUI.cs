@@ -22,18 +22,18 @@ public class QuestionnaireUI : MonoBehaviour
     {
         "In der computererzeugten Welt hatte ich den Eindruck, dort gewesen zu sein...",
         "Ich hatte das Gefühl, daß die virtuelle Umgebung hinter mir weitergeht.",
-        "Ich hatte das Gefühl, nur Bilder zu sehen.",
-        "Ich hatte nicht das Gefühl, in dem virtuellen Raum zu sein.",
-        "Ich hatte das Gefühl, in dem virtuellen Raum zu handeln statt etwas von außen zu bedienen.",
-        "Ich fühlte mich im virtuellen Raum anwesend.",
-        "Wie bewußt war Ihnen die reale Welt, während Sie sich durch die virtuelle Welt bewegten (z.B. Geräusche, Raumtemperatur, andere Personen etc.)?",
-        "Meine reale Umgebung war mir nicht mehr bewußt.",
-        "Ich achtete noch auf die reale Umgebung.",
-        "Meine Aufmerksamkeit war von der virtuellen Welt völlig in Bann gezogen.",
-        "Wie real erschien Ihnen die virtuelle Umgebung?",
-        "Wie sehr glich Ihr Erleben der virtuellen Umgebung dem Erleben einer realen Umgebung?",
-        "Wie real erschien Ihnen die virtuelle Welt?",
-        "Die virtuelle Welt erschien mir wirklicher als die reale Welt."
+        "Ich hatte das Gefühl, nur Bilder zu sehen."
+        // "Ich hatte nicht das Gefühl, in dem virtuellen Raum zu sein.",
+        // "Ich hatte das Gefühl, in dem virtuellen Raum zu handeln statt etwas von außen zu bedienen.",
+        // "Ich fühlte mich im virtuellen Raum anwesend.",
+        // "Wie bewußt war Ihnen die reale Welt, während Sie sich durch die virtuelle Welt bewegten (z.B. Geräusche, Raumtemperatur, andere Personen etc.)?",
+        // "Meine reale Umgebung war mir nicht mehr bewußt.",
+        // "Ich achtete noch auf die reale Umgebung.",
+        // "Meine Aufmerksamkeit war von der virtuellen Welt völlig in Bann gezogen.",
+        // "Wie real erschien Ihnen die virtuelle Umgebung?",
+        // "Wie sehr glich Ihr Erleben der virtuellen Umgebung dem Erleben einer realen Umgebung?",
+        // "Wie real erschien Ihnen die virtuelle Welt?",
+        // "Die virtuelle Welt erschien mir wirklicher als die reale Welt."
     };
 
     private readonly string[][] anchors = new string[][]
@@ -41,17 +41,17 @@ public class QuestionnaireUI : MonoBehaviour
         new string[] { "überhaupt nicht", "sehr stark" },
         new string[] { "trifft gar nicht zu", "trifft völlig zu" },
         new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        new string[] { "hatte nicht das Gefühl", "hatte das Gefühl" },
-        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        new string[] { "extrem bewußt", "mittelmäßig bewußt", "unbewußt" }, // 3 anchors
-        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        new string[] { "vollkommen real", "weder noch", "gar nicht real" },
-        new string[] { "überhaupt nicht", "etwas", "vollständig" },
-        new string[] { "wie eine vorgestellte Welt", "nicht zu unterscheiden von der realen Welt" },
-        new string[] { "trifft gar nicht zu", "trifft völlig zu" }
+        // new string[] { "hatte nicht das Gefühl", "hatte das Gefühl" },
+        // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        // new string[] { "extrem bewußt", "mittelmäßig bewußt", "unbewußt" }, // 3 anchors
+        // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        // new string[] { "vollkommen real", "weder noch", "gar nicht real" },
+        // new string[] { "überhaupt nicht", "etwas", "vollständig" },
+        // new string[] { "wie eine vorgestellte Welt", "nicht zu unterscheiden von der realen Welt" },
+        // new string[] { "trifft gar nicht zu", "trifft völlig zu" }
     };
 
     private Action<string[]> onComplete;
@@ -120,5 +120,6 @@ public class QuestionnaireUI : MonoBehaviour
 
         gameObject.SetActive(false);
         onComplete?.Invoke(responses);
+        onComplete = null;
     }
 }
