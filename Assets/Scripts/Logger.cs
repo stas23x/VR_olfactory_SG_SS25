@@ -55,7 +55,7 @@ public class Logger : MonoBehaviour
         currentCondition = condition.ToString();
 
         string safeScene = sceneName.Replace(" ", "_");
-        string fileName = $"log_participant_{participantID}_{safeScene}_{currentCondition}.csv";
+        string fileName = $"log_participant_{participantID-1}_{safeScene}_{currentCondition}.csv";
         logPath = Path.Combine(Application.persistentDataPath, fileName);
 
         File.WriteAllText(logPath, "participantID,Timestamp,Scene,Condition,XRPosition,XRRotation\n");
@@ -102,7 +102,7 @@ public class Logger : MonoBehaviour
     //add Questionary NEW
     public void LogQuestionnaire(int participantID, StimuliCondition condition, string[] answers)
     {
-    string fileName = $"questionnaire_participant_{participantID}_{condition}.csv";
+    string fileName = $"questionnaire_participant_{participantID-1}_{condition}.csv";
     string path = Path.Combine(Application.persistentDataPath, fileName);
 
     // Header

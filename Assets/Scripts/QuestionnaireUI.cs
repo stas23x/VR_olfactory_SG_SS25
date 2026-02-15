@@ -16,6 +16,11 @@ public class QuestionnaireUI : MonoBehaviour
     public TMP_Text[] questionText;
     public TMP_Dropdown[] dropdowns;
     public Button submitButton;
+    public Button nextButton;
+    public Button backButton;
+    private int currentPage = 0;
+    public GameObject[] pages;
+
 
     // German IPQ items and anchors
     private readonly string[] questions = new string[]
@@ -23,12 +28,12 @@ public class QuestionnaireUI : MonoBehaviour
         "In der computererzeugten Welt hatte ich den Eindruck, dort gewesen zu sein...",
         "Ich hatte das Gefühl, daß die virtuelle Umgebung hinter mir weitergeht.",
         "Ich hatte das Gefühl, nur Bilder zu sehen.",
-        // "Ich hatte nicht das Gefühl, in dem virtuellen Raum zu sein.",
-        // "Ich hatte das Gefühl, in dem virtuellen Raum zu handeln statt etwas von außen zu bedienen.",
-        // "Ich fühlte mich im virtuellen Raum anwesend.",
-        // "Wie bewußt war Ihnen die reale Welt, während Sie sich durch die virtuelle Welt bewegten (z.B. Geräusche, Raumtemperatur, andere Personen etc.)?",
-        // "Meine reale Umgebung war mir nicht mehr bewußt.",
-        // "Ich achtete noch auf die reale Umgebung.",
+        "Ich hatte nicht das Gefühl, in dem virtuellen Raum zu sein.",
+        "Ich hatte das Gefühl, in dem virtuellen Raum zu handeln statt etwas von außen zu bedienen.",
+        "Ich fühlte mich im virtuellen Raum anwesend.",
+        "Wie bewußt war Ihnen die reale Welt, während Sie sich durch die virtuelle Welt bewegten (z.B. Geräusche, Raumtemperatur, andere Personen etc.)?",
+        "Meine reale Umgebung war mir nicht mehr bewußt.",
+        "Ich achtete noch auf die reale Umgebung.",
         // "Meine Aufmerksamkeit war von der virtuellen Welt völlig in Bann gezogen.",
         // "Wie real erschien Ihnen die virtuelle Umgebung?",
         // "Wie sehr glich Ihr Erleben der virtuellen Umgebung dem Erleben einer realen Umgebung?",
@@ -41,12 +46,12 @@ public class QuestionnaireUI : MonoBehaviour
         new string[] { "überhaupt nicht", "sehr stark" },
         new string[] { "trifft gar nicht zu", "trifft völlig zu" },
         new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        // new string[] { "hatte nicht das Gefühl", "hatte das Gefühl" },
-        // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        // new string[] { "extrem bewußt", "mittelmäßig bewußt", "unbewußt" }, // 3 anchors
-        // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
-        // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "hatte nicht das Gefühl", "hatte das Gefühl" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "extrem bewußt", "mittelmäßig bewußt", "unbewußt" }, // 3 anchors
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
+        new string[] { "trifft gar nicht zu", "trifft völlig zu" },
         // new string[] { "trifft gar nicht zu", "trifft völlig zu" },
         // new string[] { "vollkommen real", "weder noch", "gar nicht real" },
         // new string[] { "überhaupt nicht", "etwas", "vollständig" },
@@ -64,7 +69,7 @@ public class QuestionnaireUI : MonoBehaviour
         Instance = this;    
         submitButton.onClick.AddListener(Submit);
         gameObject.SetActive(false);
-
+        
         //initialize questions
         for (int i = 0; i < questions.Length; i++)
         {
@@ -89,6 +94,27 @@ public class QuestionnaireUI : MonoBehaviour
         gameObject.SetActive(true);
         onComplete = callback;
 
+        //pages reset
+        // pages[currentPage].SetActive(false);
+        // currentPage = 0;
+        // pages[currentPage].SetActive(true);
+        // UpdateButtons();
+
+        // Reset page index
+    currentPage = 0;
+
+        // Disable all pages first
+        for (int i = 0; i < pages.Length; i++)
+        {
+            pages[i].gameObject.SetActive(false);
+        }
+        // Activate first page
+        pages[currentPage].SetActive(true);
+        UpdateButtons();
+        gameObject.SetActive(true);
+        Debug.Log("Resetting questionnaire to page 0");
+
+
         for (int i = 0; i < questions.Length; i++)
         {
             dropdowns[i].gameObject.SetActive(true);
@@ -96,6 +122,33 @@ public class QuestionnaireUI : MonoBehaviour
             // Or if you only have one questionText, update to current question here:
             // For simplicity, let's say you have an array of question labels.
         }
+    }
+
+    public void NextPage()
+    {
+        pages[currentPage].SetActive(false);
+        currentPage++;
+        pages[currentPage].SetActive(true);
+
+        UpdateButtons();
+        Debug.Log($"Next page: {currentPage}");
+    }
+
+    public void PreviousPage()
+    {
+        pages[currentPage].SetActive(false);
+        currentPage--;
+        pages[currentPage].SetActive(true);
+
+        UpdateButtons();
+        Debug.Log($"Previous page: {currentPage}");
+    }
+
+    void UpdateButtons()
+    {
+        backButton.gameObject.SetActive(currentPage > 0);
+        nextButton.gameObject.SetActive(currentPage < pages.Length - 1);
+        submitButton.gameObject.SetActive(currentPage == pages.Length - 1);
     }
 
     /// <summary>
@@ -117,7 +170,6 @@ public class QuestionnaireUI : MonoBehaviour
         //     return;
         // }
         
-
         gameObject.SetActive(false);
         onComplete?.Invoke(responses);
         onComplete = null;
