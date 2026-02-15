@@ -23,7 +23,6 @@ public class ExperimentManager : MonoBehaviour
     public float experimentDuration = 10f;
     public string scene = "Stanislav beach";
     public int seqLenght = 4;
-    private int currentSceneIndex = 0;
 
     private Logger logger;
     private AudioManager audioManager;
@@ -104,14 +103,14 @@ public class ExperimentManager : MonoBehaviour
             turnProvider.enabled = true;
 
             // START logging
-            logger?.StartLogging(partID , scene, condition);
+           // logger?.StartLogging(partID , scene, condition);
 
             // Wait for experiment duration or user input
             // Debug.Log($"Pre delay: " + scene);
             await Task.Delay(System.TimeSpan.FromSeconds(experimentDuration));
 
             // STOP logging
-            logger?.StopLogging();
+           // logger?.StopLogging();
 
             //questionnaire and logging of questionnaire responses
             // Disable movement while answering
@@ -126,7 +125,7 @@ public class ExperimentManager : MonoBehaviour
             
 
             // LOG questionnaire answers
-            logger?.LogQuestionnaire(participantID, condition, answers);
+            //logger?.LogQuestionnaire(participantID, condition, answers);
 
             // Re-enable movement (optional, since next scene loads anyway)
             movementProvider.enabled = true;
