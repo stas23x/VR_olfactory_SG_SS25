@@ -21,7 +21,7 @@ public class FollowHeadset : MonoBehaviour
         Vector3 cameraForward = target.forward;
 
         // Set the position 2 meters in front of the camera
-        transform.position = cameraPosition + cameraForward * 1f;
+        transform.position = cameraPosition + cameraForward * 1.5f;
 
         // Make the object face the same direction as the camera
         transform.rotation = Quaternion.LookRotation(cameraForward);

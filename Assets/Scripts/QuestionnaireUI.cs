@@ -2,6 +2,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEditor.UI;
+using UnityEngine.UIElements;
+using Unity.XR.CoreUtils;
+using System.Collections;
 
 /// <summary>
 /// Manages the questionnaire UI for collecting user responses.
@@ -15,12 +19,15 @@ public class QuestionnaireUI : MonoBehaviour
 
     public TMP_Text[] questionText;
     public TMP_Dropdown[] dropdowns;
-    public Button submitButton;
-    public Button nextButton;
-    public Button backButton;
+    public UnityEngine.UI.Button submitButton;
+    public UnityEngine.UI.Button nextButton;
+    public UnityEngine.UI.Button backButton;
     private int currentPage = 0;
     public GameObject[] pages;
 
+    public FollowHeadset scriptFollow;
+
+    public XROrigin XRRig;
 
     // German IPQ items and anchors
     private readonly string[] questions = new string[]
@@ -109,7 +116,7 @@ public class QuestionnaireUI : MonoBehaviour
         // UpdateButtons();
 
         // Reset page index
-    currentPage = 0;
+        currentPage = 0;
 
         // Disable all pages first
         for (int i = 0; i < pages.Length; i++)
@@ -130,6 +137,20 @@ public class QuestionnaireUI : MonoBehaviour
             // Or if you only have one questionText, update to current question here:
             // For simplicity, let's say you have an array of question labels.
         }
+        
+        // Calculate the new position **LOCAL** to XR Rig
+        Vector3 localOffset = new Vector3(-1.5f, 1f, 1.5f);  // 1m LEFT, 2m UP, 1.5m FORWARD
+
+        // Transform the local offset to world space relative to XR Rig
+        Vector3 worldOffset = XRRig.transform.TransformDirection(localOffset);
+
+        // Apply to your object
+        transform.position = XRRig.transform.position + worldOffset;
+
+        // Make the object face the same direction as the camera
+        Vector3 cameraForward = XRRig.transform.forward;
+        transform.rotation = Quaternion.LookRotation(cameraForward);
+
     }
 
     public void NextPage()

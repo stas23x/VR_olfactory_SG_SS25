@@ -100,7 +100,7 @@ public class ExperimentManager : MonoBehaviour
             AsyncOperation loadOp = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
             characterController.enabled = true;
             movementProvider.enabled = true;
-            turnProvider.enabled = true;
+            turnProvider.enabled = false;
 
             // START logging
            // logger?.StartLogging(partID , scene, condition);
@@ -118,10 +118,25 @@ public class ExperimentManager : MonoBehaviour
             turnProvider.enabled = false;
             characterController.enabled = false;
 
+            // // SHOW questionnaire and WAIT for answers
+            // var tcs = new TaskCompletionSource<string[]>();
+            // questionnaireUI.Show((responses) =>{tcs.SetResult(responses);});
+            // // eventSystem.SetSelectedGameObject(questionnaireUI.dropdowns);
+            // string[] answers = await tcs.Task;
+
             // SHOW questionnaire and WAIT for answers
             var tcs = new TaskCompletionSource<string[]>();
-            questionnaireUI.Show((responses) =>{tcs.SetResult(responses);});
+            questionnaireUI.Show((responses) => { tcs.SetResult(responses); });
+
+            // Select the first dropdown on the current page
+            if (questionnaireUI.dropdowns != null && questionnaireUI.dropdowns.Length > 0)
+            {
+                var firstDropdown = questionnaireUI.dropdowns[0];
+                eventSystem.SetSelectedGameObject(firstDropdown.gameObject);
+            }
+
             string[] answers = await tcs.Task;
+
             
 
             // LOG questionnaire answers
