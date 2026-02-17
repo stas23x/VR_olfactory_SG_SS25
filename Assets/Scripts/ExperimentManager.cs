@@ -34,6 +34,7 @@ public class ExperimentManager : MonoBehaviour
     private ActionBasedContinuousMoveProvider movementProvider;
     private ActionBasedContinuousTurnProvider turnProvider;
 
+
     /// <summary>
     /// Ensures the ExperimentManager persists across scenes.
     /// </summary>
@@ -128,12 +129,22 @@ public class ExperimentManager : MonoBehaviour
             var tcs = new TaskCompletionSource<string[]>();
             questionnaireUI.Show((responses) => { tcs.SetResult(responses); });
 
-           //elect the first dropdown on the current page
-            if (questionnaireUI.dropdowns != null && questionnaireUI.dropdowns.Length > 0)
-            {
-                var firstDropdown = questionnaireUI.dropdowns[0];
-                eventSystem.SetSelectedGameObject(firstDropdown.gameObject);
-            }
+        //    //elect the first dropdown on the current page
+        //     if (questionnaireUI.dropdowns != null && questionnaireUI.dropdowns.Length > 0)
+        //     {
+        //         var firstDropdown = questionnaireUI.dropdowns[0];
+        //         eventSystem.SetSelectedGameObject(firstDropdown.gameObject);
+        //     }
+
+            // // Select the first slider
+            // GameObject firstSelectable = questionnaireUI.GetFirstSelectable();
+            // if (firstSelectable != null)
+            // {
+            //     eventSystem.SetSelectedGameObject(firstSelectable);
+            // }
+
+
+
 
             string[] answers = await tcs.Task;
 
@@ -157,6 +168,9 @@ public class ExperimentManager : MonoBehaviour
                 Application.Quit();
         #endif
     }
+
+
+
 
     /// <summary>
     /// Applies the given stimuli condition by enabling/disabling audio and olfactory stimuli.
