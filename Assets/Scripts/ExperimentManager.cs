@@ -128,7 +128,7 @@ public class ExperimentManager : MonoBehaviour
             var tcs = new TaskCompletionSource<string[]>();
             questionnaireUI.Show((responses) => { tcs.SetResult(responses); });
 
-            // Select the first dropdown on the current page
+           //elect the first dropdown on the current page
             if (questionnaireUI.dropdowns != null && questionnaireUI.dropdowns.Length > 0)
             {
                 var firstDropdown = questionnaireUI.dropdowns[0];
@@ -136,8 +136,6 @@ public class ExperimentManager : MonoBehaviour
             }
 
             string[] answers = await tcs.Task;
-
-            
 
             // LOG questionnaire answers
             //logger?.LogQuestionnaire(participantID, condition, answers);

@@ -1,0 +1,18 @@
+﻿<Solution>
+  <Project Path="RAM.csproj" />
+  <Project Path="SteamVR.csproj" />
+  <Project Path="SteamVR_Input_Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
+  <Project Path="TriangleDotNet.csproj" />
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
+  <Project Path="SteamVR_Actions.csproj" />
+  <Project Path="RAMEditor.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="sc.terrain.painter.runtime.csproj" />
+  <Project Path="SteamVR_Editor.csproj" />
+  <Project Path="sc.terrain.painter.editor.csproj" />
+  <Project Path="Unity.RenderPipelines.HighDefinitionConfig.Editor.Tests.csproj" />
+  <Project Path="Unity.RenderPipelines.HighDefinition.Config.Runtime.csproj" />
+  <Project Path="SteamVR_Windows_EditorHelper.csproj" />
+</Solution>

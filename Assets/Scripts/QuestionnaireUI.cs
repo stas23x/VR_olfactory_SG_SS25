@@ -6,6 +6,8 @@ using UnityEditor.UI;
 using UnityEngine.UIElements;
 using Unity.XR.CoreUtils;
 using System.Collections;
+using UnityEngine.EventSystems;
+using Unity.Mathematics;
 
 /// <summary>
 /// Manages the questionnaire UI for collecting user responses.
@@ -28,6 +30,7 @@ public class QuestionnaireUI : MonoBehaviour
     public FollowHeadset scriptFollow;
 
     public XROrigin XRRig;
+    private EventSystem eventSystem;
 
     // German IPQ items and anchors
     private readonly string[] questions = new string[]
@@ -81,7 +84,8 @@ public class QuestionnaireUI : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        Instance = this;    
+        Instance = this; 
+        eventSystem = EventSystem.current; //to test   
         submitButton.onClick.AddListener(Submit);
         gameObject.SetActive(false);
         
@@ -100,6 +104,30 @@ public class QuestionnaireUI : MonoBehaviour
         }
     }
 
+    // private void FixDropdownScrolling(TMP_Dropdown dropdown)
+    // {
+    //     if (!dropdown.IsExpanded)
+    //         return;
+
+    //     GameObject dropdownList = dropdown.transform.root.Find(dropdown.name + "Dropdown List")?.gameObject;
+    //     if (dropdownList == null)
+    //         return;
+
+    //     ScrollRect scrollRect = dropdown.GetComponentInChildren<ScrollRect>();
+    //     if (scrollRect == null)
+    //         return;
+
+    //     RectTransform content = scrollRect.content;
+
+    //     int selectedIndex = dropdown.value;
+    //     int totalOptions = dropdown.options.Count;
+    //     if (totalOptions<=0)
+    //         return;
+    //     float normalizedPosition = 1f - (float)selectedIndex / (totalOptions - 1);
+
+    //     scrollRect.verticalNormalizedPosition = Mathf.Clamp01(normalizedPosition);
+            
+    // }
     /// <summary>
     /// Shows the questionnaire UI and sets the callback for when it's completed.
     /// </summary>
@@ -137,20 +165,33 @@ public class QuestionnaireUI : MonoBehaviour
             // Or if you only have one questionText, update to current question here:
             // For simplicity, let's say you have an array of question labels.
         }
+
+        // Reset to default option
+        for (int i = 0; i < dropdowns.Length; i++)
+        {
+            dropdowns[i].value = 0;
+        }
+
+        var firstDropdown = dropdowns[0]; 
+        eventSystem.SetSelectedGameObject(firstDropdown.gameObject);
         
-        // Calculate the new position **LOCAL** to XR Rig
-        Vector3 localOffset = new Vector3(-1.5f, 1f, 1.5f);  // 1m LEFT, 2m UP, 1.5m FORWARD
+        // // Calculate the new position **LOCAL** to XR Rig
+        // Vector3 localOffset = new Vector3(-1.5f, 1f, 1.5f);  // 1m LEFT, 2m UP, 1.5m FORWARD
 
-        // Transform the local offset to world space relative to XR Rig
-        Vector3 worldOffset = XRRig.transform.TransformDirection(localOffset);
+        // // Transform the local offset to world space relative to XR Rig
+        // Vector3 worldOffset = XRRig.transform.TransformDirection(localOffset);
 
-        // Apply to your object
-        transform.position = XRRig.transform.position + worldOffset;
+        // // Apply to your object
+        // transform.position = XRRig.transform.position + worldOffset;
 
-        // Make the object face the same direction as the camera
-        Vector3 cameraForward = XRRig.transform.forward;
-        transform.rotation = Quaternion.LookRotation(cameraForward);
-
+        // // Make the object face the same direction as the camera
+        // Vector3 cameraForward = XRRig.transform.forward;
+        // transform.rotation = Quaternion.LookRotation(cameraForward);
+        Transform head = XRRig.Camera.transform;
+        Vector3 spawnPos = head.position + head.forward * 1.5f;  
+        spawnPos.y = head.position.y;
+        transform.position = spawnPos;
+        transform.rotation = Quaternion.LookRotation(head.forward);
     }
 
     public void NextPage()
@@ -158,6 +199,10 @@ public class QuestionnaireUI : MonoBehaviour
         pages[currentPage].SetActive(false);
         currentPage++;
         pages[currentPage].SetActive(true);
+
+        // Select the first dropdown on the current page
+        var firstDropdown = dropdowns[currentPage * 3]; 
+        eventSystem.SetSelectedGameObject(firstDropdown.gameObject);
 
         UpdateButtons();
         Debug.Log($"Next page: {currentPage}");
@@ -168,6 +213,9 @@ public class QuestionnaireUI : MonoBehaviour
         pages[currentPage].SetActive(false);
         currentPage--;
         pages[currentPage].SetActive(true);
+
+        var firstDropdown = dropdowns[currentPage * 3]; 
+        eventSystem.SetSelectedGameObject(firstDropdown.gameObject);
 
         UpdateButtons();
         Debug.Log($"Previous page: {currentPage}");
