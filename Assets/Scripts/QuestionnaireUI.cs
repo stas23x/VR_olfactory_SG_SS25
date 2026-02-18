@@ -104,34 +104,6 @@ public class QuestionnaireUI : MonoBehaviour
         }
     }
 
-    // private void FixDropdownScrolling(TMP_Dropdown dropdown)
-    // {
-    //     if (!dropdown.IsExpanded)
-    //         return;
-
-    //     GameObject dropdownList = dropdown.transform.root.Find(dropdown.name + "Dropdown List")?.gameObject;
-    //     if (dropdownList == null)
-    //         return;
-
-    //     ScrollRect scrollRect = dropdown.GetComponentInChildren<ScrollRect>();
-    //     if (scrollRect == null)
-    //         return;
-
-    //     RectTransform content = scrollRect.content;
-
-    //     int selectedIndex = dropdown.value;
-    //     int totalOptions = dropdown.options.Count;
-    //     if (totalOptions<=0)
-    //         return;
-    //     float normalizedPosition = 1f - (float)selectedIndex / (totalOptions - 1);
-
-    //     scrollRect.verticalNormalizedPosition = Mathf.Clamp01(normalizedPosition);
-            
-    // }
-    /// <summary>
-    /// Shows the questionnaire UI and sets the callback for when it's completed.
-    /// </summary>
-    /// <param name="callback"></param>
     public void Show(Action<string[]> callback)
     {
         gameObject.SetActive(true);

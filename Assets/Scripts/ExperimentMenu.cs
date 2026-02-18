@@ -14,8 +14,6 @@ public class ExperimentMenu : MonoBehaviour
     public Dropdown participantDropdown;
     // public TMP_InputField participantField;
 
-    public int ID;
-
     /// <summary>
     /// Initializes the experiment menu by setting up button listeners.
     /// Start is called before the first frame update
@@ -31,11 +29,7 @@ public class ExperimentMenu : MonoBehaviour
     /// </summary>
     void OnStartClicked()
     {
-
-        // int participantID = Convert.ToInt32(participantField.text);
-
-        // int participantID = participantDropdown.value;
-        int participantID = ID;
+        int participantID = participantDropdown.value;
         
         _ = GameObject.Find("ExperimentManager").GetComponent<ExperimentManager>().RunExperiment(participantID);
         gameObject.SetActive(false);
