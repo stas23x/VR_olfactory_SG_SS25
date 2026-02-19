@@ -10970,7 +10970,7 @@ MonoBehaviour:
   ExperimentMenu: {fileID: 880646026}
   PlayerMenu: {fileID: 857109171}
   eventSystem: {fileID: 1696746869}
-  experimentDuration: 5
+  experimentDuration: 120
   scene: Stanislav beach
   seqLenght: 4
 --- !u!4 &696355760
