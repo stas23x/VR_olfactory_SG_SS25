@@ -35,8 +35,8 @@ public class QuestionnaireUI : MonoBehaviour
     // German IPQ items and anchors
     private readonly string[] questions = new string[]
     {
-        "1. How stressed are you?",
-        "2. How happy are you?",
+        "1. How stressed are you after watched the scene?",
+        "2. How happy are reight now you?",
         "3. Did you experience nausea?",
         "4. To what extent did the game hold your attention? ",
         "5. To what extent did you feel you were focused on the game?",

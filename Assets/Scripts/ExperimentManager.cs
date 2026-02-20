@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -30,9 +32,13 @@ public class ExperimentManager : MonoBehaviour
     private QuestionnaireUI questionnaireUI;
     private bool isExperimentRunning = false;
 
+    private List<GameObject> sceneScentTriggers = new List<GameObject>();
+
     private CharacterController characterController;
     private ActionBasedContinuousMoveProvider movementProvider;
     private ActionBasedContinuousTurnProvider turnProvider;
+
+    GameObject[] taggedObjects;
 
     /// <summary>
     /// Ensures the ExperimentManager persists across scenes.
@@ -40,6 +46,31 @@ public class ExperimentManager : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Clear previous list
+        sceneScentTriggers.Clear();
+
+        // Find all GameObjects with tag "ScentTrigger"
+        taggedObjects = GameObject.FindGameObjectsWithTag("OlphactoryPrefab");
+        sceneScentTriggers.AddRange(taggedObjects);
+
+        // // Optionally, disable their zoneScentTrigger component if it exists
+        // foreach (var obj in sceneScentTriggers)
+        // {
+        //     var trigger = obj.GetComponent<ScentTrigger>();
+        //     if (GlobalSettings.Instance.useOlfactory)
+        //         trigger.enabled = true;
+        //     else
+        //     {
+        //         trigger.enabled = false;
+        //     }
+        // }
+
+        Debug.Log($"Collected {sceneScentTriggers.Count} GameObjects with tag 'ScentTrigger' in scene {scene.name}");
     }
 
     /// <summary>
@@ -50,7 +81,7 @@ public class ExperimentManager : MonoBehaviour
         logger = FindObjectOfType<Logger>();
         audioManager = FindObjectOfType<AudioManager>();
         olfactoryManager = FindObjectOfType<OlfactoryManager>();
-        questionnaireUI = QuestionnaireUI.Instance;
+        questionnaireUI = QuestionnaireUI.Instance;       
 
         if (isExperimentActive)
         {
@@ -69,6 +100,8 @@ public class ExperimentManager : MonoBehaviour
             eventSystem.firstSelectedGameObject = GameObject.Find("SceneDropdown");
         }
     }
+
+
 
     /// <summary>
     /// Starts the experiment for the given participant ID.
@@ -102,6 +135,10 @@ public class ExperimentManager : MonoBehaviour
             movementProvider.enabled = true;
             turnProvider.enabled = false;
 
+            // if (olfactoryManager.enabled)
+            //     foreach (var trigger in sceneScentTriggers)
+            //         trigger.SetActive(true);
+
             // START logging
            logger?.StartLogging(partID , scene, condition);
 
@@ -111,6 +148,10 @@ public class ExperimentManager : MonoBehaviour
 
             // STOP logging
            logger?.StopLogging();
+
+            // if (olfactoryManager.enabled)
+            //     foreach (var trigger in sceneScentTriggers)
+            //         trigger.SetActive(false);
 
             //questionnaire and logging of questionnaire responses
             // Disable movement while answering
@@ -170,12 +211,34 @@ public class ExperimentManager : MonoBehaviour
         GlobalSettings.Instance.useAudio = useAudio;
         GlobalSettings.Instance.useOlfactory = useOlfactory;
 
+        Debug.Log($"audio boolean: {useAudio}, olphactory boolean: {useOlfactory}");
+
         // Audio
         audioManager?.SetMasterVolume(useAudio ? GlobalSettings.Instance.audioStrength : 0f);
 
-        // Olfactory
-        if (olfactoryManager != null)
-            olfactoryManager.enabled = useOlfactory;
+        // // Olfactory
+        // if (olfactoryManager != null)
+        //     olfactoryManager.enabled = useOlfactory;
+
+        // if (olfactoryManager.enabled)
+        //     foreach (var trigger in sceneScentTriggers)
+        //         trigger.isActive = true;
+
+
+        foreach (var obj in sceneScentTriggers)
+        {
+            var trigger = obj.GetComponent<ScentTrigger>();
+            if (GlobalSettings.Instance.useOlfactory)
+                trigger.enabled = true;
+            else
+            {
+                olfactoryManager.DisableAllPumps();
+            }
+
+            Debug.Log($"ScentTrigger script is {trigger.enabled}");
+        }
+
+        Debug.Log($"audio enabled: {GlobalSettings.Instance.useAudio}, olphactory enabled: {GlobalSettings.Instance.useOlfactory}");
     }
 
     /// <summary>

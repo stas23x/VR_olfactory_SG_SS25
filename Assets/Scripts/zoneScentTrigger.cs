@@ -16,10 +16,12 @@ public class zoneScentTrigger : MonoBehaviour
     private bool inZone2 = false;
     private bool inZone1 = false;
 
+    public bool isActive = true; // only pump when true
+
     /// <summary>
     /// Initializes the scent zones with specified radii and frequencies.
     /// </summary>
-    void Start()
+    void Awake()
     {
         olfactoryManager = OlfactoryManager.Instance;
         if (olfactoryManager == null)
@@ -51,40 +53,35 @@ public class zoneScentTrigger : MonoBehaviour
     /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
-        if (other.name != "XRRig")
+        if (!isActive || other.name != "XRRig") return;
+        
+        if(GlobalSettings.Instance.useOlfactory)
         {
-
-            Debug.Log("Other collision");
-            return;
+            if (gameObject.name == "Zone 3" & !inZone3)
+            {
+                inZone3 = true;
+                olfactoryManager.StartScent(scentType, frequency);
+                olfactoryManager.PushFrequency(frequency);
+                Debug.Log("Entering zone 3: " + other.name);
+            }
+            else if (gameObject.name == "Zone 2" & !inZone2)
+            {
+                inZone2 = true;
+                olfactoryManager.SetFrequency(frequency);
+                olfactoryManager.PushFrequency(frequency);
+                Debug.Log("Entering zone 2");
+            }
+            else if (gameObject.name == "Zone 1" & !inZone1)
+            {
+                inZone1 = true;
+                olfactoryManager.SetFrequency(frequency);
+                Debug.Log("Entering zone 1");
+            }
         }
-
-        if (olfactoryManager == null)
-        {
-            Debug.Log("Olfactory manager couldnt be found in the zoneScentTrigger");
-            return;
-        }
-
-        if (gameObject.name == "Zone 3" & !inZone3)
-        {
-            inZone3 = true;
-            olfactoryManager.StartScent(scentType, frequency);
-            olfactoryManager.PushFrequency(frequency);
-            Debug.Log("Entering zone 3: " + other.name);
-        }
-        else if (gameObject.name == "Zone 2" & !inZone2)
-        {
-            inZone2 = true;
-            olfactoryManager.SetFrequency(frequency);
-            olfactoryManager.PushFrequency(frequency);
-            Debug.Log("Entering zone 2");
-        }
-        else if (gameObject.name == "Zone 1" & !inZone1)
-        {
-            inZone1 = true;
-            olfactoryManager.SetFrequency(frequency);
-            Debug.Log("Entering zone 1");
-        }
+        
     }
+
+
 
     /// <summary>
     /// Handles scent deactivation when the player exits the trigger zone.
@@ -92,34 +89,30 @@ public class zoneScentTrigger : MonoBehaviour
     /// <param name="other"></param>
     void OnTriggerExit(Collider other)
     {
-        if (other.name != "XRRig")
-        {
-            return;
-        }
+        if (!isActive || other.name != "XRRig") return;
 
-        if (olfactoryManager == null)
-        {
-            Debug.Log("Olfactory manager couldnt be found in the zoneScentTrigger");
-            return;
-        }
 
-        if (gameObject.name == "Zone 3" & inZone3)
+        if (GlobalSettings.Instance.useOlfactory)
         {
-            inZone3 = false;
-            olfactoryManager.StopScent(scentType);
-            Debug.Log("Exit zone 3");
+             if (gameObject.name == "Zone 3" & inZone3)
+            {
+                inZone3 = false;
+                olfactoryManager.StopScent(scentType);
+                Debug.Log("Exit zone 3");
+            }
+            else if (gameObject.name == "Zone 2" & inZone2)
+            {
+                inZone2 = false;
+                olfactoryManager.ReturnToPreviousFrequency();
+                Debug.Log("Exit zone 2");
+            }
+            else if (gameObject.name == "Zone 1" & inZone1)
+            {
+                inZone1 = false;
+                olfactoryManager.ReturnToPreviousFrequency();
+                Debug.Log("Exit zone 1");
+            }
         }
-        else if (gameObject.name == "Zone 2" & inZone2)
-        {
-            inZone2 = false;
-            olfactoryManager.ReturnToPreviousFrequency();
-            Debug.Log("Exit zone 2");
-        }
-        else if (gameObject.name == "Zone 1" & inZone1)
-        {
-            inZone1 = false;
-            olfactoryManager.ReturnToPreviousFrequency();
-            Debug.Log("Exit zone 1");
-        }
+       
     }
 }

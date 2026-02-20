@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - CityGen3D
   - followHeadset
+  - OlphactoryPrefab
   layers:
   - Default
   - TransparentFX

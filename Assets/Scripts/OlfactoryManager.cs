@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Threading;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 /// <summary>
 /// Manages connection to an olfactory device via serial port and controls scent emission.
 /// </summary>
@@ -261,9 +265,34 @@ public class OlfactoryManager : MonoBehaviour
     /// <summary>
     /// Cleans up the serial port connection when the application quits.
     /// </summary>
-    void OnApplicationQuit()
+   void OnApplicationQuit()
     {
-        DisableAllPumps(); // Disable all pumps before closing
+        CleanupSerial();
+    }
+
+    void OnDestroy()
+    {
+        CleanupSerial();
+    }
+
+    /// <summary>
+    /// Cleans up the serial port connection when the object is destroyed.
+    /// </summary>
+    // void OnDestroy()
+    // {
+    //     // This will be called when the object is destroyed (e.g., scene change)
+    //     DisableAllPumps();
+
+    //     if (serialPort != null && serialPort.IsOpen)
+    //     {
+    //         serialPort.Close();
+    //         Debug.Log("Serial port closed on destroy.");
+    //     }
+    // }
+
+    private void CleanupSerial()
+    {
+        DisableAllPumps();
 
         if (serialPort != null && serialPort.IsOpen)
         {
@@ -272,19 +301,27 @@ public class OlfactoryManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Cleans up the serial port connection when the object is destroyed.
-    /// </summary>
-    void OnDestroy()
+    #if UNITY_EDITOR
+    void OnEnable()
     {
-        // This will be called when the object is destroyed (e.g., scene change)
-        DisableAllPumps();
+        EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+    }
 
-        if (serialPort != null && serialPort.IsOpen)
+    void OnDisable()
+    {
+        EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
+    }
+
+    private void OnPlayModeStateChanged(PlayModeStateChange state)
+    {
+        if (state == PlayModeStateChange.ExitingPlayMode)
         {
-            serialPort.Close();
-            Debug.Log("Serial port closed on destroy.");
+            Debug.Log("Exiting Play Mode: Cleaning up olfactory device.");
+            CleanupSerial();
         }
     }
+    #endif
+
+
 
 }
