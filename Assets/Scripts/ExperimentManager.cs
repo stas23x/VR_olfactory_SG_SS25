@@ -103,14 +103,14 @@ public class ExperimentManager : MonoBehaviour
             turnProvider.enabled = false;
 
             // START logging
-           // logger?.StartLogging(partID , scene, condition);
+           logger?.StartLogging(partID , scene, condition);
 
             // Wait for experiment duration or user input
             // Debug.Log($"Pre delay: " + scene);
             await Task.Delay(System.TimeSpan.FromSeconds(experimentDuration));
 
             // STOP logging
-           // logger?.StopLogging();
+           logger?.StopLogging();
 
             //questionnaire and logging of questionnaire responses
             // Disable movement while answering
@@ -128,7 +128,7 @@ public class ExperimentManager : MonoBehaviour
             var tcs = new TaskCompletionSource<string[]>();
             questionnaireUI.Show((responses) => { tcs.SetResult(responses); });
 
-            // Select the first dropdown on the current page
+           //elect the first dropdown on the current page
             if (questionnaireUI.dropdowns != null && questionnaireUI.dropdowns.Length > 0)
             {
                 var firstDropdown = questionnaireUI.dropdowns[0];
@@ -137,10 +137,8 @@ public class ExperimentManager : MonoBehaviour
 
             string[] answers = await tcs.Task;
 
-            
-
             // LOG questionnaire answers
-            //logger?.LogQuestionnaire(participantID, condition, answers);
+            logger?.LogQuestionnaire(participantID, condition, answers);
 
             // Re-enable movement (optional, since next scene loads anyway)
             movementProvider.enabled = true;
@@ -203,22 +201,22 @@ public class ExperimentManager : MonoBehaviour
 
                 case StimuliCondition.None:
                     // Set camera position for condition == none
-                    xrRig.transform.position = new UnityEngine.Vector3(155.0f, 20.0f, 47.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(407.0f, 243.0f, 390.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(15.8f, 28.6f, 0f);
                     break;
                 case StimuliCondition.AudioOnly:
                     // Set camera position for condition == AudioOnly
-                    xrRig.transform.position = new UnityEngine.Vector3(796.0f, 160.0f, 596.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(390.0f, 231.0f, 400.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3f, -117f, 0f);
                     break;
                 case StimuliCondition.OlfactoryOnly:
                     // Set camera position for condition == OlfactoryOnly
-                    xrRig.transform.position = new UnityEngine.Vector3(216.0f, 21.0f, 269.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(500.0f, 226.0f, 37.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3.6f, 138f, 0f);
                     break;
                 case StimuliCondition.Both:
                     // Set camera position for condition == both
-                    xrRig.transform.position = new UnityEngine.Vector3(500.0f, 32.0f, 979.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(382.0f, 25.0f, 66.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(11f, -151f, 0f);
                     break;
                 default:
