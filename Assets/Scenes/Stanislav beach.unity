@@ -2134,7 +2134,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: scentType
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 710609648413706520, guid: cac2ee81aee86b949b6c2197bf163b0e, type: 3}
       propertyPath: zone1Radius

@@ -164,6 +164,13 @@ public class ExperimentManager : MonoBehaviour
             // questionnaireUI.Show((responses) =>{tcs.SetResult(responses);});
             // // eventSystem.SetSelectedGameObject(questionnaireUI.dropdowns);
             // string[] answers = await tcs.Task;
+            foreach (var obj in sceneScentTriggers)
+            {
+                olfactoryManager.DisableAllPumps();
+                Debug.Log("Pumps stop");
+            }
+
+        Debug.Log($"audio enabled: {GlobalSettings.Instance.useAudio}, olphactory enabled: {GlobalSettings.Instance.useOlfactory}");
 
             // SHOW questionnaire and WAIT for answers
             var tcs = new TaskCompletionSource<string[]>();
@@ -264,22 +271,22 @@ public class ExperimentManager : MonoBehaviour
 
                 case StimuliCondition.None:
                     // Set camera position for condition == none
-                    xrRig.transform.position = new UnityEngine.Vector3(407.0f, 243.0f, 390.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(407.0f, 193.0f, 390.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(15.8f, 28.6f, 0f);
                     break;
                 case StimuliCondition.AudioOnly:
                     // Set camera position for condition == AudioOnly
-                    xrRig.transform.position = new UnityEngine.Vector3(390.0f, 231.0f, 400.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(390.0f, 181.0f, 400.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3f, -117f, 0f);
                     break;
                 case StimuliCondition.OlfactoryOnly:
                     // Set camera position for condition == OlfactoryOnly
-                    xrRig.transform.position = new UnityEngine.Vector3(500.0f, 226.0f, 37.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(500.0f, 176.0f, 37.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(3.6f, 138f, 0f);
                     break;
                 case StimuliCondition.Both:
                     // Set camera position for condition == both
-                    xrRig.transform.position = new UnityEngine.Vector3(382.0f, 25.0f, 66.0f);
+                    xrRig.transform.position = new UnityEngine.Vector3(382.0f, 75.0f, 66.0f);
                     xrRig.transform.rotation = UnityEngine.Quaternion.Euler(11f, -151f, 0f);
                     break;
                 default:

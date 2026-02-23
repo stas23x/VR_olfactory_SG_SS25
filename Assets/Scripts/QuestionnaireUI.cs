@@ -36,7 +36,7 @@ public class QuestionnaireUI : MonoBehaviour
     private readonly string[] questions = new string[]
     {
         "1. How stressed are you after watched the scene?",
-        "2. How happy are reight now you?",
+        "2. How happy are you right now?",
         "3. Did you experience nausea?",
         "4. To what extent did the game hold your attention? ",
         "5. To what extent did you feel you were focused on the game?",
@@ -44,7 +44,7 @@ public class QuestionnaireUI : MonoBehaviour
         "7. To what extent did you lose track of time, e.g. did the game absorb your attention so that you were not bored?",
         "8. To what extent did you feel consciously aware of being in the real world whilst playing?",
         "9. To what extent did you forget about your everyday concerns?   ",
-        "10. To what extent were you aware of yourself in your surroundings?",
+        "10. To what extent were you aware of yourself in your surroundings (in real world)?",
         "11. Did you feel the urge at any point to stop playing and see what was happening around you?  ",
         "12. To what extent did you feel as though you were separated from your real-world environment?  ",
         "13. To what extent did you feel that the game was something fun you were experiencing, rather than a task you were just doing?  ",
